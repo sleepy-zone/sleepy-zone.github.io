@@ -2,11 +2,32 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sleepy-zone.github.io/blog</id>
     <title>😴 Sleepy Zone Blog</title>
-    <updated>2024-02-19T00:00:00.000Z</updated>
+    <updated>2024-03-21T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sleepy-zone.github.io/blog"/>
     <subtitle>😴 Sleepy Zone Blog</subtitle>
     <icon>https://sleepy-zone.github.io/img/logo.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[对近期一些事情的看法]]></title>
+        <id>https://sleepy-zone.github.io/blog/thinking-recently</id>
+        <link href="https://sleepy-zone.github.io/blog/thinking-recently"/>
+        <updated>2024-03-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[程序员的钱比粪还难掏]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="程序员的钱比粪还难掏">程序员的钱比粪还难掏<a href="https://sleepy-zone.github.io/blog/thinking-recently#%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E9%92%B1%E6%AF%94%E7%B2%AA%E8%BF%98%E9%9A%BE%E6%8E%8F" class="hash-link" aria-label="程序员的钱比粪还难掏的直接链接" title="程序员的钱比粪还难掏的直接链接">​</a></h2>
+<p>事情起因，有个独立开发老哥在推上发了一句牢骚：程序员的钱比粪还难掏。引起了挺多讨论，简单说下自己的看法。</p>
+<p>首先，要比喻程序员的钱难赚，用掏粪做对比本就不恰当。</p>
+<p>再者，程序员已经是付费意愿相当高的一个群体了，但为什么还是赚不到钱。程序员付费意愿高的前提是因为他们更聪明，如果你这个东西一没有提供价值二没有深度程序员分分钟命令行就能跑一个，为什么要付费呢？</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="国产开源和国产项目">国产开源和国产项目<a href="https://sleepy-zone.github.io/blog/thinking-recently#%E5%9B%BD%E4%BA%A7%E5%BC%80%E6%BA%90%E5%92%8C%E5%9B%BD%E4%BA%A7%E9%A1%B9%E7%9B%AE" class="hash-link" aria-label="国产开源和国产项目的直接链接" title="国产开源和国产项目的直接链接">​</a></h2>
+<p>事情起因，一个开源项目的文档设置为先 Star 后阅读，且需要授权验证虽然代码里设置了绕过方法，但还是引起了很多人的不满。</p>
+<p>另外一个事情，有人拉了 ProductHunt 的点赞互助群，有人也表示不满，拉低了国产项目的质量。</p>
+<p>我既不是开源大佬也不是出海开发，这些事情，我也不知道如何评价。但有个感觉，大家对国产两个字真的有点过于苛刻了。</p>
+<p>地铁上手机码字，就这样吧。</p>]]></content>
+        <author>
+            <name>SleepyZone</name>
+            <uri>https://github.com/sleepy-zone</uri>
+        </author>
+        <category label="thinking" term="thinking"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[我读了读诗经]]></title>
         <id>https://sleepy-zone.github.io/blog/shijing</id>
