@@ -1,5 +1,3 @@
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
@@ -8,12 +6,15 @@ import styles from './index.module.css';
 
 function HomepageHeader() {
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-        Hello! 👋
+    <header className={styles.heroBanner}>
+      <div className="container" style={{ padding: '0 40px' }}>
+        <Heading as="h1" className="hero__title" style={{ marginLeft: '8%' }}>
+          <span className={styles.headingSpan}>Hey,</span>
+          <span className={styles.headingSpan}>I'm SleepyZone 😴</span>
         </Heading>
-        <p className="hero__subtitle">欢迎访问 😴 Sleepy Zone</p>
+        <p className="hero__subtitle" style={{ marginLeft: '33%', marginRight: '8%', fontSize: 48, fontWeight: 'bold' }}>
+          - A 30+、LowLevel P😅 frontend developer from China🇨🇳
+        </p>
       </div>
     </header>
   );

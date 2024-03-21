@@ -77,7 +77,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: '周刊',
+            label: '不周刊',
           },
           {
             href: 'https://bio.link/sleepyzone',
