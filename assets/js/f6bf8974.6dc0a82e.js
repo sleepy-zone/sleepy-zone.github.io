@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkblogs=self.webpackChunkblogs||[]).push([[343],{4183:s=>{s.exports=JSON.parse('{"label":"year-end-summary","permalink":"/blog/tags/year-end-summary","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
