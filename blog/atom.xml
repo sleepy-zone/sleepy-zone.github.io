@@ -2,11 +2,39 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sleepy-zone.github.io/blog</id>
     <title>😴 Sleepy Zone Blog</title>
-    <updated>2024-03-21T00:00:00.000Z</updated>
+    <updated>2024-04-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sleepy-zone.github.io/blog"/>
     <subtitle>😴 Sleepy Zone Blog</subtitle>
     <icon>https://sleepy-zone.github.io/img/logo.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[国内外组件库的一些差异]]></title>
+        <id>https://sleepy-zone.github.io/blog/ui-diff-in-out</id>
+        <link href="https://sleepy-zone.github.io/blog/ui-diff-in-out"/>
+        <updated>2024-04-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[最近在两个项目里分别用了 antd 和 shadcn 两个 react ui 库，又对比了一下国内外的一些组件库，发现两边有一些不一样。]]></summary>
+        <content type="html"><![CDATA[<p>最近在两个项目里分别用了 antd 和 shadcn 两个 react ui 库，又对比了一下国内外的一些组件库，发现两边有一些不一样。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="css-样式">CSS 样式<a href="https://sleepy-zone.github.io/blog/ui-diff-in-out#css-%E6%A0%B7%E5%BC%8F" class="hash-link" aria-label="CSS 样式的直接链接" title="CSS 样式的直接链接">​</a></h2>
+<p>不得不说老外总是能从一些我们已经不怎么关注的地方卷出一些东西来，Tailwind CSS 出现以后，国外组件库样式方案基本都是这一套了。</p>
+<p>我自己尝试了一下，配合 vscode 插件无脑写样式确实挺爽的，虽然 classname 会超长。当然也有方式组合这些原子样式，但那味道就不对了。</p>
+<p>因为这些样式最终都是构建到最终产物内，那就肯定是按需使用了😂。类似的 shadcn 组件也是这样用到哪个 install 哪个，还管什么摇树😆，而且组件和样式都暴露给你，随意修改。</p>
+<p>再说说 antd，从 classname 过渡到 css in js ，但对使用者来讲并没有什么本质的变化，不过想覆盖样式的时候确实方便了许多。从 antd 里学到了 has where 这些 css 知识。</p>
+<p>不过有一点是一致的，css variable 已经是共识了。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="表单">表单<a href="https://sleepy-zone.github.io/blog/ui-diff-in-out#%E8%A1%A8%E5%8D%95" class="hash-link" aria-label="表单的直接链接" title="表单的直接链接">​</a></h2>
+<p>都说国内已经搞大而全的超级 app，组件库也一样。通常表单都会附带一个表单实例，这个实例可以管理各个表单组件的 value onChange，负责收集表单组件的数据以及给表单组件赋值。同时会贴心的提供数组类型的表单，联动也会支持。我用的反正挺爽的。</p>
+<p>国外的这些组件库，好像都不做这些事情。如果要管理表单，自己去 install 个 useForm。联动和复杂格式也都没有提供，组件库就真的只是ui。</p>
+<p>虽然他们内部不提供很多功能，但通常又会有大量的模板，或许国外模板付费意愿比较强吧。😂</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="api">API<a href="https://sleepy-zone.github.io/blog/ui-diff-in-out#api" class="hash-link" aria-label="API的直接链接" title="API的直接链接">​</a></h2>
+<p>用 shadcn 的时候，copy 代码的时候有个明显的感觉，就是量大。他们是真的奉行了组件要组合。比如这一段。</p>
+<p>国内一般都是提供一个数据的 props ，奉行了一切皆数据。即使像 radio 这种组合的组件，也会提供一个 options的数据接口。</p>
+<p>以上只是针对我看到的几个点做了对比，没有哪个好哪个坏，毕竟我都用的挺爽的。</p>
+<p>只不过国内有些组件库，甚至是大厂的组件库，一个大厂还搞两个类似的没有创意的组件库，真的让人感觉丢人！</p>]]></content>
+        <author>
+            <name>SleepyZone</name>
+            <uri>https://github.com/sleepy-zone</uri>
+        </author>
+        <category label="dev" term="dev"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[对近期一些事情的看法]]></title>
         <id>https://sleepy-zone.github.io/blog/thinking-recently</id>
