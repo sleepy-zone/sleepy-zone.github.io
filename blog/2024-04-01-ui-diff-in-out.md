@@ -23,16 +23,84 @@ tags: [dev]
 
 都说国内已经搞大而全的超级 app，组件库也一样。通常表单都会附带一个表单实例，这个实例可以管理各个表单组件的 value onChange，负责收集表单组件的数据以及给表单组件赋值。同时会贴心的提供数组类型的表单，联动也会支持。我用的反正挺爽的。
 
-国外的这些组件库，好像都不做这些事情。如果要管理表单，自己去 install 个 useForm。联动和复杂格式也都没有提供，组件库就真的只是ui。
+国外的这些组件库，好像都不做这些事情。如果要管理表单，自己去 install 个 useForm。联动和复杂格式也都没有提供，组件库就真的只是 ui。
 
 虽然他们内部不提供很多功能，但通常又会有大量的模板，或许国外模板付费意愿比较强吧。😂
 
 ## API 
 
-用 shadcn 的时候，copy 代码的时候有个明显的感觉，就是量大。他们是真的奉行了组件要组合。比如这一段。
+用 shadcn 的时候，copy 代码的时候有个明显的感觉，就是量大。他们是真的奉行了组件要组合。比如 Drawer：
 
-国内一般都是提供一个数据的 props ，奉行了一切皆数据。即使像 radio 这种组合的组件，也会提供一个 options的数据接口。
+```typescript
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+
+function App () {
+  return (
+    <Drawer>
+      <DrawerTrigger>Open</DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+          <DrawerDescription>This action cannot be undone.</DrawerDescription>
+        </DrawerHeader>
+        <DrawerFooter>
+          <Button>Submit</Button>
+          <DrawerClose>
+            <Button variant="outline">Cancel</Button>
+          </DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
+  )
+}
+```
+
+可以看到，什么关闭按钮、标题都会抽成一个组件。
+
+国内一般都是提供一个数据的 props ，奉行了一切皆数据。即使像 radio 这种组合的组件，也会提供一个 options 的数据接口。
+
+```typescript
+import React, { useState } from 'react';
+import { Button, Drawer } from 'antd';
+
+const App: React.FC = () => {
+  const [open, setOpen] = useState(false);
+
+  const showDrawer = () => {
+    setOpen(true);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <>
+      <Button type="primary" onClick={showDrawer}>
+        Open
+      </Button>
+      <Drawer title="Basic Drawer" onClose={onClose} open={open} closeIcon={} footer={}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Drawer>
+    </>
+  );
+};
+
+export default App;
+```
 
 以上只是针对我看到的几个点做了对比，没有哪个好哪个坏，毕竟我都用的挺爽的。
 
-只不过国内有些组件库，甚至是大厂的组件库，一个大厂还搞两个类似的没有创意的组件库，真的让人感觉丢人！
+
+最后！国内有些组件库，甚至是大厂的组件库，一个大厂还搞两个类似的没有创意的组件库，真的让人感觉丢人！
