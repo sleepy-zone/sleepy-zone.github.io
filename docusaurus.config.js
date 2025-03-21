@@ -81,12 +81,6 @@ const config = {
             position: 'left',
             label: '不周刊',
           },
-          {to: '/projects', label: '项目', position: 'left'},
-          {
-            href: 'https://bio.link/sleepyzone',
-            label: 'Contact Me',
-            position: 'right',
-          },
           {
             href: 'https://github.com/sleepy-zone',
             label: 'GitHub',

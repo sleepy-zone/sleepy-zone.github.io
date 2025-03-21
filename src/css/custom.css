@@ -28,3 +28,62 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #2d3436;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+  font-weight: bold;
+}
+
+.creative-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(62, 84, 172, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(114, 49, 175, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(28, 28, 45, 1) 0%, rgba(15, 15, 26, 1) 100%);
+  z-index: -1;
+}
+
+main {
+  flex: 1;
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
