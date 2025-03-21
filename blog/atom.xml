@@ -2,11 +2,191 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sleepy-zone.github.io/blog</id>
     <title>😴 Sleepy Zone Blog</title>
-    <updated>2025-02-06T00:00:00.000Z</updated>
+    <updated>2025-03-21T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sleepy-zone.github.io/blog"/>
     <subtitle>😴 Sleepy Zone Blog</subtitle>
     <icon>https://sleepy-zone.github.io/img/logo.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[woocs，基于 doocs/md 的微信 Markdown 编辑器桌面应用]]></title>
+        <id>https://sleepy-zone.github.io/blog/2025-03-21-woocs</id>
+        <link href="https://sleepy-zone.github.io/blog/2025-03-21-woocs"/>
+        <updated>2025-03-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[前两天推荐了一款微信 Markdown 编辑器：doocs/md，并在文章末尾预告：正在基于该项目开发微信 Markdown 编辑器桌面应用。今天他来了 - woocs，基于 doocs/md 的微信 Markdown 编辑器桌面应用，正式发布了！]]></summary>
+        <content type="html"><![CDATA[<p>前两天推荐了一款微信 Markdown 编辑器：doocs/md，并在文章末尾预告：正在基于该项目开发微信 Markdown 编辑器桌面应用。今天他来了 - <strong>woocs</strong>，基于 doocs/md 的微信 Markdown 编辑器桌面应用，正式发布了！</p>
+<p>项目地址：<a href="https://github.com/sleepy-zone/woocs%E3%80%82" target="_blank" rel="noopener noreferrer">https://github.com/sleepy-zone/woocs。</a></p>
+<p>官网地址：<a href="https://sleepy-zone.github.io/woocs-home/" target="_blank" rel="noopener noreferrer">https://sleepy-zone.github.io/woocs-home/</a></p>
+<p><img decoding="async" loading="lazy" src="https://fastly.jsdelivr.net/gh/bucketio/img1@main/2025/03/21/1742532066065-adbefcb7-01b4-421e-b466-0ec01e0e7e86.png" alt="woocs home page" class="img_ev3q"></p>
+<p>（上面截图是我用 vibe coding 的方式快速上线的官网 😁）</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="关于-woocs">关于 woocs<a href="https://sleepy-zone.github.io/blog/2025-03-21-woocs#%E5%85%B3%E4%BA%8E-woocs" class="hash-link" aria-label="关于 woocs的直接链接" title="关于 woocs的直接链接">​</a></h2>
+<p>初次使用 doocs/md 十分惊艳，但作为编辑器，我还是更喜欢使用桌面应用，喜欢将编辑的文本存储在个人目录而不是浏览器的 localStorage 中，这样我即可以将文章存在本地，由于我使用的是 Mac，我还可以将文稿目录设置为 iCloud 同步，在我的其他设备上继续查看和编辑。</p>
+<p>很快我基于 electron-vite 就将 doocs/md 封装成为了一个桌面应用，这得益于两者都是 vite 的构建，两者源码、构建配置出奇的契合，关于技术细节不在这里赘述。</p>
+<p>woocs 项目主要在保留 doocs/md 原功能的前提下，对其进行了桌面化适配：</p>
+<ul>
+<li>本地内容管理，从 <code>localStorage</code> 移动至 <code>${用户文档目录}/woocs</code></li>
+<li>将新建、设置、导入导出、关于等操作移动至菜单栏，并对常用操作增加快捷键</li>
+<li>将原菜单栏和设置的重复项合并至设置面板内</li>
+<li>新增工具栏，将格式、上传、表格、内容管理、新建等移动至工具栏</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://fastly.jsdelivr.net/gh/bucketio/img4@main/2025/03/21/1742532797887-f80380ba-86a7-46ca-9922-c4704055706b.png" alt="" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="写在后面">写在后面<a href="https://sleepy-zone.github.io/blog/2025-03-21-woocs#%E5%86%99%E5%9C%A8%E5%90%8E%E9%9D%A2" class="hash-link" aria-label="写在后面的直接链接" title="写在后面的直接链接">​</a></h2>
+<p>本来 woocs 只是作为自己用的一个工具在开发，前两天晚上转了一位博主推荐 doocs/md 的推，并预告了一下自己正在开发基于 doocs/md 的微信 Markdown 编辑器桌面应用，没想到得到巨大的关注。截止目前已经有 2.4w 的曝光，并带来了 40+ 的关注，甚至有手快的小伙伴已经自己打包使用并提交了 pr，这种自己顺手做的事情能帮助很多人的感觉真的很不错。</p>
+<p>再次感谢 doocs/md、electron-vite 等优秀的开源项目，因为开源才有了 woocs。最后希望大家用的开心写的开心，如果你也喜欢 woocs，请给个 star 吧😊。</p>
+<hr>
+<div align="center"><p>欢迎关注我的公众号：前端生存指南，一起聊聊前端、AI 和生活。</p><img src="https://cloud-minapp-47803.cloud.ifanrusercontent.com/1tvAM68Cvrx3bfLR.jpg" style="width:180px"></div>]]></content>
+        <author>
+            <name>SleepyZone</name>
+            <uri>https://github.com/sleepy-zone</uri>
+        </author>
+        <category label="OpenSource" term="OpenSource"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[聊聊 vibe coding]]></title>
+        <id>https://sleepy-zone.github.io/blog/2025-03-20-vibe-coding</id>
+        <link href="https://sleepy-zone.github.io/blog/2025-03-20-vibe-coding"/>
+        <updated>2025-03-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[vibe coding，中文翻译为氛围编程，初次听这个词一头雾水。这个词由Andrej Karpathy （ OpenAI 联合创始人、前特斯拉 AI 负责人）最早提出：]]></summary>
+        <content type="html"><![CDATA[<p>vibe coding，中文翻译为氛围编程，初次听这个词一头雾水。这个词由<a href="https://x.com/karpathy/status/1886192184808149383" target="_blank" rel="noopener noreferrer">Andrej Karpathy</a> （ OpenAI 联合创始人、前特斯拉 AI 负责人）最早提出：</p>
+<blockquote>
+<p>我最近创造了一种新的编码方式，叫做“氛围编码”。在这种编码中，我完全沉浸在氛围中，接受代码指数级别的变化，甚至忘记代码本身的存在。这是因为大型语言模型（比如结合了 Cursor Composer 和 Sonnet 的工具）越来越强大。此外，我几乎不需要碰键盘，只要通过 SuperWhisper 和 Composer 进行对话。我问一些非常简单的问题，比如“将侧边栏的内边距减少一半”，因为我懒得找相关的代码。我总是选择“接受全部”，也不再查看差异了。当出现错误信息时，我只是简单地复制粘贴这些信息，通常这样就能解决问题。代码的发展超出了我平常的理解，假如想彻底理解它，我得花比较长的时间认真阅读。有时候，LLM（大型语言模型）无法修复某个错误，我就通过变更一些随机的内容或请求其他修改来绕过问题。虽然这样做对随便的周末项目来说还不错，但也非常有趣。我正在构建一个项目或网页应用，但这已经不算真正的编码了——我只是看看、说说、运行和复制粘贴，最后大多数情况下都能正常工作。</p>
+</blockquote>
+<p>也可以这么说，vibe coding 是一种完全依赖 AI 的一种编程方式，这种编程方式下人本身只是用语言输出需求，而 AI 生成实际代码。和之前完全由人编写代码截然不同。因为完全由 AI 生成代码，这就导致代码数量和代码质量其实并不可控。当 AI 生成的代码越来越多时，就会越来越不可控，人已经完全无法理解代码，只能通过观察运行结果不段的让 AI 去修改来达到最终的效果。由此在编码过程中，人只是享受这种编码的氛围而不是在实际的编码。所以叫做氛围编程。</p>
+<p>（这样讲，产品经理是不是早就走在氛围编程的前列了😂）</p>
+<hr>
+<p>vibe coding 得到了许多人的关注和讨论，信奉 AI 编程的人终于找到了归宿，而对 AI 编程不那么执着的人也终于找到一个适合嘲讽的词汇。现在这个阶段，我们既能看到 AI 编程带来的便利：</p>
+<ul>
+<li>类似 Cursor 这样优秀的工具层出不穷，一直 Tab 和 Apply 就能获得不错的代码反馈；</li>
+<li>编码门槛进一步降低，总能听到没有编程经验的人的产品获得巨大成功；</li>
+<li>AI 模型质量的不段提高，比如 Claude 3.7，创新变的简单，模型能给你意想不到的效果。</li>
+</ul>
+<p>也能看到 AI 编程带来的隐患：</p>
+<ul>
+<li>由于现阶段 AI 能力的不可控，可能更适合一次性的产品，多次迭代可能就意味着引入未知的 bug；</li>
+<li>对于真实且特定的线上业务，AI 的或许并不能很好的给出解决方案；</li>
+<li>越来越少的人关注代码质量、交付质量，软件工程开始陨落。</li>
+</ul>
+<hr>
+<p>虽然各方对 vibe coding 的讨论各执一词，但现阶段的 AI 编程说到底还是 Copilot 的角色，还是需要一个掌舵人的角色，所以我们要保持清醒，可以享受 AI 编程带来的美妙的 vibe，但切不可沉迷其中无法自拔。</p>
+<hr>
+<div align="center"><p>欢迎关注我的公众号：前端生存指南，一起聊聊前端、AI 和生活。</p><img src="https://cloud-minapp-47803.cloud.ifanrusercontent.com/1tvAM68Cvrx3bfLR.jpg" style="width:180px"></div>]]></content>
+        <author>
+            <name>SleepyZone</name>
+            <uri>https://github.com/sleepy-zone</uri>
+        </author>
+        <category label="AI" term="AI"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【开源推荐】高度简洁的微信 Markdown 编辑器]]></title>
+        <id>https://sleepy-zone.github.io/blog/2025-03-19-doocs-md</id>
+        <link href="https://sleepy-zone.github.io/blog/2025-03-19-doocs-md"/>
+        <updated>2025-03-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[只要你会基本的 Markdown 语法，就能做出一篇样式简洁而又美观大方的微信图文。 这就是今天要推荐的 doocs/md，一款高度简洁的微信 Markdown 编辑器。]]></summary>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" src="https://fastly.jsdelivr.net/gh/bucketio/img1@main/2025/03/19/1742380619315-028e1613-5e8a-49a6-a0c6-8828d4df9901.png" alt="" class="img_ev3q"></p>
+<p><strong>只要你会基本的 Markdown 语法，就能做出一篇样式简洁而又美观大方的微信图文。</strong> 这就是今天要推荐的 <a href="https://github.com/doocs/md" target="_blank" rel="noopener noreferrer">doocs/md</a>，一款高度简洁的微信 Markdown 编辑器。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="简介">简介<a href="https://sleepy-zone.github.io/blog/2025-03-19-doocs-md#%E7%AE%80%E4%BB%8B" class="hash-link" aria-label="简介的直接链接" title="简介的直接链接">​</a></h2>
+<p>项目地址：<a href="https://github.com/doocs/md" target="_blank" rel="noopener noreferrer">https://github.com/doocs/md</a>。</p>
+<p>众所周知，微信公众号文章的排版也不是一件简单的事情。在开始写公众号后，一直在找这样的工具，足够简单又足够好看，直到发现了 doocs/md。</p>
+<p>并且项目还贴心的为了用户准备了一篇完整的 markdown 的使用文档，即使你以前没用过 markdown 也能快速上手使用。</p>
+<p><img decoding="async" loading="lazy" src="https://fastly.jsdelivr.net/gh/bucketio/img2@main/2025/03/19/1742380703439-d54671d0-a934-4bda-a51a-70fecdc45db3.png" alt="" class="img_ev3q"></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="项目特性">项目特性<a href="https://sleepy-zone.github.io/blog/2025-03-19-doocs-md#%E9%A1%B9%E7%9B%AE%E7%89%B9%E6%80%A7" class="hash-link" aria-label="项目特性的直接链接" title="项目特性的直接链接">​</a></h2>
+<ul>
+<li>支持 Markdown 所有基础语法、数学公式</li>
+<li>提供对 Mermaid 图表的渲染和 GFM 警告块的支持</li>
+<li>丰富的代码块高亮主题，提升代码可读性</li>
+<li>允许自定义主题色和 CSS 样式，灵活定制展示效果</li>
+<li>提供多图上传功能，并可自定义配置图床</li>
+<li>便捷的文件导入、导出功能，提升工作效率</li>
+<li>内置本地内容管理功能，支持草稿自动保存</li>
+</ul>
+<p>除这些项目主页的也行外，其实该项目还专门公众号做了一些适配：比如抽取链接转脚注，解决公众号无法展示链接的问题，比如展示阅读时间等等。</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="写在后面">写在后面<a href="https://sleepy-zone.github.io/blog/2025-03-19-doocs-md#%E5%86%99%E5%9C%A8%E5%90%8E%E9%9D%A2" class="hash-link" aria-label="写在后面的直接链接" title="写在后面的直接链接">​</a></h2>
+<p>总之，很推荐写公众号的同学去使用。</p>
+<p>另外，后面我准备基于 doocs/md 做一点工作，将其转换为本地客户端，不仅仅是一款微信编辑器，更是一款简单的本地知识库管理工具。</p>
+<p>目前正在开发中：<a href="https://github.com/sleepy-zone/woocs%EF%BC%8C%E6%AC%A2%E8%BF%8E%E5%85%B3%E6%B3%A8%E3%80%82%E6%9C%AC%E6%96%87%E5%B7%B2%E7%BB%8F%E7%94%A8" target="_blank" rel="noopener noreferrer">https://github.com/sleepy-zone/woocs，欢迎关注。本文已经用</a> woocs 编写了！</p>
+<p><img decoding="async" loading="lazy" src="https://fastly.jsdelivr.net/gh/bucketio/img16@main/2025/03/19/1742391696386-1241e101-20cf-49ee-a62e-509f51f7d58f.png" alt="" class="img_ev3q"></p>
+<hr>
+<div align="center"><p>欢迎关注我的公众号：前端生存指南，一起聊聊前端、AI 和生活。</p><img src="https://cloud-minapp-47803.cloud.ifanrusercontent.com/1tvAM68Cvrx3bfLR.jpg" style="width:180px"></div>]]></content>
+        <author>
+            <name>SleepyZone</name>
+            <uri>https://github.com/sleepy-zone</uri>
+        </author>
+        <category label="OpenSource" term="OpenSource"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AI 浪潮下的 FOMO 情绪]]></title>
+        <id>https://sleepy-zone.github.io/blog/2025-03-17-ai-fomo</id>
+        <link href="https://sleepy-zone.github.io/blog/2025-03-17-ai-fomo"/>
+        <updated>2025-03-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[AI 浪潮下的 FOMO 情绪]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://mp.weixin.qq.com/s/5U86iIT105s5E3S4Mdrhkw" target="_blank" rel="noopener noreferrer">AI 浪潮下的 FOMO 情绪</a></p>
+<hr>
+<div align="center"><p>原文发表于我的公众号：前端生存指南。</p><img src="https://cloud-minapp-47803.cloud.ifanrusercontent.com/1tvAM68Cvrx3bfLR.jpg" style="width:180px"></div>]]></content>
+        <author>
+            <name>SleepyZone</name>
+            <uri>https://github.com/sleepy-zone</uri>
+        </author>
+        <category label="AI" term="AI"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[D2 终端技术大会之旅]]></title>
+        <id>https://sleepy-zone.github.io/blog/2025-03-10-D2</id>
+        <link href="https://sleepy-zone.github.io/blog/2025-03-10-D2"/>
+        <updated>2025-03-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[D2 终端技术大会之旅]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://mp.weixin.qq.com/s/q-GBGDd99UuoD4WoI6K80w" target="_blank" rel="noopener noreferrer">D2 终端技术大会之旅</a></p>
+<hr>
+<div align="center"><p>原文发表于我的公众号：前端生存指南。</p><img src="https://cloud-minapp-47803.cloud.ifanrusercontent.com/1tvAM68Cvrx3bfLR.jpg" style="width:180px"></div>]]></content>
+        <author>
+            <name>SleepyZone</name>
+            <uri>https://github.com/sleepy-zone</uri>
+        </author>
+        <category label="AI" term="AI"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2025 年或许是中国的 AI 元年]]></title>
+        <id>https://sleepy-zone.github.io/blog/2025-02-25-2025-ai-first</id>
+        <link href="https://sleepy-zone.github.io/blog/2025-02-25-2025-ai-first"/>
+        <updated>2025-02-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[2025 年或许是中国的 AI 元年]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://mp.weixin.qq.com/s/aY6Kpx_o8Yvoy5N2FUvp-Q" target="_blank" rel="noopener noreferrer">2025 年或许是中国的 AI 元年</a></p>
+<hr>
+<div align="center"><p>原文发表于我的公众号：前端生存指南。</p><img src="https://cloud-minapp-47803.cloud.ifanrusercontent.com/1tvAM68Cvrx3bfLR.jpg" style="width:180px"></div>]]></content>
+        <author>
+            <name>SleepyZone</name>
+            <uri>https://github.com/sleepy-zone</uri>
+        </author>
+        <category label="AI" term="AI"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【好文推荐】我们正在摧毁软件]]></title>
+        <id>https://sleepy-zone.github.io/blog/2025-02-19-we-are-destroying-software</id>
+        <link href="https://sleepy-zone.github.io/blog/2025-02-19-we-are-destroying-software"/>
+        <updated>2025-02-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[【好文推荐】我们正在摧毁软件]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://mp.weixin.qq.com/s/bcGJ70jeBR1DTP_xMWdydw" target="_blank" rel="noopener noreferrer">【好文推荐】我们正在摧毁软件</a></p>
+<hr>
+<div align="center"><p>原文发表于我的公众号：前端生存指南。</p><img src="https://cloud-minapp-47803.cloud.ifanrusercontent.com/1tvAM68Cvrx3bfLR.jpg" style="width:180px"></div>]]></content>
+        <author>
+            <name>SleepyZone</name>
+            <uri>https://github.com/sleepy-zone</uri>
+        </author>
+        <category label="book" term="book"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AI 可以取代前端吗]]></title>
+        <id>https://sleepy-zone.github.io/blog/ai-replace-fe</id>
+        <link href="https://sleepy-zone.github.io/blog/ai-replace-fe"/>
+        <updated>2025-02-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[AI 可以取代前端吗]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://mp.weixin.qq.com/s/_qqeTH73Ts1VvUE4DOjAgw" target="_blank" rel="noopener noreferrer">AI 可以取代前端吗</a></p>
+<hr>
+<div align="center"><p>原文发表于我的公众号：前端生存指南。</p><img src="https://cloud-minapp-47803.cloud.ifanrusercontent.com/1tvAM68Cvrx3bfLR.jpg" style="width:180px"></div>]]></content>
+        <author>
+            <name>SleepyZone</name>
+            <uri>https://github.com/sleepy-zone</uri>
+        </author>
+        <category label="AI" term="AI"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[迟来的 2024 总结]]></title>
         <id>https://sleepy-zone.github.io/blog/my-2024</id>
@@ -112,7 +292,7 @@
 <p>事情起因，有个独立开发老哥在推上发了一句牢骚：程序员的钱比粪还难掏。引起了挺多讨论，简单说下自己的看法。</p>
 <p>首先，要比喻程序员的钱难赚，用掏粪做对比本就不恰当。</p>
 <p>再者，程序员已经是付费意愿相当高的一个群体了，但为什么还是赚不到钱。程序员付费意愿高的前提是因为他们更聪明，如果你这个东西一没有提供价值二没有深度程序员分分钟命令行就能跑一个，为什么要付费呢？</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="国产开源和国产项目">国产开源和国产项目<a href="https://sleepy-zone.github.io/blog/thinking-recently#%E5%9B%BD%E4%BA%A7%E5%BC%80%E6%BA%90%E5%92%8C%E5%9B%BD%E4%BA%A7%E9%A1%B9%E7%9B%AE" class="hash-link" aria-label="国产开源和国产项目的直接链接" title="国产开源和国产项�目的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="国产开源和国产项目">国产开源和国产项目<a href="https://sleepy-zone.github.io/blog/thinking-recently#%E5%9B%BD%E4%BA%A7%E5%BC%80%E6%BA%90%E5%92%8C%E5%9B%BD%E4%BA%A7%E9%A1%B9%E7%9B%AE" class="hash-link" aria-label="国产开源和国产项目的直接链接" title="国产开源和国产项目的直接链接">​</a></h2>
 <p>事情起因，一个开源项目的文档设置为先 Star 后阅读，且需要授权验证虽然代码里设置了绕过方法，但还是引起了很多人的不满。</p>
 <p>另外一个事情，有人拉了 ProductHunt 的点赞互助群，有人也表示不满，拉低了国产项目的质量。</p>
 <p>我既不是开源大佬也不是出海开发，这些事情，我也不知道如何评价。但有个感觉，大家对国产两个字真的有点过于苛刻了。</p>
@@ -318,7 +498,7 @@ on <a href="https://codepen.io">CodePen</a>.</p></iframe>
 <p>老婆怀孕后，我的生活也开始了比较大的变化。因为通勤距离比较长，从每天挤地铁，改为现在每天开车上下班，从一开始有点战战兢兢到现在也能比较好的自如应对。包揽了家里几乎所有的家务（虽然以前可能也都是我😂），不得不说，洗碗机真的拯救了我。</p>
 <p>不过，还是妈妈会更辛苦也会更敏感，从一开始的一个月一次的产检到现在两周一次一周一次，伴随着各种检查。每当有一些异常，都会想宝宝是不是有什么异常，一直等到医生的定论才会安下心来。</p>
 <p>还有一个月，我笑称这个元旦，是我们最后的一个二人世界的假期了😂。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="最重要的还是健康">最重要的还是健康<a href="https://sleepy-zone.github.io/blog/2023-summary#%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E8%BF%98%E6%98%AF%E5%81%A5%E5%BA%B7" class="hash-link" aria-label="最重要的还是健康的直接链接" title="最重要的还是健康的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="最重要的还是健康">最重要的还是健康<a href="https://sleepy-zone.github.io/blog/2023-summary#%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E8%BF%98%E6%98%AF%E5%81%A5%E5%BA%B7" class="hash-link" aria-label="��最重要的还是健康的直接链接" title="最重要的还是健康的直接链接">​</a></h2>
 <p>工作越久，越觉得健康才是最重要的。</p>
 <p>去年食管反流，今年勉强算好了，但感觉很难回到以前的肠胃了。体检又检出了 0.5cm 胆囊息肉，如果再变大一点，就要手术了。吃东西也变得小心翼翼，失去了很多吃的乐趣。</p>
 <p>很多人年轻熬夜，年轻时可能不觉得什么，随着年龄增大，确实会有些力不从心，还是要健康作息和饮食，再加一些必要的运动（很难。</p>
