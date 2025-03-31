@@ -1,0 +1,43 @@
+.about {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.about h2 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.about p {
+  color: #34495e;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.skills h3 {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.skill-tag {
+  padding: 6px 15px;
+  background: #e8f0fe;
+  color: #1a73e8;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}

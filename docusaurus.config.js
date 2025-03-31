@@ -75,18 +75,22 @@ const config = {
         },
         items: [
           {to: '/blog', label: '博客', position: 'left'},
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: '不周刊',
-          },
-          {
-            href: 'https://github.com/sleepy-zone',
-            label: 'GitHub',
-            position: 'right',
-          },
+          // {
+          //   type: 'docSidebar',
+          //   sidebarId: 'tutorialSidebar',
+          //   position: 'left',
+          //   label: '不周刊',
+          // },
+          // {
+          //   href: 'https://github.com/sleepy-zone',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
         ],
+      },
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true
       },
       // footer: {
       //   style: 'dark',
