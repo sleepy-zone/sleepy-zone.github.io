@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkblogs=self.webpackChunkblogs||[]).push([[313],{7078:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/webdev","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
