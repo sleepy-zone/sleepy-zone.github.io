@@ -9,7 +9,8 @@ export default function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="sleepy zone blog, projects ...">
+      description="sleepy zone blog, projects ..."
+    >
       <div className="app">
         <Profile />
         <Projects />
