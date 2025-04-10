@@ -4,10 +4,65 @@
         <title>😴 Sleepy Zone Blog</title>
         <link>https://sleepy-zone.github.io/blog</link>
         <description>😴 Sleepy Zone Blog</description>
-        <lastBuildDate>Mon, 07 Apr 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 10 Apr 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh-Hans</language>
+        <item>
+            <title><![CDATA[什么是 Agent]]></title>
+            <link>https://sleepy-zone.github.io/blog/2025-04-10-what-is-agent.md</link>
+            <guid>https://sleepy-zone.github.io/blog/2025-04-10-what-is-agent.md</guid>
+            <pubDate>Thu, 10 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[https://weaviate.io/blog/what-are-agentic-workflows]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" src="https://fastly.jsdelivr.net/gh/bucketio/img19@main/2025/04/08/1744079884466-358dff04-5fa3-4083-a002-984f7c38faab.png" alt="https://weaviate.io/blog/what-are-agentic-workflows" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="火爆的-agent">火爆的 Agent<a href="https://sleepy-zone.github.io/blog/2025-04-10-what-is-agent.md#%E7%81%AB%E7%88%86%E7%9A%84-agent" class="hash-link" aria-label="火爆的 Agent的直接链接" title="火爆的 Agent的直接链接">​</a></h3>
+<p>AI Agent 应该是 AI 出现后讨论最多的一个词了，因为他代表着 AI 应用的最高层次了，从上次 Manus 的火爆就可见一斑。AI 给人的感觉无所不能又高深莫测，普通人又充满好奇但只能敬而远之，那是到底什么才是 AI Agent？</p>
+<p>通常很多文章在讲解 AI Agent 时又会引入很多新的概念和名词，这就让 AI Agent 的概念更加难以理解。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="我的理解">我的理解<a href="https://sleepy-zone.github.io/blog/2025-04-10-what-is-agent.md#%E6%88%91%E7%9A%84%E7%90%86%E8%A7%A3" class="hash-link" aria-label="我的理解的直接链接" title="我的理解的直接链接">​</a></h3>
+<p>我们可以换个角度看，AI Agent 的最终形态就是可以和人一样处理任务，那如果直接把 Agent 看做人类，一切就变得非常容易理解。</p>
+<p>想象一下，作为前端，我要完成一个后台管理页面的需求，我是怎么做的：</p>
+<ul>
+<li>首先我有了一定的知识储备，了解基本的前端知识和一些框架，比如 React。</li>
+<li>因为是公司内部项目，所以我还需要去了解内部的组件库。</li>
+<li>分析需求，确定组件划分。</li>
+<li>开始编码，遇到问题需要联网查阅资料。</li>
+<li>测试阶段，排查问题，修复问题。</li>
+</ul>
+<p>此时，如果需要 AI 完成这个事情，同样也是按照上述步骤：</p>
+<ul>
+<li>目前大模型都是基于已有数据进行预训练，那么模型已经具备了前端知识和框架。</li>
+<li>但模型无法知晓公司内部组件库，所以先让他进行学习。这就是 RAG。</li>
+</ul>
+<blockquote>
+<p>检索增强生成（RAG）旨在通过检索和整合外部知识来增强大语言模型生成
+文本的准确性和丰富性，其是一个集成了外部知识库、信息检索器、大语言模型等
+多个功能模块的系统。RAG 利用信息检索、深度学习等多种技术为大语言模型在
+生成过程中引入最新的、特定领域的知识，从而克服传统大语言模型的局限性，提
+供更加精准和可靠的生成内容。（引用自：<a href="https://github.com/ZJU-LLMs/Foundations-of-LLMs%EF%BC%89" target="_blank" rel="noopener noreferrer">https://github.com/ZJU-LLMs/Foundations-of-LLMs）</a></p>
+</blockquote>
+<ul>
+<li>AI 根据需求（Prompt），基于学习的知识进行拆分组件、编写代码（规划步骤 WorkFlow）。</li>
+<li>遇到问题，联网排查资料（使用 Tool）</li>
+<li>测试阶段，遇到问题，进行修复。（基于上下文记忆 Memery）。</li>
+</ul>
+<p>可以看出 AI Agent 做事情的方式就是在无限的接近于人类的做事方式：有知识储备，有规步骤规划，有工作流，有工具，最终输出结果。而整个流程中，AI Agent 作为一个完备的系统（没错，AI Agent 是一个系统），内部各部分有条不紊的工作。这一点和人类也一样，人类是一个完美的系统！</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="总结">总结<a href="https://sleepy-zone.github.io/blog/2025-04-10-what-is-agent.md#%E6%80%BB%E7%BB%93" class="hash-link" aria-label="总结的直接链接" title="总结的直接链接">​</a></h3>
+<p><strong>最后我们总结一下什么是 Agent：</strong></p>
+<ol>
+<li>首先是基于大模型的，这是基础。</li>
+<li>感知外部环境：和用户、外部知识、工具甚至是其他 Agent 交互。</li>
+<li>规划和决策：任务管理、任务分配、多步骤工作。</li>
+<li>记忆和改进：理解上下文。</li>
+<li>结合以上几点：<strong>AI Agent 是一个可以理解上下文，通过感知外部环境变化，对任务进行分析、规划并最终进行决策的系统。</strong></li>
+</ol>
+<p>目前已经有很多细分领域的 Agent 了，比如大火的 Cursor，生成代码建议、代码生成、询问人类意见，通过更多的案例学习，后续的编码 Agent 会变的更加智能。</p>
+<p><img decoding="async" loading="lazy" src="https://fastly.jsdelivr.net/gh/bucketio/img10@main/2025/04/08/1744082199745-c25ab9f1-182f-4f10-9046-250043f1a8de.png" alt="" class="img_ev3q"></p>
+<hr>
+<p>本文只是个人对 AI Agent 的简单理解，对于详细的定义概念和分类，还是要参考资料和专业书籍，推荐文章 <a href="https://weaviate.io/blog/what-are-agentic-workflows%E3%80%82%E5%8F%A6%E5%A4%96%E5%A6%82%E6%9E%9C%E6%83%B3%E8%A6%81%E5%8A%A8%E6%89%8B%E5%AE%9E%E8%B7%B5%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%9C%8B%E4%B8%80%E4%B8%8B%E5%BE%AE%E8%BD%AF%E7%9A%84" target="_blank" rel="noopener noreferrer">https://weaviate.io/blog/what-are-agentic-workflows。另外如果想要动手实践，可以看一下微软的</a> AI Agent 课程：<a href="https://microsoft.github.io/ai-agents-for-beginners/%E3%80%82" target="_blank" rel="noopener noreferrer">https://microsoft.github.io/ai-agents-for-beginners/。</a></p>
+<hr>
+<div align="center"><p>欢迎关注我的公众号：前端生存指南，一起聊聊前端、AI 和生活。</p><img src="https://cloud-minapp-47803.cloud.ifanrusercontent.com/1tvAM68Cvrx3bfLR.jpg" style="width:180px"></div>]]></content:encoded>
+            <category>AI</category>
+        </item>
         <item>
             <title><![CDATA[DeepSite：基于 DeepSeek 的生码应用]]></title>
             <link>https://sleepy-zone.github.io/blog/2025-04-07-deepsite.md</link>
@@ -15,7 +70,7 @@
             <pubDate>Mon, 07 Apr 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[试用一下]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" src="https://fastly.jsdelivr.net/gh/bucketio/img2@main/2025/04/03/1743689667074-2a6cb109-602f-4f30-a651-d22c7a38d4d7.png" alt="" class="img_ev3q"></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="试用一下">试用一下<a href="https://sleepy-zone.github.io/blog/2025-04-07-deepsite.md#%E8%AF%95%E7%94%A8%E4%B8%80%E4%B8%8B" class="hash-link" aria-label="试用一下的直接链接" title="�试用一下的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="试用一下">试用一下<a href="https://sleepy-zone.github.io/blog/2025-04-07-deepsite.md#%E8%AF%95%E7%94%A8%E4%B8%80%E4%B8%8B" class="hash-link" aria-label="试用一下的直接链接" title="试用一下的直接链接">​</a></h2>
 <p>最近看到很多人都在聊一个 DeepSite 的应用，应用部署在 huggingface：<a href="https://sleepy-zone.github.io/blog/[https://huggingface.co/spaces/enzostvs/deepsite">https://huggingface.co/spaces/enzostvs/deepsite</a>，功能很简单直接：<strong>基于 DeepSeek 一键生成纯 html 应用并且可以发布至 huggingface space</strong>。</p>
 <p>我试了一下，让 DeepSite 生成一个炫酷的个人博客首页。</p>
 <p>整体效果很不错，页面完整，效果炫酷，我已经部署到我的 space ：<a href="https://huggingface.co/spaces/sleepy-zone/sleepyspace" target="_blank" rel="noopener noreferrer">https://huggingface.co/spaces/sleepy-zone/sleepyspace</a>：</p>
@@ -40,7 +95,7 @@
             <pubDate>Sun, 06 Apr 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[AI 公司貌似喜欢在中国的节假日搞动作，清明节短短三天假期就有很多猛料。]]></description>
             <content:encoded><![CDATA[<p>AI 公司貌似喜欢在中国的节假日搞动作，清明节短短三天假期就有很多猛料。</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="github-官方-mcp-server-发布">Github 官方 MCP Server 发布<a href="https://sleepy-zone.github.io/blog/2025-04-06-recent-ai-1.md#github-%E5%AE%98%E6%96%B9-mcp-server-%E5%8F%91%E5%B8%83" class="hash-link" aria-label="Github 官方 MCP Server 发布的直接链接" title="Github 官方 MCP Server 发布的直接链接">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="github-官方-mcp-server-发布">Github 官方 MCP Server 发布<a href="https://sleepy-zone.github.io/blog/2025-04-06-recent-ai-1.md#github-%EF%BF%BD%E5%AE%98%E6%96%B9-mcp-server-%E5%8F%91%E5%B8%83" class="hash-link" aria-label="Github 官方 MCP Server 发布的直接链接" title="Github 官方 MCP Server 发布的直接链接">​</a></h3>
 <p>github 博客链接：<a href="https://github.blog/changelog/2025-04-04-github-mcp-server-public-preview/" target="_blank" rel="noopener noreferrer">https://github.blog/changelog/2025-04-04-github-mcp-server-public-preview/</a></p>
 <p>官方仓库：<a href="https://github.com/github/github-mcp-server" target="_blank" rel="noopener noreferrer">https://github.com/github/github-mcp-server</a></p>
 <blockquote>
@@ -215,7 +270,7 @@
 <li>内置本地内容管理功能，支持草稿自动保存</li>
 </ul>
 <p>除这些项目主页的也行外，其实该项目还专门公众号做了一些适配：比如抽取链接转脚注，解决公众号无法展示链接的问题，比如展示阅读时间等等。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="写在后面">写在后面<a href="https://sleepy-zone.github.io/blog/2025-03-19-doocs-md#%E5%86%99%E5%9C%A8%E5%90%8E%E9%9D%A2" class="hash-link" aria-label="写在��后面的直接链接" title="写在后面的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="写在后面">写在后面<a href="https://sleepy-zone.github.io/blog/2025-03-19-doocs-md#%E5%86%99%E5%9C%A8%E5%90%8E%E9%9D%A2" class="hash-link" aria-label="写在后面的直接链接" title="写在后面的直接链接">​</a></h2>
 <p>总之，很推荐写公众号的同学去使用。</p>
 <p>另外，后面我准备基于 doocs/md 做一点工作，将其转换为本地客户端，不仅仅是一款微信编辑器，更是一款简单的本地知识库管理工具。</p>
 <p>目前正在开发中：<a href="https://github.com/sleepy-zone/woocs%EF%BC%8C%E6%AC%A2%E8%BF%8E%E5%85%B3%E6%B3%A8%E3%80%82%E6%9C%AC%E6%96%87%E5%B7%B2%E7%BB%8F%E7%94%A8" target="_blank" rel="noopener noreferrer">https://github.com/sleepy-zone/woocs，欢迎关注。本文已经用</a> woocs 编写了！</p>
@@ -364,7 +419,7 @@
             <guid>https://sleepy-zone.github.io/blog/thinking-recently</guid>
             <pubDate>Thu, 21 Mar 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[程序员的钱比粪还难掏]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="程序员的钱比粪还难掏">程序员的钱比粪还难掏<a href="https://sleepy-zone.github.io/blog/thinking-recently#%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E9%92%B1%E6%AF%94%E7%B2%AA%E8%BF%98%E9%9A%BE%E6%8E%8F" class="hash-link" aria-label="程序员的钱比粪还难掏的直接链接" title="程序员的钱比粪还难掏的直接链接">​</a></h2>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="程序员的钱比粪还难掏">程序员的钱比粪还难掏<a href="https://sleepy-zone.github.io/blog/thinking-recently#%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E9%92%B1%E6%AF%94%E7%B2%AA%E8%BF%98%E9%9A%BE%E6%8E%8F" class="hash-link" aria-label="程序员的钱比粪还难掏的直接链接" title="程序�员的钱比粪还难掏的直接链接">​</a></h2>
 <p>事情起因，有个独立开发老哥在推上发了一句牢骚：程序员的钱比粪还难掏。引起了挺多讨论，简单说下自己的看法。</p>
 <p>首先，要比喻程序员的钱难赚，用掏粪做对比本就不恰当。</p>
 <p>再者，程序员已经是付费意愿相当高的一个群体了，但为什么还是赚不到钱。程序员付费意愿高的前提是因为他们更聪明，如果你这个东西一没有提供价值二没有深度程序员分分钟命令行就能跑一个，为什么要付费呢？</p>
@@ -505,40 +560,6 @@ on <a href="https://codepen.io">CodePen</a>.</p></iframe>
 <p><img decoding="async" loading="lazy" src="https://files.mdnice.com/user/52679/bfe7fb3e-817c-49bc-9ef4-5825bb93beb5.png" alt="" class="img_ev3q"></p>
 <p>如果你的项目也需要一个渐变色选择器，不妨试一下！</p>]]></content:encoded>
             <category>webdev</category>
-        </item>
-        <item>
-            <title><![CDATA[fabritor @ 2024 的一些更新]]></title>
-            <link>https://sleepy-zone.github.io/blog/fabritor-2024-1</link>
-            <guid>https://sleepy-zone.github.io/blog/fabritor-2024-1</guid>
-            <pubDate>Thu, 01 Feb 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[在圣诞节发布 2.0 版本之后，fabritor 就进入了下一个迭代，终于在 2024 年元旦，next 分支合并进主干，发布 2.1 版本，也算是和我的项目一起跨年了。]]></description>
-            <content:encoded><![CDATA[<p>在圣诞节发布 2.0 版本之后，fabritor 就进入了下一个迭代，终于在 2024 年元旦，next 分支合并进主干，发布 2.1 版本，也算是和我的项目一起跨年了。</p>
-<p>2.1 版本主要在文本和图片带来一些增强，一些创意的增强。（都在下面的主图里了！</p>
-<p><img decoding="async" loading="lazy" src="https://files.mdnice.com/user/52679/b2e90089-2733-4bb8-ae20-4656a8dab2d4.jpg" alt="" class="img_ev3q"></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="颜色渐变">颜色渐变<a href="https://sleepy-zone.github.io/blog/fabritor-2024-1#%E9%A2%9C%E8%89%B2%E6%B8%90%E5%8F%98" class="hash-link" aria-label="颜色渐变的直接链接" title="颜色渐变的直接链接">​</a></h2>
-<p>首要支持的便是颜色渐变。fabricjs 虽然支持<a href="http://fabricjs.com/docs/fabric.Gradient.html" target="_blank" rel="noopener noreferrer">渐变</a>，但怎么配置确实一个难题，属实难找到一个好用的支持渐变的颜色选择器。</p>
-<p>所以自己动手开发了 <a href="https://github.com/sleepy-zone/react-colors" target="_blank" rel="noopener noreferrer">react-colors-beauty</a>，UI 上参考了 sketch 填充选择器，同时支持纯色和渐变色的选择器，文档地址：<a href="https://sleepy-zone.github.io/react-colors/" target="_blank" rel="noopener noreferrer">https://sleepy-zone.github.io/react-colors/</a></p>
-<p><img decoding="async" loading="lazy" src="https://files.mdnice.com/user/52679/c15f773b-1b65-4bbc-adb4-9de9a094f52e.png" alt="" class="img_ev3q"></p>
-<p>在文字颜色、文字边框、形状背景、画板背景都支持了渐变配置。</p>
-<p><img decoding="async" loading="lazy" src="https://files.mdnice.com/user/52679/b503b90d-9a9e-47c8-800e-ddf7c8dc205c.jpg" alt="" class="img_ev3q"></p>
-<p>（同时，支持渐变的图标，也以渐变展示。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="文字图片填充">文字图片填充<a href="https://sleepy-zone.github.io/blog/fabritor-2024-1#%E6%96%87%E5%AD%97%E5%9B%BE%E7%89%87%E5%A1%AB%E5%85%85" class="hash-link" aria-label="文字图片填充的直接链接" title="文字图片填充的直接链接">​</a></h2>
-<p>fabricjs 对象的 fill 属性是支持 pattern 的，也就是图片填充，这也算是对渐变的一种补充。这样可以实现渐变难以实现的效果。</p>
-<p>主图里 Happy New Year 的英文就是使用一张烟花图片渐变产生的。</p>
-<p><img decoding="async" loading="lazy" src="https://files.mdnice.com/user/52679/b82fd006-918f-46b8-9534-c0b0cf07c237.png" alt="" class="img_ev3q"></p>
-<p>填充图片：
-<img decoding="async" loading="lazy" src="https://cdn.pixabay.com/photo/2016/01/04/14/24/fireworks-1120960_1280.jpg" alt="" class="img_ev3q"></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="图片裁剪">图片裁剪<a href="https://sleepy-zone.github.io/blog/fabritor-2024-1#%E5%9B%BE%E7%89%87%E8%A3%81%E5%89%AA" class="hash-link" aria-label="图片裁剪的直接链接" title="图片裁剪的直接链接">​</a></h2>
-<p>图片新增裁剪功能，在图片工具栏点击裁剪后，就会将当前图片选中，进行自由裁剪。</p>
-<p><img decoding="async" loading="lazy" src="https://files.mdnice.com/user/52679/db85d29e-0119-4264-96f6-0601221071c1.jpg" alt="" class="img_ev3q"></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="图片滤镜">图片滤镜<a href="https://sleepy-zone.github.io/blog/fabritor-2024-1#%E5%9B%BE%E7%89%87%E6%BB%A4%E9%95%9C" class="hash-link" aria-label="图片滤镜的直接链接" title="图片滤镜的直接链接">​</a></h2>
-<p>在 2.0 版本中，我提到重写了图片对象，就是为了便利的享受 fabricjs 内置的滤镜。</p>
-<p>这里内置了几个滤镜。（不知道翻译的好不好！</p>
-<p><img decoding="async" loading="lazy" src="https://files.mdnice.com/user/52679/792bac77-4a86-40e4-8320-6e67b1df7c28.png" alt="" class="img_ev3q"></p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="写在后面">写在后面<a href="https://sleepy-zone.github.io/blog/fabritor-2024-1#%E5%86%99%E5%9C%A8%E5%90%8E%E9%9D%A2" class="hash-link" aria-label="写在后面的直接链接" title="写在后面的直接链接">​</a></h2>
-<p>至此，fabritor 作为一个图片编辑器，功能基本完善了。后续的方向一个是更像一个产品去维护它，更好的操作体验。另外抽出一个快速安装包，以便开发者更简单的部署一个自己的版本。</p>
-<p>2024，一起加油吧！</p>]]></content:encoded>
-            <category>fabritor</category>
         </item>
     </channel>
 </rss>
