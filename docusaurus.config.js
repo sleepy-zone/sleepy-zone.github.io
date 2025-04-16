@@ -75,12 +75,12 @@ const config = {
         },
         items: [
           {to: '/blog', label: '博客', position: 'left'},
-          // {
-          //   type: 'docSidebar',
-          //   sidebarId: 'tutorialSidebar',
-          //   position: 'left',
-          //   label: '不周刊',
-          // },
+          {
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: '想法',
+          },
           // {
           //   href: 'https://github.com/sleepy-zone',
           //   label: 'GitHub',
@@ -145,6 +145,20 @@ const config = {
 
   headTags: [
     {
+      tagName: 'link',
+      attributes: {
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+      }
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'
+      }
+    },
+    {
       tagName: 'script',
       attributes: {
         type: 'text/javascript'
@@ -154,6 +168,24 @@ const config = {
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "r1wmvdsf4a");`
+    }
+  ],
+
+  plugins: [
+    async function myPostPlugin(context, options) {
+      console.log('context', context)
+      return {
+        name: 'myPostPlugin',
+        async loadContent () {
+
+        },
+        async contentLoaded({content, actions}) {
+          const { setGlobalData } = actions;
+          console.log('content', content)
+
+          setGlobalData({ myPostPlugin: 'myPostPlugin' });
+        },
+      }
     }
   ]
 };

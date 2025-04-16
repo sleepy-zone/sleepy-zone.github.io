@@ -1,3 +1,16 @@
+:root {
+  --primary-color: #6c5ce7;
+  --secondary-color: #a29bfe;
+  --accent-color: #fd79a8;
+  --text-color: #2d3436;
+  --light-text: #636e72;
+  --background: #ffffff;
+  --light-background: #f9f9f9;
+  --border-color: #dfe6e9;
+  --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,78 +19,75 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  min-height: 100vh;
-  padding: 0;
-  background-color: #f8f9fa;
-  position: relative;
-  overflow-x: hidden;
-  line-height: 2;
-}
-
-body::before,
-body::after {
-  content: '';
-  position: fixed;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.5;
-  z-index: -1;
-  animation: float 10s infinite ease-in-out alternate;
-}
-
-body::before {
-  background: linear-gradient(45deg, #a8e6cf, #dcedc1);
-  top: -100px;
-  left: -100px;
-}
-
-body::after {
-  background: linear-gradient(45deg, #ffd3b6, #ffaaa5);
-  bottom: -100px;
-  right: -100px;
-  animation-delay: -5s;
-}
-
-@keyframes float {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  100% {
-    transform: translate(50px, 50px) scale(1.1);
-  }
-}
-
-#root {
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.profile,
-.about,
-.projects {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.profile:hover,
-.about:hover,
-.projects:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+  background-color: var(--background);
+  line-height: 1.6;
 }
 
 .app {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  padding: 40px;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 2rem;
   margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent-color);
 }
 
 @media (max-width: 768px) {
-  .app {
-    padding: 20px 10px;
+  .section {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
   }
 }

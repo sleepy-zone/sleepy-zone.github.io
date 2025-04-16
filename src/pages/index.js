@@ -1,8 +1,10 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import React from 'react';
-import Profile from './home/Profile';
-import Projects from './home/Projects';
+import HeroSection from './home/HeroSection';
+import RecentPosts from './home/RecentPosts';
+import WorksSection from './home/WorksSection';
+import Newsletter from './home/Newsletter';
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -12,8 +14,12 @@ export default function Home() {
       description="sleepy zone blog, projects ..."
     >
       <div className="app">
-        <Profile />
-        <Projects />
+        <div className="home-page">
+          <HeroSection />
+          <RecentPosts />
+          <WorksSection />
+          <Newsletter />
+        </div>
       </div>
     </Layout>
   );
