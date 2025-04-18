@@ -2,7 +2,7 @@ import React from 'react';
 import './WorkCard.css';
 
 const WorkCard = ({ work }) => {
-  const { title, description, image, category, link } = work;
+  const { title = '', description = '', image = '', category = [], link = '' } = work || {};
   
   return (
     <article className="work-card">

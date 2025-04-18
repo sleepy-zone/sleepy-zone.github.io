@@ -2,7 +2,7 @@ import React from 'react';
 import './PostCard.css';
 
 const PostCard = ({ post }) => {
-  const { title, excerpt, date, category, image, readTime } = post;
+  const { title = '', excerpt = '', date = '', category = '', image = '', readTime = '' } = post || {};
   
   // 格式化日期
   const formattedDate = new Date(date).toLocaleDateString('zh-CN', {
