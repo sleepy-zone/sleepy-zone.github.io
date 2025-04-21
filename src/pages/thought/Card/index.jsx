@@ -27,7 +27,7 @@ const ThoughtCard = ({ thought = {} }) => {
     <div className={`thought-card ${thought.category}`}>
       <div className="card-header">
         <div className="user-info">
-          <div className="avatar" style={{ backgroundImage: `url(${thought.avatar})` }}></div>
+          <div className="avatart" style={{ backgroundImage: `url(${thought.avatar})` }}></div>
           <div className="user-details">
             <h3 style={{ marginBottom: 0 }}>{thought.username}</h3>
             <span style={{ fontSize: 12, color: '#666' }}>{thought.time}</span>
