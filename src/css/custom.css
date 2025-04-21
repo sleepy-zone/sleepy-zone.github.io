@@ -9,6 +9,35 @@
   --border-color: #dfe6e9;
   --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
   --transition: all 0.3s ease;
+
+  --light-gray: #f0f2f5;
+  --medium-gray: #bdc3c7;
+  --dark-gray: #7f8c8d;
+  --text-color: #2c3e50;
+  --white: #ffffff;
+  
+  --idea-color: #3498db;
+  --thought-color: #9b59b6;
+  --quote-color: #f39c12;
+  --dream-color: #2ecc71;
+  
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.1);
+  
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
 }
 
 * {
@@ -90,4 +119,14 @@ button {
     font-size: 1.8rem;
     margin-bottom: 30px;
   }
+}
+
+.main-content {
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  padding-top: 60px;
+  padding-bottom: 80px;
+  flex-grow: 1;
 }

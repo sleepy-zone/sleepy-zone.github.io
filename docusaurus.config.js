@@ -76,8 +76,7 @@ const config = {
         items: [
           {to: '/blog', label: '博客', position: 'left'},
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            to: '/thoughts',
             position: 'left',
             label: '想法',
           },
