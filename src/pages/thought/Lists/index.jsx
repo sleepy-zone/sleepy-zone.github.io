@@ -2,7 +2,7 @@ import React from 'react';
 import ThoughtCard from '../Card';
 import './index.css';
 
-const ThoughtsList = ({ thoughts }) => {
+const ThoughtsList = ({ thoughts = [] }) => {
   return (
     <div className="thoughts-list">
       {thoughts.length > 0 ? (
