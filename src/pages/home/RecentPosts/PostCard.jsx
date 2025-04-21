@@ -2,7 +2,7 @@ import React from 'react';
 import './PostCard.css';
 
 const PostCard = ({ post }) => {
-  const { title = '', excerpt = '', date = '', category = '', image = '', readTime = '' } = post || {};
+  const { title = '', excerpt = '', date = '', category = '', image = '', readTime = '', url = '' } = post || {};
   
   // 格式化日期
   const formattedDate = new Date(date).toLocaleDateString('zh-CN', {
@@ -25,12 +25,12 @@ const PostCard = ({ post }) => {
         </div>
         
         <h3 className="post-title">
-          <a href={`#/blog/${title}`}>{title}</a>
+          <a href={url}>{title}</a>
         </h3>
         
         <p className="post-excerpt">{excerpt}</p>
         
-        <a href={`#/blog/${title}`} className="read-more">
+        <a href={url} className="read-more">
           阅读全文 <i className="fas fa-long-arrow-alt-right"></i>
         </a>
       </div>
