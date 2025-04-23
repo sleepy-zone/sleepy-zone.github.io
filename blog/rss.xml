@@ -4,10 +4,59 @@
         <title>😴 Sleepy Zone Blog</title>
         <link>https://sleepy-zone.github.io/blog</link>
         <description>😴 Sleepy Zone Blog</description>
-        <lastBuildDate>Mon, 21 Apr 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 23 Apr 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>zh-Hans</language>
+        <item>
+            <title><![CDATA[谷歌提示词工程 - 模型原理和提示词技术]]></title>
+            <link>https://sleepy-zone.github.io/blog/2025-04-23-google-promtps.md</link>
+            <guid>https://sleepy-zone.github.io/blog/2025-04-23-google-promtps.md</guid>
+            <pubDate>Wed, 23 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[谷歌前段时间发布了提示词工程白皮书，已经有很多博主推荐了，最近终于有时间阅读一下。以下是笔记记录。]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" src="https://fastly.jsdelivr.net/gh/bucketio/img6@main/2025/04/23/1745392049583-b2db7b1e-2f2b-4565-8252-14f946e00719.png" alt="" class="img_ev3q"></p>
+<p>谷歌前段时间发布了提示词工程白皮书，已经有很多博主推荐了，最近终于有时间阅读一下。以下是笔记记录。</p>
+<p>原文：<a href="https://drive.google.com/file/d/1AbaBYbEa_EbPelsT40-vj64L-2IwUJHy/view?pli=1" target="_blank" rel="noopener noreferrer">https://drive.google.com/file/d/1AbaBYbEa_EbPelsT40-vj64L-2IwUJHy/view?pli=1</a></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="模型工作原理">模型工作原理<a href="https://sleepy-zone.github.io/blog/2025-04-23-google-promtps.md#%E6%A8%A1%E5%9E%8B%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86" class="hash-link" aria-label="模型工作原理的直接链接" title="模型工作原理的直接链接">​</a></h3>
+<p>大语言模型的本质是<strong>预测</strong>。模型接受输入文本，根据训练数据循环预测后续的文本。提示词就是在引导模型正确的预测。</p>
+<p>另外需要了解模型的输出配置，如果你调用过大模型的 API 应该对这些参数比较熟悉。</p>
+<p><strong>Output length</strong>：输出长度限制对于大模型的性能，响应时间尤为重要。</p>
+<p><strong>Sampling controls</strong>：控制预测结果</p>
+<p>Temperature，越高则输出结果越发散，越低则结果更具有确定性。top-K 和 top-P 和 Temperature 类似，值越高，则输出结果越具有创造性和多样性。越高。</p>
+<p>文档中给出了几个场景的配置样例：</p>
+<ol>
+<li>Temperature 值 0.2、top-P 值 0.95 和 top-K 值 30 的组合能产生相对连贯且适度创新的结果。</li>
+<li>若追求更高创造性，可 Temperature 值 0.9、top-P 值 0.99 和 top-K 值40 的配置。</li>
+<li>如需更保守的输出，建议采用 Temperature 值 0.1、top-P 值0.9 和 top-K值 20 的参数。</li>
+<li>对于存在唯一正确答案的任务（如数学题求解） ，应将 Temperature 值设为 0。</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="提示词技术">提示词技术<a href="https://sleepy-zone.github.io/blog/2025-04-23-google-promtps.md#%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%8A%80%E6%9C%AF" class="hash-link" aria-label="提示词技术的直接链接" title="提示词技术的直接链接">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="零样本zero-shot">零样本（zero shot）<a href="https://sleepy-zone.github.io/blog/2025-04-23-google-promtps.md#%E9%9B%B6%E6%A0%B7%E6%9C%ACzero-shot" class="hash-link" aria-label="零样本（zero shot）的直接链接" title="零样本（zero shot）的直接链接">​</a></h4>
+<p>零样本仅提供任务描述和供大语言模型处理的文本。不过可以通过增加单个示例（<strong>单样本</strong>）或者多个示例（<strong>少样本</strong>）让模型输出更符合要求的内容。</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="系统提示system-prompting">系统提示（System Prompting）<a href="https://sleepy-zone.github.io/blog/2025-04-23-google-promtps.md#%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BAsystem-prompting" class="hash-link" aria-label="系统提示（System Prompting）的直接链接" title="系统提示（System Prompting）的直接链接">​</a></h4>
+<p>系统提示设定语言模型的整体语境和目的，明确模型应执行的宏观任务，如语言翻译、评论分类等。</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="角色提示role-prompting">角色提示（Role prompting）<a href="https://sleepy-zone.github.io/blog/2025-04-23-google-promtps.md#%E8%A7%92%E8%89%B2%E6%8F%90%E7%A4%BArole-prompting" class="hash-link" aria-label="角色提示（Role prompting）的直接链接" title="角色提示（Role prompting）的直接链接">​</a></h4>
+<p>给模型分配特根据定角色，使模型能角色定位生成更相关、信息量更大的输出。</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="情境提示contextual-prompting">情境提示（Contextual prompting）<a href="https://sleepy-zone.github.io/blog/2025-04-23-google-promtps.md#%E6%83%85%E5%A2%83%E6%8F%90%E7%A4%BAcontextual-prompting" class="hash-link" aria-label="情境提示（Contextual prompting）的直接链接" title="情境提示（Contextual prompting）的直接链接">​</a></h4>
+<p>给模型提供上下文提示，比如：</p>
+<blockquote>
+<p>背景：您正在为一家关于80年代复古街机游戏的博客撰稿。请建议3个文章主题，并附上简要说明每篇文章应包含的内容。</p>
+</blockquote>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="回退式提示step-back-prompting">回退式提示（Step-back prompting）<a href="https://sleepy-zone.github.io/blog/2025-04-23-google-promtps.md#%E5%9B%9E%E9%80%80%E5%BC%8F%E6%8F%90%E7%A4%BAstep-back-prompting" class="hash-link" aria-label="回退式提示（Step-back prompting）的直接链接" title="回退式提示（Step-back prompting）的直接链接">​</a></h4>
+<p>回退式提示法是一种通过让大语言模型先思考与当前具体任务相关的宏观问题，再将宏观问题的答案作为后续具体任务提示的输入，从而提升模型表现的技术。</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="思维链chain-of-thoughtcot">思维链（Chain of Thought，CoT）<a href="https://sleepy-zone.github.io/blog/2025-04-23-google-promtps.md#%E6%80%9D%E7%BB%B4%E9%93%BEchain-of-thoughtcot" class="hash-link" aria-label="思维链（Chain of Thought，CoT）的直接链接" title="思维链（Chain of Thought，CoT）的直接链接">​</a></h4>
+<p>思维链一种通过生成中间推理步骤来提升大语言模型推理能力的技术。思维链特别适合代码生成时，分解需求逐步输出代码的过程。</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="思维树tree-of-thoughtstot">思维树（Tree of Thoughts，ToT）<a href="https://sleepy-zone.github.io/blog/2025-04-23-google-promtps.md#%E6%80%9D%E7%BB%B4%E6%A0%91tree-of-thoughtstot" class="hash-link" aria-label="思维树（Tree of Thoughts，ToT）的直接链接" title="思维树（Tree of Thoughts，ToT）的直接链接">​</a></h4>
+<p>思维树允许大语言模型同时探索多条不同的推理路径，而非仅遵循单一线性思维链。适合探索复杂任务。</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="推理与行动reactreason--act">推理与行动（ReAct，reason &amp; act）<a href="https://sleepy-zone.github.io/blog/2025-04-23-google-promtps.md#%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A1%8C%E5%8A%A8reactreason--act" class="hash-link" aria-label="推理与行动（ReAct，reason &amp; act）的直接链接" title="推理与行动（ReAct，reason &amp; act）的直接链接">​</a></h4>
+<p>大模型基于自然语言推理和外部工具（搜索、代码解释器等）来解决复杂任务。只是实现智能体（Agent）第一步。这部分需要有编写代码的能力，或者借助其他智能体构建工具。</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="其他">其他<a href="https://sleepy-zone.github.io/blog/2025-04-23-google-promtps.md#%E5%85%B6%E4%BB%96" class="hash-link" aria-label="其他的直接链接" title="其他的直接链接">​</a></h4>
+<p>可以借助大模型优化提示词。</p>
+<p>文档还专门提到了代码相关的提示，编写脚本、解释代码、调试、Review等等。</p>
+<hr>
+<div align="center"><p>欢迎关注我的公众号：前端生存指南，一起聊聊前端、AI 和生活。</p><img src="https://cloud-minapp-47803.cloud.ifanrusercontent.com/1tvAM68Cvrx3bfLR.jpg" style="width:180px"></div>]]></content:encoded>
+            <category>AI</category>
+        </item>
         <item>
             <title><![CDATA[盘点前端还在更新的老项目]]></title>
             <link>https://sleepy-zone.github.io/blog/2025-04-21-old-fe-1.md</link>
@@ -225,7 +274,7 @@
 <li>MCP Server，连接外部数据，并将数据返回给 MCP Client。这样 AI App 就可以获取外部数据了。</li>
 </ol>
 <p>如果你之前了解过 Function Call 或者 Tool（后面两者统一称为 Tool），应该对 MCP 这个概念会感到很熟悉，同样都是扩展 AI 的能力，但 Tool 需要在每个 AI 应用内单独集成无法复用，而 MCP 可以看做是一个更通用的 Tool，不论你使用哪个 AI App，只要 AI App 内置 MCP Client，就可以使用 MCP 市场的 Server。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="动手开发">动手开发<a href="https://sleepy-zone.github.io/blog/2025-03-26-dev-mcp-server.md#%E5%8A%A8%E6%89%8B%E5%BC%80%E5%8F%91" class="hash-link" aria-label="动手开发的直接链接" title="动手开发的直接链接">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="动手开发">动手开发<a href="https://sleepy-zone.github.io/blog/2025-03-26-dev-mcp-server.md#%E5%8A%A8%E6%89%8B%E5%BC%80%E5%8F%91" class="hash-link" aria-label="��动手开发的直接链接" title="动手开发的直接链接">​</a></h2>
 <p>一般来说，AI App 会集成 MCP Client，所以对于使用 AI App 的我们来说，我们唯一需要做的是定制 MCP Server，使我们的工具更加强大。</p>
 <p>接下来我们要开发一个获取 Pixabay（<a href="https://pixabay.com/%EF%BC%89%E5%9B%BE%E7%89%87%E7%9A%84" target="_blank" rel="noopener noreferrer">https://pixabay.com/）图片的</a> MCP server。简单起见，我们直接使用 JavaScript。</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="开发">开发<a href="https://sleepy-zone.github.io/blog/2025-03-26-dev-mcp-server.md#%E5%BC%80%E5%8F%91" class="hash-link" aria-label="开发的直接链接" title="开发的直接链接">​</a></h3>
@@ -481,23 +530,6 @@
 <p>以上只是针对我看到的几个点做了对比，没有哪个好哪个坏，毕竟我都用的挺爽的。</p>
 <p>最后！国内有些组件库，甚至是大厂的组件库，一个大厂还搞两个类似的没有创意的组件库，真的让人感觉丢人！</p>]]></content:encoded>
             <category>dev</category>
-        </item>
-        <item>
-            <title><![CDATA[对近期一些事情的看法]]></title>
-            <link>https://sleepy-zone.github.io/blog/thinking-recently</link>
-            <guid>https://sleepy-zone.github.io/blog/thinking-recently</guid>
-            <pubDate>Thu, 21 Mar 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[程序员的钱比粪还难掏]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="程序员的钱比粪还难掏">程序员的钱比粪还难掏<a href="https://sleepy-zone.github.io/blog/thinking-recently#%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E9%92%B1%E6%AF%94%E7%B2%AA%E8%BF%98%E9%9A%BE%E6%8E%8F" class="hash-link" aria-label="程序员的钱比粪还难掏的直接链接" title="程序员的钱比粪还难掏的直接链接">​</a></h2>
-<p>事情起因，有个独立开发老哥在推上发了一句牢骚：程序员的钱比粪还难掏。引起了挺多讨论，简单说下自己的看法。</p>
-<p>首先，要比喻程序员的钱难赚，用掏粪做对比本就不恰当。</p>
-<p>再者，程序员已经是付费意愿相当高的一个群体了，但为什么还是赚不到钱。程序员付费意愿高的前提是因为他们更聪明，如果你这个东西一没有提供价值二没有深度程序员分分钟命令行就能跑一个，为什么要付费呢？</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="国产开源和国产项目">国产开源和国产项目<a href="https://sleepy-zone.github.io/blog/thinking-recently#%E5%9B%BD%E4%BA%A7%E5%BC%80%E6%BA%90%E5%92%8C%E5%9B%BD%E4%BA%A7%E9%A1%B9%E7%9B%AE" class="hash-link" aria-label="国产开源和国产项目的直接链接" title="国产开源和国产项目的直接链接">​</a></h2>
-<p>事情起因，一个开源项目的文档设置为先 Star 后阅读，且需要授权验证虽然代码里设置了绕过方法，但还是引起了很多人的不满。</p>
-<p>另外一个事情，有人拉了 ProductHunt 的点赞互助群，有人也表示不满，拉低了国产项目的质量。</p>
-<p>我既不是开源大佬也不是出海开发，这些事情，我也不知道如何评价。但有个感觉，大家对国产两个字真的有点过于苛刻了。</p>
-<p>地铁上手机码字，就这样吧。</p>]]></content:encoded>
-            <category>thinking</category>
         </item>
     </channel>
 </rss>
