@@ -74,12 +74,18 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {to: '/blog', label: '博客', position: 'left'},
+          {to: '/blog', label: '🔥博客', position: 'left'},
           {
             to: '/thoughts',
             position: 'left',
-            label: '想法',
+            label: '💡想法',
           },
+          {
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: '📚不周刊',
+          }
           // {
           //   href: 'https://github.com/sleepy-zone',
           //   label: 'GitHub',

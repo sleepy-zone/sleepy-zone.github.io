@@ -1,7 +1,7 @@
 ---
-sidebar_position: 1
+sidebar_position: 999999
 ---
 
-# 想法
+# 欢迎
 
-一些奇怪的想法 💡
+不定时分享的周刊。📚
