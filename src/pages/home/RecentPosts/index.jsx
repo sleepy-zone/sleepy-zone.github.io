@@ -7,33 +7,33 @@ import useGlobalData from '@docusaurus/useGlobalData';
 const blogPosts = [
   {
     id: 3,
-    title: "盘点前端还在更新的老项目",
-    excerpt: "今天不聊 AI，聊点前端。冒着暴露年龄的风险聊点前端里还在更新的老项目。",
-    date: "2025-04-21",
-    category: "frontend",
-    image: "https://fastly.jsdelivr.net/gh/bucketio/img9@main/2025/04/21/1745217332670-feb3786f-71d6-4a97-a8b4-58f82f690f41.png",
-    readTime: "4 分钟",
-    url: '/blog/2025-04-21-old-fe-1.md'
+    title: "现在开始使用 Cline Rules ",
+    excerpt: "最近在业务（面向用户的 C 端业务）中较多的使用了 Cline，总体感觉非常丝滑",
+    date: "2025-05-30",
+    category: "AI",
+    image: "https://fastly.jsdelivr.net/gh/bucketio/img19@main/2025/05/30/1748588412574-e064741c-0bf1-4c61-be3c-fd9ac86453e4.png",
+    readTime: "5 分钟",
+    url: '/blog/2025-05-30-cline-rule.md'
   },
   {
     id: 1,
-    title: "从 Github 不能访问想到的",
-    excerpt: "上周末中国未登录用户无法访问 Github，瞬间在社交媒体引起轩然大波。",
-    date: "2025-04-14",
-    category: "随便聊聊",
-    image: "https://fastly.jsdelivr.net/gh/bucketio/img7@main/2025/04/14/1744620520993-54adfc65-507b-439a-924b-a5e91ee9353d.png",
+    title: "Mastra  - TypeScript AI Agent 框架",
+    excerpt: "Mastra，是一个难得的 TS 的 AI Agent 框架，可以让你快手上手开发一个 Agent，目前已经有 13.2K 的 Star",
+    date: "2025-05-21",
+    category: "Agent",
+    image: "https://fastly.jsdelivr.net/gh/bucketio/img10@main/2025/05/19/1747639233989-a54bfdd8-3570-4750-8b7c-c8f0b88ff435.png",
     readTime: "3 分钟",
-    url: '/blog/2025-04-14-github-no-vistit.md'
+    url: '/blog/2025-04-30-ts-agent-mastra.md'
   },
   {
     id: 2,
-    title: "什么是 AI Agent ",
-    excerpt: "AI Agent 应该是 AI 出现后讨论最多的一个词了，因为他代表着 AI 应用的最高层次了，从上次 Manus 的火爆就可见一斑。AI 给人的感觉无所不能又高深莫测，普通人又充满好奇但只能敬而远之，那是到底什么才是 AI Agent？",
-    date: "2025-04-10",
+    title: "DeepWiki - 阅读开源代码的神器",
+    excerpt: "Devin （就是那个每月 500 刀的 AI 程序员）团队推出了 DeepWiki，从此阅读源码更方便了。",
+    date: "2025-04-30",
     category: "AI",
-    image: "https://fastly.jsdelivr.net/gh/bucketio/img19@main/2025/04/08/1744079884466-358dff04-5fa3-4083-a002-984f7c38faab.png",
-    readTime: "6 分钟",
-    url: '/blog/2025-04-10-what-is-agent.md'
+    image: "https://fastly.jsdelivr.net/gh/bucketio/img17@main/2025/04/29/1745915063123-0603daf0-f9b8-42af-9597-59570e3a7eae.png",
+    readTime: "2 分钟",
+    url: '/blog/2025-04-30-deepwiki.md'
   }
 ];
 
