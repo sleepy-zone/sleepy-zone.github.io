@@ -2,11 +2,62 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sleepy-zone.github.io/blog</id>
     <title>😴 Sleepy Zone Blog</title>
-    <updated>2025-05-21T00:00:00.000Z</updated>
+    <updated>2025-05-30T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sleepy-zone.github.io/blog"/>
     <subtitle>😴 Sleepy Zone Blog</subtitle>
     <icon>https://sleepy-zone.github.io/img/logo.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[现在开始使用 Cline Rules]]></title>
+        <id>https://sleepy-zone.github.io/blog/2025-05-30-cline-rule.md</id>
+        <link href="https://sleepy-zone.github.io/blog/2025-05-30-cline-rule.md"/>
+        <updated>2025-05-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[写在前面]]></summary>
+        <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" src="https://fastly.jsdelivr.net/gh/bucketio/img19@main/2025/05/30/1748588412574-e064741c-0bf1-4c61-be3c-fd9ac86453e4.png" alt="" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="写在前面">写在前面<a href="https://sleepy-zone.github.io/blog/2025-05-30-cline-rule.md#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2" class="hash-link" aria-label="写在前面的直接链接" title="写在前面的直接链接">​</a></h3>
+<p>最近在业务（面向用户的 C 端业务）中较多的使用了 <a href="https://docs.cline.bot/getting-started/what-is-cline" target="_blank" rel="noopener noreferrer">Cline</a>，总体感觉非常丝滑（尤其是看着他在默默地生成代码并且自己排查错误的时候，但 Token 确实也消耗的很快😂）。</p>
+<p>Cline 算是 VS Code AI 开发插件中的佼佼者了，并且是一个开源项目，他的一个 fork 分支 RooCode 热度也很高。</p>
+<p><img decoding="async" loading="lazy" src="https://fastly.jsdelivr.net/gh/bucketio/img17@main/2025/05/30/1748572666434-e20a0717-a388-47c9-8332-832423e6b337.png" alt="openrouter 网站的统计，Cline 遥遥领�先" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="开始配置-cline-rules">开始配置 Cline Rules<a href="https://sleepy-zone.github.io/blog/2025-05-30-cline-rule.md#%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AE-cline-rules" class="hash-link" aria-label="开始配置 Cline Rules的直接链接" title="开始配置 Cline Rules的直接链接">​</a></h3>
+<p>作为一个通用的编程助手，如何能针对不同的项目进行更好的开发，除了 Cline 本身对代码的理解之外，作为用户如果能提供更多的指引，可以让 Cline 发挥更好的作用。</p>
+<p>一般来说，Cline、Cursor 及其他代码 Agent 都会提供 rules 这个概念，在项目根目录下新建 rules 目录，目录下根据自己的项目可以新建各种规则文件。</p>
+<div class="language-markdown codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-markdown codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">your-project/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">	├── .clinerules</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">		├── project.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">        ├── api.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">	├── src/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">	├── docs/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">	└── ...</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>如果你的规则全局通用，可以将规则放置到 <code>Documents/Cline/Rules</code> 目录。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="cline-rules-优势">Cline Rules 优势<a href="https://sleepy-zone.github.io/blog/2025-05-30-cline-rule.md#cline-rules-%E4%BC%98%E5%8A%BF" class="hash-link" aria-label="Cline Rules 优势的直接链接" title="Cline Rules 优势的直接链接">​</a></h3>
+<p>放在项目内好处很明显：</p>
+<ol>
+<li>可以针对每个项目配置不同的规则；</li>
+<li>作为项目源代码的一部分，进行版本控制，持续维护，跟随项目发展设置长远的 rule；</li>
+<li>保证团队成员使用 AI 的行为是一致的。</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="cline-rules-的原则">Cline Rules 的原则<a href="https://sleepy-zone.github.io/blog/2025-05-30-cline-rule.md#cline-rules-%E7%9A%84%E5%8E%9F%E5%88%99" class="hash-link" aria-label="Cline Rules 的原则的直接链接" title="Cline Rules 的原则的直接链接">​</a></h3>
+<ol>
+<li>清晰简洁：使用简单语言，避免歧义。</li>
+<li>关注期望结果：描述你想要的结果，而不是具体步骤。</li>
+<li>测试和迭代：试验找出最适合你的工作流程的方法。</li>
+</ol>
+<p>rules 本质上是自定义 prompts，和 Cline 的 system prompts 互为补充，共同为项目服务。（system promps：<a href="https://github.com/cline/cline/blob/main/src/core/prompts/model_prompts/claude4.ts%EF%BC%89" target="_blank" rel="noopener noreferrer">https://github.com/cline/cline/blob/main/src/core/prompts/model_prompts/claude4.ts）</a></p>
+<p>关于提示词，我之前有总结过<a href="https://mp.weixin.qq.com/s/YFV0MO_pX3Us-PEMzxF0vQ" target="_blank" rel="noopener noreferrer">谷歌的提示词最佳实践</a>，可以看一下。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="高级用法-rules-bank">高级用法 Rules Bank<a href="https://sleepy-zone.github.io/blog/2025-05-30-cline-rule.md#%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95-rules-bank" class="hash-link" aria-label="高级用法 Rules Bank的直接链接" title="高级用法 Rules Bank的直接链接">​</a></h3>
+<p>Rules Bank 顾名思义，就是存放 Rules 的地方，如果你的项目很复杂，又有前端、又有后端、又有不同的技术栈，这个时候就很有用。</p>
+<div class="language-markdown codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-markdown codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">your-project/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── .clinerules/              # Active rules - automatically applied</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── 01-coding.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── client-a.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">├── clinerules-bank/          # Repository of available but inactive rules</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── clients/              # Client-specific rule sets</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   ├── client-a.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   └── client-b.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   ├── frameworks/           # Framework-specific rules</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   ├── react.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   │   └── vue.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│   └── project-types/        # Project type standards</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│       ├── api-service.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">│       └── frontend-app.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── ...</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>比如当你在开发 React 技术栈的时候，从 Rules Bank 中复制 React Rule 到 Cline Rules 内。</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"># Switch to React</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">rm .clinerules/vue.md</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">cp clinerules-bank/clients/react.md .clinerules/</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="复制代码到剪贴板" title="复制" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>总之一切文本放到代码仓库中，提高可持续性，并且可以跟随项目保持最新的迭代！</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="如何管理">如何管理<a href="https://sleepy-zone.github.io/blog/2025-05-30-cline-rule.md#%E5%A6%82%E4%BD%95%E7%AE%A1%E7%90%86" class="hash-link" aria-label="如何管理的直接链接" title="如何管理的直接链接">​</a></h3>
+<p>Cline 提供了一种方便的方式管理 Rules，在输入框下方一个天平的小标志内，可以打开 Rule 管理器，新增删除或者启用禁用 Rule。</p>
+<p><img decoding="async" loading="lazy" src="https://fastly.jsdelivr.net/gh/bucketio/img19@main/2025/05/30/1748590113024-f84df6e2-374d-4378-b4af-79b8b7ed9f86.png" alt="" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="最后">最后<a href="https://sleepy-zone.github.io/blog/2025-05-30-cline-rule.md#%E6%9C%80%E5%90%8E" class="hash-link" aria-label="最后的直接链接" title="最后的直接链接">​</a></h3>
+<p>十分建议你在平时工作中使用 Cline，并使用 Cline Rule 增强开发体验。后面会持续更新 Cline 的相关内容。</p>
+<p>最后，假期快乐！</p>
+<hr>
+<div align="center"><p>欢迎关注我的公众号：前端生存指南，一起聊聊前端、AI 和生活。</p><img src="https://cloud-minapp-47803.cloud.ifanrusercontent.com/1tvAM68Cvrx3bfLR.jpg" style="width:180px"></div>]]></content>
+        <author>
+            <name>SleepyZone</name>
+            <uri>https://github.com/sleepy-zone</uri>
+        </author>
+        <category label="AI" term="AI"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Mastra  - TypeScript AI Agent 框架]]></title>
         <id>https://sleepy-zone.github.io/blog/2025-04-30-ts-agent-mastra.md</id>
@@ -124,7 +175,7 @@
 <p>尽可能使用正向指令：用“应该做什么”替代“禁止做什么”，这能避免混淆并提高输出准确性。</p>
 <p>约束条件在特定场景仍具价值：当需要防止模型生成有害/偏见内容，或要求严格输出格式时。</p>
 <p>作为最佳实践，应优先处理指令，明确说明您希望模型执行的操作，仅在出于安全性、清晰度或特定需求时使用约束条件。通过实验与迭代测试不同指令和约束的组合，以找到最适合您特定任务的方案，并予以记录。</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="控制最大令牌长度">控制最大令牌长度<a href="https://sleepy-zone.github.io/blog/2025-04-24-google-promtps-2.md#%E6%8E%A7%E5%88%B6%E6%9C%80%E5%A4%A7%E4%BB%A4%E7%89%8C%E9%95%BF%E5%BA%A6" class="hash-link" aria-label="控制最大令牌长度的直接链接" title="控制最大令牌长度的直接链接">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="控制最大令牌长度">控制最大令牌长度<a href="https://sleepy-zone.github.io/blog/2025-04-24-google-promtps-2.md#%E6%8E%A7%E5%88%B6%E6%9C%80%E5%A4%A7%E4%BB%A4%E7%89%8C%E9%95%BF%E5%BA%A6" class="hash-link" aria-label="控制最大令牌长度的直接链接" title="控制最大令牌长度的直��接链接">​</a></h3>
 <p>要控制生成式大语言模型(LLM)的响应长度，您可以在配置中设置最大令牌限制，或在提示词中明确指定所需长度。例如：</p>
 <blockquote>
 <p>"Explain quantum physics in a tweet length message."</p>
@@ -671,32 +722,5 @@
             <uri>https://github.com/sleepy-zone</uri>
         </author>
         <category label="AI" term="AI"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[迟来的 2024 总结]]></title>
-        <id>https://sleepy-zone.github.io/blog/my-2024</id>
-        <link href="https://sleepy-zone.github.io/blog/my-2024"/>
-        <updated>2025-02-06T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[春节过完已经开工才开始动笔写 2024 年总结，但好饭不怕晚。]]></summary>
-        <content type="html"><![CDATA[<p>春节过完已经开工才开始动笔写 2024 年总结，但好饭不怕晚。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="生活快乐与焦灼">生活：快乐与焦灼<a href="https://sleepy-zone.github.io/blog/my-2024#%E7%94%9F%E6%B4%BB%E5%BF%AB%E4%B9%90%E4%B8%8E%E7%84%A6%E7%81%BC" class="hash-link" aria-label="生活：快乐与焦灼的直接链接" title="生活：快乐与焦灼的直接链接">​</a></h2>
-<p>2024年生活上最大的变化就是有了宝宝，去年这个时候宝宝出生，现在刚好一周岁。这一年，慢慢学着去怎么做一个爸爸，从宝宝刚出生时开始学着喂奶换尿布哄睡，再到大一些喂饭陪玩读绘本，虽然带宝宝真的不是一件轻松的事情，但每次看到宝宝朝你傻笑😂时，看到宝宝对着你一声软软的爸爸时，那种幸福感是无法描述的。</p>
-<p>拖了带娃的福，生活竟然逐渐规律起来了，一直困扰自己的胃病暂时也控制住了，体检时什么脂肪肝胆囊息肉都也不见了。虽然不能像以前一样胡吃海塞了，酒咖啡什么的也早已经戒了🥲。</p>
-<p>之前因为疫情、生娃各种事情有三年没有回家过年了，今年春节回了一趟老家，虽然这么多年在外面，只有在家会有那种特别舒适和放松的感觉🥹。</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="工作老样子">工作：老样子<a href="https://sleepy-zone.github.io/blog/my-2024#%E5%B7%A5%E4%BD%9C%E8%80%81%E6%A0%B7%E5%AD%90" class="hash-link" aria-label="工作：老样子的直接链接" title="工作：老样子的直接链接">​</a></h2>
-<p>可能这个经济形势下，老样子就是最好的消息了。近两年前端团队的策略也是直接变为以业务为主，我的主要工作也是堆各种业务。前两天<a href="https://www.zhihu.com/question/9253458779/answer/92786974892" target="_blank" rel="noopener noreferrer">知乎回答过一个问题</a>，可能特别适合写在这里：</p>
-<blockquote>
-<p>这两年很明显的变化就是越来越“务实”，就是回归业务，而且是 C 端业务，中后台业务几乎没有，都回归中台了，绩效的制定也从搭平台建系统变为完成业务需求。这种务实有好有坏，本来公司聚焦业务少搞点形而上挺好，但低能产品及产品领导实在太多，导致前端完全沦为需求机器，压缩时间举报领导变成常态。前段时间我还在公众号上 <a href="https://link.zhihu.com/?target=https%3A//mp.weixin.qq.com/s/Yd_jwgJkbryEVJKQy9ZorQ" target="_blank" rel="noopener noreferrer">https://mp.weixin.qq.com/s/Yd_jwgJkbryEVJKQy9ZorQ</a> 发了篇牢骚。</p>
-</blockquote>
-<blockquote>
-<p>当然也有对新事物的探索，比如AI，但“务实”导致不敢投太多力量，团队不大，业务压力大，如果需求没人做那不又是投诉。所以只能慢慢尝试，一边看业界或者其他团队的动向，一边看更高领导的意思，再看后面怎么走。</p>
-</blockquote>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="其他毫无进展">其他：毫无进展<a href="https://sleepy-zone.github.io/blog/my-2024#%E5%85%B6%E4%BB%96%E6%AF%AB%E6%97%A0%E8%BF%9B%E5%B1%95" class="hash-link" aria-label="其他：毫无进展的直接链接" title="其他：毫无进展的直接链接">​</a></h2>
-<p>带娃和上班，感觉两件事情已经占据了大部分时间（还是自己太懒😭），年初折腾的开源项目和个人项目都没有再继续下去。偶尔推上看看大佬们开源项目独立开发项目，不禁陷入了沉思，他们是不是没工作的（开玩笑）。2025年还是要多拿出一些时间做做自己的事情，让 Github 的小绿格子亮起来！</p>]]></content>
-        <author>
-            <name>SleepyZone</name>
-            <uri>https://github.com/sleepy-zone</uri>
-        </author>
-        <category label="life" term="life"/>
     </entry>
 </feed>
