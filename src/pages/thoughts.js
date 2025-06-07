@@ -13,6 +13,14 @@ const data = [
     category: "thought",
     time: "2025-04-21 22:28",
   },
+  {
+    id: 2,
+    username: "SleepyZone",
+    avatar: "https://avatars.githubusercontent.com/u/131369648?v=4",
+    content: "看完了 Cline 源码，Agent 最终都落到了 prompt 组装和工具的调用上，所以如何发挥模型的最大价值、足够丰富的创意、丝滑的体验是 Agent 的重中之重。",
+    category: "thought",
+    time: "2025-06-07 22:28",
+  },
   // {
   //   id: 2,
   //   username: "李小花",

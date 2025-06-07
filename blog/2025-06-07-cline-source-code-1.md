@@ -208,13 +208,13 @@ const [parsedUserContent, environmentDetails, clinerulesError] = await this.load
 
 这样处理之后，用户输入重新组装为 parsedUserContent，内容比较长，这里不贴了，大致格式为：
 
-```
+```markdown
 <explicit_instructions type="new_task"></explicit_instructions>
 <task>用户输入</task>
 <fileContent>src/utils/index.ts内的文件</fileContent>
 ```
 
-再次看一下我们的输入：`/newtask 实现快速排序算法，写入 @/src/utils/index.ts 文件`，上面三段一一对应：<explicit_instructions type="new_task"> 对应 /newtask 命令，这是 Cline 的内置 prompt，@/src/utils/index.ts 添加了该文件内容作为上下文。
+再次看一下我们的输入：`/newtask 实现快速排序算法，写入 @/src/utils/index.ts 文件`，上面三段一一对应：`\<explicit_instructions type="new_task\>"` 对应 /newtask 命令，这是 Cline 的内置 prompt，@/src/utils/index.ts 添加了该文件内容作为上下文。
 
 同时将 environmentDetails 也添加到 userContent，environmentDetails 有工作目录、当前时间、当前打开的 Tab 等。
 
@@ -293,7 +293,7 @@ let stream = this.api.createMessage(systemPrompt, contextManagementMetadata.trun
 <thinking>\n我需要在`src/utils/index.ts`文件中添加一个快速排序算法。首先，我已经看到了文件的内容，这是一个工具函数集合文件，包含了各种实用函数，如rpx转换、vw计算、类型检查、日志记录等。\n\n我需要在这个文件中添加一个快速排序算法实现。快速排序是一种高效的排序算法，基于分治法的思想。我将实现一个通用的快速排序函数，可以对数组进行排序。\n\n我将使用`replace_in_file`工具来修改文件，在文件末尾添加快速排序算法的实现。我需要确保添加的代码与现有代码风格保持一致，并提供适当的类型注解和注释。\n\n我将在文件末尾添加快速排序算法的实现，包括：\n1. 一个主快速排序函数，接受一个数组和可选的比较函数\n2. 一个辅助函数用于分区操作\n\n让我使用`replace_in_file`工具来修改文件。\n</thinking>\n\n<replace_in_file>\n<path>src/utils/index.ts</path>\n<diff>\n------- SEARCH\nexport const jump2UpdateApp = () => {\n  if (is… (a, b) => {\n  if (a < b) return -1;\n  if (a > b) return 1;\n  return 0;\n}): T[] => {\n  // 创建数组副本，不修改原数组\n  const result = [...arr];\n  \n  // 内部快速排序实现\n  const _quickSort = (arr: T[], left: number, right: number) => {\n    if (left < right) {\n      const pivotIndex = partition(arr, left, right);\n      _quickSort(arr, left, pivotIndex - 1);\n      _quickSort(arr, pivotIndex + 1, right);\n    }\n  };\n  \n  // 分区操作\n  const partition = (arr: T[], left: number, right: number): number => {\n    // 选择最右边的元素作为基
 ```
 
-`parseAssistantMessageV2` 方法会解析上述输出内容，主要是从模型输出中解析出使用哪些工具以及工具的参数，比如这里我们发现模型输出中有 <replace_in_file>，那就说明这次需要使用 replace_in_file 工具。
+`parseAssistantMessageV2` 方法会解析上述输出内容，主要是从模型输出中解析出使用哪些工具以及工具的参数，比如这里我们发现模型输出中有 \<replace_in_file\>，那就说明这次需要使用 replace_in_file 工具。
 
 接下来调用 `presentAssistantMessage` 方法真正将模型消息展示给用户，一方面展示文本消息，类似下图：
 
