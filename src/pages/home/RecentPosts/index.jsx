@@ -6,6 +6,16 @@ import useGlobalData from '@docusaurus/useGlobalData';
 // 模拟博客文章数据
 const blogPosts = [
   {
+    id: 2,
+    title: "Cline 源码浅析 - 从输入到输出",
+    excerpt: "本篇文章从源码角度来看一下从我们输入指令到 Cline 输出的过程到底是怎样的，这样对我们后续使用 Cline 会有更好的帮助。",
+    date: "2025-06-07",
+    category: "AI, Cline",
+    image: "https://fastly.jsdelivr.net/gh/bucketio/img17@main/2025/06/06/1749176746221-f97aba25-6da5-461a-be21-369de1c44fff.png",
+    readTime: "10 分钟",
+    url: '/blog/2025-06-07-cline-source-code-1.md'
+  },
+  {
     id: 3,
     title: "现在开始使用 Cline Rules ",
     excerpt: "最近在业务（面向用户的 C 端业务）中较多的使用了 Cline，总体感觉非常丝滑",
@@ -24,16 +34,6 @@ const blogPosts = [
     image: "https://fastly.jsdelivr.net/gh/bucketio/img10@main/2025/05/19/1747639233989-a54bfdd8-3570-4750-8b7c-c8f0b88ff435.png",
     readTime: "3 分钟",
     url: '/blog/2025-04-30-ts-agent-mastra.md'
-  },
-  {
-    id: 2,
-    title: "DeepWiki - 阅读开源代码的神器",
-    excerpt: "Devin （就是那个每月 500 刀的 AI 程序员）团队推出了 DeepWiki，从此阅读源码更方便了。",
-    date: "2025-04-30",
-    category: "AI",
-    image: "https://fastly.jsdelivr.net/gh/bucketio/img17@main/2025/04/29/1745915063123-0603daf0-f9b8-42af-9597-59570e3a7eae.png",
-    readTime: "2 分钟",
-    url: '/blog/2025-04-30-deepwiki.md'
   }
 ];
 

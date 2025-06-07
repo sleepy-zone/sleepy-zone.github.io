@@ -2,7 +2,7 @@
 slug: 2025-05-30-cline-rule.md
 title: 现在开始使用 Cline Rules 
 authors: [sleepy]
-tags: [AI]
+tags: [AI, Cline]
 ---
 
 # 现在开始使用 Cline Rules 
