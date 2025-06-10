@@ -6,6 +6,15 @@ import useGlobalData from '@docusaurus/useGlobalData';
 // 模拟博客文章数据
 const blogPosts = [
   {
+    id: 1,
+    title: "Cline 源码浅析 - MCP 调用",
+    excerpt: "本篇文章从源码角度来看一下 Cline 的 MCP 管理",
+    date: "2025-06-10",
+    category: "AI, Cline",
+    image: "https://fastly.jsdelivr.net/gh/bucketio/img10@main/2025/05/19/1747639233989-a54bfdd8-3570-4750-8b7c-c8f0b88ff435.png",
+    readTime: "6 分钟",
+    url: '/blog/2025-06-10-cline-source-code-mcp.md'
+  }, {
     id: 2,
     title: "Cline 源码浅析 - 从输入到输出",
     excerpt: "本篇文章从源码角度来看一下从我们输入指令到 Cline 输出的过程到底是怎样的，这样对我们后续使用 Cline 会有更好的帮助。",
@@ -24,16 +33,6 @@ const blogPosts = [
     image: "https://fastly.jsdelivr.net/gh/bucketio/img19@main/2025/05/30/1748588412574-e064741c-0bf1-4c61-be3c-fd9ac86453e4.png",
     readTime: "5 分钟",
     url: '/blog/2025-05-30-cline-rule.md'
-  },
-  {
-    id: 1,
-    title: "Mastra  - TypeScript AI Agent 框架",
-    excerpt: "Mastra，是一个难得的 TS 的 AI Agent 框架，可以让你快手上手开发一个 Agent，目前已经有 13.2K 的 Star",
-    date: "2025-05-21",
-    category: "Agent",
-    image: "https://fastly.jsdelivr.net/gh/bucketio/img10@main/2025/05/19/1747639233989-a54bfdd8-3570-4750-8b7c-c8f0b88ff435.png",
-    readTime: "3 分钟",
-    url: '/blog/2025-04-30-ts-agent-mastra.md'
   }
 ];
 
