@@ -6,6 +6,16 @@ import useGlobalData from '@docusaurus/useGlobalData';
 // 模拟博客文章数据
 const blogPosts = [
   {
+    id: 3,
+    title: "Cline 源码浅析 -  Prompt 设计",
+    excerpt: "“Agent 就是如何拼出更好用的 Prompt”，虽然有点玩笑的意味，但也能说明一定的问题。本篇文章我们探讨下 Cline 里的 Prompt 设计。",
+    date: "2025-06-13",
+    category: "AI, Cline",
+    image: "https://fastly.jsdelivr.net/gh/bucketio/img17@main/2025/06/06/1749176746221-f97aba25-6da5-461a-be21-369de1c44fff.png",
+    readTime: "5 分钟",
+    url: '/blog/2025-06-13-cline-source-code-prompt.md'
+  },
+  {
     id: 1,
     title: "Cline 源码浅析 - MCP 调用",
     excerpt: "本篇文章从源码角度来看一下 Cline 的 MCP 管理",
@@ -24,16 +34,6 @@ const blogPosts = [
     readTime: "10 分钟",
     url: '/blog/2025-06-07-cline-source-code-1.md'
   },
-  {
-    id: 3,
-    title: "现在开始使用 Cline Rules ",
-    excerpt: "最近在业务（面向用户的 C 端业务）中较多的使用了 Cline，总体感觉非常丝滑",
-    date: "2025-05-30",
-    category: "AI",
-    image: "https://fastly.jsdelivr.net/gh/bucketio/img19@main/2025/05/30/1748588412574-e064741c-0bf1-4c61-be3c-fd9ac86453e4.png",
-    readTime: "5 分钟",
-    url: '/blog/2025-05-30-cline-rule.md'
-  }
 ];
 
 const RecentPosts = () => {
