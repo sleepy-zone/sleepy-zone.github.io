@@ -121,6 +121,14 @@ git push
 | 修改项目状态/链接 | 目录行即时更新；URL 不变 |
 | 归档文章 | 不参与新内容，保持原 URL |
 
+## 手机上发一条想法
+
+1. 打开 [`issues/new?template=thought.yml`](https://github.com/sleepy-zone/sleepy-zone.github.io/issues/new?template=thought.yml)（可以加到手机主屏幕）。
+2. 填「想法 / 标签 / 关联项目 slug」，提交。
+3. GitHub Actions 会自动创建 `src/content/thoughts/<日期>.md`、提交、部署，并关掉这条 issue；约 1 分钟上线。
+
+只有仓库 owner / member / collaborator 创建的 issue 会触发，标签为 `thought`。如果想改已发布的内容，直接改生成的文件；issue 只在打开时处理一次。
+
 ## 埋点
 
 和 `char-db-cn` 共用同一个 Clarity 项目（`r1wmvdsf4a`），报表里按 URL 过滤即可区分站点。
