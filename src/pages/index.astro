@@ -1,0 +1,71 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MoonDial from '../components/MoonDial.astro';
+import ThoughtItem from '../components/ThoughtItem.astro';
+import ProjectRow from '../components/ProjectRow.astro';
+import { site } from '../data/site';
+import { formatDate } from '../lib/date';
+import { featuredProjects, projects } from '../lib/projects';
+import { sortThoughts } from '../lib/thoughts';
+
+const thoughts = (await getCollection('thoughts')).sort(sortThoughts);
+const recent = thoughts.slice(0, 4);
+const featured = featuredProjects.slice(0, 6);
+const latest = thoughts[0]?.data.date;
+---
+
+<BaseLayout>
+  <section class="wrap hero">
+    <div>
+      <p class="kicker">{site.hero.kicker}</p>
+      <h1>
+        {site.hero.title}<br />
+        {site.hero.titleSecond}<span class="accent">{site.hero.titleAccent}</span>{site.hero.titleEnd}
+      </h1>
+      <p class="lede">{site.hero.lede}</p>
+      <div class="hero-links">
+        <a class="primary" href="/thoughts/">读想法 <span>→</span></a>
+        <a class="secondary" href="/projects/">看项目</a>
+      </div>
+      <p class="now">
+        <span class="dot"></span>
+        NOW — {site.hero.now}{latest ? ` · 最后一条 ${formatDate(latest)}` : ''}
+      </p>
+    </div>
+
+    <MoonDial />
+  </section>
+
+  <section class="wrap section">
+    <div class="section-head">
+      <div>
+        <p class="sec-kicker">01 — NOTES</p>
+        <h2>最近在想</h2>
+      </div>
+      <a class="more" href="/thoughts/">全部 {thoughts.length} 条 →</a>
+    </div>
+
+    {recent.length > 0 ? (
+      recent.map((entry) => <ThoughtItem entry={entry} />)
+    ) : (
+      <p class="empty">还没有想法，过几天再来看看。</p>
+    )}
+  </section>
+
+  <section class="wrap section">
+    <div class="section-head">
+      <div>
+        <p class="sec-kicker">02 — PROJECTS</p>
+        <h2>在做的东西</h2>
+      </div>
+      <a class="more" href="/projects/">全部 {projects.length} 个 →</a>
+    </div>
+
+    <div class="projects">
+      {featured.map((project, index) => (
+        <ProjectRow project={project} index={index + 1} showStatus={false} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

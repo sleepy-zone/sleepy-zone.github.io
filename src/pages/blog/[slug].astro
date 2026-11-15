@@ -1,0 +1,52 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate } from '../../lib/date';
+import { excerpt } from '../../lib/text';
+
+export async function getStaticPaths() {
+  const archive = await getCollection('archive');
+  return archive.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { id: entry.id },
+  }));
+}
+
+const { id } = Astro.props;
+const entry = await getEntry('archive', id);
+if (!entry) throw new Error(`Archive entry not found: ${id}`);
+const { Content } = await render(entry);
+const year = entry.data.date.getUTCFullYear();
+---
+
+<BaseLayout
+  title={entry.data.title}
+  description={excerpt(entry.body, 90)}
+  ogType="article"
+>
+  <article class="wrap post-page">
+    <header class="post-head">
+      <p class="kicker">ARCHIVE · {year}</p>
+      <h1>{entry.data.title}</h1>
+      <div class="post-meta">
+        <time datetime={entry.data.date.toISOString()}>{formatDate(entry.data.date)}</time>
+        <span>已归档</span>
+        {entry.data.tags.map((tag) => <span>#{tag}</span>)}
+      </div>
+    </header>
+
+    <div class="archive-banner">
+      <strong>写于 {formatDate(entry.data.date)}</strong>
+      <span>已归档，不再更新。</span>
+    </div>
+
+    <div class="post-body prose">
+      <Content />
+    </div>
+
+    <footer class="post-foot">
+      这个站现在只写短想法 → <a href="/thoughts/">/thoughts</a><br />
+      回到 <a href="/blog/">归档</a>。
+    </footer>
+  </article>
+</BaseLayout>

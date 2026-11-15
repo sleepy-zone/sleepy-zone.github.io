@@ -1,0 +1,43 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate } from '../../lib/date';
+
+const archive = (await getCollection('archive')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const groups = new Map<number, CollectionEntry<'archive'>[]>();
+for (const entry of archive) {
+  const year = entry.data.date.getUTCFullYear();
+  const list = groups.get(year) ?? [];
+  list.push(entry);
+  groups.set(year, list);
+}
+const years = [...groups.keys()].sort((a, b) => b - a);
+---
+
+<BaseLayout title="归档" description="SleepyZone 2024–2025 年的长文归档。">
+  <section class="wrap page-head">
+    <p class="kicker">ARCHIVE · {years[years.length - 1]}—{years[0]}</p>
+    <h1>归档</h1>
+    <p class="sub">2024–2025 年的长文，保留原链接，不再更新。新的想法都在 <a href="/thoughts/">想法</a>。</p>
+    <p class="count">{archive.length} POSTS · 按年份排列</p>
+  </section>
+
+  <div class="wrap">
+    {years.map((year) => (
+      <section class="archive-year">
+        <div class="label">{year}</div>
+        {groups.get(year)?.map((entry) => (
+          <a class="archive-item" href={`/blog/${entry.data.slug}/`}>
+            <time datetime={entry.data.date.toISOString()}>{formatDate(entry.data.date)}</time>
+            <span class="title">{entry.data.title}</span>
+            <span class="meta">{entry.data.tags[0] ?? 'NOTE'}</span>
+          </a>
+        ))}
+      </section>
+    ))}
+
+    <p class="endnote">旧文只做归档，不再补写。想看新的，去 <a href="/thoughts/">想法</a>。</p>
+  </div>
+</BaseLayout>

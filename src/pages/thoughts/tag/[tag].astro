@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ThoughtItem from '../../../components/ThoughtItem.astro';
+import TagFilters from '../../../components/TagFilters.astro';
+import { sortThoughts, type Thought } from '../../../lib/thoughts';
+
+export async function getStaticPaths() {
+  const thoughts = await getCollection('thoughts');
+  const tags = [...new Set(thoughts.flatMap((entry) => entry.data.tags))];
+  return tags.map((tag) => ({
+    params: { tag },
+    props: { tag },
+  }));
+}
+
+const { tag } = Astro.props;
+const all = (await getCollection('thoughts')) as Thought[];
+const thoughts = all.filter((entry) => entry.data.tags.includes(tag)).sort(sortThoughts);
+---
+
+<BaseLayout title={`#${tag}`} description={`SleepyZone 关于「${tag}」的短想法。`}>
+  <section class="wrap page-head">
+    <p class="kicker">TAGGED · {thoughts.length} NOTES</p>
+    <h1 class="tag-head">#{tag}</h1>
+    <p class="sub">关于「{tag}」的短想法。</p>
+  </section>
+
+  <div class="wrap">
+    <TagFilters thoughts={all} active={tag} />
+    {thoughts.map((entry) => <ThoughtItem entry={entry} variant="list" />)}
+    <p class="endnote"><a href="/thoughts/">← 全部想法</a></p>
+  </div>
+</BaseLayout>

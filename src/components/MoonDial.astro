@@ -1,0 +1,52 @@
+---
+---
+
+<div class="dial" aria-hidden="true">
+  <svg viewBox="0 0 264 264" fill="none">
+    <circle class="dial-ring" cx="132" cy="132" r="131" stroke-width="1"></circle>
+    <circle
+      class="dial-ticks"
+      cx="132"
+      cy="132"
+      r="122"
+      stroke-width="1"
+      stroke-dasharray="1 20.3"
+    ></circle>
+    <circle
+      class="dial-arc"
+      cx="132"
+      cy="132"
+      r="122"
+      stroke-width="1.2"
+      stroke-dasharray="191 575"
+      stroke-linecap="butt"
+      transform="rotate(-90 132 132)"
+      opacity="0.9"
+    ></circle>
+    <g transform="translate(132, 74)">
+      <circle class="dial-moon" r="11" opacity="0.95"></circle>
+      <circle class="dial-mask" cx="7" cy="-4" r="10.5"></circle>
+    </g>
+  </svg>
+  <div class="face">
+    <div class="time" data-dial-time>--:--</div>
+    <div class="date" data-dial-date>—</div>
+  </div>
+  <div class="phase">LOCAL TIME · UTC+8</div>
+</div>
+
+<script is:inline>
+  (() => {
+    const time = document.querySelector('[data-dial-time]');
+    const date = document.querySelector('[data-dial-date]');
+    if (!time || !date) return;
+
+    const now = new Date();
+    const pad = (value) => String(value).padStart(2, '0');
+    const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+
+    time.textContent = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
+    date.textContent = `${months[now.getMonth()]} ${now.getDate()} · ${days[now.getDay()]}`;
+  })();
+</script>

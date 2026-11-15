@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ThoughtItem from '../../components/ThoughtItem.astro';
+import TagFilters from '../../components/TagFilters.astro';
+import { formatDate } from '../../lib/date';
+import { groupThoughtsByYear, sortThoughts } from '../../lib/thoughts';
+
+const thoughts = (await getCollection('thoughts')).sort(sortThoughts);
+const groups = groupThoughtsByYear(thoughts);
+const years = groups.map((group) => group.year);
+const range = years.length > 1 ? `${years[years.length - 1]}—${years[0]}` : String(years[0] ?? '');
+const latest = thoughts[0]?.data.date;
+
+const archive = await getCollection('archive');
+const archiveYears = [...new Set(archive.map((entry) => entry.data.date.getUTCFullYear()))].sort(
+  (a, b) => a - b,
+);
+const archiveRange =
+  archiveYears.length > 1
+    ? `${archiveYears[0]}—${archiveYears[archiveYears.length - 1]}`
+    : String(archiveYears[0] ?? '');
+---
+
+<BaseLayout
+  title="想法"
+  description="短句、链接、半成型的念头。SleepyZone 的短想法。"
+>
+  <section class="wrap page-head">
+    <p class="kicker">ALL NOTES · {range}</p>
+    <h1>想法</h1>
+    <p class="sub">句子、链接、半成型的念头。不排版，不修饰，每一条都短。</p>
+    <p class="count">
+      {thoughts.length} ENTRIES{latest ? ` · 最后一条 ${formatDate(latest)}` : ''}
+    </p>
+  </section>
+
+  <div class="wrap">
+    <TagFilters thoughts={thoughts} />
+
+    {groups.map((group) => (
+      <section class="year">
+        <div class="label">{group.year}</div>
+        {group.items.map((entry) => (
+          <ThoughtItem entry={entry} variant="list" />
+        ))}
+      </section>
+    ))}
+
+    {thoughts.length === 0 && <p class="empty">还没有想法，过几天再来看看。</p>}
+
+    {archive.length > 0 && (
+      <p class="endnote">
+        再往前是 {archiveRange} 年的 {archive.length} 篇长文，都收进了 <a href="/blog/">归档</a>。
+      </p>
+    )}
+  </div>
+</BaseLayout>

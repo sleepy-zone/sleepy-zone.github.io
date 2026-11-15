@@ -1,0 +1,78 @@
+---
+import '@fontsource/instrument-serif/latin-400.css';
+import '@fontsource/jetbrains-mono/latin-400.css';
+import '../styles/global.css';
+import TopBar from '../components/TopBar.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = site.description,
+  ogType = 'website',
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL(`https://${site.domain}`);
+const canonical = new URL(Astro.url.pathname, siteUrl);
+const ogImage = new URL('/og.png', siteUrl);
+const pageTitle = title ? `${title} — ${site.title}` : `${site.title} — 前端、开源与 AI 绘图`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: site.title,
+  url: siteUrl.href,
+  inLanguage: 'zh-Hans',
+  author: {
+    '@type': 'Person',
+    name: 'SleepyZone',
+    url: 'https://github.com/sleepy-zone',
+  },
+};
+---
+
+<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="SleepyZone" />
+    <meta name="theme-color" content="#F4F1E8" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="Sleepy Zone 想法" href="/rss.xml" />
+    {noindex && <meta name="robots" content="noindex,follow" />}
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={site.title} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="zh_CN" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到正文</a>
+    <TopBar />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

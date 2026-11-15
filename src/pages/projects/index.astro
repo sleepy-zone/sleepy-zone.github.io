@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectRow from '../../components/ProjectRow.astro';
+import { projectGroups } from '../../data/site';
+import { projects, projectsByGroup } from '../../lib/projects';
+
+const online = projects.filter((project) => project.site).length;
+---
+
+<BaseLayout title="项目" description="SleepyZone 做过的项目：编辑器、AI 绘图素材库和一堆实验。">
+  <section class="wrap page-head">
+    <p class="kicker">ALL PROJECTS · 2019—2026</p>
+    <h1>项目</h1>
+    <p class="sub">做过的、在做的、停在半路的，都在这儿。每一个都能点开直接用。</p>
+    <p class="count">{projects.length} PROJECTS · {online} 个可在线访问</p>
+  </section>
+
+  <div class="wrap">
+    {projectGroups.map((group) => (
+      <section class="group">
+        <div class="ghead">{group.index} / {group.label}</div>
+        <div>
+          <h2>{group.heading}</h2>
+          <p class="gdesc">{group.desc}</p>
+          <div class="projects">
+            {projectsByGroup(group.id).map((project) => (
+              <ProjectRow project={project} />
+            ))}
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <p class="legend">STARS = GitHub Star，构建时自动同步 · 状态：维护中 / 暂停 / 归档 / 实验 / 新</p>
+  </div>
+</BaseLayout>

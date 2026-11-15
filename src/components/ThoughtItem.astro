@@ -1,0 +1,35 @@
+---
+import { render } from 'astro:content';
+import { formatDate, formatMonthDay } from '../lib/date';
+import { projectBySlug } from '../lib/projects';
+import { tagHref, type Thought } from '../lib/thoughts';
+
+interface Props {
+  entry: Thought;
+  variant?: 'home' | 'list';
+}
+
+const { entry, variant = 'home' } = Astro.props;
+const { Content } = await render(entry);
+const project = entry.data.project ? projectBySlug(entry.data.project) : undefined;
+---
+
+<article class="thought">
+  <time datetime={entry.data.date.toISOString()}>
+    {variant === 'home' ? formatDate(entry.data.date) : formatMonthDay(entry.data.date)}
+  </time>
+  <div class="body">
+    <Content />
+    {entry.data.image && <img class="shot" src={entry.data.image} alt="" loading="lazy" />}
+    {entry.data.tags.length > 0 && (
+      <p class="tags">
+        {entry.data.tags.map((tag) => (
+          <a href={tagHref(tag)}><span>#</span>{tag}</a>
+        ))}
+      </p>
+    )}
+    {project && (
+      <p class="related">相关项目 <a href="/projects/">{project.name}</a></p>
+    )}
+  </div>
+</article>

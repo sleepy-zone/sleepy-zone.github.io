@@ -1,0 +1,21 @@
+---
+const path = Astro.url.pathname;
+const links = [
+  { href: '/thoughts/', label: '想法' },
+  { href: '/projects/', label: '项目' },
+  { href: '/about/', label: '关于' },
+];
+const isActive = (href: string) => path === href || path.startsWith(href);
+---
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="moon">☾</span> sleepy.zone</a>
+    <nav class="nav" aria-label="主导航">
+      {links.map((link) => (
+        <a href={link.href} class={isActive(link.href) ? 'on' : undefined}>{link.label}</a>
+      ))}
+      <a class="ext" href="https://github.com/sleepy-zone" target="_blank" rel="noopener">GITHUB ↗</a>
+    </nav>
+  </div>
+</header>

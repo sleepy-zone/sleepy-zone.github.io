@@ -1,0 +1,18 @@
+---
+import { tagCounts, tagHref, type Thought } from '../lib/thoughts';
+
+interface Props {
+  thoughts: Thought[];
+  active?: string;
+}
+
+const { thoughts, active } = Astro.props;
+const tags = tagCounts(thoughts);
+---
+
+<nav class="filters" aria-label="想法标签">
+  <a href="/thoughts/" class={active ? undefined : 'on'}>全部 {thoughts.length}</a>
+  {tags.map(([tag, count]) => (
+    <a href={tagHref(tag)} class={active === tag ? 'on' : undefined}>#{tag} {count}</a>
+  ))}
+</nav>
