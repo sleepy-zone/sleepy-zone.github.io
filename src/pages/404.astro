@@ -4,13 +4,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="404" description="这条日志不存在。" noindex>
   <section class="wrap notfound">
-    <p class="kicker">404 · NOT FOUND</p>
-    <h1>这条日志不存在。</h1>
-    <p>可能被归档了，也可能从来没写过。</p>
-    <div class="links">
-      <a href="/thoughts/">去想法</a>
-      <a href="/projects/">去项目</a>
-      <a href="/">回首页</a>
+    <div class="notfound-card">
+      <p class="kicker">404 / NOT FOUND</p>
+      <h1>这条日志不存在。</h1>
+      <p>可能被归档了，也可能从来没写过。</p>
+      <div class="links">
+        <a class="btn btn-accent" href="/thoughts/">去想法</a>
+        <a class="btn" href="/projects/">去项目</a>
+        <a class="btn" href="/">回首页</a>
+      </div>
     </div>
   </section>
 </BaseLayout>

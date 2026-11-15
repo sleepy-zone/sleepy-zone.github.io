@@ -25,28 +25,30 @@ const year = entry.data.date.getUTCFullYear();
   ogType="article"
 >
   <article class="wrap post-page">
-    <header class="post-head">
-      <p class="kicker">ARCHIVE · {year}</p>
-      <h1>{entry.data.title}</h1>
-      <div class="post-meta">
-        <time datetime={entry.data.date.toISOString()}>{formatDate(entry.data.date)}</time>
-        <span>已归档</span>
-        {entry.data.tags.map((tag) => <span>#{tag}</span>)}
+    <div class="post-card">
+      <header class="post-head">
+        <p class="kicker">ARCHIVE · {year}</p>
+        <h1>{entry.data.title}</h1>
+        <div class="post-meta">
+          <time datetime={entry.data.date.toISOString()}>{formatDate(entry.data.date)}</time>
+          <span>已归档</span>
+          {entry.data.tags.map((tag) => <span>#{tag}</span>)}
+        </div>
+      </header>
+
+      <div class="archive-banner">
+        <strong>写于 {formatDate(entry.data.date)}</strong>
+        <span>已归档，不再更新。</span>
       </div>
-    </header>
 
-    <div class="archive-banner">
-      <strong>写于 {formatDate(entry.data.date)}</strong>
-      <span>已归档，不再更新。</span>
+      <div class="post-body prose">
+        <Content />
+      </div>
+
+      <footer class="post-foot">
+        这个站现在只写短想法 → <a href="/thoughts/">/thoughts</a><br />
+        回到 <a href="/blog/">归档</a>。
+      </footer>
     </div>
-
-    <div class="post-body prose">
-      <Content />
-    </div>
-
-    <footer class="post-foot">
-      这个站现在只写短想法 → <a href="/thoughts/">/thoughts</a><br />
-      回到 <a href="/blog/">归档</a>。
-    </footer>
   </article>
 </BaseLayout>

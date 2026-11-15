@@ -25,18 +25,20 @@ const years = [...groups.keys()].sort((a, b) => b - a);
   </section>
 
   <div class="wrap">
-    {years.map((year) => (
-      <section class="archive-year">
-        <div class="label">{year}</div>
-        {groups.get(year)?.map((entry) => (
-          <a class="archive-item" href={`/blog/${entry.data.slug}/`}>
-            <time datetime={entry.data.date.toISOString()}>{formatDate(entry.data.date)}</time>
-            <span class="title">{entry.data.title}</span>
-            <span class="meta">{entry.data.tags[0] ?? 'NOTE'}</span>
-          </a>
-        ))}
-      </section>
-    ))}
+    <div class="archive-panel">
+      {years.map((year) => (
+        <section class="archive-year">
+          <div class="year-label">{year}</div>
+          {groups.get(year)?.map((entry) => (
+            <a class="archive-item" href={`/blog/${entry.data.slug}/`}>
+              <time datetime={entry.data.date.toISOString()}>{formatDate(entry.data.date)}</time>
+              <span class="title">{entry.data.title}</span>
+              <span class="meta">{entry.data.tags[0] ?? 'NOTE'}</span>
+            </a>
+          ))}
+        </section>
+      ))}
+    </div>
 
     <p class="endnote">旧文只做归档，不再补写。想看新的，去 <a href="/thoughts/">想法</a>。</p>
   </div>

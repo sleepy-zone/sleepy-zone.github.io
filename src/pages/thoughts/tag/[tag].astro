@@ -22,13 +22,15 @@ const thoughts = all.filter((entry) => entry.data.tags.includes(tag)).sort(sortT
 <BaseLayout title={`#${tag}`} description={`SleepyZone 关于「${tag}」的短想法。`}>
   <section class="wrap page-head">
     <p class="kicker">TAGGED · {thoughts.length} NOTES</p>
-    <h1 class="tag-head">#{tag}</h1>
+    <h1>#{tag}</h1>
     <p class="sub">关于「{tag}」的短想法。</p>
   </section>
 
   <div class="wrap">
     <TagFilters thoughts={all} active={tag} />
-    {thoughts.map((entry) => <ThoughtItem entry={entry} variant="list" />)}
+    <div class="thought-list">
+      {thoughts.map((entry) => <ThoughtItem entry={entry} />)}
+    </div>
     <p class="endnote"><a href="/thoughts/">← 全部想法</a></p>
   </div>
 </BaseLayout>

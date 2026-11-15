@@ -9,13 +9,17 @@ const isActive = (href: string) => path === href || path.startsWith(href);
 ---
 
 <header class="topbar">
-  <div class="wrap">
-    <a class="brand" href="/"><span class="moon">☾</span> sleepy.zone</a>
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">☾</span>Sleepy Zone</a>
     <nav class="nav" aria-label="主导航">
       {links.map((link) => (
-        <a href={link.href} class={isActive(link.href) ? 'on' : undefined}>{link.label}</a>
+        <a
+          href={link.href}
+          class={isActive(link.href) ? 'is-active' : undefined}
+          aria-current={isActive(link.href) ? 'page' : undefined}
+        >{link.label}</a>
       ))}
-      <a class="ext" href="https://github.com/sleepy-zone" target="_blank" rel="noopener">GITHUB ↗</a>
+      <a class="nav-ext" href="https://github.com/sleepy-zone" target="_blank" rel="noopener">GitHub ↗</a>
     </nav>
   </div>
 </header>

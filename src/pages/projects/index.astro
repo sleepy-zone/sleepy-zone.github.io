@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ProjectRow from '../../components/ProjectRow.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
 import { projectGroups } from '../../data/site';
 import { projects, projectsByGroup } from '../../lib/projects';
 
@@ -18,15 +18,13 @@ const online = projects.filter((project) => project.site).length;
   <div class="wrap">
     {projectGroups.map((group) => (
       <section class="group">
-        <div class="ghead">{group.index} / {group.label}</div>
-        <div>
+        <div class="group-head">
+          <p class="sec-kicker">{group.index} / {group.label}</p>
           <h2>{group.heading}</h2>
           <p class="gdesc">{group.desc}</p>
-          <div class="projects">
-            {projectsByGroup(group.id).map((project) => (
-              <ProjectRow project={project} />
-            ))}
-          </div>
+        </div>
+        <div class="project-grid">
+          {projectsByGroup(group.id).map((project) => <ProjectCard project={project} />)}
         </div>
       </section>
     ))}

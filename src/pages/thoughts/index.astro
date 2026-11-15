@@ -40,10 +40,10 @@ const archiveRange =
 
     {groups.map((group) => (
       <section class="year">
-        <div class="label">{group.year}</div>
-        {group.items.map((entry) => (
-          <ThoughtItem entry={entry} variant="list" />
-        ))}
+        <div class="year-label">{group.year}</div>
+        <div class="thought-list">
+          {group.items.map((entry) => <ThoughtItem entry={entry} />)}
+        </div>
       </section>
     ))}
 

@@ -1,0 +1,47 @@
+---
+import { statusLabels } from '../data/site';
+import { formatStars, projectHref, type Project } from '../lib/projects';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const href = projectHref(project);
+const isExternal = /^https?:\/\//.test(href);
+const label = statusLabels[project.status];
+---
+
+<a
+  class="project-card"
+  href={href}
+  target={isExternal ? '_blank' : undefined}
+  rel={isExternal ? 'noopener' : undefined}
+>
+  <div class="project-cover">
+    {project.image ? (
+      <img
+        src={project.image}
+        alt={project.imageAlt ?? project.name}
+        width="480"
+        height="300"
+        loading="lazy"
+        decoding="async"
+      />
+    ) : (
+      <div class="cover-fallback" aria-hidden="true">{project.name}</div>
+    )}
+    <span class={`badge ${project.status}`}>{label}</span>
+  </div>
+
+  <div class="project-body">
+    <div class="project-title">
+      <h3>{project.name}</h3>
+      {project.stars > 0 && <span class="project-stars">★ {formatStars(project.stars)}</span>}
+    </div>
+    <p class="project-desc">{project.desc}</p>
+    <div class="project-stack">
+      {project.stack.map((item) => <span>{item}</span>)}
+    </div>
+  </div>
+</a>

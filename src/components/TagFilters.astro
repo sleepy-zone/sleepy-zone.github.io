@@ -11,8 +11,16 @@ const tags = tagCounts(thoughts);
 ---
 
 <nav class="filters" aria-label="想法标签">
-  <a href="/thoughts/" class={active ? undefined : 'on'}>全部 {thoughts.length}</a>
+  <a
+    href="/thoughts/"
+    class={active ? undefined : 'is-active'}
+    aria-current={active ? undefined : 'page'}
+  >全部 <b>{thoughts.length}</b></a>
   {tags.map(([tag, count]) => (
-    <a href={tagHref(tag)} class={active === tag ? 'on' : undefined}>#{tag} {count}</a>
+    <a
+      href={tagHref(tag)}
+      class={active === tag ? 'is-active' : undefined}
+      aria-current={active === tag ? 'page' : undefined}
+    >#{tag} <b>{count}</b></a>
   ))}
 </nav>

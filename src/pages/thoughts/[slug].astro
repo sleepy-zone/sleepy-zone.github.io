@@ -25,31 +25,35 @@ const project = entry.data.project ? projectBySlug(entry.data.project) : undefin
 
 <BaseLayout title={title} description={excerpt(entry.body, 90)} ogType="article">
   <article class="wrap thought-page">
-    <p class="kicker">NOTE · {formatDate(entry.data.date)}</p>
-    <h1 class="visually-hidden">{title}</h1>
+    <div class="thought-card">
+      <p class="kicker">NOTE · {formatDate(entry.data.date)}</p>
+      <h1 class="visually-hidden">{title}</h1>
 
-    <div class="body">
-      <Content />
-      {entry.data.image && (
-        <ThoughtImage
-          src={entry.data.image}
-          alt={entry.data.imageAlt}
-          caption={entry.data.imageCaption}
-        />
-      )}
-      {entry.data.tags.length > 0 && (
-        <p class="tags">
+      <div class="body">
+        <Content />
+        {entry.data.image && (
+          <ThoughtImage
+            src={entry.data.image}
+            alt={entry.data.imageAlt}
+            caption={entry.data.imageCaption}
+          />
+        )}
+        {project && <p class="related">相关项目 <a href="/projects/">{project.name}</a></p>}
+      </div>
+
+      <footer class="thought-meta">
+        <time datetime={entry.data.date.toISOString()}>{formatDate(entry.data.date)}</time>
+        <div class="tags">
           {entry.data.tags.map((tag) => (
-            <a href={tagHref(tag)}><span>#</span>{tag}</a>
+            <a class="chip" href={tagHref(tag)}><span>#</span>{tag}</a>
           ))}
-        </p>
-      )}
-      {project && <p class="related">相关项目 <a href="/projects/">{project.name}</a></p>}
-    </div>
+        </div>
+      </footer>
 
-    <div class="thought-foot">
-      <a href="/thoughts/">← 全部想法</a>
-      <span>{entry.data.tags.map((tag) => `#${tag}`).join('  ')}</span>
+      <div class="thought-foot">
+        <a href="/thoughts/">← 全部想法</a>
+        <span>NOTE</span>
+      </div>
     </div>
   </article>
 </BaseLayout>

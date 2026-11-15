@@ -1,0 +1,43 @@
+---
+---
+
+<aside class="status-card" aria-label="上海时间">
+  <div class="status-top">
+    <span>SHANGHAI · UTC+8</span>
+    <span class="status-moon" aria-hidden="true">☾</span>
+  </div>
+  <div class="status-time" data-status-time>--:--</div>
+  <div class="status-date" data-status-date>—</div>
+  <div class="status-foot">
+    <span>LOCAL CLOCK</span>
+    <span>31.23°N</span>
+  </div>
+</aside>
+
+<script is:inline>
+  (() => {
+    const timeEl = document.querySelector('[data-status-time]');
+    const dateEl = document.querySelector('[data-status-date]');
+    if (!timeEl || !dateEl) return;
+
+    const now = new Date();
+    const time = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Asia/Shanghai',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    }).format(now);
+    const date = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Asia/Shanghai',
+      month: 'short',
+      day: '2-digit',
+    }).format(now);
+    const weekday = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Asia/Shanghai',
+      weekday: 'short',
+    }).format(now);
+
+    timeEl.textContent = time;
+    dateEl.textContent = `${date} · ${weekday}`.toUpperCase();
+  })();
+</script>

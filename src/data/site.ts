@@ -23,7 +23,7 @@ export const site = {
       { label: '在学', value: '把重复的事情交给 Agent，留时间给判断' },
       { label: '在玩', value: 'AI 绘图、九宫格设计' },
     ],
-    colophon: '本站用 Astro 手写，字体是系统宋体，没有追踪脚本。',
+    colophon: '本站用 Astro 手写，没有追踪脚本。',
   },
   contacts: [
     { label: 'X / Twitter', handle: '@zone__online', href: 'https://twitter.com/zone__online' },

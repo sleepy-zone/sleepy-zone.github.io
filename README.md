@@ -136,7 +136,7 @@ git push
 
 ```
 src/
-├─ components/     TopBar / Footer / MoonDial / ThoughtItem / ProjectRow / TagFilters
+├─ components/     TopBar / Footer / StatusCard / ThoughtItem / ProjectCard / TagFilters
 ├─ content/
 │  ├─ thoughts/    短想法
 │  └─ archive/     旧文
@@ -144,7 +144,7 @@ src/
 ├─ layouts/        BaseLayout
 ├─ lib/            日期、项目、想法的读取与格式化
 ├─ pages/          首页、想法、项目、关于、归档、RSS、404
-└─ styles/         global.css（纸本主题 token + 全站样式）
+└─ styles/         global.css（与 char-db-cn 一致的主题 token + 全站样式）
 ```
 
 设计说明与原型在仓库外的 `sleepy-zone-redesign/`（评审用，不参与构建）。

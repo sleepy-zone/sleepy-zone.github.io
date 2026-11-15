@@ -1,24 +1,20 @@
 ---
 import { render } from 'astro:content';
 import ThoughtImage from './ThoughtImage.astro';
-import { formatDate, formatMonthDay } from '../lib/date';
+import { formatDate } from '../lib/date';
 import { projectBySlug } from '../lib/projects';
-import { tagHref, type Thought } from '../lib/thoughts';
+import { tagHref, thoughtHref, type Thought } from '../lib/thoughts';
 
 interface Props {
   entry: Thought;
-  variant?: 'home' | 'list';
 }
 
-const { entry, variant = 'home' } = Astro.props;
+const { entry } = Astro.props;
 const { Content } = await render(entry);
 const project = entry.data.project ? projectBySlug(entry.data.project) : undefined;
 ---
 
 <article class="thought">
-  <time datetime={entry.data.date.toISOString()}>
-    {variant === 'home' ? formatDate(entry.data.date) : formatMonthDay(entry.data.date)}
-  </time>
   <div class="body">
     <Content />
     {entry.data.image && (
@@ -28,15 +24,18 @@ const project = entry.data.project ? projectBySlug(entry.data.project) : undefin
         caption={entry.data.imageCaption}
       />
     )}
-    {entry.data.tags.length > 0 && (
-      <p class="tags">
-        {entry.data.tags.map((tag) => (
-          <a href={tagHref(tag)}><span>#</span>{tag}</a>
-        ))}
-      </p>
-    )}
     {project && (
       <p class="related">相关项目 <a href="/projects/">{project.name}</a></p>
     )}
   </div>
+
+  <footer class="thought-meta">
+    <time datetime={entry.data.date.toISOString()}>{formatDate(entry.data.date)}</time>
+    <div class="tags">
+      {entry.data.tags.map((tag) => (
+        <a class="chip" href={tagHref(tag)}><span>#</span>{tag}</a>
+      ))}
+    </div>
+    <a class="permalink" href={thoughtHref(entry)} aria-label="打开这条想法">↗</a>
+  </footer>
 </article>

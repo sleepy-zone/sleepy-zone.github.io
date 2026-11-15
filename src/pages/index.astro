@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import MoonDial from '../components/MoonDial.astro';
+import StatusCard from '../components/StatusCard.astro';
 import ThoughtItem from '../components/ThoughtItem.astro';
-import ProjectRow from '../components/ProjectRow.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 import { site } from '../data/site';
 import { formatDate } from '../lib/date';
 import { featuredProjects, projects } from '../lib/projects';
@@ -17,16 +17,16 @@ const latest = thoughts[0]?.data.date;
 
 <BaseLayout>
   <section class="wrap hero">
-    <div>
+    <div class="hero-copy">
       <p class="kicker">{site.hero.kicker}</p>
       <h1>
         {site.hero.title}<br />
         {site.hero.titleSecond}<span class="accent">{site.hero.titleAccent}</span>{site.hero.titleEnd}
       </h1>
       <p class="lede">{site.hero.lede}</p>
-      <div class="hero-links">
-        <a class="primary" href="/thoughts/">读想法 <span>→</span></a>
-        <a class="secondary" href="/projects/">看项目</a>
+      <div class="hero-actions">
+        <a class="btn btn-accent" href="/thoughts/">读想法 <span aria-hidden="true">→</span></a>
+        <a class="btn" href="/projects/">看项目</a>
       </div>
       <p class="now">
         <span class="dot"></span>
@@ -34,20 +34,22 @@ const latest = thoughts[0]?.data.date;
       </p>
     </div>
 
-    <MoonDial />
+    <StatusCard />
   </section>
 
-  <section class="wrap section">
+  <section class="wrap section section-notes">
     <div class="section-head">
       <div>
-        <p class="sec-kicker">01 — NOTES</p>
+        <p class="sec-kicker">01 / NOTES</p>
         <h2>最近在想</h2>
       </div>
       <a class="more" href="/thoughts/">全部 {thoughts.length} 条 →</a>
     </div>
 
     {recent.length > 0 ? (
-      recent.map((entry) => <ThoughtItem entry={entry} />)
+      <div class="thought-list">
+        {recent.map((entry) => <ThoughtItem entry={entry} />)}
+      </div>
     ) : (
       <p class="empty">还没有想法，过几天再来看看。</p>
     )}
@@ -56,16 +58,14 @@ const latest = thoughts[0]?.data.date;
   <section class="wrap section">
     <div class="section-head">
       <div>
-        <p class="sec-kicker">02 — PROJECTS</p>
+        <p class="sec-kicker">02 / PROJECTS</p>
         <h2>在做的东西</h2>
       </div>
       <a class="more" href="/projects/">全部 {projects.length} 个 →</a>
     </div>
 
-    <div class="projects">
-      {featured.map((project, index) => (
-        <ProjectRow project={project} index={index + 1} showStatus={false} />
-      ))}
+    <div class="project-grid">
+      {featured.map((project) => <ProjectCard project={project} />)}
     </div>
   </section>
 </BaseLayout>
