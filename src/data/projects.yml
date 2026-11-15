@@ -1,5 +1,5 @@
 # 项目清单：站点上所有项目入口由这一个文件维护
-# group: product | library | lab
+# group: product | library
 # status: active | paused | archived | new | experiment
 
 - slug: fabritor
@@ -138,56 +138,3 @@
   stars: 0
   featured: false
   order: 10
-
-- slug: fabritor-handbook
-  name: fabritor-handbook
-  desc: 用 fabritor 学 fabric.js 的动手手册
-  image: /img/projects/fabritor-handbook.webp
-  imageAlt: fabritor 手册页面
-  group: lab
-  status: paused
-  stack: [JavaScript]
-  site: https://sleepyzone.online/fabritor-handbook/
-  repo: https://github.com/sleepy-zone/fabritor-handbook
-  stars: 9
-  featured: false
-  order: 11
-
-- slug: cline-analysis
-  name: cline-analysis
-  desc: Cline 源码浅析 4 篇，收录在公众号
-  image: /img/projects/cline-analysis.webp
-  imageAlt: Cline 源码浅析系列
-  group: lab
-  status: archived
-  stack: [Writing]
-  repo: https://github.com/sleepy-zone/cline-analysis
-  stars: 20
-  featured: false
-  order: 12
-
-- slug: agent-assistant-app
-  name: agent-assistant-app
-  desc: 用 vibe coding 拼出来的 Agent 助手
-  image: /img/projects/agent-assistant-app.webp
-  imageAlt: Agent 助手实验
-  group: lab
-  status: experiment
-  stack: [TypeScript]
-  repo: https://github.com/sleepy-zone/agent-assistant-app
-  stars: 2
-  featured: false
-  order: 13
-
-- slug: daily-report
-  name: daily-report
-  desc: 每日自动生成的信息日报
-  image: /img/projects/daily-report.webp
-  imageAlt: 每日日报
-  group: lab
-  status: archived
-  stack: [HTML]
-  repo: https://github.com/sleepy-zone/daily-report
-  stars: 6
-  featured: false
-  order: 14

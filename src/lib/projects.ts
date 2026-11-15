@@ -9,7 +9,7 @@ export interface Project {
   desc: string;
   image?: string;
   imageAlt?: string;
-  group: 'product' | 'library' | 'lab';
+  group: 'product' | 'library';
   status: ProjectStatus;
   stack: string[];
   site?: string;
