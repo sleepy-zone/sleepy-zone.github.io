@@ -73,5 +73,12 @@ const schema = {
       <slot />
     </main>
     <Footer />
+
+    <script is:inline>
+      window.ANALYTICS = {
+        providers: [{ provider: 'clarity', id: 'r1wmvdsf4a' }],
+      };
+    </script>
+    <script is:inline src="/analytics.js" defer></script>
   </body>
 </html>

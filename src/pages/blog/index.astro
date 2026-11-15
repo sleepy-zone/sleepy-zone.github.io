@@ -30,7 +30,15 @@ const years = [...groups.keys()].sort((a, b) => b - a);
         <section class="archive-year">
           <div class="year-label">{year}</div>
           {groups.get(year)?.map((entry) => (
-            <a class="archive-item" href={`/blog/${entry.data.slug}/`}>
+            <a
+              class="archive-item"
+              href={`/blog/${entry.data.slug}/`}
+              data-track="archive_open"
+              data-track-lib="archive"
+              data-track-id={entry.data.slug}
+              data-track-label={entry.data.title}
+              data-track-type="archive"
+            >
               <time datetime={entry.data.date.toISOString()}>{formatDate(entry.data.date)}</time>
               <span class="title">{entry.data.title}</span>
               <span class="meta">{entry.data.tags[0] ?? 'NOTE'}</span>

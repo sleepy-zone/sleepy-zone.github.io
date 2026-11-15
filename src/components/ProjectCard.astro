@@ -17,6 +17,12 @@ const label = statusLabels[project.status];
   href={href}
   target={isExternal ? '_blank' : undefined}
   rel={isExternal ? 'noopener' : undefined}
+  data-track="project_click"
+  data-track-lib="projects"
+  data-track-id={project.slug}
+  data-track-label={project.name}
+  data-track-type={project.group}
+  data-track-value={project.site ? 'site' : 'repo'}
 >
   <div class="project-cover">
     {project.image ? (

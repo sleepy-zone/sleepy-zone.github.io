@@ -35,7 +35,15 @@ const year = new Date().getFullYear();
           {site.contacts.map((contact) => (
             <li>
               {contact.href ? (
-                <a href={contact.href} target="_blank" rel="noopener">
+                <a
+                  href={contact.href}
+                  target="_blank"
+                  rel="noopener"
+                  data-track="contact_click"
+                  data-track-lib="about"
+                  data-track-value={contact.label}
+                  data-track-label={contact.handle}
+                >
                   {contact.label}<span>{contact.handle}</span>
                 </a>
               ) : (

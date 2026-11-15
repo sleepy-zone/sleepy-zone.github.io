@@ -2,7 +2,7 @@
 
 [sleepyzone.online](https://sleepyzone.online) 的源码。一个只放两样东西的个人站：**短想法**和**做过的项目**。长文已归档，不再更新。
 
-用 [Astro](https://astro.build) 写，静态输出，没有前端框架运行时，也没有统计脚本。
+用 [Astro](https://astro.build) 写，静态输出，没有前端框架运行时，只加了 Clarity 埋点。
 
 ## 本地开发
 
@@ -120,6 +120,16 @@ git push
 | 新增项目 | `/projects/` 对应分组；`featured` 可能进首页 |
 | 修改项目状态/链接 | 目录行即时更新；URL 不变 |
 | 归档文章 | 不参与新内容，保持原 URL |
+
+## 埋点
+
+和 `char-db-cn` 共用同一个 Clarity 项目（`r1wmvdsf4a`），报表里按 URL 过滤即可区分站点。
+
+- 只在 `sleepyzone.online` / `*.sleepy-zone.github.io` 加载 Clarity；本地开发只写 `window.__trackLog`，不上报。
+- 业务事件统一走 `window.track(name, params)`，同时写入 Clarity 的 `event` 和 `lib / type / value / label / ...` 标签。
+- 已埋事件：`nav_click`、`cta_click`、`project_click`、`note_open`、`tag_click`、`archive_open`、`contact_click`、`outbound_click`。
+- 调试：控制台执行 `window.__trackDebug = true` 后刷新；`window.__trackLog` 始终保留最近 200 条。
+- 新增可点击元素时，加 `data-track="event_name"` 和 `data-track-id / label / type / value` 即可，不用写额外的 JS。
 
 ## 部署
 

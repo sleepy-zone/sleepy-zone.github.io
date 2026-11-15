@@ -33,9 +33,26 @@ const project = entry.data.project ? projectBySlug(entry.data.project) : undefin
     <time datetime={entry.data.date.toISOString()}>{formatDate(entry.data.date)}</time>
     <div class="tags">
       {entry.data.tags.map((tag) => (
-        <a class="chip" href={tagHref(tag)}><span>#</span>{tag}</a>
+        <a
+          class="chip"
+          href={tagHref(tag)}
+          data-track="tag_click"
+          data-track-lib="notes"
+          data-track-type="tag"
+          data-track-value={tag}
+          data-track-label="chip"
+        ><span>#</span>{tag}</a>
       ))}
     </div>
-    <a class="permalink" href={thoughtHref(entry)} aria-label="打开这条想法">↗</a>
+    <a
+      class="permalink"
+      href={thoughtHref(entry)}
+      aria-label="打开这条想法"
+      data-track="note_open"
+      data-track-lib="notes"
+      data-track-id={entry.id}
+      data-track-type="note"
+      data-track-label={entry.data.tags[0] ?? 'note'}
+    >↗</a>
   </footer>
 </article>

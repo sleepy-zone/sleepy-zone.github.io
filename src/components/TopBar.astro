@@ -17,9 +17,22 @@ const isActive = (href: string) => path === href || path.startsWith(href);
           href={link.href}
           class={isActive(link.href) ? 'is-active' : undefined}
           aria-current={isActive(link.href) ? 'page' : undefined}
+          data-track="nav_click"
+          data-track-lib="nav"
+          data-track-value={link.href}
+          data-track-label={link.label}
         >{link.label}</a>
       ))}
-      <a class="nav-ext" href="https://github.com/sleepy-zone" target="_blank" rel="noopener">GitHub ↗</a>
+      <a
+        class="nav-ext"
+        href="https://github.com/sleepy-zone"
+        target="_blank"
+        rel="noopener"
+        data-track="outbound_click"
+        data-track-lib="nav"
+        data-track-value="github.com"
+        data-track-label="GitHub nav"
+      >GitHub ↗</a>
     </nav>
   </div>
 </header>
