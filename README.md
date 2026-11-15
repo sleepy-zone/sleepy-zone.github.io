@@ -81,10 +81,10 @@ pnpm thought "今天想到的一句话"
 2. `group` 只能是 `product` / `library` / `lab`；`status` 只能是 `active` / `paused` / `archived` / `new` / `experiment`。
 3. `site` 和 `repo` 至少填一个；都空时整行链接是 `#`。
 4. 想在首页露出就设 `featured: true`，用 `order` 排顺序；首页只取前 6 个。
-5. `stars` 先填 0 或当前值即可。部署时 Actions 会自动跑 `pnpm stars` 刷新，本地也可以手动跑：
+5. `stars` 先填 0 或当前值即可。部署时 Actions 会自动跑 `pnpm sync-stars` 刷新，本地也可以手动跑：
 
 ```bash
-pnpm stars   # 有 GITHUB_TOKEN 更好；失败会保留旧值
+pnpm sync-stars   # 有 GITHUB_TOKEN 更好；失败会保留旧值
 ```
 
 Star 数由 `src/data/stars.json` 覆盖，YAML 里的值是兜底。

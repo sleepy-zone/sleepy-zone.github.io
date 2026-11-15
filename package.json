@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "thought": "node scripts/new-thought.mjs",
-    "stars": "node scripts/sync-stars.mjs"
+    "sync-stars": "node scripts/sync-stars.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
