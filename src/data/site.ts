@@ -2,33 +2,33 @@ export const site = {
   title: 'Sleepy Zone',
   domain: 'sleepyzone.online',
   description:
-    '前端开发者 SleepyZone 的个人站：短想法，以及做过的项目。',
+    '前端开发者 SleepyZone 的个人站：想法、项目、AI',
   hero: {
     kicker: 'SLEEPY ZONE · UTC+8',
-    title: '白天写代码，',
-    titleSecond: '夜里写点',
-    titleAccent: '想法',
+    title: '欢迎访问',
+    titleSecond: '我的',
+    titleAccent: '个人站点',
     titleEnd: '。',
-    lede: '我是 SleepyZone，前端开发者。做开源工具，也做 AI 绘图素材站。这里不放长文，只留两样东西：想到就记的短句，和做过的项目。',
-    now: '在整理旧文，也在做新东西',
+    lede: '我是 SleepyZone，前端开发者，大龄大厂小工，奶爸，做了一些开源工具，喜欢新鲜的东西和尝试～',
+    now: '正在学习成为一名独立开发者',
   },
   about: {
     bio: [
-      '我是 SleepyZone，前端开发者。白天写代码，晚上做点自己的东西：fabritor、woocs，还有几个 AI 绘图素材站。',
-      '不太擅长写长文，所以这个站只剩两样东西：想到就记的短想法，和做过的项目。',
-      '如果你也在做类似的事，欢迎来聊。',
+      '我是 SleepyZone，前端开发者，大龄大厂小工，奶爸，做了一些开源工具，喜欢新鲜的东西和尝试～',
+      '这是我的个人站点，记录一些突然冒出来的想法，汇总自己做过的项目。',
+      '欢迎交流～',
     ],
     now: [
-      { label: '在做', value: '把这个站重做一遍（你正在看的就是新站）' },
-      { label: '在学', value: '把重复的事情交给 Agent，留时间给判断' },
-      { label: '在玩', value: 'AI 绘图、九宫格设计' },
+      { label: '在做', value: 'AI 绘图素材站' },
+      { label: '在学', value: '借助 AI 的力量～' },
+      { label: '在玩', value: 'GTA6（等待中）' },
     ],
-    colophon: '本站用 Astro 手写，使用 Clarity 做基础埋点。',
+    colophon: '',
   },
   contacts: [
     { label: 'X / Twitter', handle: '@zone__online', href: 'https://twitter.com/zone__online' },
     { label: 'GitHub', handle: '@sleepy-zone', href: 'https://github.com/sleepy-zone' },
-    { label: '公众号', handle: '前端生存指南', href: '' },
+    { label: '公众号', handle: '开发者生存指南', href: '' },
   ],
 } as const;
 
@@ -36,16 +36,16 @@ export const projectGroups = [
   {
     id: 'library',
     index: '01',
-    label: 'AI 素材库',
-    heading: '给 AI 绘图找个参照',
-    desc: '把散落的素材整理成能搜、能组合、能直接用的一张表。',
+    label: 'AI 绘图素材库',
+    heading: 'AI 绘图参考',
+    desc: '借助这几个站点，快速 AI 出图',
   },
   {
     id: 'product',
     index: '02',
     label: '产品与工具',
-    heading: '自己每天会用的东西',
-    desc: '从编辑器到截图美化，都是先解决自己的问题。',
+    heading: '一些还不错的工具',
+    desc: '从编辑器到截图美化',
   },
 ] as const;
 

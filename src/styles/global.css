@@ -227,7 +227,6 @@ button {
 .hero h1 {
   margin-top: 20px;
   font-size: clamp(38px, 4.6vw, 56px);
-  font-weight: 400;
   line-height: 1.14;
   letter-spacing: -0.02em;
 }
@@ -760,8 +759,8 @@ button {
 
 .project-cover img {
   display: block;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: cover;
 }
 

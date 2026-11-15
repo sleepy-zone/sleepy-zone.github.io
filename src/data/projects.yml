@@ -5,12 +5,12 @@
 - slug: fabritor
   name: fabritor
   desc: 基于 fabric.js 的开源创意图片编辑器
-  image: /img/projects/fabritor.webp
+  image: https://github.com/sleepy-zone/fabritor-web/raw/main/public/fabritor_2024_1.png
   imageAlt: fabritor 编辑器界面
   group: product
   status: active
   stack: [fabric.js, React]
-  site: https://fabritor.surge.sh/
+  site: https://github.com/sleepy-zone/fabritor-web
   repo: https://github.com/sleepy-zone/fabritor-web
   stars: 1201
   featured: true
@@ -19,7 +19,7 @@
 - slug: woocs
   name: woocs
   desc: 微信 Markdown 编辑器桌面应用，基于 doocs/md
-  image: /img/projects/woocs.webp
+  image: https://cloud-minapp-47803.cloud.ifanrusercontent.com/1tvAeEyU14WC5WqH.png
   imageAlt: woocs 首页
   group: product
   status: active
@@ -33,7 +33,7 @@
 - slug: photor
   name: photor
   desc: 截图美化应用：网页版、浏览器插件、uTools 插件
-  image: /img/projects/photor.webp
+  image: https://www.photor.fun/assets/home.07d93dc0.png
   imageAlt: photor 首页
   group: product
   status: active
@@ -43,37 +43,10 @@
   featured: false
   order: 7
 
-- slug: dsh-wechat-md
-  name: dsh-wechat-md
-  desc: DSH 插件：公众号排版预览，一键复制富文本
-  image: /img/projects/dsh-wechat-md.webp
-  imageAlt: DSH 公众号排版插件
-  group: product
-  status: new
-  stack: [JavaScript]
-  repo: https://github.com/sleepy-zone/dsh-wechat-md
-  stars: 1
-  featured: true
-  order: 6
-
-- slug: react-colors
-  name: react-colors
-  desc: React 颜色选择器，支持纯色与渐变
-  image: /img/projects/react-colors.webp
-  imageAlt: react-colors 页面
-  group: product
-  status: paused
-  stack: [React, TypeScript]
-  site: https://sleepyzone.online/react-colors/
-  repo: https://github.com/sleepy-zone/react-colors
-  stars: 5
-  featured: false
-  order: 8
-
 - slug: ai-ref-library-cn
   name: ai-ref-library-cn
   desc: AI 绘图素材库中文版：脸 / 姿势 / 服装
-  image: /img/projects/ai-ref-library-cn.webp
+  image: https://private-user-images.githubusercontent.com/131369648/692443740-6a53ac45-4c89-48fd-a7b4-2e6788a5294a.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3OTQ3NTY1MDUsIm5iZiI6MTc5NDc1NjIwNSwicGF0aCI6Ii8xMzEzNjk2NDgvNjkyNDQzNzQwLTZhNTNhYzQ1LTRjODktNDhmZC1hN2I0LTJlNjc4OGE1Mjk0YS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYxMTE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MTExNVQxNTIzMjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04MWM2YWNmNzhkMGEyNDA5Nzg5ZmY0NGIxNzQ4YTU1ZWI4MTkyMDg1Mjg1MjFkNDdmNTVlNzYyOTg1NjNkYzJhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.Uv4yRUQPbPl-Ih_v6GEz7Tf034VyevND8RwCGgRkM4Q
   imageAlt: AI 作图素材库界面
   group: library
   status: active
@@ -87,7 +60,7 @@
 - slug: char-db-cn
   name: char-db-cn
   desc: 二次元角色换装库：发型 / 服装 / 姿势 / 组装
-  image: /img/projects/char-db-cn.webp
+  image: https://private-user-images.githubusercontent.com/131369648/692431296-3c2857cd-9380-4f13-bbea-b6462aa49ca5.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3OTQ3NTY1MTUsIm5iZiI6MTc5NDc1NjIxNSwicGF0aCI6Ii8xMzEzNjk2NDgvNjkyNDMxMjk2LTNjMjg1N2NkLTkzODAtNGYxMy1iYmVhLWI2NDYyYWE0OWNhNS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYxMTE1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MTExNVQxNTIzMzVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jMzJjNTQwYzE5NWNhMTEwYzU4NDg5ZmJkMmJlNzU1NWE5NWI2N2NkNjgyYjFhYjYxMjI4YjNlMmJjMDg3ODQxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZwbmcifQ.veCBAE-Zu8ceLcFA2sOskUuCvg7b5kPHvXWjtjBIV6k
   imageAlt: 二次元角色换装库界面
   group: library
   status: active
@@ -101,7 +74,7 @@
 - slug: ai-tag-atlas
   name: ai-tag-atlas
   desc: AI 绘图标签词典与提示词工作台
-  image: /img/projects/ai-tag-atlas.webp
+  image: https://github-production-user-asset-6210df.s3.amazonaws.com/131369648/706862169-bb9917cc-2780-4455-b3c5-648ec522159a.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20261115%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261115T152445Z&X-Amz-Expires=300&X-Amz-Signature=d9f09a777a5e82b6bc4fe5e948f8f0407beab36ff5e7d3cffd8e1aabc8471ebf&X-Amz-SignedHeaders=host&response-content-type=image%2Fpng
   imageAlt: Tag Atlas 界面
   group: library
   status: active
@@ -115,7 +88,7 @@
 - slug: mio-design-archive
   name: mio-design-archive
   desc: 九宫格设计档案：32 卷 / 288 张
-  image: /img/projects/mio-design-archive.webp
+  image: https://github-production-user-asset-6210df.s3.amazonaws.com/131369648/706862011-9f12b0d6-e01d-49a8-9ab9-92dece4e5df0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20261115%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261115T152520Z&X-Amz-Expires=300&X-Amz-Signature=b70faf8cf75d04d6d926f37e2e33deced8d1bf45c54c0e96df57b1b09cc76f85&X-Amz-SignedHeaders=host&response-content-type=image%2Fpng
   imageAlt: Mio 设计档案界面
   group: library
   status: active
@@ -129,7 +102,7 @@
 - slug: sticker-library-cn
   name: sticker-library-cn
   desc: 表情包素材库中文版，整理中
-  image: /img/projects/sticker-library-cn.webp
+  image: https://github.com/sleepy-zone/sticker-library-cn/raw/main/screenshots/home.webp
   imageAlt: 表情包素材库
   group: library
   status: paused

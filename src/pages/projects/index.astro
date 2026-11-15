@@ -7,12 +7,11 @@ import { projects, projectsByGroup } from '../../lib/projects';
 const online = projects.filter((project) => project.site).length;
 ---
 
-<BaseLayout title="项目" description="SleepyZone 做过的项目：编辑器、AI 绘图素材库和一堆实验。">
+<BaseLayout title="项目" description="SleepyZone 做过的项目">
   <section class="wrap page-head">
     <p class="kicker">ALL PROJECTS · 2019—2026</p>
     <h1>项目</h1>
-    <p class="sub">做过的、在做的、停在半路的，都在这儿。每一个都能点开直接用。</p>
-    <p class="count">{projects.length} PROJECTS · {online} 个可在线访问</p>
+    <p class="sub">我的个人项目汇总</p>
   </section>
 
   <div class="wrap">
