@@ -452,11 +452,24 @@ a {
   color: var(--accent);
 }
 
-.thought .shot {
-  margin-top: 18px;
-  border: 1px solid var(--line);
-  display: block;
+.shot {
+  margin: 18px 0 0;
   max-width: 100%;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+}
+
+.shot figcaption {
+  margin-top: 9px;
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
 }
 
 /* ---------------- 项目索引 ---------------- */
@@ -468,7 +481,7 @@ a {
 
 .project {
   display: grid;
-  grid-template-columns: 34px minmax(0, 1fr) auto 58px 14px;
+  grid-template-columns: 34px 96px minmax(0, 1fr) auto 58px 14px;
   align-items: center;
   gap: 22px;
   padding: 17px 0;
@@ -489,6 +502,32 @@ a {
   font-size: 10px;
   color: var(--muted);
   letter-spacing: 0.06em;
+}
+
+.project .thumb {
+  width: 96px;
+  height: 60px;
+  border: 1px solid var(--line);
+  background: var(--bg-3);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.project .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.9) contrast(0.98);
+  transition: filter 0.18s ease;
+}
+
+.project:hover .thumb img {
+  filter: none;
 }
 
 .project .meta {
@@ -762,7 +801,7 @@ a {
 }
 
 .group .project {
-  grid-template-columns: minmax(0, 1fr) auto 58px 14px;
+  grid-template-columns: 96px minmax(0, 1fr) auto 58px 14px;
 }
 
 .legend {
@@ -857,13 +896,19 @@ a {
   }
 
   .project {
-    grid-template-columns: minmax(0, 1fr) 14px;
+    grid-template-columns: 64px minmax(0, 1fr) 14px;
     gap: 14px;
     padding: 15px 0;
   }
 
   .group .project {
-    grid-template-columns: minmax(0, 1fr) 14px;
+    grid-template-columns: 64px minmax(0, 1fr) 14px;
+  }
+
+  .project .thumb {
+    width: 64px;
+    height: 42px;
+    font-size: 15px;
   }
 
   .project .idx,
@@ -1349,8 +1394,6 @@ a {
 
 .thought-page .shot {
   margin-top: 24px;
-  border: 1px solid var(--line);
-  max-width: 100%;
 }
 
 .thought-foot {

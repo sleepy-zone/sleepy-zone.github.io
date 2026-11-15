@@ -5,6 +5,8 @@
 - slug: fabritor
   name: fabritor
   desc: 基于 fabric.js 的开源创意图片编辑器
+  image: /img/projects/fabritor.webp
+  imageAlt: fabritor 编辑器界面
   group: product
   status: active
   stack: [fabric.js, React]
@@ -17,6 +19,8 @@
 - slug: woocs
   name: woocs
   desc: 微信 Markdown 编辑器桌面应用，基于 doocs/md
+  image: /img/projects/woocs.webp
+  imageAlt: woocs 首页
   group: product
   status: active
   stack: [Vue, Electron]
@@ -29,6 +33,8 @@
 - slug: photor
   name: photor
   desc: 截图美化应用：网页版、浏览器插件、uTools 插件
+  image: /img/projects/photor.webp
+  imageAlt: photor 首页
   group: product
   status: active
   stack: [fabric.js]
@@ -40,6 +46,8 @@
 - slug: dsh-wechat-md
   name: dsh-wechat-md
   desc: DSH 插件：公众号排版预览，一键复制富文本
+  image: /img/projects/dsh-wechat-md.webp
+  imageAlt: DSH 公众号排版插件
   group: product
   status: new
   stack: [JavaScript]
@@ -51,6 +59,8 @@
 - slug: react-colors
   name: react-colors
   desc: React 颜色选择器，支持纯色与渐变
+  image: /img/projects/react-colors.webp
+  imageAlt: react-colors 页面
   group: product
   status: paused
   stack: [React, TypeScript]
@@ -63,6 +73,8 @@
 - slug: ai-ref-library-cn
   name: ai-ref-library-cn
   desc: AI 绘图素材库中文版：脸 / 姿势 / 服装
+  image: /img/projects/ai-ref-library-cn.webp
+  imageAlt: AI 作图素材库界面
   group: library
   status: active
   stack: [JavaScript]
@@ -75,6 +87,8 @@
 - slug: char-db-cn
   name: char-db-cn
   desc: 二次元角色换装库：发型 / 服装 / 姿势 / 组装
+  image: /img/projects/char-db-cn.webp
+  imageAlt: 二次元角色换装库界面
   group: library
   status: active
   stack: [JavaScript]
@@ -87,6 +101,8 @@
 - slug: ai-tag-atlas
   name: ai-tag-atlas
   desc: AI 绘图标签词典与提示词工作台
+  image: /img/projects/ai-tag-atlas.webp
+  imageAlt: Tag Atlas 界面
   group: library
   status: active
   stack: [JavaScript]
@@ -99,6 +115,8 @@
 - slug: mio-design-archive
   name: mio-design-archive
   desc: 九宫格设计档案：32 卷 / 288 张
+  image: /img/projects/mio-design-archive.webp
+  imageAlt: Mio 设计档案界面
   group: library
   status: active
   stack: [HTML]
@@ -111,6 +129,8 @@
 - slug: sticker-library-cn
   name: sticker-library-cn
   desc: 表情包素材库中文版，整理中
+  image: /img/projects/sticker-library-cn.webp
+  imageAlt: 表情包素材库
   group: library
   status: paused
   stack: [JavaScript]
@@ -122,6 +142,8 @@
 - slug: fabritor-handbook
   name: fabritor-handbook
   desc: 用 fabritor 学 fabric.js 的动手手册
+  image: /img/projects/fabritor-handbook.webp
+  imageAlt: fabritor 手册页面
   group: lab
   status: paused
   stack: [JavaScript]
@@ -134,6 +156,8 @@
 - slug: cline-analysis
   name: cline-analysis
   desc: Cline 源码浅析 4 篇，收录在公众号
+  image: /img/projects/cline-analysis.webp
+  imageAlt: Cline 源码浅析系列
   group: lab
   status: archived
   stack: [Writing]
@@ -145,6 +169,8 @@
 - slug: agent-assistant-app
   name: agent-assistant-app
   desc: 用 vibe coding 拼出来的 Agent 助手
+  image: /img/projects/agent-assistant-app.webp
+  imageAlt: Agent 助手实验
   group: lab
   status: experiment
   stack: [TypeScript]
@@ -156,6 +182,8 @@
 - slug: daily-report
   name: daily-report
   desc: 每日自动生成的信息日报
+  image: /img/projects/daily-report.webp
+  imageAlt: 每日日报
   group: lab
   status: archived
   stack: [HTML]

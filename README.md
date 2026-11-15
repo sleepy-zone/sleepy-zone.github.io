@@ -29,7 +29,9 @@ date: 2025-06-07T22:28:00+08:00
 tags: [agent]
 project: dsh-wechat-md   # 可选，关联项目
 link: https://...        # 可选
-image: /img/...          # 可选，最多一张
+image: /img/thoughts/cline.webp   # 可选，一张配图
+imageAlt: Cline 官网首页           # 配图的 alt
+imageCaption: 配图说明（可选）      # 显示在图下方
 ---
 
 看完了 Cline 源码，Agent 最终都落到了 prompt 组装和工具的调用上。
@@ -61,6 +63,8 @@ pnpm thought "今天想到的一句话"
 - slug: fabritor
   name: fabritor
   desc: 基于 fabric.js 的开源创意图片编辑器
+  image: /img/projects/fabritor.webp
+  imageAlt: fabritor 编辑器界面
   group: product              # product | library | lab
   status: active              # active | paused | archived | new | experiment
   stack: [fabric.js, React]
@@ -84,6 +88,14 @@ pnpm stars   # 有 GITHUB_TOKEN 更好；失败会保留旧值
 ```
 
 Star 数由 `src/data/stars.json` 覆盖，YAML 里的值是兜底。
+
+### 图片
+
+- 项目封面放 `public/img/projects/`，建议 **3:2、480×300 的 WebP**；目录行会显示成 96×60 的缩略图。
+- 想法配图放 `public/img/thoughts/`，建议 **宽 1200 的 WebP**；正文里会显示为 700px 宽的大图。
+- 两个 YAML / frontmatter 字段都支持 `image` + `imageAlt`，想法额外支持 `imageCaption`。
+- 没有截图的项目可以用一张纸色标题卡（现有 5 个项目就是这样），保持和站内一致的观感。
+- 图片不会在构建时自动压缩，建议先转 WebP 再提交；批量下载/压缩可参考 `scripts/legacy/localize-images.py`。
 
 ### 归档
 

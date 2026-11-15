@@ -7,6 +7,8 @@ export interface Project {
   slug: string;
   name: string;
   desc: string;
+  image?: string;
+  imageAlt?: string;
   group: 'product' | 'library' | 'lab';
   status: ProjectStatus;
   stack: string[];

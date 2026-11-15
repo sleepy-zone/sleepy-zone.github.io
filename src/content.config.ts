@@ -10,6 +10,8 @@ const thoughts = defineCollection({
     project: z.string().optional(),
     link: z.string().url().optional(),
     image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    imageCaption: z.string().optional(),
   }),
 });
 

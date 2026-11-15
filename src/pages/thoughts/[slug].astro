@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ThoughtImage from '../../components/ThoughtImage.astro';
 import { formatDate } from '../../lib/date';
 import { projectBySlug } from '../../lib/projects';
 import { tagHref, thoughtTitle } from '../../lib/thoughts';
@@ -29,7 +30,13 @@ const project = entry.data.project ? projectBySlug(entry.data.project) : undefin
 
     <div class="body">
       <Content />
-      {entry.data.image && <img class="shot" src={entry.data.image} alt="" />}
+      {entry.data.image && (
+        <ThoughtImage
+          src={entry.data.image}
+          alt={entry.data.imageAlt}
+          caption={entry.data.imageCaption}
+        />
+      )}
       {entry.data.tags.length > 0 && (
         <p class="tags">
           {entry.data.tags.map((tag) => (
