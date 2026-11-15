@@ -43,7 +43,15 @@ image: /img/...          # 可选，最多一张
 pnpm thought "今天想到的一句话"
 ```
 
-然后 `git add -A && git commit -m "thought: ..." && git push`，约 40 秒后上线。
+然后 `git add -A && git commit -m "thought: ..." && git push`，合并到 `main` 后约 40 秒上线。
+
+几条约定：
+
+- **文件名就是 URL**：`2025-06-07-cline.md` → `/thoughts/2025-06-07-cline/`。发布后不要改文件名，否则旧链接会 404。
+- 同一天第二条用 `-2`、`-3`，脚本会自动处理；手动建文件时注意别重名。
+- `tags` 会自动生成 `/thoughts/tag/<tag>/` 页面，中文标签也可以。
+- 配图放到 `public/img/`，frontmatter 写 `image: /img/xxx.webp`；也可以在正文里用 Markdown 图片。
+- 超过 300 字就不太适合想法流了，建议拆成两条，或者告诉我加回长文类型。
 
 ### 项目
 
@@ -63,15 +71,43 @@ pnpm thought "今天想到的一句话"
   order: 1
 ```
 
-Star 数由 `src/data/stars.json` 覆盖，构建前可手动刷新：
+新增一个项目：
+
+1. 在 `projects.yml` 对应分组下追加一条，字段照抄上面的例子。
+2. `group` 只能是 `product` / `library` / `lab`；`status` 只能是 `active` / `paused` / `archived` / `new` / `experiment`。
+3. `site` 和 `repo` 至少填一个；都空时整行链接是 `#`。
+4. 想在首页露出就设 `featured: true`，用 `order` 排顺序；首页只取前 6 个。
+5. `stars` 先填 0 或当前值即可。部署时 Actions 会自动跑 `pnpm stars` 刷新，本地也可以手动跑：
 
 ```bash
-pnpm stars   # 需要 GITHUB_TOKEN 时可提高限额；失败会保留旧值
+pnpm stars   # 有 GITHUB_TOKEN 更好；失败会保留旧值
 ```
+
+Star 数由 `src/data/stars.json` 覆盖，YAML 里的值是兜底。
 
 ### 归档
 
 37 篇 2024–2025 年的长文在 `src/content/archive/`，保留旧 URL `/blog/<slug>/`。**不要改 frontmatter 里的 `slug`**，会断链。
+
+### 发布检查
+
+```bash
+PATH=/usr/local/bin:$PATH pnpm dev     # 本地看一眼
+git add -A
+git commit -m "thought: ..."           # 或 "project: ..."
+git push
+```
+
+内容改动会出现在哪里：
+
+| 改动 | 影响 |
+| --- | --- |
+| 新增想法 | 首页「最近在想」、`/thoughts/`、RSS、sitemap、对应标签页 |
+| 修改想法正文 | 列表与详情同步；URL 不变 |
+| 重命名想法文件 | URL 变化，旧链接 404 |
+| 新增项目 | `/projects/` 对应分组；`featured` 可能进首页 |
+| 修改项目状态/链接 | 目录行即时更新；URL 不变 |
+| 归档文章 | 不参与新内容，保持原 URL |
 
 ## 部署
 
