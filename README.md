@@ -63,6 +63,8 @@ Star 数由 `src/data/stars.json` 覆盖，YAML 里的值是兜底。
 - id: quark-pan
   title: 夸克网盘
   desc: 大文件下载与备份，素材包直接转存
+  image: https://.../cover.webp       # 可选，卡片封面（16:9 最好看）
+  imageAlt: 夸克网盘界面
   url: https://pan.quark.cn/          # 换成带返佣参数的链接
   tag: 资源下载
   mark: 盘                           # 左侧小方块里的字

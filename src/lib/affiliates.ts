@@ -6,6 +6,8 @@ export interface Affiliate {
   title: string;
   desc: string;
   url: string;
+  image?: string;
+  imageAlt?: string;
   tag?: string;
   mark?: string;
   sponsored?: boolean;

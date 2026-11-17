@@ -1727,21 +1727,21 @@ button {
 }
 
 .promo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 14px;
 }
 
 .promo-card {
+  flex: 1 1 300px;
   display: flex;
   flex-direction: column;
-  min-height: 158px;
-  padding: 18px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--r);
   text-decoration: none;
   color: inherit;
+  overflow: hidden;
   transition: border-color 0.15s, background 0.15s;
 }
 
@@ -1750,29 +1750,36 @@ button {
   background: var(--canvas-soft);
 }
 
-.promo-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
+.promo-cover {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-bottom: 1px solid var(--line-soft);
+  background: var(--accent-soft);
+  overflow: hidden;
 }
 
-.promo-icon {
+.promo-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.promo-cover-fallback {
   display: grid;
   place-items: center;
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--line);
-  border-radius: var(--r-sm);
-  background: var(--canvas);
-  font: 500 10px var(--mono);
-  color: var(--ink);
+  height: 100%;
+  font: 500 13px var(--mono);
+  color: var(--muted);
 }
 
 .promo-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   padding: 3px 6px;
   border-radius: 4px;
-  background: var(--canvas-soft);
+  background: rgba(250, 250, 247, 0.94);
   color: var(--muted);
   font: 500 8.5px var(--mono);
   letter-spacing: 0.06em;
@@ -1783,17 +1790,24 @@ button {
   color: var(--accent);
 }
 
+.promo-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 16px 18px 18px;
+}
+
 .promo-card h3 {
-  margin: 14px 0 0;
-  font-size: 15px;
+  margin: 0;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.015em;
 }
 
 .promo-card p {
-  margin: 5px 0 0;
-  font-size: 12px;
-  line-height: 1.6;
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  line-height: 1.65;
   color: var(--muted);
 }
 
@@ -1821,9 +1835,6 @@ button {
     gap: 10px;
   }
 
-  .promo-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 640px) {
@@ -1848,7 +1859,5 @@ button {
     gap: 10px;
   }
 
-  .promo-card {
-    min-height: 150px;
-  }
+
 }

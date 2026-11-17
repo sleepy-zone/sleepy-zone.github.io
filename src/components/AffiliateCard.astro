@@ -19,11 +19,24 @@ const { item } = Astro.props;
   data-track-type={item.sponsored ? 'sponsored' : 'recommended'}
   data-track-label={item.title}
 >
-  <div class="promo-top">
-    <span class="promo-icon" aria-hidden="true">{item.mark}</span>
+  <div class="promo-cover">
+    {item.image ? (
+      <img
+        src={item.image}
+        alt={item.imageAlt ?? item.title}
+        width="640"
+        height="360"
+        loading="lazy"
+        decoding="async"
+      />
+    ) : (
+      <div class="promo-cover-fallback" aria-hidden="true">{item.mark}</div>
+    )}
     <span class={`promo-tag${item.sponsored ? ' is-sponsored' : ''}`}>{item.sponsored ? '推广' : '推荐'}</span>
   </div>
-  <h3>{item.title}</h3>
-  <p>{item.desc}</p>
-  <span class="promo-link">{item.tag || '查看'} <i aria-hidden="true">↗</i></span>
+  <div class="promo-body">
+    <h3>{item.title}</h3>
+    <p>{item.desc}</p>
+    <span class="promo-link">{item.tag || '查看'} <i aria-hidden="true">↗</i></span>
+  </div>
 </a>
