@@ -3,32 +3,24 @@
 # sponsored: false → 显示「推荐」，不写佣金披露；
 # sponsored: true  → 显示「推广」，并在区块下方显示佣金披露。
 # 换成推广链接后，把 url 改成带返佣参数的地址即可。
-- id: quark-pan
-  title: 夸克网盘
-  desc: 大文件下载与备份，素材包直接转存
-  url: https://pan.quark.cn/
-  tag: 资源下载
+- id: mole
+  title: Mole
+  desc: 清理几十 GB 垃圾和 AI 工具旧数据，卸载和更新软件，分析磁盘，维护系统，实时查看 Mac 运行状态
+  image: https://mole.fit/img/en/status.webp
+  url: https://mole.fit/?atp=sleepy
+  tag: 系统软件
   mark: 盘
   sponsored: false
   enabled: true
   order: 1
 
-- id: openrouter
-  title: OpenRouter
-  desc: 一个 API 调用多家模型，适合做 AI 工具
+- id: skillry
+  title: Skillry
+  desc: 有品味的 Agent Skills
   url: https://openrouter.ai/
-  tag: AI API
+  image: https://media.skillry.dev/cdn-cgi/image/width=960,quality=80,fit=scale-down,format=auto/home/made-by-skillry/studio-designed-by-hand.93234d1014.png
+  tag: skill AI
   mark: AI
   sponsored: false
   enabled: true
   order: 2
-
-- id: namecheap
-  title: Namecheap
-  desc: 域名注册与 SSL，个人站够用
-  url: https://www.namecheap.com/
-  tag: 域名与建站
-  mark: 域
-  sponsored: false
-  enabled: true
-  order: 3

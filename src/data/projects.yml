@@ -113,7 +113,7 @@
   image: /img/projects/sticker-library-cn.webp
   imageAlt: 表情包素材库
   group: library
-  status: paused
+  status: active
   stack: [JavaScript]
   repo: https://github.com/sleepy-zone/sticker-library-cn
   stars: 0
