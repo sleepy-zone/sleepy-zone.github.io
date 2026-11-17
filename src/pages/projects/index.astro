@@ -7,11 +7,11 @@ import { projects, projectsByGroup } from '../../lib/projects';
 const online = projects.filter((project) => project.site).length;
 ---
 
-<BaseLayout title="项目" description="SleepyZone 做过的项目">
+<BaseLayout title="项目" description="SleepyZone 的项目与 AI 绘图资源">
   <section class="wrap page-head">
     <p class="kicker">ALL PROJECTS · 2019—2026</p>
     <h1>项目</h1>
-    <p class="sub">我的个人项目汇总</p>
+    <p class="sub">做过的工具，以及能直接打开用的素材库。</p>
   </section>
 
   <div class="wrap">
@@ -28,6 +28,6 @@ const online = projects.filter((project) => project.site).length;
       </section>
     ))}
 
-    <p class="legend">STARS = GitHub Star，构建时自动同步 · 状态：维护中 / 暂停 / 新</p>
+    <p class="legend">STARS = GitHub Star，构建时自动同步 · 状态：维护中 / 暂停</p>
   </div>
 </BaseLayout>

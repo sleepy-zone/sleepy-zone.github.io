@@ -35,7 +35,7 @@
     if (window.__trackDebug) console.log("[track]", name, rec.params);
   }
 
-  var CLARITY_TAGS = ["lib", "type", "value", "label", "mode", "action", "trigger", "id"];
+  var CLARITY_TAGS = ["lib", "type", "value", "label", "mode", "action", "trigger", "id", "free"];
 
   function dispatch(provider, name, params) {
     try {
@@ -127,7 +127,7 @@
 
   function paramsFrom(el) {
     var params = { lib: el.getAttribute("data-track-lib") || "site" };
-    ["id", "type", "value", "label", "mode", "action", "trigger"].forEach(function (key) {
+    ["id", "type", "value", "label", "mode", "action", "trigger", "free"].forEach(function (key) {
       var value = el.getAttribute("data-track-" + key);
       if (value) params[key] = value;
     });

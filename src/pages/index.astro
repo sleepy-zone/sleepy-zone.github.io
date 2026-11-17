@@ -1,71 +1,84 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import StatusCard from '../components/StatusCard.astro';
-import ThoughtItem from '../components/ThoughtItem.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import AffiliateCard from '../components/AffiliateCard.astro';
 import { site } from '../data/site';
-import { formatDate } from '../lib/date';
 import { featuredProjects, projects } from '../lib/projects';
-import { sortThoughts } from '../lib/thoughts';
+import { affiliates, hasSponsored } from '../lib/affiliates';
 
-const thoughts = (await getCollection('thoughts')).sort(sortThoughts);
-const recent = thoughts.slice(0, 4);
-const featured = featuredProjects.slice(0, 6);
-const latest = thoughts[0]?.data.date;
+const featured = [...featuredProjects]
+  .sort((a, b) => {
+    const rank = (project: (typeof projects)[number]) => (project.group === 'library' ? 0 : 1);
+    return rank(a) - rank(b) || a.order - b.order;
+  })
+  .slice(0, 5);
+const libraryCount = projects.filter((project) => project.group === 'library').length;
 ---
 
 <BaseLayout>
-  <section class="wrap hero">
-    <div class="hero-copy">
-      <p class="kicker">{site.hero.kicker}</p>
-      <h1>
-        {site.hero.title}<br />
-        {site.hero.titleSecond}<span class="accent">{site.hero.titleAccent}</span>{site.hero.titleEnd}
-      </h1>
-      <p class="lede">{site.hero.lede}</p>
-      <div class="hero-actions">
-        <a class="btn btn-accent" href="/thoughts/" data-track="cta_click" data-track-lib="hero" data-track-value="thoughts" data-track-label="读想法">读想法 <span aria-hidden="true">→</span></a>
-        <a class="btn" href="/projects/" data-track="cta_click" data-track-lib="hero" data-track-value="projects" data-track-label="看项目">看项目</a>
-      </div>
-      <p class="now">
-        <span class="dot"></span>
-        NOW — {site.hero.now}{latest ? ` · 最后一条 ${formatDate(latest)}` : ''}
-      </p>
+  <section class="wrap masthead">
+    <p class="kicker">{site.hero.kicker}</p>
+    <h1>
+      {site.hero.title}<br />
+      {site.hero.titleSecond}<span class="accent">{site.hero.titleAccent}</span>{site.hero.titleEnd}
+    </h1>
+    <p class="lede">{projects.length} 个项目、{libraryCount} 个资源库：{site.hero.lede}</p>
+    <div class="masthead-actions">
+      <a
+        class="btn btn-accent"
+        href="#projects"
+        data-track="cta_click"
+        data-track-lib="home"
+        data-track-value="projects"
+        data-track-label="看项目"
+      >看项目 <span aria-hidden="true">→</span></a>
+      <a
+        class="btn"
+        href="#picks"
+        data-track="cta_click"
+        data-track-lib="home"
+        data-track-value="picks"
+        data-track-label="工具推荐"
+      >工具推荐</a>
     </div>
-
-    <StatusCard />
+    <p class="masthead-stats">
+      <b>{projects.length}</b> 个项目 <span>/</span>
+      <b>{libraryCount}</b> 个资源库 <span>/</span>
+      <b>373</b> 个标签
+    </p>
   </section>
 
-  <section class="wrap section section-notes">
+  <section class="wrap section" id="projects">
     <div class="section-head">
       <div>
-        <p class="sec-kicker">01 / NOTES</p>
-        <h2>最近在想</h2>
+        <p class="sec-kicker">01 / PROJECTS</p>
+        <h2>项目</h2>
       </div>
-      <a class="more" href="/thoughts/">全部 {thoughts.length} 条 →</a>
+      <a class="more" href="/projects/">全部 {projects.length} 个 <span aria-hidden="true">→</span></a>
     </div>
 
-    {recent.length > 0 ? (
-      <div class="thought-list">
-        {recent.map((entry) => <ThoughtItem entry={entry} />)}
-      </div>
-    ) : (
-      <p class="empty">还没有想法，过几天再来看看。</p>
-    )}
-  </section>
-
-  <section class="wrap section">
-    <div class="section-head">
-      <div>
-        <p class="sec-kicker">02 / PROJECTS</p>
-        <h2>在做的东西</h2>
-      </div>
-      <a class="more" href="/projects/">全部 {projects.length} 个 →</a>
-    </div>
-
-    <div class="project-grid">
+    <div class="project-grid home-projects">
       {featured.map((project) => <ProjectCard project={project} />)}
     </div>
   </section>
+
+  {affiliates.length > 0 && (
+    <section class="wrap section" id="picks">
+      <div class="section-head">
+        <div>
+          <p class="sec-kicker">02 / PICKS</p>
+          <h2>好用的工具推荐</h2>
+        </div>
+      </div>
+      <p class="pick-note">
+        {hasSponsored
+          ? '以下为推广链接，通过它们购买 / 订阅，我可能获得佣金，价格不变。'
+          : '以下是我在用的工具，点进去是官网。'}
+      </p>
+
+      <div class="promo-grid">
+        {affiliates.map((item) => <AffiliateCard item={item} />)}
+      </div>
+    </section>
+  )}
 </BaseLayout>

@@ -22,7 +22,7 @@ const {
 const siteUrl = Astro.site ?? new URL(`https://${site.domain}`);
 const canonical = new URL(Astro.url.pathname, siteUrl);
 const ogImage = new URL('/og.png', siteUrl);
-const pageTitle = title ? `${title} — ${site.title}` : `${site.title} — 前端、开源与 AI 绘图`;
+const pageTitle = title ? `${title} — ${site.title}` : `${site.title} — 项目与 AI 绘图资源`;
 
 const schema = {
   '@context': 'https://schema.org',
@@ -49,7 +49,6 @@ const schema = {
     <meta name="theme-color" content="#F7F7F4" />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate" type="application/rss+xml" title="Sleepy Zone 想法" href="/rss.xml" />
     {noindex && <meta name="robots" content="noindex,follow" />}
 
     <meta property="og:type" content={ogType} />

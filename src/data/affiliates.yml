@@ -1,0 +1,34 @@
+# 首页「好用的工具推荐」
+# 一条一个工具；enabled: false 可暂时隐藏。
+# sponsored: false → 显示「推荐」，不写佣金披露；
+# sponsored: true  → 显示「推广」，并在区块下方显示佣金披露。
+# 换成推广链接后，把 url 改成带返佣参数的地址即可。
+- id: quark-pan
+  title: 夸克网盘
+  desc: 大文件下载与备份，素材包直接转存
+  url: https://pan.quark.cn/
+  tag: 资源下载
+  mark: 盘
+  sponsored: false
+  enabled: true
+  order: 1
+
+- id: openrouter
+  title: OpenRouter
+  desc: 一个 API 调用多家模型，适合做 AI 工具
+  url: https://openrouter.ai/
+  tag: AI API
+  mark: AI
+  sponsored: false
+  enabled: true
+  order: 2
+
+- id: namecheap
+  title: Namecheap
+  desc: 域名注册与 SSL，个人站够用
+  url: https://www.namecheap.com/
+  tag: 域名与建站
+  mark: 域
+  sponsored: false
+  enabled: true
+  order: 3

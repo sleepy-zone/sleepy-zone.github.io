@@ -1,0 +1,29 @@
+---
+import type { Affiliate } from '../lib/affiliates';
+
+interface Props {
+  item: Affiliate;
+}
+
+const { item } = Astro.props;
+---
+
+<a
+  class="promo-card"
+  href={item.url}
+  target="_blank"
+  rel={item.sponsored ? 'sponsored nofollow noopener' : 'noopener'}
+  data-track="tool_click"
+  data-track-lib="picks"
+  data-track-id={item.id}
+  data-track-type={item.sponsored ? 'sponsored' : 'recommended'}
+  data-track-label={item.title}
+>
+  <div class="promo-top">
+    <span class="promo-icon" aria-hidden="true">{item.mark}</span>
+    <span class={`promo-tag${item.sponsored ? ' is-sponsored' : ''}`}>{item.sponsored ? '推广' : '推荐'}</span>
+  </div>
+  <h3>{item.title}</h3>
+  <p>{item.desc}</p>
+  <span class="promo-link">{item.tag || '查看'} <i aria-hidden="true">↗</i></span>
+</a>

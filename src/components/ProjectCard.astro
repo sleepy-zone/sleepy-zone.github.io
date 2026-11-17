@@ -23,6 +23,7 @@ const label = statusLabels[project.status];
   data-track-label={project.name}
   data-track-type={project.group}
   data-track-value={project.site ? 'site' : 'repo'}
+  data-track-free={project.freeDownload ? 'true' : undefined}
 >
   <div class="project-cover">
     {project.image ? (
@@ -46,6 +47,10 @@ const label = statusLabels[project.status];
       {project.stars > 0 && <span class="project-stars">★ {formatStars(project.stars)}</span>}
     </div>
     <p class="project-desc">{project.desc}</p>
+    {project.resourceNote && <p class="project-note">{project.resourceNote}</p>}
+    {project.freeDownload && (
+      <p class="project-free"><span aria-hidden="true">↓</span> 资源可免费打包下载</p>
+    )}
     <div class="project-stack">
       {project.stack.map((item) => <span>{item}</span>)}
     </div>

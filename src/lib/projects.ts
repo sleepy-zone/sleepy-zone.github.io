@@ -7,6 +7,8 @@ export interface Project {
   slug: string;
   name: string;
   desc: string;
+  freeDownload?: boolean;
+  resourceNote?: string;
   image?: string;
   imageAlt?: string;
   group: 'product' | 'library';
