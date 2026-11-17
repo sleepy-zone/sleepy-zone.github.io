@@ -44,7 +44,7 @@ pnpm preview
 1. 在 `projects.yml` 里追加或修改一条，字段照上面的例子。
 2. `group` 只能是 `product` / `library`；`status` 见注释。
 3. `site` 和 `repo` 至少填一个；都空时链接是 `#`。
-4. 想让首页出现就设 `featured: true`，首页最多取 5 个；资源库会排在工具前面。
+4. 想让首页出现就设 `featured: true`，首页最多取 6 个；资源库会排在工具前面。
 5. `freeDownload: true` 时卡片会多一行 `↓ 资源可免费打包下载`；不提供打包的项目不要开。
 6. `resourceNote` 写卡片上的数量，例如 `"373 标签 · 29 分类 / 12 配方"`。
 7. `stars` 先填 0 或当前值。部署时 Actions 会自动跑 `pnpm sync-stars` 刷新；本地也可以：

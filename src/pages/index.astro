@@ -11,7 +11,7 @@ const featured = [...featuredProjects]
     const rank = (project: (typeof projects)[number]) => (project.group === 'library' ? 0 : 1);
     return rank(a) - rank(b) || a.order - b.order;
   })
-  .slice(0, 5);
+  .slice(0, 6);
 ---
 
 <BaseLayout>
