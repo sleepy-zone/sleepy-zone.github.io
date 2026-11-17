@@ -136,7 +136,7 @@ src/
 ├─ data/           projects.yml、affiliates.yml、stars.json、站点文案
 ├─ layouts/        BaseLayout
 ├─ lib/            项目、工具推荐、日期、文本
-├─ pages/          首页、项目、关于、归档、404
+├─ pages/          首页、项目、归档、404
 └─ styles/         global.css（与 char-db-cn 一致的主题 token + 全站样式）
 ```
 

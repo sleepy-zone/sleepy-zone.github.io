@@ -12,17 +12,26 @@ const featured = [...featuredProjects]
     return rank(a) - rank(b) || a.order - b.order;
   })
   .slice(0, 5);
-const libraryCount = projects.filter((project) => project.group === 'library').length;
 ---
 
 <BaseLayout>
   <section class="wrap masthead">
     <p class="kicker">{site.hero.kicker}</p>
-    <h1>
-      {site.hero.title}<br />
-      {site.hero.titleSecond}<span class="accent">{site.hero.titleAccent}</span>{site.hero.titleEnd}
-    </h1>
-    <p class="lede">{projects.length} 个项目、{libraryCount} 个资源库：{site.hero.lede}</p>
+    <h1><span id="greeting">你好</span></h1>
+    <script is:inline>
+      (() => {
+        const hour = new Date().getHours();
+        const greeting =
+          hour < 5 ? '深夜了' :
+          hour < 11 ? '早上好' :
+          hour < 14 ? '中午好' :
+          hour < 18 ? '下午好' :
+          hour < 23 ? '晚上好' : '深夜了';
+        const node = document.getElementById('greeting');
+        if (node) node.textContent = greeting;
+      })();
+    </script>
+    <p class="lede">{site.hero.welcome}</p>
     <div class="masthead-actions">
       <a
         class="btn btn-accent"
@@ -30,8 +39,8 @@ const libraryCount = projects.filter((project) => project.group === 'library').l
         data-track="cta_click"
         data-track-lib="home"
         data-track-value="projects"
-        data-track-label="看项目"
-      >看项目 <span aria-hidden="true">→</span></a>
+        data-track-label="项目"
+      >项目 <span aria-hidden="true">→</span></a>
       <a
         class="btn"
         href="#picks"
@@ -41,11 +50,6 @@ const libraryCount = projects.filter((project) => project.group === 'library').l
         data-track-label="工具推荐"
       >工具推荐</a>
     </div>
-    <p class="masthead-stats">
-      <b>{projects.length}</b> 个项目 <span>/</span>
-      <b>{libraryCount}</b> 个资源库 <span>/</span>
-      <b>373</b> 个标签
-    </p>
   </section>
 
   <section class="wrap section" id="projects">

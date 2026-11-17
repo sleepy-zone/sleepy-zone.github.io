@@ -3,7 +3,6 @@ const path = Astro.url.pathname;
 const links = [
   { href: '/projects/', label: '项目' },
   { href: '/#picks', label: '工具推荐' },
-  { href: '/about/', label: '关于' },
 ];
 const isActive = (href: string) => path === href || path.startsWith(href);
 ---
