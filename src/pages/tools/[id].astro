@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { affiliateById, affiliates } from '../../lib/affiliates';
+import { breadcrumbSchema, toolApplicationSchema } from '../../lib/seo';
+
+export function getStaticPaths() {
+  return affiliates.map((item) => ({
+    params: { id: item.id },
+    props: { id: item.id },
+  }));
+}
+
+const { id } = Astro.props;
+const item = affiliateById(id);
+if (!item) throw new Error(`Tool not found: ${id}`);
+
+const description = `${item.desc}。${item.platform ? `${item.platform} 工具，` : ''}包含适用场景、使用建议与官网入口。`;
+const others = affiliates.filter((tool) => tool.id !== item.id);
+---
+
+<BaseLayout
+  title={item.title}
+  description={description}
+  structuredData={[
+    toolApplicationSchema(item),
+    breadcrumbSchema([
+      { name: '首页', url: '/' },
+      { name: '工具推荐', url: '/tools/' },
+      { name: item.title, url: `/tools/${item.id}/` },
+    ]),
+  ]}
+>
+  <div class="wrap detail-page">
+    <nav class="crumbs" aria-label="面包屑">
+      <a href="/">首页</a>
+      <span>/</span>
+      <a href="/tools/">工具推荐</a>
+      <span>/</span>
+      <span aria-current="page">{item.title}</span>
+    </nav>
+
+    <article class="detail-card">
+      <header class="detail-head">
+        <p class="kicker">TOOL / {item.tag || '推荐'}</p>
+        <h1>{item.title}</h1>
+        <p class="detail-lede">{item.desc}</p>
+        <div class="detail-meta">
+          <span class={`meta-pill ${item.sponsored ? 'new' : ''}`}>{item.sponsored ? '推广' : '推荐'}</span>
+          {item.platform && <span>{item.platform}</span>}
+          {item.tag && <span>{item.tag}</span>}
+        </div>
+      </header>
+
+      {item.image && (
+        <div class="detail-hero is-wide">
+          <img
+            src={item.image}
+            alt={item.imageAlt ?? item.title}
+            width="960"
+            height="540"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+      )}
+
+      <div class="detail-actions">
+        <a
+          class="btn btn-accent"
+          href={item.url}
+          target="_blank"
+          rel={item.sponsored ? 'sponsored nofollow noopener' : 'noopener'}
+          data-track="tool_click"
+          data-track-lib="picks"
+          data-track-id={item.id}
+          data-track-type={item.sponsored ? 'sponsored' : 'recommended'}
+          data-track-label={item.title}
+        >前往官网 <span aria-hidden="true">↗</span></a>
+        <a class="btn" href="/tools/">全部工具</a>
+      </div>
+
+      <div class="detail-grid tool-detail-grid">
+        <div class="detail-main">
+          {item.sections?.length ? item.sections.map((section) => (
+            <section class="detail-section">
+              <h2>{section.title}</h2>
+              {section.text && <p class="detail-copy">{section.text}</p>}
+              {section.items?.length ? (
+                <ul>
+                  {section.items.map((entry) => <li>{entry}</li>)}
+                </ul>
+              ) : null}
+            </section>
+          )) : <p class="detail-copy">{item.desc}</p>}
+        </div>
+      </div>
+
+      <p class="tool-disclosure">
+        {item.sponsored
+          ? '这是推广链接。通过它购买 / 订阅，我可能获得佣金，价格不变。'
+          : '这是官网链接，不是推广链接。'}
+      </p>
+
+      {others.length > 0 && (
+        <section class="detail-related">
+          <h2>其他工具</h2>
+          <div class="related-links">
+            {others.map((tool) => (
+              <a href={`/tools/${tool.id}/`}>{tool.title} <span aria-hidden="true">→</span></a>
+            ))}
+          </div>
+        </section>
+      )}
+    </article>
+  </div>
+</BaseLayout>

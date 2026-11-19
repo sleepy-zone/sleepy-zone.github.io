@@ -1,5 +1,6 @@
 import type { Project } from './projects';
 import { projectHref } from './projects';
+import type { Affiliate } from './affiliates';
 
 export const SITE_URL = 'https://sleepyzone.online';
 export const PERSON_ID = `${SITE_URL}/#person`;
@@ -34,19 +35,71 @@ export function projectItemList(projects: Project[], name = 'Sleepy Zone 项目'
     name,
     numberOfItems: projects.length,
     itemListElement: projects.map((project, index) => {
-      const href = projectHref(project);
       return {
         '@type': 'ListItem',
         position: index + 1,
         item: {
           '@type': 'CreativeWork',
-          name: project.name,
+          name: project.displayName ?? project.name,
           description: project.desc,
-          url: href === '#' ? `${SITE_URL}/projects/` : absoluteUrl(href),
+          url: `${SITE_URL}/projects/${project.slug}/`,
           ...(project.image ? { image: absoluteUrl(project.image) } : {}),
         },
       };
     }),
+  };
+}
+
+export function projectApplicationSchema(project: Project) {
+  const href = projectHref(project);
+  return {
+    '@type': 'WebApplication',
+    '@id': `${SITE_URL}/projects/${project.slug}/#app`,
+    name: project.displayName ?? project.name,
+    description: project.detail?.intro ?? project.desc,
+    url: href === '#' ? `${SITE_URL}/projects/${project.slug}/` : absoluteUrl(href),
+    ...(project.image ? { image: absoluteUrl(project.image) } : {}),
+    applicationCategory: project.group === 'library' ? 'DesignApplication' : 'UtilitiesApplication',
+    operatingSystem: 'Web',
+    author: { '@id': PERSON_ID },
+    isPartOf: { '@id': WEBSITE_ID },
+    inLanguage: 'zh-Hans',
+  };
+}
+
+export function toolItemList(items: Affiliate[], name = 'Sleepy Zone 工具推荐') {
+  return {
+    '@type': 'ItemList',
+    name,
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'SoftwareApplication',
+        name: item.title,
+        description: item.desc,
+        url: `${SITE_URL}/tools/${item.id}/`,
+        ...(item.image ? { image: absoluteUrl(item.image) } : {}),
+        applicationCategory: item.platform === 'macOS' ? 'UtilitiesApplication' : 'BusinessApplication',
+        operatingSystem: item.platform ?? 'Web',
+      },
+    })),
+  };
+}
+
+export function toolApplicationSchema(item: Affiliate) {
+  return {
+    '@type': 'SoftwareApplication',
+    '@id': `${SITE_URL}/tools/${item.id}/#app`,
+    name: item.title,
+    description: item.desc,
+    url: absoluteUrl(item.url),
+    ...(item.image ? { image: absoluteUrl(item.image) } : {}),
+    applicationCategory: item.platform === 'macOS' ? 'UtilitiesApplication' : 'BusinessApplication',
+    operatingSystem: item.platform ?? 'Web',
+    isPartOf: { '@id': WEBSITE_ID },
+    inLanguage: 'zh-Hans',
   };
 }
 

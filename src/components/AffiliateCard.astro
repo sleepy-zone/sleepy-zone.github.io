@@ -3,17 +3,19 @@ import type { Affiliate } from '../lib/affiliates';
 
 interface Props {
   item: Affiliate;
+  detail?: boolean;
 }
 
-const { item } = Astro.props;
+const { item, detail = false } = Astro.props;
+const href = detail ? `/tools/${item.id}/` : item.url;
 ---
 
 <a
   class="promo-card"
-  href={item.url}
-  target="_blank"
-  rel={item.sponsored ? 'sponsored nofollow noopener' : 'noopener'}
-  data-track="tool_click"
+  href={href}
+  target={detail ? undefined : '_blank'}
+  rel={detail ? undefined : item.sponsored ? 'sponsored nofollow noopener' : 'noopener'}
+  data-track={detail ? 'tool_card_click' : 'tool_click'}
   data-track-lib="picks"
   data-track-id={item.id}
   data-track-type={item.sponsored ? 'sponsored' : 'recommended'}
@@ -37,6 +39,6 @@ const { item } = Astro.props;
   <div class="promo-body">
     <h3>{item.title}</h3>
     <p>{item.desc}</p>
-    <span class="promo-link">{item.tag || '查看'} <i aria-hidden="true">↗</i></span>
+    <span class="promo-link">{detail ? '详情' : item.tag || '查看'} <i aria-hidden="true">{detail ? '→' : '↗'}</i></span>
   </div>
 </a>

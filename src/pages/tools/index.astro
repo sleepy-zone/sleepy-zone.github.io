@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateCard from '../../components/AffiliateCard.astro';
+import { affiliates, hasSponsored } from '../../lib/affiliates';
+import { breadcrumbSchema, toolItemList } from '../../lib/seo';
+
+const description = `SleepyZone 在用的工具推荐：${affiliates.map((item) => item.title).join('、')}。包含适用场景、平台和官网入口。`;
+---
+
+<BaseLayout
+  title="好用的工具推荐"
+  description={description}
+  structuredData={[
+    toolItemList(affiliates),
+    breadcrumbSchema([
+      { name: '首页', url: '/' },
+      { name: '工具推荐', url: '/tools/' },
+    ]),
+  ]}
+>
+  <section class="wrap page-head">
+    <p class="kicker">PICKS · TOOLS I USE</p>
+    <h1>好用的工具推荐</h1>
+    <p class="sub">这里放我实际在用的工具，写清楚适合谁、能做什么，再给官网入口。</p>
+    <p class="count">{affiliates.length} TOOLS · 按推荐顺序排列</p>
+  </section>
+
+  <div class="wrap">
+    <p class="pick-note">
+      {hasSponsored
+        ? '以下为推广链接，详情页里有官网入口；通过它们购买 / 订阅，我可能获得佣金，价格不变。'
+        : '以下是我在用的工具，详情页里有官网入口。'}
+    </p>
+    <div class="promo-grid">
+      {affiliates.map((item) => <AffiliateCard item={item} detail />)}
+    </div>
+  </div>
+</BaseLayout>

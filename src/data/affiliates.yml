@@ -10,6 +10,17 @@
   url: https://mole.fit/?atp=sleepy
   tag: 系统软件
   mark: 盘
+  platform: macOS
+  sections:
+    - title: 能做什么
+      items:
+        - 清理几十 GB 垃圾和 AI 工具旧数据
+        - 卸载和更新软件，分析磁盘占用
+        - 维护系统，实时查看 Mac 运行状态
+    - title: 适合谁
+      text: Mac 空间紧张、装了很多 AI 工具或模型，或者想用一个工具代替多个清理软件的人。
+    - title: 使用建议
+      text: 先看磁盘分析再清理；卸载和更新前确认目标，重要数据照常备份。具体功能以官网为准。
   sponsored: false
   enabled: true
   order: 1
@@ -21,6 +32,14 @@
   image: https://media.skillry.dev/cdn-cgi/image/width=960,quality=80,fit=scale-down,format=auto/home/made-by-skillry/studio-designed-by-hand.93234d1014.png
   tag: skill AI
   mark: AI
+  platform: Web
+  sections:
+    - title: 是什么
+      text: Skillry 是一个 Agent Skills 合集，官方介绍是“有品味的 Agent Skills”。
+    - title: 适合谁
+      text: 用 Agent 做设计、前端或内容工作，想直接复用现成 skills 的人。
+    - title: 使用建议
+      text: 从官网查看最新 skills 和适用场景；具体能力以官方页面为准。
   sponsored: false
   enabled: true
   order: 2

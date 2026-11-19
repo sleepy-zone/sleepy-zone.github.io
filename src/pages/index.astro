@@ -46,10 +46,10 @@ const featured = [...featuredProjects]
       >项目 <span aria-hidden="true">→</span></a>
       <a
         class="btn"
-        href="#picks"
+        href="/tools/"
         data-track="cta_click"
         data-track-lib="home"
-        data-track-value="picks"
+        data-track-value="tools"
         data-track-label="工具推荐"
       >工具推荐</a>
     </div>
@@ -76,15 +76,16 @@ const featured = [...featuredProjects]
           <p class="sec-kicker">02 / PICKS</p>
           <h2>好用的工具推荐</h2>
         </div>
+        <a class="more" href="/tools/">全部 {affiliates.length} 个 <span aria-hidden="true">→</span></a>
       </div>
       <p class="pick-note">
         {hasSponsored
-          ? '以下为推广链接，通过它们购买 / 订阅，我可能获得佣金，价格不变。'
-          : '以下是我在用的工具，点进去是官网。'}
+          ? '以下为推广链接，详情页里有官网入口；通过它们购买 / 订阅，我可能获得佣金，价格不变。'
+          : '以下是我在用的工具，详情页里有官网入口。'}
       </p>
 
       <div class="promo-grid">
-        {affiliates.map((item) => <AffiliateCard item={item} />)}
+        {affiliates.map((item) => <AffiliateCard item={item} detail />)}
       </div>
     </section>
   )}

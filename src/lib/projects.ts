@@ -6,9 +6,15 @@ import type { ProjectStatus } from '../data/site';
 export interface Project {
   slug: string;
   name: string;
+  displayName?: string;
   desc: string;
   freeDownload?: boolean;
   resourceNote?: string;
+  detail?: {
+    intro?: string;
+    highlights?: string[];
+    useCases?: string[];
+  };
   image?: string;
   imageAlt?: string;
   group: 'product' | 'library';
@@ -43,6 +49,10 @@ export function projectBySlug(slug: string) {
 
 export function projectHref(project: Project) {
   return project.site || project.repo || '#';
+}
+
+export function projectDetailHref(project: Project) {
+  return `/projects/${project.slug}/`;
 }
 
 export function formatStars(stars: number) {

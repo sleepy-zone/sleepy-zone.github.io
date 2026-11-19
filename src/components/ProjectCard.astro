@@ -1,6 +1,6 @@
 ---
 import { statusLabels } from '../data/site';
-import { formatStars, projectHref, type Project } from '../lib/projects';
+import { formatStars, projectDetailHref, type Project } from '../lib/projects';
 
 interface Props {
   project: Project;
@@ -8,22 +8,19 @@ interface Props {
 }
 
 const { project, priority = false } = Astro.props;
-const href = projectHref(project);
-const isExternal = /^https?:\/\//.test(href);
+const href = projectDetailHref(project);
 const label = statusLabels[project.status];
 ---
 
 <a
   class="project-card"
   href={href}
-  target={isExternal ? '_blank' : undefined}
-  rel={isExternal ? 'noopener' : undefined}
   data-track="project_click"
   data-track-lib="projects"
   data-track-id={project.slug}
   data-track-label={project.name}
   data-track-type={project.group}
-  data-track-value={project.site ? 'site' : 'repo'}
+  data-track-value="detail"
   data-track-free={project.freeDownload ? 'true' : undefined}
 >
   <div class="project-cover">
@@ -45,7 +42,7 @@ const label = statusLabels[project.status];
 
   <div class="project-body">
     <div class="project-title">
-      <h3>{project.name}</h3>
+      <h3>{project.displayName ?? project.name}</h3>
       {project.stars > 0 && <span class="project-stars">★ {formatStars(project.stars)}</span>}
     </div>
     <p class="project-desc">{project.desc}</p>
@@ -56,5 +53,6 @@ const label = statusLabels[project.status];
     <div class="project-stack">
       {project.stack.map((item) => <span>{item}</span>)}
     </div>
+    <span class="project-detail-link">项目详情 <span aria-hidden="true">→</span></span>
   </div>
 </a>

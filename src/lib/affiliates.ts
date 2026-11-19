@@ -10,6 +10,12 @@ export interface Affiliate {
   imageAlt?: string;
   tag?: string;
   mark?: string;
+  platform?: string;
+  sections?: Array<{
+    title: string;
+    text?: string;
+    items?: string[];
+  }>;
   sponsored?: boolean;
   enabled?: boolean;
   order?: number;
@@ -27,5 +33,9 @@ export const affiliates: Affiliate[] = parsed
     order: item.order ?? 100,
   }))
   .sort((a, b) => a.order - b.order);
+
+export function affiliateById(id: string) {
+  return affiliates.find((item) => item.id === id);
+}
 
 export const hasSponsored = affiliates.some((item) => item.sponsored);

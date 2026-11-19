@@ -24,8 +24,9 @@ pnpm preview
 ```yaml
 - slug: ai-ref-library-cn
   name: ai-ref-library-cn
+  displayName: AI 绘图素材库          # 详情页 H1 / 标题
   desc: AI 绘图素材库中文版：脸 / 姿势 / 服装
-  image: https://.../cover.png       # 也可以用 /img/projects/xxx.webp
+  image: /img/projects/ai-ref-library-cn.webp
   imageAlt: AI 作图素材库界面
   group: library                     # product | library
   status: active                     # active | paused | archived | new | experiment
@@ -33,8 +34,16 @@ pnpm preview
   site: https://sleepyzone.online/ai-ref-library-cn/
   repo: https://github.com/sleepy-zone/ai-ref-library-cn
   stars: 768
-  freeDownload: true                 # 卡片显示「资源可免费打包下载」
+  freeDownload: true                 # 卡片和详情页显示免费下载
   resourceNote: "3 个库 · 4,345 项"   # 卡片上的数据行
+  detail:
+    intro: "AI 绘图素材库中文版，把脸、姿势和服装拆成可检索的参考库。"
+    highlights:
+      - "脸库 1,499 张，按风格 / 发色 / 表情分类"
+      - "姿势 288 组 / 1,439 张，包含线稿"
+    useCases:
+      - "给 Stable Diffusion / Midjourney 找参考"
+      - "固定角色后做姿势和服装变体"
   featured: true                     # 是否进首页
   order: 2                           # 组内排序
 ```
@@ -43,11 +52,12 @@ pnpm preview
 
 1. 在 `projects.yml` 里追加或修改一条，字段照上面的例子。
 2. `group` 只能是 `product` / `library`；`status` 见注释。
-3. `site` 和 `repo` 至少填一个；都空时链接是 `#`。
+3. 项目卡片现在跳到本地详情页 `/projects/<slug>/`，详情页再给 `site` / `repo` 的外部入口；`site` 和 `repo` 至少填一个。
 4. 想让首页出现就设 `featured: true`，首页最多取 6 个；资源库会排在工具前面。
-5. `freeDownload: true` 时卡片会多一行 `↓ 资源可免费打包下载`；不提供打包的项目不要开。
-6. `resourceNote` 写卡片上的数量，例如 `"373 标签 · 29 分类 / 12 配方"`。
-7. `stars` 先填 0 或当前值。部署时 Actions 会自动跑 `pnpm sync-stars` 刷新；本地也可以：
+5. `freeDownload: true` 时卡片和详情页会显示免费下载提示；不提供打包的项目不要开。
+6. `resourceNote` 写资源数量，例如 `"373 标签 · 29 分类 / 12 配方"`。
+7. `detail.intro` / `highlights` / `useCases` 是详情页正文，写 2–3 条即可，避免所有项目页长得一样。
+8. `stars` 先填 0 或当前值。部署时 Actions 会自动跑 `pnpm sync-stars` 刷新；本地也可以：
 
 ```bash
 pnpm sync-stars   # 有 GITHUB_TOKEN 更好；失败会保留旧值
@@ -57,26 +67,34 @@ Star 数由 `src/data/stars.json` 覆盖，YAML 里的值是兜底。
 
 ## 好用的工具推荐
 
-首页 02 区块由 `src/data/affiliates.yml` 维护：
+首页 02 区块和 `/tools/` 由 `src/data/affiliates.yml` 维护：
 
 ```yaml
-- id: quark-pan
-  title: 夸克网盘
-  desc: 大文件下载与备份，素材包直接转存
-  image: https://.../cover.webp       # 可选，卡片封面（16:9 最好看）
-  imageAlt: 夸克网盘界面
-  url: https://pan.quark.cn/          # 换成带返佣参数的链接
-  tag: 资源下载
-  mark: 盘                           # 左侧小方块里的字
+- id: mole
+  title: Mole
+  desc: 清理垃圾、卸载更新软件、分析磁盘、查看 Mac 状态
+  image: https://mole.fit/img/en/status.webp
+  imageAlt: Mole 界面
+  url: https://mole.fit/?atp=sleepy   # 换成带返佣参数的链接
+  tag: 系统软件
+  mark: 盘
+  platform: macOS
+  sections:
+    - title: 能做什么
+      items:
+        - 清理垃圾和 AI 工具旧数据
+        - 卸载、更新软件，分析磁盘
+    - title: 适合谁
+      text: Mac 空间紧张、装了很多 AI 工具的人。
   sponsored: false                   # true → 显示「推广」+ 佣金披露
   enabled: true                      # false → 不显示
   order: 1
 ```
 
-- `sponsored: false` 显示小标签「推荐」，区块说明是「以下是我在用的工具，点进去是官网。」
-- 换成真实 affiliate 链接后把 `sponsored` 改成 `true`：卡片显示「推广」，区块显示「我可能获得佣金，价格不变」，链接自动加 `rel="sponsored nofollow noopener"`。
-- 最多放 3 个；没有链接的占位项直接 `enabled: false`，不要放 `#`。
-- 当前三条（夸克网盘 / OpenRouter / Namecheap）是示例，都是官网链接，处于「推荐」态。
+- 卡片跳到本地详情页 `/tools/<id>/`，详情页的「前往官网」才是外链。
+- `sponsored: false` 显示「推荐」，详情页说明是官网链接；改成 `true` 后显示「推广」、佣金披露，并自动加 `rel="sponsored nofollow noopener"`。
+- `sections` 写工具详情正文，避免只有一个推广卡。
+- 当前工具是 Mole 和 Skillry；Mole 的 `atp=sleepy` 看起来是推广参数，如果确认是 affiliate，应把 `sponsored` 改成 `true`。
 
 ## 图片
 
@@ -120,10 +138,10 @@ git push
 ## SEO
 
 - 页面标题、描述、canonical、OG/Twitter 卡片统一在 `src/layouts/BaseLayout.astro`。
-- 结构化数据在 `src/lib/seo.ts`：Person / Organization / WebSite / WebPage；首页和项目页是 ItemList，文章是 BlogPosting + BreadcrumbList。
-- 新增项目会自动进入项目页 ItemList；新增归档文章会自动进入归档 ItemList 和 BlogPosting。
+- 结构化数据在 `src/lib/seo.ts`：Person / Organization / WebSite / WebPage；首页和项目页是 ItemList，项目详情是 WebApplication，工具详情是 SoftwareApplication，文章是 BlogPosting + BreadcrumbList。
+- 新增项目会自动生成 `/projects/<slug>/` 并进入 ItemList；新增工具会自动生成 `/tools/<id>/`；归档文章自动进入 BlogPosting。
 - 社交卡片：`public/og.png`（1200×630）；品牌 logo：`public/logo-512.png`。
-- `sitemap-index.xml` 和 `robots.txt` 已配置；sitemap 只保留首页（priority 1.0）和 `/projects/`（0.9），归档博客保留可访问但不提交 sitemap。
+- `sitemap-index.xml` 和 `robots.txt` 已配置；sitemap 包含首页、项目列表/详情、工具列表/详情，归档博客保留可访问但不提交 sitemap。
 - 上线后到 Google Search Console / Bing Webmaster 提交 `https://sleepyzone.online/sitemap-index.xml`。
 - 19 个归档旧 URL 里的 `.md` 已去掉，旧地址会重定向到干净 URL；不要在新文章里使用带 `.md` 的 slug。
 
@@ -148,7 +166,7 @@ src/
 ├─ data/           projects.yml、affiliates.yml、stars.json、站点文案
 ├─ layouts/        BaseLayout
 ├─ lib/            项目、工具推荐、日期、文本
-├─ pages/          首页、项目、归档、404
+├─ pages/          首页、项目列表/详情、工具列表/详情、归档、404
 └─ styles/         global.css（与 char-db-cn 一致的主题 token + 全站样式）
 ```
 

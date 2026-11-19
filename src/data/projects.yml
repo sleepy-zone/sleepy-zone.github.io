@@ -4,6 +4,7 @@
 
 - slug: fabritor
   name: fabritor
+  displayName: "fabritor 图片编辑器"
   desc: 基于 fabric.js 的开源创意图片编辑器
   image: /img/projects/fabritor.webp
   imageAlt: fabritor 编辑器界面
@@ -13,11 +14,21 @@
   site: https://github.com/sleepy-zone/fabritor-web
   repo: https://github.com/sleepy-zone/fabritor-web
   stars: 1201
+  detail:
+    intro: "fabritor 是一个基于 fabric.js 的开源图片编辑器，适合在浏览器里快速拼图、加文字和做简单海报。"
+    highlights:
+      - "基于 fabric.js + React，打开网页就能用"
+      - "开源，可自己部署或二次开发"
+      - "适合做封面、配图和版式拼贴"
+    useCases:
+      - "给文章和社交媒体做配图"
+      - "把几张图快速拼成一张版式"
   featured: true
   order: 1
 
 - slug: woocs
   name: woocs
+  displayName: "woocs 微信 Markdown 编辑器"
   desc: 微信 Markdown 编辑器桌面应用，基于 doocs/md
   image: /img/projects/woocs.webp
   imageAlt: woocs 首页
@@ -27,11 +38,21 @@
   site: https://sleepyzone.online/woocs-home/
   repo: https://github.com/sleepy-zone/woocs
   stars: 73
+  detail:
+    intro: "woocs 是微信 Markdown 编辑器的桌面版，基于 doocs/md，把 Markdown 草稿排成可以直接粘贴到公众号的富文本。"
+    highlights:
+      - "Vue + Electron 桌面应用"
+      - "基于 doocs/md 的公众号排版能力"
+      - "支持导入导出和常用快捷键"
+    useCases:
+      - "公众号文章排版"
+      - "把 Markdown 笔记转成富文本"
   featured: false
   order: 4
 
 - slug: photor
   name: photor
+  displayName: "photor 截图美化"
   desc: 截图美化应用：网页版、浏览器插件、uTools 插件
   image: /img/projects/photor.webp
   imageAlt: photor 首页
@@ -40,11 +61,21 @@
   stack: [fabric.js]
   site: https://photor.fun
   stars: 0
+  detail:
+    intro: "photor 是截图美化工具，提供网页版、浏览器插件和 uTools 插件，给截图加背景、圆角和版式。"
+    highlights:
+      - "网页版 / 浏览器插件 / uTools 插件"
+      - "给截图加渐变背景和圆角阴影"
+      - "基于 fabric.js"
+    useCases:
+      - "美化教程和文档截图"
+      - "快速做分享图"
   featured: false
   order: 7
 
 - slug: ai-ref-library-cn
   name: ai-ref-library-cn
+  displayName: "AI 绘图素材库"
   desc: AI 绘图素材库中文版：脸 / 姿势 / 服装
   image: /img/projects/ai-ref-library-cn.webp
   imageAlt: AI 作图素材库界面
@@ -56,11 +87,21 @@
   site: https://sleepyzone.online/ai-ref-library-cn/
   repo: https://github.com/sleepy-zone/ai-ref-library-cn
   stars: 768
+  detail:
+    intro: "AI 绘图素材库中文版，把脸、姿势和服装拆成可检索的参考库，适合给 AI 绘图找角色、动作和服装参考。"
+    highlights:
+      - "脸库 1,499 张，按风格 / 发色 / 表情分类"
+      - "姿势 288 组 / 1,439 张，包含线稿"
+      - "服装 1,407 套，可按上装 / 下装 / 外套组合"
+    useCases:
+      - "给 Stable Diffusion / Midjourney 找参考"
+      - "固定角色后做姿势和服装变体"
   featured: true
   order: 2
 
 - slug: char-db-cn
   name: char-db-cn
+  displayName: "二次元角色换装库"
   desc: 二次元角色换装库：发型 / 服装 / 姿势 / 组装
   image: /img/projects/char-db-cn.webp
   imageAlt: 二次元角色换装库界面
@@ -72,11 +113,21 @@
   site: https://sleepyzone.online/char-db-cn/
   repo: https://github.com/sleepy-zone/char-db-cn
   stars: 375
+  detail:
+    intro: "二次元角色换装库，把发型、服装、姿势和组装拆成可组合的行，适合做角色设定和换装参考。"
+    highlights:
+      - "2,347 张素材"
+      - "发型 306 / 服装 1,760 / 姿势 281"
+      - "支持角色组装"
+    useCases:
+      - "角色换装和设定"
+      - "给 AI 绘图写更具体的服装和姿势提示"
   featured: true
   order: 3
 
 - slug: ai-tag-atlas
   name: ai-tag-atlas
+  displayName: "Tag Atlas 标签词典"
   desc: AI 绘图标签词典与提示词工作台
   image: /img/projects/ai-tag-atlas.webp
   imageAlt: Tag Atlas 界面
@@ -88,11 +139,21 @@
   site: https://sleepyzone.online/ai-tag-atlas/
   repo: https://github.com/sleepy-zone/ai-tag-atlas
   stars: 2
+  detail:
+    intro: "Tag Atlas 是 AI 绘图标签词典和提示词工作台，把服装、体型、表情、姿势等标签整理成可搜索的库。"
+    highlights:
+      - "373 个中英标签"
+      - "29 个分类"
+      - "12 组场景 / 灯光配方"
+    useCases:
+      - "查标签的中英文写法"
+      - "用配方快速拼提示词"
   featured: true
   order: 4
 
 - slug: mio-design-archive
   name: mio-design-archive
+  displayName: "Mio 设计档案"
   desc: 九宫格设计档案：47 卷 / 430 件
   image: /img/projects/mio-design-archive.webp
   imageAlt: Mio 设计档案界面
@@ -104,11 +165,21 @@
   site: https://sleepyzone.online/mio-design-archive/
   repo: https://github.com/sleepy-zone/mio-design-archive
   stars: 15
+  detail:
+    intro: "Mio 设计档案是九宫格设计库，按卷整理发型、服装和姿势，适合做角色设计和设定图参考。"
+    highlights:
+      - "47 卷 / 430 件"
+      - "发型 / 服装 / 姿势"
+      - "整库可打包下载"
+    useCases:
+      - "角色设计和服装灵感"
+      - "做九宫格设定图"
   featured: true
   order: 5
 
 - slug: sticker-library-cn
   name: sticker-library-cn
+  displayName: "表情包素材库"
   desc: 表情包素材库中文版，整理中
   image: /img/projects/sticker-library-cn.webp
   imageAlt: 表情包素材库
@@ -118,5 +189,14 @@
   site: https://sleepyzone.online/sticker-library-cn/
   repo: https://github.com/sleepy-zone/sticker-library-cn
   stars: 0
+  detail:
+    intro: "表情包素材库中文版，整理中文聊天和社群常用的表情包素材。"
+    highlights:
+      - "中文表情包分类整理"
+      - "适合聊天和社群运营"
+      - "持续整理中"
+    useCases:
+      - "找聊天和社群表情包"
+      - "给内容配图"
   featured: true
   order: 10
