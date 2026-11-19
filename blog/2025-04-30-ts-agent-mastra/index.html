@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mastra  - TypeScript AI Agent 框架 — Sleepy Zone</title><meta name="description" content="简介 之前我们讨论过什么是 Agent，都是一些概念性的闲聊，今天介绍的 Mastra，是一个难得的（一般都是 Python 框架） TS 的 AI Agent 框架，可以让你快手上手开发一个 Agent，目前已经有 13.2K 的 Sta…"><meta name="author" content="SleepyZone"><meta name="theme-color" content="#F7F7F4"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><link rel="canonical" href="https://sleepyzone.online/blog/2025-04-30-ts-agent-mastra/"><link rel="alternate" hreflang="zh-Hans" href="https://sleepyzone.online/blog/2025-04-30-ts-agent-mastra/"><link rel="alternate" hreflang="x-default" href="https://sleepyzone.online/blog/2025-04-30-ts-agent-mastra/"><link rel="sitemap" type="application/xml" href="/sitemap-index.xml"><link rel="me" href="https://github.com/sleepy-zone"><link rel="me" href="https://twitter.com/zone__online"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta property="og:type" content="article"><meta property="og:site_name" content="Sleepy Zone"><meta property="og:title" content="Mastra  - TypeScript AI Agent 框架 — Sleepy Zone"><meta property="og:description" content="简介 之前我们讨论过什么是 Agent，都是一些概念性的闲聊，今天介绍的 Mastra，是一个难得的（一般都是 Python 框架） TS 的 AI Agent 框架，可以让你快手上手开发一个 Agent，目前已经有 13.2K 的 Sta…"><meta property="og:url" content="https://sleepyzone.online/blog/2025-04-30-ts-agent-mastra/"><meta property="og:image" content="https://sleepyzone.online/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Mastra  - TypeScript AI Agent 框架 — Sleepy Zone"><meta property="og:locale" content="zh_CN"><meta property="article:published_time" content="2025-05-21T00:00:00.000Z"><meta property="article:modified_time" content="2025-05-21T00:00:00.000Z"><meta property="article:tag" content="AI"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@zone__online"><meta name="twitter:creator" content="@zone__online"><meta name="twitter:title" content="Mastra  - TypeScript AI Agent 框架 — Sleepy Zone"><meta name="twitter:description" content="简介 之前我们讨论过什么是 Agent，都是一些概念性的闲聊，今天介绍的 Mastra，是一个难得的（一般都是 Python 框架） TS 的 AI Agent 框架，可以让你快手上手开发一个 Agent，目前已经有 13.2K 的 Sta…"><meta name="twitter:image" content="https://sleepyzone.online/og.png"><meta name="twitter:image:alt" content="Mastra  - TypeScript AI Agent 框架 — Sleepy Zone"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://sleepyzone.online/#person","name":"SleepyZone","url":"https://sleepyzone.online/","image":"https://sleepyzone.online/img/avatar.jpg","description":"前端开发者，做开源工具和 AI 绘图素材库。","jobTitle":"前端开发者","sameAs":["https://github.com/sleepy-zone","https://twitter.com/zone__online"],"knowsAbout":["AI 绘图","前端开发","开源工具","AI 编程"],"worksFor":{"@id":"https://sleepyzone.online/#organization"}},{"@type":"Organization","@id":"https://sleepyzone.online/#organization","name":"Sleepy Zone","url":"https://sleepyzone.online/","logo":{"@type":"ImageObject","url":"https://sleepyzone.online/logo-512.png","width":512,"height":512},"sameAs":["https://github.com/sleepy-zone","https://twitter.com/zone__online"]},{"@type":"WebSite","@id":"https://sleepyzone.online/#website","url":"https://sleepyzone.online/","name":"Sleepy Zone","description":"前端开发者 SleepyZone 的项目与 AI 绘图资源站：AI 绘图素材库、二次元角色换装、标签词典、设计档案与开源工具。","inLanguage":"zh-Hans","publisher":{"@id":"https://sleepyzone.online/#organization"},"author":{"@id":"https://sleepyzone.online/#person"}},{"@type":"WebPage","@id":"https://sleepyzone.online/blog/2025-04-30-ts-agent-mastra/#webpage","url":"https://sleepyzone.online/blog/2025-04-30-ts-agent-mastra/","name":"Mastra  - TypeScript AI Agent 框架 — Sleepy Zone","description":"简介 之前我们讨论过什么是 Agent，都是一些概念性的闲聊，今天介绍的 Mastra，是一个难得的（一般都是 Python 框架） TS 的 AI Agent 框架，可以让你快手上手开发一个 Agent，目前已经有 13.2K 的 Sta…","isPartOf":{"@id":"https://sleepyzone.online/#website"},"about":{"@id":"https://sleepyzone.online/#person"},"inLanguage":"zh-Hans","primaryImageOfPage":{"@type":"ImageObject","url":"https://sleepyzone.online/og.png"}},{"@type":"BlogPosting","@id":"https://sleepyzone.online/blog/2025-04-30-ts-agent-mastra/#article","headline":"Mastra  - TypeScript AI Agent 框架","description":"简介 之前我们讨论过什么是 Agent，都是一些概念性的闲聊，今天介绍的 Mastra，是一个难得的（一般都是 Python 框架） TS 的 AI Agent 框架，可以让你快手上手开发一个 Agent，目前已经有 13.2K 的 Sta…","datePublished":"2025-05-21T00:00:00.000Z","dateModified":"2025-05-21T00:00:00.000Z","author":{"@id":"https://sleepyzone.online/#person"},"publisher":{"@id":"https://sleepyzone.online/#organization"},"image":"https://sleepyzone.online/og.png","mainEntityOfPage":{"@id":"https://sleepyzone.online/blog/2025-04-30-ts-agent-mastra/#webpage"},"isPartOf":{"@id":"https://sleepyzone.online/#website"},"inLanguage":"zh-Hans","articleSection":"归档","keywords":"AI"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://sleepyzone.online/"},{"@type":"ListItem","position":2,"name":"归档","item":"https://sleepyzone.online/blog/"},{"@type":"ListItem","position":3,"name":"Mastra  - TypeScript AI Agent 框架","item":"https://sleepyzone.online/blog/2025-04-30-ts-agent-mastra/"}]}]}</script><link rel="stylesheet" href="/_astro/BaseLayout.jLNvHuDw.css"></head><body><a class="skip-link" href="#main">跳到正文</a><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">☾</span>Sleepy Zone</a><nav class="nav" aria-label="主导航"><a href="/projects/" data-track="nav_click" data-track-lib="nav" data-track-value="/projects/" data-track-label="项目">项目</a><a href="/#picks" data-track="nav_click" data-track-lib="nav" data-track-value="/#picks" data-track-label="工具推荐">工具推荐</a><a class="nav-ext" href="https://github.com/sleepy-zone" target="_blank" rel="noopener" data-track="outbound_click" data-track-lib="nav" data-track-value="github.com" data-track-label="GitHub nav">GitHub ↗</a></nav></div></header><main id="main"><article class="wrap post-page"><div class="post-card"><header class="post-head"><p class="kicker">ARCHIVE · 2025</p><h1>Mastra  - TypeScript AI Agent 框架</h1><div class="post-meta"><time datetime="2025-05-21T00:00:00.000Z">2025.05.21</time><span>已归档</span><span>#AI</span></div></header><div class="archive-banner"><strong>写于 2025.05.21</strong><span>已归档，不再更新。</span></div><div class="post-body prose"><p><img src="/img/archive/a488d007c7c96d4d.webp" alt="配图"></p>
+<h2 id="简介">简介</h2>
+<p>之前我们讨论过<a href="https://mp.weixin.qq.com/s/9KaU4LeGmkw0YGmY-XRihw?token=2043170037&amp;lang=zh_CN">什么是 Agent</a>，都是一些概念性的闲聊，今天介绍的 <a href="https://mastra.ai/">Mastra</a>，是一个难得的（一般都是 Python 框架） TS 的 AI Agent 框架，可以让你快手上手开发一个 Agent，目前已经有 13.2K 的 Star。</p>
+<p><strong>前端人狂喜</strong>。</p>
+<p>Mastra 提供了 Agent 所需的所有要素：</p>
+<ol>
+<li>大模型：基于 Vercel AI SDK。</li>
+<li>Tools：工具。</li>
+<li>Workflow：工作流，以支持更加复杂的工作。</li>
+<li>RAG：检索增强生成，以帮助构建知识库。</li>
+<li>Memery：各种存储方式集成。</li>
+<li>Agent：最终的 Agent 构建。</li>
+</ol>
+<p>接下来，我们按照官网的快速开始，在 Next.js 框架中接入 Mastra。</p>
+<h2 id="快速开始">快速开始</h2>
+<ol>
+<li>
+<p>初始化 Next.js 结构，参照官网即可。</p>
+</li>
+<li>
+<p>lib 目录下 新建 mastra 目录，在这个目录下开发 Agent 相关的内容。</p>
+</li>
+<li>
+<p>新建 tools 目录，扩展大模型能力的工具，比如建一个根据城市获取天气的工具。tools 目录下新建 <code>weather-tool.ts</code> 文件。</p>
+</li>
+</ol>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { createTool } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> '@mastra/core/tools'</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { z } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> 'zod'</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">interface</span><span style="color:#6F42C1"> WeatherResponse</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#E36209">  current</span><span style="color:#D73A49">:</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#E36209">    time</span><span style="color:#D73A49">:</span><span style="color:#005CC5"> string</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#E36209">    temperature_2m</span><span style="color:#D73A49">:</span><span style="color:#005CC5"> number</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#E36209">    apparent_temperature</span><span style="color:#D73A49">:</span><span style="color:#005CC5"> number</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#E36209">    relative_humidity_2m</span><span style="color:#D73A49">:</span><span style="color:#005CC5"> number</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#E36209">    wind_speed_10m</span><span style="color:#D73A49">:</span><span style="color:#005CC5"> number</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#E36209">    wind_gusts_10m</span><span style="color:#D73A49">:</span><span style="color:#005CC5"> number</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#E36209">    weather_code</span><span style="color:#D73A49">:</span><span style="color:#005CC5"> number</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">  };</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">export</span><span style="color:#D73A49"> const</span><span style="color:#005CC5"> weatherTool</span><span style="color:#D73A49"> =</span><span style="color:#6F42C1"> createTool</span><span style="color:#24292E">({</span></span>
+<span class="line"><span style="color:#24292E">  id: </span><span style="color:#032F62">'get-weather'</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">  description: </span><span style="color:#032F62">'Get current weather for a location'</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">  inputSchema: z.</span><span style="color:#6F42C1">object</span><span style="color:#24292E">({</span></span>
+<span class="line"><span style="color:#24292E">    location: z.</span><span style="color:#6F42C1">string</span><span style="color:#24292E">().</span><span style="color:#6F42C1">describe</span><span style="color:#24292E">(</span><span style="color:#032F62">"City name"</span><span style="color:#24292E">),</span></span>
+<span class="line"><span style="color:#24292E">  }),</span></span>
+<span class="line"><span style="color:#24292E">  outputSchema: z.</span><span style="color:#6F42C1">object</span><span style="color:#24292E">({</span></span>
+<span class="line"><span style="color:#24292E">    temperature: z.</span><span style="color:#6F42C1">number</span><span style="color:#24292E">(),</span></span>
+<span class="line"><span style="color:#24292E">    feelsLike: z.</span><span style="color:#6F42C1">number</span><span style="color:#24292E">(),</span></span>
+<span class="line"><span style="color:#24292E">    humidity: z.</span><span style="color:#6F42C1">number</span><span style="color:#24292E">(),</span></span>
+<span class="line"><span style="color:#24292E">    windSpeed: z.</span><span style="color:#6F42C1">number</span><span style="color:#24292E">(),</span></span>
+<span class="line"><span style="color:#24292E">    windGust: z.</span><span style="color:#6F42C1">number</span><span style="color:#24292E">(),</span></span>
+<span class="line"><span style="color:#24292E">    conditions: z.</span><span style="color:#6F42C1">string</span><span style="color:#24292E">(),</span></span>
+<span class="line"><span style="color:#24292E">    location: z.</span><span style="color:#6F42C1">string</span><span style="color:#24292E">(),</span></span>
+<span class="line"><span style="color:#24292E">  }),</span></span>
+<span class="line"><span style="color:#6F42C1">  execute</span><span style="color:#24292E">: </span><span style="color:#D73A49">async</span><span style="color:#24292E"> ({ </span><span style="color:#E36209">context</span><span style="color:#24292E"> }) </span><span style="color:#D73A49">=&gt;</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#D73A49"> await</span><span style="color:#6F42C1"> getWeather</span><span style="color:#24292E">(context.location);</span></span>
+<span class="line"><span style="color:#24292E">  },</span></span>
+<span class="line"><span style="color:#24292E">})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">const</span><span style="color:#6F42C1"> getWeather</span><span style="color:#D73A49"> =</span><span style="color:#D73A49"> async</span><span style="color:#24292E"> (</span><span style="color:#E36209">location</span><span style="color:#D73A49">:</span><span style="color:#005CC5"> string</span><span style="color:#24292E">) </span><span style="color:#D73A49">=&gt;</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> geocodingUrl</span><span style="color:#D73A49"> =</span><span style="color:#032F62"> `https://geocoding-api.open-meteo.com/v1/search?name=${</span><span style="color:#6F42C1">encodeURIComponent</span><span style="color:#032F62">(</span><span style="color:#24292E">location</span><span style="color:#032F62">)</span><span style="color:#032F62">}&amp;count=1`</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> geocodingResponse</span><span style="color:#D73A49"> =</span><span style="color:#D73A49"> await</span><span style="color:#6F42C1"> fetch</span><span style="color:#24292E">(geocodingUrl);</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> geocodingData</span><span style="color:#D73A49"> =</span><span style="color:#D73A49"> await</span><span style="color:#24292E"> geocodingResponse.</span><span style="color:#6F42C1">json</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E"> </span></span>
+<span class="line"><span style="color:#D73A49">  if</span><span style="color:#24292E"> (</span><span style="color:#D73A49">!</span><span style="color:#24292E">geocodingData.results?.[</span><span style="color:#005CC5">0</span><span style="color:#24292E">]) {</span></span>
+<span class="line"><span style="color:#D73A49">    throw</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Error</span><span style="color:#24292E">(</span><span style="color:#032F62">`Location '${</span><span style="color:#24292E">location</span><span style="color:#032F62">}' not found`</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E"> </span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#24292E"> { </span><span style="color:#005CC5">latitude</span><span style="color:#24292E">, </span><span style="color:#005CC5">longitude</span><span style="color:#24292E">, </span><span style="color:#005CC5">name</span><span style="color:#24292E"> } </span><span style="color:#D73A49">=</span><span style="color:#24292E"> geocodingData.results[</span><span style="color:#005CC5">0</span><span style="color:#24292E">];</span></span>
+<span class="line"><span style="color:#24292E"> </span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> weatherUrl</span><span style="color:#D73A49"> =</span><span style="color:#032F62"> `https://api.open-meteo.com/v1/forecast?latitude=${</span><span style="color:#24292E">latitude</span><span style="color:#032F62">}&amp;longitude=${</span><span style="color:#24292E">longitude</span><span style="color:#032F62">}&amp;current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,wind_gusts_10m,weather_code`</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E"> </span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> response</span><span style="color:#D73A49"> =</span><span style="color:#D73A49"> await</span><span style="color:#6F42C1"> fetch</span><span style="color:#24292E">(weatherUrl);</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> data</span><span style="color:#D73A49">:</span><span style="color:#6F42C1"> WeatherResponse</span><span style="color:#D73A49"> =</span><span style="color:#D73A49"> await</span><span style="color:#24292E"> response.</span><span style="color:#6F42C1">json</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E"> </span></span>
+<span class="line"><span style="color:#D73A49">  return</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">    temperature: data.current.temperature_2m,</span></span>
+<span class="line"><span style="color:#24292E">    feelsLike: data.current.apparent_temperature,</span></span>
+<span class="line"><span style="color:#24292E">    humidity: data.current.relative_humidity_2m,</span></span>
+<span class="line"><span style="color:#24292E">    windSpeed: data.current.wind_speed_10m,</span></span>
+<span class="line"><span style="color:#24292E">    windGust: data.current.wind_gusts_10m,</span></span>
+<span class="line"><span style="color:#24292E">    conditions: </span><span style="color:#6F42C1">getWeatherCondition</span><span style="color:#24292E">(data.current.weather_code),</span></span>
+<span class="line"><span style="color:#24292E">    location: name,</span></span>
+<span class="line"><span style="color:#24292E">  };</span></span>
+<span class="line"><span style="color:#24292E">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> getWeatherCondition</span><span style="color:#24292E">(</span><span style="color:#E36209">code</span><span style="color:#D73A49">:</span><span style="color:#005CC5"> number</span><span style="color:#24292E">)</span><span style="color:#D73A49">:</span><span style="color:#005CC5"> string</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> conditions</span><span style="color:#D73A49">:</span><span style="color:#6F42C1"> Record</span><span style="color:#24292E">&lt;</span><span style="color:#005CC5">number</span><span style="color:#24292E">, </span><span style="color:#005CC5">string</span><span style="color:#24292E">&gt; </span><span style="color:#D73A49">=</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#005CC5">    0</span><span style="color:#24292E">: </span><span style="color:#032F62">"Clear sky"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    1</span><span style="color:#24292E">: </span><span style="color:#032F62">"Mainly clear"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    2</span><span style="color:#24292E">: </span><span style="color:#032F62">"Partly cloudy"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    3</span><span style="color:#24292E">: </span><span style="color:#032F62">"Overcast"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    45</span><span style="color:#24292E">: </span><span style="color:#032F62">"Foggy"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    48</span><span style="color:#24292E">: </span><span style="color:#032F62">"Depositing rime fog"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    51</span><span style="color:#24292E">: </span><span style="color:#032F62">"Light drizzle"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    53</span><span style="color:#24292E">: </span><span style="color:#032F62">"Moderate drizzle"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    55</span><span style="color:#24292E">: </span><span style="color:#032F62">"Dense drizzle"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    56</span><span style="color:#24292E">: </span><span style="color:#032F62">"Light freezing drizzle"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    57</span><span style="color:#24292E">: </span><span style="color:#032F62">"Dense freezing drizzle"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    61</span><span style="color:#24292E">: </span><span style="color:#032F62">"Slight rain"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    63</span><span style="color:#24292E">: </span><span style="color:#032F62">"Moderate rain"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    65</span><span style="color:#24292E">: </span><span style="color:#032F62">"Heavy rain"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    66</span><span style="color:#24292E">: </span><span style="color:#032F62">"Light freezing rain"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    67</span><span style="color:#24292E">: </span><span style="color:#032F62">"Heavy freezing rain"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    71</span><span style="color:#24292E">: </span><span style="color:#032F62">"Slight snow fall"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    73</span><span style="color:#24292E">: </span><span style="color:#032F62">"Moderate snow fall"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    75</span><span style="color:#24292E">: </span><span style="color:#032F62">"Heavy snow fall"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    77</span><span style="color:#24292E">: </span><span style="color:#032F62">"Snow grains"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    80</span><span style="color:#24292E">: </span><span style="color:#032F62">"Slight rain showers"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    81</span><span style="color:#24292E">: </span><span style="color:#032F62">"Moderate rain showers"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    82</span><span style="color:#24292E">: </span><span style="color:#032F62">"Violent rain showers"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    85</span><span style="color:#24292E">: </span><span style="color:#032F62">"Slight snow showers"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    86</span><span style="color:#24292E">: </span><span style="color:#032F62">"Heavy snow showers"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    95</span><span style="color:#24292E">: </span><span style="color:#032F62">"Thunderstorm"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    96</span><span style="color:#24292E">: </span><span style="color:#032F62">"Thunderstorm with slight hail"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    99</span><span style="color:#24292E">: </span><span style="color:#032F62">"Thunderstorm with heavy hail"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">  };</span></span>
+<span class="line"><span style="color:#D73A49">  return</span><span style="color:#24292E"> conditions[code] </span><span style="color:#D73A49">||</span><span style="color:#032F62"> "Unknown"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<ol start="4">
+<li>mastra 目录下新建 agents 目录，agent 目录下新建 <code>weather-agent.ts</code> 文件。</li>
+</ol>
+<p>可以看到这个天气 Agent 主要功能就是：如果用户提问天气相关的内容，模型则调用上述工具获取天气。</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { Agent } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> '@mastra/core/agent'</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { weatherTool } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> '../tools/weather-tool'</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { createAIModel } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> '@/lib/utils'</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E"> </span></span>
+<span class="line"><span style="color:#D73A49">export</span><span style="color:#D73A49"> const</span><span style="color:#005CC5"> weatherAgent</span><span style="color:#D73A49"> =</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Agent</span><span style="color:#24292E">({</span></span>
+<span class="line"><span style="color:#24292E">  name: </span><span style="color:#032F62">'Weather Agent'</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">  instructions: </span><span style="color:#032F62">`You are a helpful weather assistant that provides accurate weather information.</span></span>
+<span class="line"><span style="color:#032F62"> </span></span>
+<span class="line"><span style="color:#032F62">Your primary function is to help users get weather details for specific locations. When responding:</span></span>
+<span class="line"><span style="color:#032F62">- Always ask for a location if none is provided</span></span>
+<span class="line"><span style="color:#032F62">- If the location name isn’t in English, please translate it</span></span>
+<span class="line"><span style="color:#032F62">- Include relevant details like humidity, wind conditions, and precipitation</span></span>
+<span class="line"><span style="color:#032F62">- Keep responses concise but informative</span></span>
+<span class="line"><span style="color:#032F62"> </span></span>
+<span class="line"><span style="color:#032F62">Use the weatherTool to fetch current weather data.`</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">  model: </span><span style="color:#6F42C1">createAIModel</span><span style="color:#24292E">(</span><span style="color:#032F62">'gpt-4o-mini-0718'</span><span style="color:#24292E">),</span></span>
+<span class="line"><span style="color:#24292E">  tools: { weatherTool },</span></span>
+<span class="line"><span style="color:#24292E">});</span></span></code></pre>
+<p>模型使用的 Vercel AI SDK，如果你是用的 OpenAI 或者 Claude 等模型，可以直接使用 @ai-sdk/openai 这些包。如果你和我一样，使用的服务商统一包装的兼容 OpenAI 的接口，则可以这样：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { createOpenAICompatible } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> '@ai-sdk/openai-compatible'</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">export</span><span style="color:#D73A49"> const</span><span style="color:#6F42C1"> createAIModel</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> (</span><span style="color:#E36209">modelName</span><span style="color:#D73A49">:</span><span style="color:#005CC5"> string</span><span style="color:#24292E">) </span><span style="color:#D73A49">=&gt;</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">  return</span><span style="color:#6F42C1"> createOpenAICompatible</span><span style="color:#24292E">({</span></span>
+<span class="line"><span style="color:#24292E">    name: </span><span style="color:#032F62">'custom model'</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    baseURL: </span><span style="color:#032F62">'https://your-base-url/api/openai/v1/'</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#6A737D">    // api key 最好配置到 .env 文件中</span></span>
+<span class="line"><span style="color:#24292E">    apiKey: </span><span style="color:#032F62">'your-api-key'</span></span>
+<span class="line"><span style="color:#24292E">  })(modelName);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<p>然后我们建一个 agent 的入口文件 <code>mastra/index.ts</code>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { Mastra } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> '@mastra/core'</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { PinoLogger } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> '@mastra/loggers'</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { LibSQLStore } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> '@mastra/libsql'</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { weatherAgent } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> './agents/weather-agent'</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E"> </span></span>
+<span class="line"><span style="color:#D73A49">export</span><span style="color:#D73A49"> const</span><span style="color:#005CC5"> mastra</span><span style="color:#D73A49"> =</span><span style="color:#D73A49"> new</span><span style="color:#6F42C1"> Mastra</span><span style="color:#24292E">({</span></span>
+<span class="line"><span style="color:#24292E">  agents: { weatherAgent },</span></span>
+<span class="line"><span style="color:#24292E">  storage: </span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> LibSQLStore</span><span style="color:#24292E">({</span></span>
+<span class="line"><span style="color:#6A737D">    // stores telemetry, evals, ... into memory storage, if it needs to persist, change to file:../mastra.db</span></span>
+<span class="line"><span style="color:#24292E">    url: </span><span style="color:#032F62">':memory:'</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">  }),</span></span>
+<span class="line"><span style="color:#24292E">  logger: </span><span style="color:#D73A49">new</span><span style="color:#6F42C1"> PinoLogger</span><span style="color:#24292E">({</span></span>
+<span class="line"><span style="color:#24292E">    name: </span><span style="color:#032F62">'Mastra'</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    level: </span><span style="color:#032F62">'info'</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">  }),</span></span>
+<span class="line"><span style="color:#24292E">});</span></span></code></pre>
+<ol start="5">
+<li>一个简单的 Agent 就完成了，我们开发一个接口测试一下：</li>
+</ol>
+<p>在 app 目录下新建 <code>/(chat)/api/chat/route.ts</code>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { mastra } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> '@/lib/mastra'</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { NextResponse } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> 'next/server'</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E"> </span></span>
+<span class="line"><span style="color:#D73A49">export</span><span style="color:#D73A49"> async</span><span style="color:#D73A49"> function</span><span style="color:#6F42C1"> POST</span><span style="color:#24292E">(</span><span style="color:#E36209">req</span><span style="color:#D73A49">:</span><span style="color:#6F42C1"> Request</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#24292E"> { </span><span style="color:#005CC5">city</span><span style="color:#24292E"> } </span><span style="color:#D73A49">=</span><span style="color:#D73A49"> await</span><span style="color:#24292E"> req.</span><span style="color:#6F42C1">json</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> agent</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> mastra.</span><span style="color:#6F42C1">getAgent</span><span style="color:#24292E">(</span><span style="color:#032F62">'weatherAgent'</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E"> </span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> result</span><span style="color:#D73A49"> =</span><span style="color:#D73A49"> await</span><span style="color:#24292E"> agent.</span><span style="color:#6F42C1">stream</span><span style="color:#24292E">(</span><span style="color:#032F62">`What's the weather like in ${</span><span style="color:#24292E">city</span><span style="color:#032F62">}?`</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E"> </span></span>
+<span class="line"><span style="color:#D73A49">  return</span><span style="color:#24292E"> result.</span><span style="color:#6F42C1">toDataStreamResponse</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<ol start="6">
+<li>使用 Postman 访问 <a href="http://localhost:3000/api/talk">http://localhost:3000/api/talk</a> 接口测试一下：</li>
+</ol>
+<p><strong>流式返回了天气信息！！</strong></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#24292E">f:{</span><span style="color:#005CC5">"messageId"</span><span style="color:#24292E">:</span><span style="color:#032F62">"msg-xZkgBuDjmIEtRWqu0wB6kNFw"</span><span style="color:#24292E">}</span></span>
+<span class="line"><span style="color:#005CC5">9</span><span style="color:#24292E">:{</span><span style="color:#005CC5">"toolCallId"</span><span style="color:#24292E">:</span><span style="color:#032F62">"call_iQt37jB3orK3HhY0ZGBWUClB"</span><span style="color:#24292E">,</span><span style="color:#005CC5">"toolName"</span><span style="color:#24292E">:</span><span style="color:#032F62">"weatherTool"</span><span style="color:#24292E">,</span><span style="color:#005CC5">"args"</span><span style="color:#24292E">:{</span><span style="color:#005CC5">"location"</span><span style="color:#24292E">:</span><span style="color:#032F62">"New York"</span><span style="color:#24292E">}}</span></span>
+<span class="line"><span style="color:#24292E">a:{</span><span style="color:#005CC5">"toolCallId"</span><span style="color:#24292E">:</span><span style="color:#032F62">"call_iQt37jB3orK3HhY0ZGBWUClB"</span><span style="color:#24292E">,</span><span style="color:#005CC5">"result"</span><span style="color:#24292E">:{</span><span style="color:#005CC5">"temperature"</span><span style="color:#24292E">:</span><span style="color:#005CC5">9.2</span><span style="color:#24292E">,</span><span style="color:#005CC5">"feelsLike"</span><span style="color:#24292E">:</span><span style="color:#005CC5">6.5</span><span style="color:#24292E">,</span><span style="color:#005CC5">"humidity"</span><span style="color:#24292E">:</span><span style="color:#005CC5">88</span><span style="color:#24292E">,</span><span style="color:#005CC5">"windSpeed"</span><span style="color:#24292E">:</span><span style="color:#005CC5">13.2</span><span style="color:#24292E">,</span><span style="color:#005CC5">"windGust"</span><span style="color:#24292E">:</span><span style="color:#005CC5">36.7</span><span style="color:#24292E">,</span><span style="color:#005CC5">"conditions"</span><span style="color:#24292E">:</span><span style="color:#032F62">"Overcast"</span><span style="color:#24292E">,</span><span style="color:#005CC5">"location"</span><span style="color:#24292E">:</span><span style="color:#032F62">"New York"</span><span style="color:#24292E">}}</span></span>
+<span class="line"><span style="color:#24292E">e:{</span><span style="color:#005CC5">"finishReason"</span><span style="color:#24292E">:</span><span style="color:#032F62">"tool-calls"</span><span style="color:#24292E">,</span><span style="color:#005CC5">"usage"</span><span style="color:#24292E">:{</span><span style="color:#005CC5">"promptTokens"</span><span style="color:#24292E">:</span><span style="color:#005CC5">99</span><span style="color:#24292E">,</span><span style="color:#005CC5">"completionTokens"</span><span style="color:#24292E">:</span><span style="color:#005CC5">4</span><span style="color:#24292E">},</span><span style="color:#005CC5">"isContinued"</span><span style="color:#24292E">:</span><span style="color:#005CC5">false</span><span style="color:#24292E">}</span></span>
+<span class="line"><span style="color:#24292E">f:{</span><span style="color:#005CC5">"messageId"</span><span style="color:#24292E">:</span><span style="color:#032F62">"msg-Bhwx7fT1X0zQTxBnKAeb00xi"</span><span style="color:#24292E">}</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"The"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" current"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" weather"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" in"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" New"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" York"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" is"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" as"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" follows"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">":</span><span style="color:#005CC5">\n\n</span><span style="color:#032F62">"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"-"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" **"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"Temperature"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">":**"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" "</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"9"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"."</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"2"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"°C"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" ("</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"Feels"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" like"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" "</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"6"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"."</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"5"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"°C"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">")</span><span style="color:#005CC5">\n</span><span style="color:#032F62">"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"-"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" **"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"Humidity"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">":**"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" "</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"88"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"%</span><span style="color:#005CC5">\n</span><span style="color:#032F62">"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"-"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" **"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"Wind"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" Speed"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">":**"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" "</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"13"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"."</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"2"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" km"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"/h"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"</span><span style="color:#005CC5">\n</span><span style="color:#032F62">"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"-"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" **"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"Wind"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" Gust"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"s"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">":**"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" "</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"36"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"."</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"7"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" km"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"/h"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"</span><span style="color:#005CC5">\n</span><span style="color:#032F62">"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"-"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" **"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"Conditions"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">":**"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" Over"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"cast"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"</span><span style="color:#005CC5">\n\n</span><span style="color:#032F62">"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"If"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" you"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" need"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" more"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" details"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" or"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" information"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" about"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" another"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" location"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">","</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" feel"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" free"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" to"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">" ask"</span></span>
+<span class="line"><span style="color:#005CC5">0</span><span style="color:#24292E">:</span><span style="color:#032F62">"!"</span></span>
+<span class="line"><span style="color:#24292E">e:{</span><span style="color:#005CC5">"finishReason"</span><span style="color:#24292E">:</span><span style="color:#032F62">"stop"</span><span style="color:#24292E">,</span><span style="color:#005CC5">"usage"</span><span style="color:#24292E">:{</span><span style="color:#005CC5">"promptTokens"</span><span style="color:#24292E">:</span><span style="color:#005CC5">145</span><span style="color:#24292E">,</span><span style="color:#005CC5">"completionTokens"</span><span style="color:#24292E">:</span><span style="color:#005CC5">88</span><span style="color:#24292E">},</span><span style="color:#005CC5">"isContinued"</span><span style="color:#24292E">:</span><span style="color:#005CC5">false</span><span style="color:#24292E">}</span></span>
+<span class="line"><span style="color:#24292E">d:{</span><span style="color:#005CC5">"finishReason"</span><span style="color:#24292E">:</span><span style="color:#032F62">"stop"</span><span style="color:#24292E">,</span><span style="color:#005CC5">"usage"</span><span style="color:#24292E">:{</span><span style="color:#005CC5">"promptTokens"</span><span style="color:#24292E">:</span><span style="color:#005CC5">244</span><span style="color:#24292E">,</span><span style="color:#005CC5">"completionTokens"</span><span style="color:#24292E">:</span><span style="color:#005CC5">92</span><span style="color:#24292E">}}</span></span></code></pre>
+<ol start="7">
+<li>如果有更复杂的需求，可以尝试 Workflow ，使用不同的模型处理多个任务，最终组合称为一个更好的 Agent。这里就不展开了。</li>
+</ol>
+<h2 id="写在后面">写在后面</h2>
+<p>很欣喜能看到一个 TS 的 Agent 框架，而且从文档代码来看，完成度和质量都很高。</p>
+<p>但我们应该意识到，除了 Agent 开发工具，更重要的是找到<strong>合适的落地场景</strong>。</p>
+</div><footer class="post-foot">这个站现在只放项目与资源 → <a href="/">首页</a><br>回到 <a href="/blog/">归档</a>。</footer></div></article></main><footer class="footer"><div class="wrap footer-inner"><div class="footer-copy"><span class="footer-brand">☾ Sleepy Zone</span><span>© 2026 · 希望你们快乐～</span></div><nav class="footer-nav" aria-label="页脚导航"><a href="/blog/" data-track="nav_click" data-track-lib="footer" data-track-value="/blog/" data-track-label="归档">归档</a><a href="https://github.com/sleepy-zone" target="_blank" rel="noopener" data-track="outbound_click" data-track-lib="footer" data-track-value="github.com" data-track-label="GitHub">GitHub</a><a href="https://twitter.com/zone__online" target="_blank" rel="noopener" data-track="outbound_click" data-track-lib="footer" data-track-value="twitter.com" data-track-label="X">X</a></nav></div></footer><script>
+      window.ANALYTICS = {
+        providers: [{ provider: 'clarity', id: 'r1wmvdsf4a' }],
+      };
+    </script><script src="/analytics.js" defer></script></body></html>

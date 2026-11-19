@@ -1,65 +1,12 @@
-<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>现在开始使用 Cline Rules — Sleepy Zone</title><meta name="description" content="写在前面 最近在业务（面向用户的 C 端业务）中较多的使用了 Cline，总体感觉非常丝滑（尤其是看着他在默默地生成代码并且自己排查错误的时候，但 Token 确实也消耗的很快😂…"><meta name="author" content="SleepyZone"><meta name="theme-color" content="#F7F7F4"><link rel="canonical" href="https://sleepyzone.online/blog/2025-05-30-cline-rule.md/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta property="og:type" content="article"><meta property="og:site_name" content="Sleepy Zone"><meta property="og:title" content="现在开始使用 Cline Rules — Sleepy Zone"><meta property="og:description" content="写在前面 最近在业务（面向用户的 C 端业务）中较多的使用了 Cline，总体感觉非常丝滑（尤其是看着他在默默地生成代码并且自己排查错误的时候，但 Token 确实也消耗的很快😂…"><meta property="og:url" content="https://sleepyzone.online/blog/2025-05-30-cline-rule.md/"><meta property="og:image" content="https://sleepyzone.online/og.png"><meta property="og:locale" content="zh_CN"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="现在开始使用 Cline Rules — Sleepy Zone"><meta name="twitter:description" content="写在前面 最近在业务（面向用户的 C 端业务）中较多的使用了 Cline，总体感觉非常丝滑（尤其是看着他在默默地生成代码并且自己排查错误的时候，但 Token 确实也消耗的很快😂…"><meta name="twitter:image" content="https://sleepyzone.online/og.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Sleepy Zone","url":"https://sleepyzone.online/","inLanguage":"zh-Hans","author":{"@type":"Person","name":"SleepyZone","url":"https://github.com/sleepy-zone"}}</script><link rel="stylesheet" href="/_astro/BaseLayout.KfS5gcno.css"></head><body><a class="skip-link" href="#main">跳到正文</a><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">☾</span>Sleepy Zone</a><nav class="nav" aria-label="主导航"><a href="/projects/" data-track="nav_click" data-track-lib="nav" data-track-value="/projects/" data-track-label="项目">项目</a><a href="/#picks" data-track="nav_click" data-track-lib="nav" data-track-value="/#picks" data-track-label="工具推荐">工具推荐</a><a class="nav-ext" href="https://github.com/sleepy-zone" target="_blank" rel="noopener" data-track="outbound_click" data-track-lib="nav" data-track-value="github.com" data-track-label="GitHub nav">GitHub ↗</a></nav></div></header><main id="main"><article class="wrap post-page"><div class="post-card"><header class="post-head"><p class="kicker">ARCHIVE · 2025</p><h1>现在开始使用 Cline Rules</h1><div class="post-meta"><time datetime="2025-05-30T00:00:00.000Z">2025.05.30</time><span>已归档</span><span>#AI</span><span>#Cline</span></div></header><div class="archive-banner"><strong>写于 2025.05.30</strong><span>已归档，不再更新。</span></div><div class="post-body prose"><p><img src="/img/archive/3659a2f596eee68d.webp" alt="配图"></p>
-<h3 id="写在前面">写在前面</h3>
-<p>最近在业务（面向用户的 C 端业务）中较多的使用了 <a href="https://docs.cline.bot/getting-started/what-is-cline">Cline</a>，总体感觉非常丝滑（尤其是看着他在默默地生成代码并且自己排查错误的时候，但 Token 确实也消耗的很快😂）。</p>
-<p>Cline 算是 VS Code AI 开发插件中的佼佼者了，并且是一个开源项目，他的一个 fork 分支 RooCode 热度也很高。</p>
-<p><img src="/img/archive/bf2140a1995a09c3.webp" alt="openrouter 网站的统计，Cline 遥遥领先"></p>
-<h3 id="开始配置-cline-rules">开始配置 Cline Rules</h3>
-<p>作为一个通用的编程助手，如何能针对不同的项目进行更好的开发，除了 Cline 本身对代码的理解之外，作为用户如果能提供更多的指引，可以让 Cline 发挥更好的作用。</p>
-<p>一般来说，Cline、Cursor 及其他代码 Agent 都会提供 rules 这个概念，在项目根目录下新建 rules 目录，目录下根据自己的项目可以新建各种规则文件。</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#24292E">your-project/</span></span>
-<span class="line"><span style="color:#24292E">	├── .clinerules</span></span>
-<span class="line"><span style="color:#24292E">		├── project.md</span></span>
-<span class="line"><span style="color:#24292E">        ├── api.md</span></span>
-<span class="line"><span style="color:#24292E">	├── src/</span></span>
-<span class="line"><span style="color:#24292E">	├── docs/</span></span>
-<span class="line"><span style="color:#24292E">	└── ...</span></span></code></pre>
-<p>如果你的规则全局通用，可以将规则放置到 <code>Documents/Cline/Rules</code> 目录。</p>
-<h3 id="cline-rules-优势">Cline Rules 优势</h3>
-<p>放在项目内好处很明显：</p>
-<ol>
-<li>可以针对每个项目配置不同的规则；</li>
-<li>作为项目源代码的一部分，进行版本控制，持续维护，跟随项目发展设置长远的 rule；</li>
-<li>保证团队成员使用 AI 的行为是一致的。</li>
-</ol>
-<h3 id="cline-rules-的原则">Cline Rules 的原则</h3>
-<ol>
-<li>清晰简洁：使用简单语言，避免歧义。</li>
-<li>关注期望结果：描述你想要的结果，而不是具体步骤。</li>
-<li>测试和迭代：试验找出最适合你的工作流程的方法。</li>
-</ol>
-<p>rules 本质上是自定义 prompts，和 Cline 的 system prompts 互为补充，共同为项目服务。（system promps：<a href="https://github.com/cline/cline/blob/main/src/core/prompts/model_prompts/claude4.ts%EF%BC%89">https://github.com/cline/cline/blob/main/src/core/prompts/model_prompts/claude4.ts）</a></p>
-<p>关于提示词，我之前有总结过<a href="https://mp.weixin.qq.com/s/YFV0MO_pX3Us-PEMzxF0vQ">谷歌的提示词最佳实践</a>，可以看一下。</p>
-<h3 id="高级用法-rules-bank">高级用法 Rules Bank</h3>
-<p>Rules Bank 顾名思义，就是存放 Rules 的地方，如果你的项目很复杂，又有前端、又有后端、又有不同的技术栈，这个时候就很有用。</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#24292E">your-project/</span></span>
-<span class="line"><span style="color:#24292E">├── .clinerules/              # Active rules - automatically applied</span></span>
-<span class="line"><span style="color:#24292E">│   ├── 01-coding.md</span></span>
-<span class="line"><span style="color:#24292E">│   └── client-a.md</span></span>
-<span class="line"><span style="color:#24292E">│</span></span>
-<span class="line"><span style="color:#24292E">├── clinerules-bank/          # Repository of available but inactive rules</span></span>
-<span class="line"><span style="color:#24292E">│   ├── clients/              # Client-specific rule sets</span></span>
-<span class="line"><span style="color:#24292E">│   │   ├── client-a.md</span></span>
-<span class="line"><span style="color:#24292E">│   │   └── client-b.md</span></span>
-<span class="line"><span style="color:#24292E">│   ├── frameworks/           # Framework-specific rules</span></span>
-<span class="line"><span style="color:#24292E">│   │   ├── react.md</span></span>
-<span class="line"><span style="color:#24292E">│   │   └── vue.md</span></span>
-<span class="line"><span style="color:#24292E">│   └── project-types/        # Project type standards</span></span>
-<span class="line"><span style="color:#24292E">│       ├── api-service.md</span></span>
-<span class="line"><span style="color:#24292E">│       └── frontend-app.md</span></span>
-<span class="line"><span style="color:#24292E">└── ...</span></span></code></pre>
-<p>比如当你在开发 React 技术栈的时候，从 Rules Bank 中复制 React Rule 到 Cline Rules 内。</p>
-<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Switch to React</span></span>
-<span class="line"><span style="color:#6F42C1">rm</span><span style="color:#032F62"> .clinerules/vue.md</span></span>
-<span class="line"><span style="color:#6F42C1">cp</span><span style="color:#032F62"> clinerules-bank/clients/react.md</span><span style="color:#032F62"> .clinerules/</span></span></code></pre>
-<p>总之一切文本放到代码仓库中，提高可持续性，并且可以跟随项目保持最新的迭代！</p>
-<h3 id="如何管理">如何管理</h3>
-<p>Cline 提供了一种方便的方式管理 Rules，在输入框下方一个天平的小标志内，可以打开 Rule 管理器，新增删除或者启用禁用 Rule。</p>
-<p><img src="/img/archive/06fe3d89f72bbfa0.webp" alt="配图"></p>
-<h3 id="最后">最后</h3>
-<p>十分建议你在平时工作中使用 Cline，并使用 Cline Rule 增强开发体验。后面会持续更新 Cline 的相关内容。</p>
-<p>最后，假期快乐！</p>
-</div><footer class="post-foot">这个站现在只放项目与资源 → <a href="/">首页</a><br>回到 <a href="/blog/">归档</a>。</footer></div></article></main><footer class="footer"><div class="wrap footer-inner"><div class="footer-copy"><span class="footer-brand">☾ Sleepy Zone</span><span>© 2026 · 希望你们快乐～</span></div><nav class="footer-nav" aria-label="页脚导航"><a href="/blog/" data-track="nav_click" data-track-lib="footer" data-track-value="/blog/" data-track-label="归档">归档</a><a href="https://github.com/sleepy-zone" target="_blank" rel="noopener" data-track="outbound_click" data-track-lib="footer" data-track-value="github.com" data-track-label="GitHub">GitHub</a><a href="https://twitter.com/zone__online" target="_blank" rel="noopener" data-track="outbound_click" data-track-lib="footer" data-track-value="twitter.com" data-track-label="X">X</a></nav></div></footer><script>
-      window.ANALYTICS = {
-        providers: [{ provider: 'clarity', id: 'r1wmvdsf4a' }],
-      };
-    </script><script src="/analytics.js" defer></script></body></html>
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="0; url=/blog/2025-05-30-cline-rule/">
+<link rel="canonical" href="https://sleepyzone.online/blog/2025-05-30-cline-rule/">
+<meta name="robots" content="noindex">
+<title>页面已迁移 — Sleepy Zone</title>
+</head>
+<body><p>页面已迁移，<a href="/blog/2025-05-30-cline-rule/">继续阅读</a>。</p></body>
+</html>

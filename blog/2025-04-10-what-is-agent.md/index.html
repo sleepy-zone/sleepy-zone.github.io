@@ -1,50 +1,12 @@
-<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>什么是 Agent — Sleepy Zone</title><meta name="description" content="火爆的 Agent AI Agent 应该是 AI 出现后讨论最多的一个词了，因为他代表着 AI 应用的最高层次了，从上次 Manus 的火爆就可见一斑。AI 给人的感觉无所不能又…"><meta name="author" content="SleepyZone"><meta name="theme-color" content="#F7F7F4"><link rel="canonical" href="https://sleepyzone.online/blog/2025-04-10-what-is-agent.md/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta property="og:type" content="article"><meta property="og:site_name" content="Sleepy Zone"><meta property="og:title" content="什么是 Agent — Sleepy Zone"><meta property="og:description" content="火爆的 Agent AI Agent 应该是 AI 出现后讨论最多的一个词了，因为他代表着 AI 应用的最高层次了，从上次 Manus 的火爆就可见一斑。AI 给人的感觉无所不能又…"><meta property="og:url" content="https://sleepyzone.online/blog/2025-04-10-what-is-agent.md/"><meta property="og:image" content="https://sleepyzone.online/og.png"><meta property="og:locale" content="zh_CN"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="什么是 Agent — Sleepy Zone"><meta name="twitter:description" content="火爆的 Agent AI Agent 应该是 AI 出现后讨论最多的一个词了，因为他代表着 AI 应用的最高层次了，从上次 Manus 的火爆就可见一斑。AI 给人的感觉无所不能又…"><meta name="twitter:image" content="https://sleepyzone.online/og.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Sleepy Zone","url":"https://sleepyzone.online/","inLanguage":"zh-Hans","author":{"@type":"Person","name":"SleepyZone","url":"https://github.com/sleepy-zone"}}</script><link rel="stylesheet" href="/_astro/BaseLayout.KfS5gcno.css"></head><body><a class="skip-link" href="#main">跳到正文</a><header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">☾</span>Sleepy Zone</a><nav class="nav" aria-label="主导航"><a href="/projects/" data-track="nav_click" data-track-lib="nav" data-track-value="/projects/" data-track-label="项目">项目</a><a href="/#picks" data-track="nav_click" data-track-lib="nav" data-track-value="/#picks" data-track-label="工具推荐">工具推荐</a><a class="nav-ext" href="https://github.com/sleepy-zone" target="_blank" rel="noopener" data-track="outbound_click" data-track-lib="nav" data-track-value="github.com" data-track-label="GitHub nav">GitHub ↗</a></nav></div></header><main id="main"><article class="wrap post-page"><div class="post-card"><header class="post-head"><p class="kicker">ARCHIVE · 2025</p><h1>什么是 Agent</h1><div class="post-meta"><time datetime="2025-04-10T00:00:00.000Z">2025.04.10</time><span>已归档</span><span>#AI</span></div></header><div class="archive-banner"><strong>写于 2025.04.10</strong><span>已归档，不再更新。</span></div><div class="post-body prose"><p><img src="/img/archive/c5fb4e1f32f13ceb.webp" alt="配图"></p>
-<h3 id="火爆的-agent">火爆的 Agent</h3>
-<p>AI Agent 应该是 AI 出现后讨论最多的一个词了，因为他代表着 AI 应用的最高层次了，从上次 Manus 的火爆就可见一斑。AI 给人的感觉无所不能又高深莫测，普通人又充满好奇但只能敬而远之，那是到底什么才是 AI Agent？</p>
-<p>通常很多文章在讲解 AI Agent 时又会引入很多新的概念和名词，这就让 AI Agent 的概念更加难以理解。</p>
-<h3 id="我的理解">我的理解</h3>
-<p>我们可以换个角度看，AI Agent 的最终形态就是可以和人一样处理任务，那如果直接把 Agent 看做人类，一切就变得非常容易理解。</p>
-<p>想象一下，作为前端，我要完成一个后台管理页面的需求，我是怎么做的：</p>
-<ul>
-<li>首先我有了一定的知识储备，了解基本的前端知识和一些框架，比如 React。</li>
-<li>因为是公司内部项目，所以我还需要去了解内部的组件库。</li>
-<li>分析需求，确定组件划分。</li>
-<li>开始编码，遇到问题需要联网查阅资料。</li>
-<li>测试阶段，排查问题，修复问题。</li>
-</ul>
-<p>此时，如果需要 AI 完成这个事情，同样也是按照上述步骤：</p>
-<ul>
-<li>目前大模型都是基于已有数据进行预训练，那么模型已经具备了前端知识和框架。</li>
-<li>但模型无法知晓公司内部组件库，所以先让他进行学习。这就是 RAG。</li>
-</ul>
-<blockquote>
-<p>检索增强生成（RAG）旨在通过检索和整合外部知识来增强大语言模型生成
-文本的准确性和丰富性，其是一个集成了外部知识库、信息检索器、大语言模型等
-多个功能模块的系统。RAG 利用信息检索、深度学习等多种技术为大语言模型在
-生成过程中引入最新的、特定领域的知识，从而克服传统大语言模型的局限性，提
-供更加精准和可靠的生成内容。（引用自：<a href="https://github.com/ZJU-LLMs/Foundations-of-LLMs%EF%BC%89">https://github.com/ZJU-LLMs/Foundations-of-LLMs）</a></p>
-</blockquote>
-<ul>
-<li>AI 根据需求（Prompt），基于学习的知识进行拆分组件、编写代码（规划步骤 WorkFlow）。</li>
-<li>遇到问题，联网排查资料（使用 Tool）</li>
-<li>测试阶段，遇到问题，进行修复。（基于上下文记忆 Memery）。</li>
-</ul>
-<p>可以看出 AI Agent 做事情的方式就是在无限的接近于人类的做事方式：有知识储备，有规步骤规划，有工作流，有工具，最终输出结果。而整个流程中，AI Agent 作为一个完备的系统（没错，AI Agent 是一个系统），内部各部分有条不紊的工作。这一点和人类也一样，人类是一个完美的系统！</p>
-<h3 id="总结">总结</h3>
-<p><strong>最后我们总结一下什么是 Agent：</strong></p>
-<ol>
-<li>首先是基于大模型的，这是基础。</li>
-<li>感知外部环境：和用户、外部知识、工具甚至是其他 Agent 交互。</li>
-<li>规划和决策：任务管理、任务分配、多步骤工作。</li>
-<li>记忆和改进：理解上下文。</li>
-<li>结合以上几点：<strong>AI Agent 是一个可以理解上下文，通过感知外部环境变化，对任务进行分析、规划并最终进行决策的系统。</strong></li>
-</ol>
-<p>目前已经有很多细分领域的 Agent 了，比如大火的 Cursor，生成代码建议、代码生成、询问人类意见，通过更多的案例学习，后续的编码 Agent 会变的更加智能。</p>
-<p><img src="/img/archive/0168e660a4e09bd4.webp" alt="配图"></p>
-<hr>
-<p>本文只是个人对 AI Agent 的简单理解，对于详细的定义概念和分类，还是要参考资料和专业书籍，推荐文章 <a href="https://weaviate.io/blog/what-are-agentic-workflows%E3%80%82%E5%8F%A6%E5%A4%96%E5%A6%82%E6%9E%9C%E6%83%B3%E8%A6%81%E5%8A%A8%E6%89%8B%E5%AE%9E%E8%B7%B5%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%9C%8B%E4%B8%80%E4%B8%8B%E5%BE%AE%E8%BD%AF%E7%9A%84">https://weaviate.io/blog/what-are-agentic-workflows。另外如果想要动手实践，可以看一下微软的</a> AI Agent 课程：<a href="https://microsoft.github.io/ai-agents-for-beginners/%E3%80%82">https://microsoft.github.io/ai-agents-for-beginners/。</a></p>
-</div><footer class="post-foot">这个站现在只放项目与资源 → <a href="/">首页</a><br>回到 <a href="/blog/">归档</a>。</footer></div></article></main><footer class="footer"><div class="wrap footer-inner"><div class="footer-copy"><span class="footer-brand">☾ Sleepy Zone</span><span>© 2026 · 希望你们快乐～</span></div><nav class="footer-nav" aria-label="页脚导航"><a href="/blog/" data-track="nav_click" data-track-lib="footer" data-track-value="/blog/" data-track-label="归档">归档</a><a href="https://github.com/sleepy-zone" target="_blank" rel="noopener" data-track="outbound_click" data-track-lib="footer" data-track-value="github.com" data-track-label="GitHub">GitHub</a><a href="https://twitter.com/zone__online" target="_blank" rel="noopener" data-track="outbound_click" data-track-lib="footer" data-track-value="twitter.com" data-track-label="X">X</a></nav></div></footer><script>
-      window.ANALYTICS = {
-        providers: [{ provider: 'clarity', id: 'r1wmvdsf4a' }],
-      };
-    </script><script src="/analytics.js" defer></script></body></html>
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="0; url=/blog/2025-04-10-what-is-agent/">
+<link rel="canonical" href="https://sleepyzone.online/blog/2025-04-10-what-is-agent/">
+<meta name="robots" content="noindex">
+<title>页面已迁移 — Sleepy Zone</title>
+</head>
+<body><p>页面已迁移，<a href="/blog/2025-04-10-what-is-agent/">继续阅读</a>。</p></body>
+</html>
