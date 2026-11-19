@@ -28,7 +28,7 @@
 - id: skillry
   title: Skillry
   desc: 有品味的 Agent Skills
-  url: https://openrouter.ai/
+  url: https://skillry.dev?via=sleepyzone
   image: https://media.skillry.dev/cdn-cgi/image/width=960,quality=80,fit=scale-down,format=auto/home/made-by-skillry/studio-designed-by-hand.93234d1014.png
   tag: skill AI
   mark: AI
@@ -40,6 +40,6 @@
       text: 用 Agent 做设计、前端或内容工作，想直接复用现成 skills 的人。
     - title: 使用建议
       text: 从官网查看最新 skills 和适用场景；具体能力以官方页面为准。
-  sponsored: false
+  sponsored: true
   enabled: true
   order: 2
