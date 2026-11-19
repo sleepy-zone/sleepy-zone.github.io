@@ -123,7 +123,8 @@ git push
 - 结构化数据在 `src/lib/seo.ts`：Person / Organization / WebSite / WebPage；首页和项目页是 ItemList，文章是 BlogPosting + BreadcrumbList。
 - 新增项目会自动进入项目页 ItemList；新增归档文章会自动进入归档 ItemList 和 BlogPosting。
 - 社交卡片：`public/og.png`（1200×630）；品牌 logo：`public/logo-512.png`。
-- `sitemap-index.xml` 和 `robots.txt` 已配置；上线后到 Google Search Console / Bing Webmaster 提交 sitemap。
+- `sitemap-index.xml` 和 `robots.txt` 已配置；sitemap 只保留首页（priority 1.0）和 `/projects/`（0.9），归档博客保留可访问但不提交 sitemap。
+- 上线后到 Google Search Console / Bing Webmaster 提交 `https://sleepyzone.online/sitemap-index.xml`。
 - 19 个归档旧 URL 里的 `.md` 已去掉，旧地址会重定向到干净 URL；不要在新文章里使用带 `.md` 的 slug。
 
 ## 部署
