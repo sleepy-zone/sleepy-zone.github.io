@@ -80,7 +80,7 @@ Star 数由 `src/data/stars.json` 覆盖，YAML 里的值是兜底。
 
 ## 图片
 
-- 项目封面建议 **3:2、480×300 的 WebP**，放 `public/img/projects/`；也可以用远程图片 URL。
+- 项目封面建议 **3:2、768×512 的 WebP**，放 `public/img/projects/`；卡片会按 480×300 的比例裁切。
 - 没有截图的项目可以生成一张纸色标题卡，保持和站内一致的观感。
 - 图片不会在构建时自动压缩，建议先转 WebP 再提交；批量处理可参考 `scripts/legacy/localize-images.py`。
 
@@ -116,6 +116,15 @@ git push
 - 已埋事件：`nav_click`、`cta_click`、`project_click`（带 `free`）、`tool_click`、`archive_open`、`contact_click`、`outbound_click`。
 - 调试：控制台执行 `window.__trackDebug = true` 后刷新；`window.__trackLog` 始终保留最近 200 条。
 - 新增可点击元素时，加 `data-track="event_name"` 和 `data-track-id / label / type / value` 即可，不用写额外的 JS。
+
+## SEO
+
+- 页面标题、描述、canonical、OG/Twitter 卡片统一在 `src/layouts/BaseLayout.astro`。
+- 结构化数据在 `src/lib/seo.ts`：Person / Organization / WebSite / WebPage；首页和项目页是 ItemList，文章是 BlogPosting + BreadcrumbList。
+- 新增项目会自动进入项目页 ItemList；新增归档文章会自动进入归档 ItemList 和 BlogPosting。
+- 社交卡片：`public/og.png`（1200×630）；品牌 logo：`public/logo-512.png`。
+- `sitemap-index.xml` 和 `robots.txt` 已配置；上线后到 Google Search Console / Bing Webmaster 提交 sitemap。
+- 19 个归档旧 URL 里的 `.md` 已去掉，旧地址会重定向到干净 URL；不要在新文章里使用带 `.md` 的 slug。
 
 ## 部署
 

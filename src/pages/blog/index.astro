@@ -2,6 +2,8 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { formatDate } from '../../lib/date';
+import { excerpt } from '../../lib/text';
+import { archiveItemList, breadcrumbSchema } from '../../lib/seo';
 
 const archive = (await getCollection('archive')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
@@ -14,13 +16,30 @@ for (const entry of archive) {
   groups.set(year, list);
 }
 const years = [...groups.keys()].sort((a, b) => b - a);
+const description = `SleepyZone 2024–2025 年关于前端、AI 编程、Cline 源码与效率工具的长文归档，共 ${archive.length} 篇。`;
+const archiveItems = archive.map((entry) => ({
+  title: entry.data.title,
+  url: `/blog/${entry.data.slug}/`,
+  date: entry.data.date,
+  description: excerpt(entry.body, 120),
+}));
 ---
 
-<BaseLayout title="归档" description="SleepyZone 2024–2025 年的长文归档。">
+<BaseLayout
+  title="前端与 AI 长文归档"
+  description={description}
+  structuredData={[
+    archiveItemList(archiveItems),
+    breadcrumbSchema([
+      { name: '首页', url: '/' },
+      { name: '归档', url: '/blog/' },
+    ]),
+  ]}
+>
   <section class="wrap page-head">
     <p class="kicker">ARCHIVE · {years[years.length - 1]}—{years[0]}</p>
     <h1>归档</h1>
-    <p class="sub">2024–2025 年的长文，保留原链接，不再更新。现在的项目与资源都在 <a href="/">首页</a>。</p>
+    <p class="sub">2024–2025 年关于前端、AI 编程、Cline 源码与效率工具的长文，保留原链接，不再更新。现在的项目与资源都在 <a href="/">首页</a>。</p>
     <p class="count">{archive.length} POSTS · 按年份排列</p>
   </section>
 

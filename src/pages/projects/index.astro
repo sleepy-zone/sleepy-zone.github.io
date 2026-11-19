@@ -3,15 +3,30 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 import { projectGroups } from '../../data/site';
 import { projects, projectsByGroup } from '../../lib/projects';
+import { breadcrumbSchema, projectItemList } from '../../lib/seo';
 
 const online = projects.filter((project) => project.site).length;
+const libraryCount = projects.filter((project) => project.group === 'library').length;
+const description = `SleepyZone 的 ${projects.length} 个项目：${libraryCount} 个 AI 绘图资源库，${online} 个可在线访问。包含 AI 绘图素材、二次元角色换装、标签词典、设计档案和开源工具。`;
 ---
 
-<BaseLayout title="项目" description="SleepyZone 的项目与 AI 绘图资源">
+<BaseLayout
+  title="AI 绘图素材与开源工具"
+  description={description}
+  structuredData={[
+    projectItemList(projects),
+    breadcrumbSchema([
+      { name: '首页', url: '/' },
+      { name: '项目', url: '/projects/' },
+    ]),
+  ]}
+>
   <section class="wrap page-head">
     <p class="kicker">ALL PROJECTS · 2019—2026</p>
     <h1>项目</h1>
-    <p class="sub">做过的工具，以及能直接打开用的素材库。</p>
+    <p class="sub">
+      {projects.length} 个项目，{libraryCount} 个 AI 绘图资源库，{online} 个可在线访问。素材支持免费打包下载。
+    </p>
   </section>
 
   <div class="wrap">
@@ -23,7 +38,9 @@ const online = projects.filter((project) => project.site).length;
           <p class="gdesc">{group.desc}</p>
         </div>
         <div class="project-grid">
-          {projectsByGroup(group.id).map((project) => <ProjectCard project={project} />)}
+          {projectsByGroup(group.id).map((project, index) => (
+            <ProjectCard project={project} priority={index < 2} />
+          ))}
         </div>
       </section>
     ))}

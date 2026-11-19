@@ -1,6 +1,6 @@
 ---
 title: "Cline 源码浅析 - 递归执行引擎"
-slug: "2025-06-23-cline-source-code-3-engine.md"
+slug: "2025-06-23-cline-source-code-3-engine"
 date: "2025-06-23"
 tags: ["AI","Cline"]
 legacy: true

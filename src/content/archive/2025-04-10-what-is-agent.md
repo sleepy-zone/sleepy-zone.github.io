@@ -1,6 +1,6 @@
 ---
 title: "什么是 Agent"
-slug: "2025-04-10-what-is-agent.md"
+slug: "2025-04-10-what-is-agent"
 date: "2025-04-10"
 tags: ["AI"]
 legacy: true

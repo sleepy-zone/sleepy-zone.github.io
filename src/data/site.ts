@@ -2,10 +2,10 @@ export const site = {
   title: 'Sleepy Zone',
   domain: 'sleepyzone.online',
   description:
-    '前端开发者 SleepyZone 的项目与 AI 绘图资源站：开源工具、素材库、标签词典。',
+    '前端开发者 SleepyZone 的项目与 AI 绘图资源站：AI 绘图素材库、二次元角色换装、标签词典、设计档案与开源工具。',
   hero: {
     kicker: 'PROJECTS & RESOURCES · 2019—2026',
-    welcome: '欢迎来逛逛我的项目和素材库。',
+    welcome: '欢迎来逛逛我的 AI 绘图素材与开源工具。',
   },
 } as const;
 

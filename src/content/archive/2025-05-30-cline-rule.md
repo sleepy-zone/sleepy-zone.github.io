@@ -1,6 +1,6 @@
 ---
 title: "现在开始使用 Cline Rules"
-slug: "2025-05-30-cline-rule.md"
+slug: "2025-05-30-cline-rule"
 date: "2025-05-30"
 tags: ["AI","Cline"]
 legacy: true

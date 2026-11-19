@@ -1,11 +1,11 @@
 ---
 title: "谷歌提示词工程 - 最佳实践"
-slug: "2025-04-24-google-promtps-2.md"
+slug: "2025-04-24-google-promtps-2"
 date: "2025-04-24"
 tags: ["AI"]
 legacy: true
 ---
-接上文[谷歌提示词工程 - 模型原理和提示词技术](/blog/2025-04-23-google-promtps.md)，讨论提示词的最佳实践。
+接上文[谷歌提示词工程 - 模型原理和提示词技术](/blog/2025-04-23-google-promtps/)，讨论提示词的最佳实践。
 
 ![配图](/img/archive/59a8d55f64068d58.webp)
 

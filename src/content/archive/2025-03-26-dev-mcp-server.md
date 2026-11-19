@@ -1,6 +1,6 @@
 ---
 title: "动手开发一个 MCP Server"
-slug: "2025-03-26-dev-mcp-server.md"
+slug: "2025-03-26-dev-mcp-server"
 date: "2025-03-26"
 tags: ["AI"]
 legacy: true

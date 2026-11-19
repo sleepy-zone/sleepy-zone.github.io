@@ -1,6 +1,6 @@
 ---
 title: "Cline 源码浅析 - Prompt 设计"
-slug: "2025-06-13-cline-source-code-prompt.md"
+slug: "2025-06-13-cline-source-code-prompt"
 date: "2025-06-13"
 tags: ["AI","Cline"]
 legacy: true

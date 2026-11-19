@@ -1,6 +1,6 @@
 ---
 title: "谷歌提示词工程 - 模型原理和提示词技术"
-slug: "2025-04-23-google-promtps.md"
+slug: "2025-04-23-google-promtps"
 date: "2025-04-23"
 tags: ["AI"]
 legacy: true

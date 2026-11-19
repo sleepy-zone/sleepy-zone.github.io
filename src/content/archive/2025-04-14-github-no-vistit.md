@@ -1,6 +1,6 @@
 ---
 title: "从 Github 不能访问想到的"
-slug: "2025-04-14-github-no-vistit.md"
+slug: "2025-04-14-github-no-vistit"
 date: "2025-04-14"
 tags: ["talk"]
 legacy: true

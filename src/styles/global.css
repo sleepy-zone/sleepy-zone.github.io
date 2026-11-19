@@ -1663,6 +1663,16 @@ button {
   color: var(--accent);
 }
 
+.masthead h1 .h1-welcome {
+  display: block;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0;
+  color: var(--body);
+}
+
 .masthead .lede {
   margin-top: 18px;
   max-width: 560px;
@@ -1845,6 +1855,10 @@ button {
 
   .masthead h1 {
     font-size: 34px;
+  }
+
+  .masthead h1 .h1-welcome {
+    font-size: 14px;
   }
 
   .masthead .lede {

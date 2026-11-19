@@ -1,6 +1,6 @@
 ---
 title: "为什么随着 AI 能力的提升，人类意图变得更加重要"
-slug: "2025-06-20-why-human-intent-matters-more-as-ai-capabilities-grow.md"
+slug: "2025-06-20-why-human-intent-matters-more-as-ai-capabilities-grow"
 date: "2025-06-20"
 tags: ["AI","Cline"]
 legacy: true

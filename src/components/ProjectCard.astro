@@ -4,9 +4,10 @@ import { formatStars, projectHref, type Project } from '../lib/projects';
 
 interface Props {
   project: Project;
+  priority?: boolean;
 }
 
-const { project } = Astro.props;
+const { project, priority = false } = Astro.props;
 const href = projectHref(project);
 const isExternal = /^https?:\/\//.test(href);
 const label = statusLabels[project.status];
@@ -30,9 +31,10 @@ const label = statusLabels[project.status];
       <img
         src={project.image}
         alt={project.imageAlt ?? project.name}
-        width="480"
-        height="300"
-        loading="lazy"
+        width="768"
+        height="512"
+        loading={priority ? 'eager' : 'lazy'}
+        fetchpriority={priority ? 'high' : undefined}
         decoding="async"
       />
     ) : (

@@ -1,6 +1,6 @@
 ---
 title: "Cline 源码浅析 - 从输入到输出"
-slug: "2025-06-07-cline-source-code-1.md"
+slug: "2025-06-07-cline-source-code-1"
 date: "2025-06-07"
 tags: ["AI","Cline"]
 legacy: true

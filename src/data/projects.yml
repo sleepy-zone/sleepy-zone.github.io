@@ -19,7 +19,7 @@
 - slug: woocs
   name: woocs
   desc: 微信 Markdown 编辑器桌面应用，基于 doocs/md
-  image: https://cloud-minapp-47803.cloud.ifanrusercontent.com/1tvAeEyU14WC5WqH.png
+  image: /img/projects/woocs.webp
   imageAlt: woocs 首页
   group: product
   status: active
@@ -33,7 +33,7 @@
 - slug: photor
   name: photor
   desc: 截图美化应用：网页版、浏览器插件、uTools 插件
-  image: https://www.photor.fun/assets/home.07d93dc0.png
+  image: /img/projects/photor.webp
   imageAlt: photor 首页
   group: product
   status: active
@@ -46,7 +46,7 @@
 - slug: ai-ref-library-cn
   name: ai-ref-library-cn
   desc: AI 绘图素材库中文版：脸 / 姿势 / 服装
-  image: https://cloud-minapp-50123.cloud.ifanrusercontent.com/1xScGh3RvBLAaHDE.png
+  image: /img/projects/ai-ref-library-cn.webp
   imageAlt: AI 作图素材库界面
   freeDownload: true
   resourceNote: "3 个库 · 4,345 项"
@@ -62,7 +62,7 @@
 - slug: char-db-cn
   name: char-db-cn
   desc: 二次元角色换装库：发型 / 服装 / 姿势 / 组装
-  image: https://cloud-minapp-50123.cloud.ifanrusercontent.com/1xScGhRHv2EsFcYx.png
+  image: /img/projects/char-db-cn.webp
   imageAlt: 二次元角色换装库界面
   freeDownload: true
   resourceNote: "2,347 张 · 306 发型 / 1,760 服装"
@@ -78,7 +78,7 @@
 - slug: ai-tag-atlas
   name: ai-tag-atlas
   desc: AI 绘图标签词典与提示词工作台
-  image: https://cloud-minapp-50123.cloud.ifanrusercontent.com/1xScGhAPfzTVMmGO.png
+  image: /img/projects/ai-tag-atlas.webp
   imageAlt: Tag Atlas 界面
   freeDownload: true
   resourceNote: "373 标签 · 29 分类 / 12 配方"
@@ -94,7 +94,7 @@
 - slug: mio-design-archive
   name: mio-design-archive
   desc: 九宫格设计档案：47 卷 / 430 件
-  image: https://cloud-minapp-50123.cloud.ifanrusercontent.com/1xScGhOGQBQyuoPg.png
+  image: /img/projects/mio-design-archive.webp
   imageAlt: Mio 设计档案界面
   freeDownload: true
   resourceNote: "430 件 / 47 卷"

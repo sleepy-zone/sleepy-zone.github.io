@@ -1,6 +1,6 @@
 ---
 title: "上下文工程 - Context Engineering"
-slug: "2025-06-26-context-engineering.md"
+slug: "2025-06-26-context-engineering"
 date: "2025-06-26"
 tags: ["AI","Cline"]
 legacy: true

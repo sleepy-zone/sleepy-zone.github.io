@@ -1,6 +1,6 @@
 ---
 title: "Cline 源码浅析 - MCP 调用"
-slug: "2025-06-10-cline-source-code-mcp.md"
+slug: "2025-06-10-cline-source-code-mcp"
 date: "2025-06-10"
 tags: ["AI","Cline"]
 legacy: true

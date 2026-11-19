@@ -5,6 +5,7 @@ import AffiliateCard from '../components/AffiliateCard.astro';
 import { site } from '../data/site';
 import { featuredProjects, projects } from '../lib/projects';
 import { affiliates, hasSponsored } from '../lib/affiliates';
+import { projectItemList } from '../lib/seo';
 
 const featured = [...featuredProjects]
   .sort((a, b) => {
@@ -14,10 +15,13 @@ const featured = [...featuredProjects]
   .slice(0, 6);
 ---
 
-<BaseLayout>
+<BaseLayout structuredData={[projectItemList(featured, 'Sleepy Zone 精选项目与资源')]}>
   <section class="wrap masthead">
     <p class="kicker">{site.hero.kicker}</p>
-    <h1><span id="greeting">你好</span></h1>
+    <h1>
+      <span id="greeting">你好</span>
+      <span class="h1-welcome">{site.hero.welcome}</span>
+    </h1>
     <script is:inline>
       (() => {
         const hour = new Date().getHours();
@@ -31,7 +35,6 @@ const featured = [...featuredProjects]
         if (node) node.textContent = greeting;
       })();
     </script>
-    <p class="lede">{site.hero.welcome}</p>
     <div class="masthead-actions">
       <a
         class="btn btn-accent"
@@ -62,7 +65,7 @@ const featured = [...featuredProjects]
     </div>
 
     <div class="project-grid home-projects">
-      {featured.map((project) => <ProjectCard project={project} />)}
+      {featured.map((project, index) => <ProjectCard project={project} priority={index < 3} />)}
     </div>
   </section>
 

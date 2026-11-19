@@ -1,6 +1,6 @@
 ---
 title: "什么是 Coding Agent?"
-slug: "2025-06-16-what-makes-a-coding-agent.md"
+slug: "2025-06-16-what-makes-a-coding-agent"
 date: "2025-06-16"
 tags: ["AI","Cline"]
 legacy: true
