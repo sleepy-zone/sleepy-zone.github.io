@@ -23,17 +23,6 @@ const availableLocales = locales.filter((item) => alternates[item]);
   <div class="wrap topbar-inner">
     <a class="brand" href={localePath(locale, '/')}><span class="brand-mark" aria-hidden="true">☾</span>Sleepy Zone</a>
     <nav class="nav" aria-label={locale === 'zh' ? '主导航' : locale === 'en' ? 'Main navigation' : 'メインナビゲーション'}>
-      {links.map((link) => (
-        <a
-          href={link.href}
-          class={isActive(link.href) ? 'is-active' : undefined}
-          aria-current={isActive(link.href) ? 'page' : undefined}
-          data-track="nav_click"
-          data-track-lib="nav"
-          data-track-value={link.href}
-          data-track-label={link.label}
-        >{link.label}</a>
-      ))}
       {availableLocales.length > 1 && (
         <details class="lang-switch">
           <summary aria-label="Language">
@@ -64,6 +53,17 @@ const availableLocales = locales.filter((item) => alternates[item]);
           </div>
         </details>
       )}
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class={isActive(link.href) ? 'is-active' : undefined}
+          aria-current={isActive(link.href) ? 'page' : undefined}
+          data-track="nav_click"
+          data-track-lib="nav"
+          data-track-value={link.href}
+          data-track-label={link.label}
+        >{link.label}</a>
+      ))}
       <a
         class="nav-ext"
         href="https://github.com/sleepy-zone"

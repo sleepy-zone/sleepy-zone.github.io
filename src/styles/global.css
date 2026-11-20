@@ -2276,7 +2276,7 @@ button {
 .lang-menu {
   position: absolute;
   top: calc(100% + 6px);
-  right: 0;
+  left: 0;
   z-index: 30;
   min-width: 108px;
   padding: 4px;
