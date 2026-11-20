@@ -133,6 +133,14 @@
   imageAlt: Tag Atlas 界面
   freeDownload: true
   resourceNote: "373 标签 · 29 分类 / 12 配方"
+  downloadsTitle: "提示词包下载"
+  downloadsNote: "100 条标签提示词 + 对应生图，两个网盘任选，内容相同。"
+  downloads:
+    - provider: uc
+      url: https://drive.uc.cn/s/0077a620bbe74
+    - provider: xunlei
+      url: https://pan.xunlei.com/s/VP6tSfycQ-um5UBuiKIclWDYA1?pwd=xrik
+      password: xrik
   group: library
   status: active
   stack: [JavaScript]
@@ -140,14 +148,15 @@
   repo: https://github.com/sleepy-zone/ai-tag-atlas
   stars: 2
   detail:
-    intro: "Tag Atlas 是 AI 绘图标签词典和提示词工作台，把服装、体型、表情、姿势等标签整理成可搜索的库。"
+    intro: "Tag Atlas 是 AI 绘图标签词典和提示词工作台，把服装、体型、表情、姿势等标签整理成可搜索的库；另附 100 条现成提示词和对应生图，可打包下载。"
     highlights:
-      - "373 个中英标签"
-      - "29 个分类"
+      - "373 个中英标签，29 个分类"
       - "12 组场景 / 灯光配方"
+      - "100 条现成提示词 + 对应生图，网盘下载"
     useCases:
       - "查标签的中英文写法"
       - "用配方快速拼提示词"
+      - "下载现成提示词直接改画风"
   featured: true
   order: 4
 

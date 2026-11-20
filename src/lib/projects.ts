@@ -17,6 +17,8 @@ export interface Project {
   freeDownload?: boolean;
   resourceNote?: string;
   downloads?: ProjectDownload[];
+  downloadsTitle?: string;
+  downloadsNote?: string;
   detail?: {
     intro?: string;
     highlights?: string[];

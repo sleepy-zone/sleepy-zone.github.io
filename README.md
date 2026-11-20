@@ -57,7 +57,8 @@ pnpm preview
 5. `freeDownload: true` 时卡片和详情页会显示免费下载提示；不提供打包的项目不要开。
 6. `resourceNote` 写资源数量，例如 `"373 标签 · 29 分类 / 12 配方"`。
 7. `detail.intro` / `highlights` / `useCases` 是详情页正文，写 2–3 条即可，避免所有项目页长得一样。
-8. `stars` 先填 0 或当前值。部署时 Actions 会自动跑 `pnpm sync-stars` 刷新；本地也可以：
+8. 需要网盘下载时加 `downloads`（`provider` 用 `uc` / `xunlei`，迅雷填 `password`）；详情页默认标题是「整库下载」，可用 `downloadsTitle` / `downloadsNote` 改成具体资源名和说明，英文 / 日文翻译放对应的 `projects.<lang>.yml`。
+9. `stars` 先填 0 或当前值。部署时 Actions 会自动跑 `pnpm sync-stars` 刷新；本地也可以：
 
 ```bash
 pnpm sync-stars   # 有 GITHUB_TOKEN 更好；失败会保留旧值
@@ -122,6 +123,7 @@ git push
 | 新增项目 | `/projects/` 对应分组；`featured` 可能进首页 |
 | 修改项目状态/链接 | 卡片即时更新；URL 不变 |
 | 修改 `freeDownload` | 卡片显示 / 隐藏「资源可免费打包下载」 |
+| 修改 `downloads` | 详情页的网盘下载卡片 |
 | 修改工具推荐 | 首页 02 区块；`sponsored` 控制「推荐 / 推广」 |
 | 归档文章 | 不参与新内容，保持原 URL |
 

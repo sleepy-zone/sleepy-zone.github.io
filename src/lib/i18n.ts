@@ -11,6 +11,8 @@ interface ProjectTranslation {
   displayName?: string;
   desc?: string;
   resourceNote?: string;
+  downloadsTitle?: string;
+  downloadsNote?: string;
   imageAlt?: string;
   detail?: NonNullable<Project['detail']>;
 }
@@ -41,6 +43,8 @@ export function localizeProject(project: Project, locale: Locale): Project {
     displayName: translation.displayName ?? project.displayName,
     desc: translation.desc ?? project.desc,
     resourceNote: translation.resourceNote ?? project.resourceNote,
+    downloadsTitle: translation.downloadsTitle ?? project.downloadsTitle,
+    downloadsNote: translation.downloadsNote ?? project.downloadsNote,
     imageAlt: translation.imageAlt ?? project.imageAlt,
     detail: translation.detail ?? project.detail,
   };

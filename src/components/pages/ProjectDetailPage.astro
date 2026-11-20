@@ -120,8 +120,8 @@ const projectsPath = '/projects/';
       {item.downloads?.length ? (
         <section class="detail-downloads" aria-labelledby="dl-title">
           <div class="dl-head">
-            <h2 id="dl-title">{t.project.downloads}</h2>
-            <p>{t.project.downloadsSub}</p>
+            <h2 id="dl-title">{item.downloadsTitle ?? t.project.downloads}</h2>
+            <p>{item.downloadsNote ?? t.project.downloadsSub}</p>
           </div>
           <div class="dl-cards">
             {item.downloads.map((entry, index) => (

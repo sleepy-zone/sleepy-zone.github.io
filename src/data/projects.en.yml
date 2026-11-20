@@ -74,16 +74,19 @@ ai-tag-atlas:
   displayName: Tag Atlas — AI Tag Dictionary
   desc: AI drawing tag dictionary and prompt workbench.
   resourceNote: "373 tags · 29 categories / 12 recipes"
+  downloadsTitle: Download the prompt pack
+  downloadsNote: "100 tag prompts with matching images. Either cloud drive works; both hold the same files."
   imageAlt: Tag Atlas interface
   detail:
-    intro: "Tag Atlas is an AI drawing tag dictionary and prompt workbench. It organizes clothes, body types, expressions and poses into a searchable library."
+    intro: "Tag Atlas is an AI drawing tag dictionary and prompt workbench. It organizes clothes, body types, expressions and poses into a searchable library, plus a downloadable pack of 100 ready-made prompts with matching images."
     highlights:
-      - "373 bilingual tags"
-      - "29 categories"
+      - "373 bilingual tags, 29 categories"
       - "12 scene / lighting recipes"
+      - "100 ready-made prompts + matching images"
     useCases:
       - "Look up Chinese and English tag names"
       - "Build prompts from ready-made recipes"
+      - "Download prompts and adapt the art style"
 
 mio-design-archive:
   displayName: Mio Design Archive
