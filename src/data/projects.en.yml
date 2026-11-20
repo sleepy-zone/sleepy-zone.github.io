@@ -88,12 +88,12 @@ ai-tag-atlas:
 mio-design-archive:
   displayName: Mio Design Archive
   desc: Nine-grid design archive for hair, outfits and poses.
-  resourceNote: "430 items / 47 volumes"
+  resourceNote: "457 items / 50 volumes"
   imageAlt: Mio design archive
   detail:
     intro: "Mio Design Archive is a nine-grid design library organized by volume, covering hair, outfits and poses for character design references."
     highlights:
-      - "47 volumes / 430 items"
+      - "50 volumes / 457 items"
       - "Hair / outfits / poses"
       - "Full library download"
     useCases:

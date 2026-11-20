@@ -117,6 +117,35 @@ const projectsPath = '/projects/';
         <a class="btn" href={localePath(locale, projectsPath)}>{t.project.all}</a>
       </div>
 
+      {item.downloads?.length ? (
+        <section class="detail-downloads" aria-labelledby="dl-title">
+          <div class="dl-head">
+            <h2 id="dl-title">{t.project.downloads}</h2>
+            <p>{t.project.downloadsSub}</p>
+          </div>
+          <div class="dl-cards">
+            {item.downloads.map((entry, index) => (
+              <a
+                class="dl-card"
+                href={entry.url}
+                target="_blank"
+                rel="noopener"
+                data-track="download_click"
+                data-track-lib={item.slug}
+                data-track-label={entry.provider}
+              >
+                <span class="dl-card-no" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                <span class="dl-card-body">
+                  <strong>{entry.provider === 'uc' ? t.project.dlUc : t.project.dlXunlei}</strong>
+                  <span>{entry.password ? t.project.dlPassword.replace('{pwd}', entry.password) : t.project.dlNoPassword}</span>
+                </span>
+                <span class="dl-card-arrow" aria-hidden="true">↓</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <div class="detail-grid">
         <div class="detail-main">
           {item.detail?.highlights?.length ? (

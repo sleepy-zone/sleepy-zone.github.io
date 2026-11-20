@@ -3,6 +3,12 @@ import projectsRaw from '../data/projects.yml?raw';
 import starsJson from '../data/stars.json';
 import type { ProjectStatus } from '../data/site';
 
+export interface ProjectDownload {
+  provider: 'uc' | 'xunlei';
+  url: string;
+  password?: string;
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -10,6 +16,7 @@ export interface Project {
   desc: string;
   freeDownload?: boolean;
   resourceNote?: string;
+  downloads?: ProjectDownload[];
   detail?: {
     intro?: string;
     highlights?: string[];
