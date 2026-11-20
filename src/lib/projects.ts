@@ -4,7 +4,7 @@ import starsJson from '../data/stars.json';
 import type { ProjectStatus } from '../data/site';
 
 export interface ProjectDownload {
-  provider: 'uc' | 'xunlei';
+  provider: 'uc' | 'xunlei' | 'baidu' | 'quark';
   url: string;
   password?: string;
   /** 同一个项目有多份素材包时用来区分，例如「原图包」「单品图包」 */

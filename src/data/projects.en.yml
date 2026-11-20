@@ -44,6 +44,31 @@ ai-ref-library-cn:
   displayName: AI Drawing Reference Library
   desc: Chinese AI drawing reference library for faces, poses and outfits.
   resourceNote: "3 libraries · 4,345 items"
+
+  downloadsTitle: Download the packs
+  downloadsNote: "Face, pose and outfit packs. Each has a Baidu and Quark link; both hold the same files."
+  downloads:
+    - provider: baidu
+      label: Faces
+      url: https://pan.baidu.com/s/1rxqVp0qkxCQf-8Z8DXI6HA?pwd=jR2P
+      password: jR2P
+    - provider: quark
+      label: Faces
+      url: https://pan.quark.cn/s/469084c4f0fa
+    - provider: baidu
+      label: Poses
+      url: https://pan.baidu.com/s/1rY8E88d19xabnoBGhex4zg?pwd=vsf6
+      password: vsf6
+    - provider: quark
+      label: Poses
+      url: https://pan.quark.cn/s/6b1004add615
+    - provider: baidu
+      label: Outfits
+      url: https://pan.baidu.com/s/1bsGuveiCBRbucS-17tpTrg?pwd=s39e
+      password: s39e
+    - provider: quark
+      label: Outfits
+      url: https://pan.quark.cn/s/492b9782ab78
   imageAlt: AI drawing reference library
   detail:
     intro: "A Chinese reference library that splits faces, poses and outfits into searchable collections for AI drawing."

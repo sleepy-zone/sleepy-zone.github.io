@@ -44,6 +44,31 @@ ai-ref-library-cn:
   displayName: AI イラスト参考素材ライブラリ
   desc: 顔・ポーズ・服装を検索できる、中国語の AI 绘图参考素材ライブラリ。
   resourceNote: "3 ライブラリ · 4,345 点"
+
+  downloadsTitle: 素材パックのダウンロード
+  downloadsNote: "顔・ポーズ・服装の 3 パック。各パックに Baidu と Quark の 2 本ずつ、中身は同じです。"
+  downloads:
+    - provider: baidu
+      label: 顔ライブラリ
+      url: https://pan.baidu.com/s/1rxqVp0qkxCQf-8Z8DXI6HA?pwd=jR2P
+      password: jR2P
+    - provider: quark
+      label: 顔ライブラリ
+      url: https://pan.quark.cn/s/469084c4f0fa
+    - provider: baidu
+      label: ポーズライブラリ
+      url: https://pan.baidu.com/s/1rY8E88d19xabnoBGhex4zg?pwd=vsf6
+      password: vsf6
+    - provider: quark
+      label: ポーズライブラリ
+      url: https://pan.quark.cn/s/6b1004add615
+    - provider: baidu
+      label: 服装ライブラリ
+      url: https://pan.baidu.com/s/1bsGuveiCBRbucS-17tpTrg?pwd=s39e
+      password: s39e
+    - provider: quark
+      label: 服装ライブラリ
+      url: https://pan.quark.cn/s/492b9782ab78
   imageAlt: AI イラスト参考素材ライブラリ
   detail:
     intro: "顔・ポーズ・服装を検索可能なコレクションに分けた、AI 绘图向けの中国語参考ライブラリです。"

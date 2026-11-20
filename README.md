@@ -57,7 +57,7 @@ pnpm preview
 5. `freeDownload: true` 时卡片和详情页会显示免费下载提示；不提供打包的项目不要开。
 6. `resourceNote` 写资源数量，例如 `"373 标签 · 29 分类 / 12 配方"`。
 7. `detail.intro` / `highlights` / `useCases` 是详情页正文，写 2–3 条即可，避免所有项目页长得一样。
-8. 需要网盘下载时加 `downloads`（`provider` 用 `uc` / `xunlei`，迅雷填 `password`）；详情页默认标题是「整库下载」，可用 `downloadsTitle` / `downloadsNote` 改成具体资源名和说明，英文 / 日文翻译放对应的 `projects.<lang>.yml`。
+8. 需要网盘下载时加 `downloads`（`provider` 用 `uc` / `xunlei` / `baidu` / `quark`，迅雷和百度填 `password`）；详情页默认标题是「整库下载」，可用 `downloadsTitle` / `downloadsNote` 改成具体资源名和说明，英文 / 日文翻译放对应的 `projects.<lang>.yml`。
 9. `stars` 先填 0 或当前值。部署时 Actions 会自动跑 `pnpm sync-stars` 刷新；本地也可以：
 
 ```bash

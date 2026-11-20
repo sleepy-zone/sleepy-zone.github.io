@@ -38,6 +38,12 @@ const related = projects
 const detailPath = `/projects/${item.slug}/`;
 const projectsPath = '/projects/';
 const hasSide = Boolean(item.resourceNote || item.freeDownload);
+const downloadProviderLabel = {
+  uc: t.project.dlUc,
+  xunlei: t.project.dlXunlei,
+  baidu: t.project.dlBaidu,
+  quark: t.project.dlQuark,
+} as const;
 ---
 
 <BaseLayout
@@ -138,7 +144,7 @@ const hasSide = Boolean(item.resourceNote || item.freeDownload);
                 <span class="dl-card-body">
                   <strong>
                     {entry.label ? `${entry.label} · ` : ''}
-                    {entry.provider === 'uc' ? t.project.dlUc : t.project.dlXunlei}
+                    {downloadProviderLabel[entry.provider]}
                   </strong>
                   <span>{entry.password ? t.project.dlPassword.replace('{pwd}', entry.password) : t.project.dlNoPassword}</span>
                 </span>
