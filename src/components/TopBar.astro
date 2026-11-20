@@ -1,16 +1,28 @@
 ---
+import { localeMeta, localePath, locales, ui, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale?: Locale;
+  alternates?: Partial<Record<Locale, string>>;
+}
+
+const { locale = 'zh', alternates = {} } = Astro.props;
 const path = Astro.url.pathname;
+const t = ui[locale];
+const projectsHref = localePath(locale, '/projects/');
+const toolsHref = localePath(locale, '/tools/');
 const links = [
-  { href: '/projects/', label: '项目' },
-  { href: '/tools/', label: '工具推荐' },
+  { href: projectsHref, label: t.nav.projects },
+  { href: toolsHref, label: t.nav.tools },
 ];
 const isActive = (href: string) => path === href || path.startsWith(href);
+const availableLocales = locales.filter((item) => alternates[item]);
 ---
 
 <header class="topbar">
   <div class="wrap topbar-inner">
-    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">☾</span>Sleepy Zone</a>
-    <nav class="nav" aria-label="主导航">
+    <a class="brand" href={localePath(locale, '/')}><span class="brand-mark" aria-hidden="true">☾</span>Sleepy Zone</a>
+    <nav class="nav" aria-label={locale === 'zh' ? '主导航' : locale === 'en' ? 'Main navigation' : 'メインナビゲーション'}>
       {links.map((link) => (
         <a
           href={link.href}
@@ -22,6 +34,26 @@ const isActive = (href: string) => path === href || path.startsWith(href);
           data-track-label={link.label}
         >{link.label}</a>
       ))}
+      {availableLocales.length > 1 && (
+        <details class="lang-switch">
+          <summary aria-label="Language">{localeMeta[locale].label}</summary>
+          <div class="lang-menu">
+            {availableLocales.map((item) => (
+              <a
+                href={alternates[item]}
+                hreflang={localeMeta[item].htmlLang}
+                lang={localeMeta[item].htmlLang}
+                class={item === locale ? 'is-active' : undefined}
+                aria-current={item === locale ? 'page' : undefined}
+                data-track="language_switch"
+                data-track-lib="nav"
+                data-track-value={item}
+                data-track-label={localeMeta[item].label}
+              >{localeMeta[item].label}</a>
+            ))}
+          </div>
+        </details>
+      )}
       <a
         class="nav-ext"
         href="https://github.com/sleepy-zone"

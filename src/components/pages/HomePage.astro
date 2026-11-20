@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../ProjectCard.astro';
+import AffiliateCard from '../AffiliateCard.astro';
+import { alternatePaths, localePath, ui, type Locale } from '../../i18n/ui';
+import { localizeProject } from '../../lib/i18n';
+import { featuredProjects, projects } from '../../lib/projects';
+import { affiliates, hasSponsored } from '../../lib/affiliates';
+import { projectItemList } from '../../lib/seo';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'zh' } = Astro.props;
+const t = ui[locale];
+const featured = [...featuredProjects]
+  .sort((a, b) => {
+    const rank = (project: (typeof projects)[number]) => (project.group === 'library' ? 0 : 1);
+    return rank(a) - rank(b) || a.order - b.order;
+  })
+  .slice(0, 6);
+const localizedFeatured = featured.map((project) => localizeProject(project, locale));
+---
+
+<BaseLayout
+  title={t.home.metaTitle}
+  description={t.description}
+  locale={locale}
+  alternates={alternatePaths('/')}
+  structuredData={[projectItemList(localizedFeatured, t.home.projects, locale)]}
+>
+  <section class="wrap masthead">
+    <p class="kicker">{t.home.kicker}</p>
+    <h1>
+      <span id="greeting">{t.greeting.fallback}</span>
+      <span class="h1-welcome">{t.home.welcome}</span>
+    </h1>
+    <script is:inline define:vars={{ greetingLabels: t.greeting }}>
+      (() => {
+        const hour = new Date().getHours();
+        const key =
+          hour < 5 ? 'late' :
+          hour < 11 ? 'morning' :
+          hour < 14 ? 'noon' :
+          hour < 18 ? 'afternoon' :
+          hour < 23 ? 'evening' : 'late';
+        const node = document.getElementById('greeting');
+        if (node) node.textContent = greetingLabels[key];
+      })();
+    </script>
+    <div class="masthead-actions">
+      <a
+        class="btn btn-accent"
+        href="#projects"
+        data-track="cta_click"
+        data-track-lib="home"
+        data-track-value="projects"
+        data-track-label={t.home.primary}
+      >{t.home.primary} <span aria-hidden="true">→</span></a>
+      <a
+        class="btn"
+        href={localePath(locale, '/tools/')}
+        data-track="cta_click"
+        data-track-lib="home"
+        data-track-value="tools"
+        data-track-label={t.home.secondary}
+      >{t.home.secondary}</a>
+    </div>
+  </section>
+
+  <section class="wrap section" id="projects">
+    <div class="section-head">
+      <div>
+        <p class="sec-kicker">01 / PROJECTS</p>
+        <h2>{t.home.projects}</h2>
+      </div>
+      <a class="more" href={localePath(locale, '/projects/')}>{t.home.allProjects(projects.length)} <span aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="project-grid home-projects">
+      {featured.map((project, index) => <ProjectCard project={project} priority={index < 3} locale={locale} />)}
+    </div>
+  </section>
+
+  {affiliates.length > 0 && (
+    <section class="wrap section" id="picks">
+      <div class="section-head">
+        <div>
+          <p class="sec-kicker">02 / PICKS</p>
+          <h2>{t.home.tools}</h2>
+        </div>
+        <a class="more" href={localePath(locale, '/tools/')}>{t.home.allTools(affiliates.length)} <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="pick-note">{hasSponsored ? t.home.noteSponsored : t.home.note}</p>
+
+      <div class="promo-grid">
+        {affiliates.map((item) => <AffiliateCard item={item} detail locale={locale} />)}
+      </div>
+    </section>
+  )}
+</BaseLayout>

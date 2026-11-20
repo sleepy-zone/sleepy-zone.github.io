@@ -1,4 +1,12 @@
 ---
+import { localePath, ui, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'zh' } = Astro.props;
+const t = ui[locale];
 const year = new Date().getFullYear();
 ---
 
@@ -6,10 +14,14 @@ const year = new Date().getFullYear();
   <div class="wrap footer-inner">
     <div class="footer-copy">
       <span class="footer-brand">☾ Sleepy Zone</span>
-      <span>© {year} · 希望你们快乐～</span>
+      <span>© {year} · {t.footer.tagline}</span>
     </div>
-    <nav class="footer-nav" aria-label="页脚导航">
-      <a href="/blog/" data-track="nav_click" data-track-lib="footer" data-track-value="/blog/" data-track-label="归档">归档</a>
+    <nav class="footer-nav" aria-label={locale === 'zh' ? '页脚导航' : locale === 'en' ? 'Footer navigation' : 'フッターナビゲーション'}>
+      <a href={localePath(locale, '/projects/')} data-track="nav_click" data-track-lib="footer" data-track-value={localePath(locale, '/projects/')} data-track-label={t.nav.projects}>{t.nav.projects}</a>
+      <a href={localePath(locale, '/tools/')} data-track="nav_click" data-track-lib="footer" data-track-value={localePath(locale, '/tools/')} data-track-label={t.nav.tools}>{t.nav.tools}</a>
+      {t.footer.archive && (
+        <a href="/blog/" data-track="nav_click" data-track-lib="footer" data-track-value="/blog/" data-track-label={t.footer.archive}>{t.footer.archive}</a>
+      )}
       <a href="https://github.com/sleepy-zone" target="_blank" rel="noopener" data-track="outbound_click" data-track-lib="footer" data-track-value="github.com" data-track-label="GitHub">GitHub</a>
       <a href="https://twitter.com/zone__online" target="_blank" rel="noopener" data-track="outbound_click" data-track-lib="footer" data-track-value="twitter.com" data-track-label="X">X</a>
     </nav>

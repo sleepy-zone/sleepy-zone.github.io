@@ -1,0 +1,25 @@
+mole:
+  desc: 数十 GB のゴミや AI ツールの古いデータを整理し、アプリの削除・更新、ディスク分析、Mac の状態確認ができます。
+  tag: システムユーティリティ
+  imageAlt: Mole のダッシュボード
+  sections:
+    - title: できること
+      items:
+        - ゴミや AI ツールの古いデータを整理
+        - アプリの削除・更新、ディスク使用量の分析
+        - Mac の動作状況をリアルタイムで確認
+    - title: 向いている人
+      text: Mac の空き容量が少ない人、AI ツールやモデルをたくさん入れている人。
+    - title: 使い方
+      text: ディスク分析を確認してから整理し、削除・更新の対象を確認します。重要なデータはいつもどおりバックアップしてください。最新機能は公式サイトをご確認ください。
+skillry:
+  desc: センスのよい Agent Skills のコレクション。
+  tag: Agent スキル
+  imageAlt: Skillry
+  sections:
+    - title: これは何か
+      text: Skillry は Agent Skills のコレクションで、公式サイトでは「センスのよい Agent Skills」と紹介されています。
+    - title: 向いている人
+      text: デザイン、フロントエンド、コンテンツ制作で Agent を使い、既存のスキルを再利用したい人。
+    - title: 使い方
+      text: 公式サイトで最新のスキルと用途を確認してください。

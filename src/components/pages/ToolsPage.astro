@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateCard from '../AffiliateCard.astro';
+import { affiliates, hasSponsored } from '../../lib/affiliates';
+import { localizeAffiliate } from '../../lib/i18n';
+import { alternatePaths, localePath, ui, type Locale } from '../../i18n/ui';
+import { breadcrumbSchema, toolItemList } from '../../lib/seo';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'zh' } = Astro.props;
+const t = ui[locale];
+const localized = affiliates.map((item) => localizeAffiliate(item, locale));
+const description = `${t.tools.title}: ${localized.map((item) => item.title).join(', ')}. ${t.tools.sub}`;
+---
+
+<BaseLayout
+  title={t.tools.title}
+  description={description}
+  locale={locale}
+  alternates={alternatePaths('/tools/')}
+  structuredData={[
+    toolItemList(localized, t.tools.title, locale),
+    breadcrumbSchema([
+      { name: t.tool.breadcrumbHome, url: localePath(locale, '/') },
+      { name: t.tool.breadcrumbTools, url: localePath(locale, '/tools/') },
+    ]),
+  ]}
+>
+  <section class="wrap page-head">
+    <p class="kicker">{t.tools.kicker}</p>
+    <h1>{t.tools.title}</h1>
+    <p class="sub">{t.tools.sub}</p>
+    <p class="count">{t.tools.count(affiliates.length)}</p>
+  </section>
+
+  <div class="wrap">
+    <p class="pick-note">{hasSponsored ? t.tools.noteSponsored : t.tools.note}</p>
+    <div class="promo-grid">
+      {affiliates.map((item) => <AffiliateCard item={item} detail locale={locale} />)}
+    </div>
+  </div>
+</BaseLayout>

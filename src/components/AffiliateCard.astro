@@ -1,44 +1,49 @@
 ---
+import { localePath, ui, type Locale } from '../i18n/ui';
+import { localizeAffiliate } from '../lib/i18n';
 import type { Affiliate } from '../lib/affiliates';
 
 interface Props {
   item: Affiliate;
   detail?: boolean;
+  locale?: Locale;
 }
 
-const { item, detail = false } = Astro.props;
-const href = detail ? `/tools/${item.id}/` : item.url;
+const { item, detail = false, locale = 'zh' } = Astro.props;
+const tool = localizeAffiliate(item, locale);
+const t = ui[locale].tool;
+const href = detail ? localePath(locale, `/tools/${tool.id}/`) : tool.url;
 ---
 
 <a
   class="promo-card"
   href={href}
   target={detail ? undefined : '_blank'}
-  rel={detail ? undefined : item.sponsored ? 'sponsored nofollow noopener' : 'noopener'}
+  rel={detail ? undefined : tool.sponsored ? 'sponsored nofollow noopener' : 'noopener'}
   data-track={detail ? 'tool_card_click' : 'tool_click'}
   data-track-lib="picks"
-  data-track-id={item.id}
-  data-track-type={item.sponsored ? 'sponsored' : 'recommended'}
-  data-track-label={item.title}
+  data-track-id={tool.id}
+  data-track-type={tool.sponsored ? 'sponsored' : 'recommended'}
+  data-track-label={tool.title}
 >
   <div class="promo-cover">
-    {item.image ? (
+    {tool.image ? (
       <img
-        src={item.image}
-        alt={item.imageAlt ?? item.title}
+        src={tool.image}
+        alt={tool.imageAlt ?? tool.title}
         width="640"
         height="360"
         loading="lazy"
         decoding="async"
       />
     ) : (
-      <div class="promo-cover-fallback" aria-hidden="true">{item.mark}</div>
+      <div class="promo-cover-fallback" aria-hidden="true">{tool.mark}</div>
     )}
-    <span class={`promo-tag${item.sponsored ? ' is-sponsored' : ''}`}>{item.sponsored ? '推广' : '推荐'}</span>
+    <span class={`promo-tag${tool.sponsored ? ' is-sponsored' : ''}`}>{tool.sponsored ? t.sponsored : t.recommended}</span>
   </div>
   <div class="promo-body">
-    <h3>{item.title}</h3>
-    <p>{item.desc}</p>
-    <span class="promo-link">{detail ? '详情' : item.tag || '查看'} <i aria-hidden="true">{detail ? '→' : '↗'}</i></span>
+    <h3>{tool.title}</h3>
+    <p>{tool.desc}</p>
+    <span class="promo-link">{detail ? t.details : tool.tag || t.details} <i aria-hidden="true">{detail ? '→' : '↗'}</i></span>
   </div>
 </a>

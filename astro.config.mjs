@@ -19,7 +19,9 @@ export default defineConfig({
       // 归档博客保留可访问，但不放进 sitemap；提交首页、项目、工具及详情页。
       filter: (page) => {
         const path = new URL(page).pathname;
+        const localized = /^\/(en|ja)(\/|$)/.test(path);
         return (
+          localized ||
           path === '/' ||
           path === '/projects/' ||
           path.startsWith('/projects/') ||
@@ -29,13 +31,14 @@ export default defineConfig({
       },
       serialize(item) {
         const path = new URL(item.url).pathname;
-        if (path === '/') {
+        const normalized = path.replace(/^\/(en|ja)(?=\/|$)/, '') || '/';
+        if (normalized === '/') {
           return { ...item, lastmod: buildDate, changefreq: 'daily', priority: 1.0 };
         }
-        if (path === '/projects/' || path === '/tools/') {
+        if (normalized === '/projects/' || normalized === '/tools/') {
           return { ...item, lastmod: buildDate, changefreq: 'weekly', priority: 0.9 };
         }
-        if (path.startsWith('/projects/') || path.startsWith('/tools/')) {
+        if (normalized.startsWith('/projects/') || normalized.startsWith('/tools/')) {
           return { ...item, lastmod: buildDate, changefreq: 'monthly', priority: 0.8 };
         }
         return item;

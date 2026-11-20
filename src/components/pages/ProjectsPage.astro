@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../ProjectCard.astro';
+import { projectGroups } from '../../data/site';
+import { projects, projectsByGroup } from '../../lib/projects';
+import { localizeProject } from '../../lib/i18n';
+import { alternatePaths, localePath, ui, type Locale } from '../../i18n/ui';
+import { breadcrumbSchema, projectItemList } from '../../lib/seo';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'zh' } = Astro.props;
+const t = ui[locale];
+const online = projects.filter((project) => project.site).length;
+const libraryCount = projects.filter((project) => project.group === 'library').length;
+const localizedProjects = projects.map((project) => localizeProject(project, locale));
+const description = t.projectsPage.sub(projects.length, libraryCount, online);
+---
+
+<BaseLayout
+  title={t.projectsPage.metaTitle}
+  description={description}
+  locale={locale}
+  alternates={alternatePaths('/projects/')}
+  structuredData={[
+    projectItemList(localizedProjects, t.projectsPage.title, locale),
+    breadcrumbSchema([
+      { name: t.project.breadcrumbHome, url: localePath(locale, '/') },
+      { name: t.project.breadcrumbProjects, url: localePath(locale, '/projects/') },
+    ]),
+  ]}
+>
+  <section class="wrap page-head">
+    <p class="kicker">{t.projectsPage.kicker}</p>
+    <h1>{t.projectsPage.title}</h1>
+    <p class="sub">{description}</p>
+  </section>
+
+  <div class="wrap">
+    {projectGroups.map((group) => {
+      const copy = t.groups[group.id];
+      return (
+        <section class="group">
+          <div class="group-head">
+            <p class="sec-kicker">{group.index} / {copy.label}</p>
+            <h2>{copy.heading}</h2>
+            <p class="gdesc">{copy.desc}</p>
+          </div>
+          <div class="project-grid">
+            {projectsByGroup(group.id).map((project, index) => (
+              <ProjectCard project={project} priority={index < 2} locale={locale} />
+            ))}
+          </div>
+        </section>
+      );
+    })}
+
+    <p class="legend">{t.projectsPage.legend}</p>
+  </div>
+</BaseLayout>

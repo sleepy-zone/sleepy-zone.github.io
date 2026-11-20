@@ -135,13 +135,31 @@ git push
 - 调试：控制台执行 `window.__trackDebug = true` 后刷新；`window.__trackLog` 始终保留最近 200 条。
 - 新增可点击元素时，加 `data-track="event_name"` 和 `data-track-id / label / type / value` 即可，不用写额外的 JS。
 
+## 多语言
+
+- 中文在根路径：`/`、`/projects/`、`/tools/`
+- 英文在 `/en/` 下，日文在 `/ja/` 下
+- 已翻译：首页、项目列表、8 个项目详情、工具列表、2 个工具详情
+- 归档博客保持中文，不翻译，不进 sitemap
+- UI 文案在 `src/i18n/ui.ts`
+- 项目翻译在 `src/data/projects.en.yml` / `projects.ja.yml`
+- 工具翻译在 `src/data/affiliates.en.yml` / `affiliates.ja.yml`
+
+新增一种语言：
+
+1. 在 `src/i18n/ui.ts` 的 `locales` 和 `localeMeta` 里加语言代码；
+2. 在 `ui` 里补该语言的文案；
+3. 加 `projects.<lang>.yml`、`affiliates.<lang>.yml`；
+4. 在 `src/lib/i18n.ts` 的翻译表里注册；
+5. 构建后会自动生成 `/<lang>/` 页面、hreflang 和 sitemap 条目。
+
 ## SEO
 
 - 页面标题、描述、canonical、OG/Twitter 卡片统一在 `src/layouts/BaseLayout.astro`。
 - 结构化数据在 `src/lib/seo.ts`：Person / Organization / WebSite / WebPage；首页和项目页是 ItemList，项目详情是 WebApplication，工具详情是 SoftwareApplication，文章是 BlogPosting + BreadcrumbList。
 - 新增项目会自动生成 `/projects/<slug>/` 并进入 ItemList；新增工具会自动生成 `/tools/<id>/`；归档文章自动进入 BlogPosting。
 - 社交卡片：`public/og.png`（1200×630）；品牌 logo：`public/logo-512.png`。
-- `sitemap-index.xml` 和 `robots.txt` 已配置；sitemap 包含首页、项目列表/详情、工具列表/详情，归档博客保留可访问但不提交 sitemap。
+- `sitemap-index.xml` 和 `robots.txt` 已配置；sitemap 包含中文、英文、日文的首页/项目/工具及详情页（共 39 条），归档博客保留可访问但不提交 sitemap。
 - 上线后到 Google Search Console / Bing Webmaster 提交 `https://sleepyzone.online/sitemap-index.xml`。
 - 19 个归档旧 URL 里的 `.md` 已去掉，旧地址会重定向到干净 URL；不要在新文章里使用带 `.md` 的 slug。
 
@@ -163,10 +181,11 @@ src/
 ├─ components/     TopBar / Footer / ProjectCard / AffiliateCard
 ├─ content/
 │  └─ archive/     旧文
-├─ data/           projects.yml、affiliates.yml、stars.json、站点文案
+├─ data/           projects*.yml、affiliates*.yml、stars.json、站点文案
 ├─ layouts/        BaseLayout
 ├─ lib/            项目、工具推荐、日期、文本
-├─ pages/          首页、项目列表/详情、工具列表/详情、归档、404
+├─ i18n/           locales 与 UI 文案
+├─ pages/          中文根路径 + /[lang]/ 多语言路由、归档、404
 └─ styles/         global.css（与 char-db-cn 一致的主题 token + 全站样式）
 ```
 

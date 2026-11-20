@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects, projectBySlug, formatStars } from '../../lib/projects';
+import { localizeProject } from '../../lib/i18n';
+import { alternatePaths, localePath, ui, type Locale } from '../../i18n/ui';
+import { breadcrumbSchema, projectApplicationSchema } from '../../lib/seo';
+
+interface Props {
+  locale?: Locale;
+  slug: string;
+}
+
+const { locale = 'zh', slug } = Astro.props;
+const project = projectBySlug(slug);
+if (!project) throw new Error(`Project not found: ${slug}`);
+
+const item = localizeProject(project, locale);
+const t = ui[locale];
+const title = item.displayName ?? item.name;
+const intro = item.detail?.intro ?? item.desc;
+const groupLabel = t.groups[item.group].label;
+const statusLabel = t.status[item.status];
+const kindLabel = item.group === 'library' ? t.project.kindLibrary : t.project.kindTool;
+const stop = locale === 'en' ? '.' : '。';
+const nameWrap = locale === 'zh' ? `（${item.name}）` : ` (${item.name})`;
+const description = `${item.desc}${nameWrap}${stop}${item.freeDownload ? ` ${t.project.freeText}${stop}` : ''} ${t.project.metaSuffix}`;
+
+const related = projects
+  .filter((entry) => entry.slug !== item.slug)
+  .sort((a, b) => {
+    const sameA = a.group === item.group ? 0 : 1;
+    const sameB = b.group === item.group ? 0 : 1;
+    return sameA - sameB || a.order - b.order;
+  })
+  .slice(0, 3)
+  .map((entry) => localizeProject(entry, locale));
+
+const detailPath = `/projects/${item.slug}/`;
+const projectsPath = '/projects/';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  locale={locale}
+  alternates={alternatePaths(detailPath)}
+  structuredData={[
+    projectApplicationSchema(item, locale),
+    breadcrumbSchema([
+      { name: t.project.breadcrumbHome, url: localePath(locale, '/') },
+      { name: t.project.breadcrumbProjects, url: localePath(locale, projectsPath) },
+      { name: title, url: localePath(locale, detailPath) },
+    ]),
+  ]}
+>
+  <div class="wrap detail-page">
+    <nav class="crumbs" aria-label="breadcrumb">
+      <a href={localePath(locale, '/')}>{t.project.breadcrumbHome}</a>
+      <span>/</span>
+      <a href={localePath(locale, projectsPath)}>{t.project.breadcrumbProjects}</a>
+      <span>/</span>
+      <span aria-current="page">{title}</span>
+    </nav>
+
+    <article class="detail-card">
+      <header class="detail-head">
+        <p class="kicker">PROJECT / {groupLabel}</p>
+        <h1>{title}</h1>
+        <p class="detail-slug">{item.name}</p>
+        <p class="detail-lede">{intro}</p>
+        <div class="detail-meta">
+          <span class={`meta-pill ${item.status}`}>{statusLabel}</span>
+          <span>{kindLabel}</span>
+          {item.stars > 0 && <span>★ {formatStars(item.stars)}</span>}
+          {item.freeDownload && <span class="meta-free">{t.project.freeText}</span>}
+        </div>
+      </header>
+
+      {item.image && (
+        <div class="detail-hero">
+          <img
+            src={item.image}
+            alt={item.imageAlt ?? item.name}
+            width="768"
+            height="512"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+      )}
+
+      <div class="detail-actions">
+        {item.site && (
+          <a
+            class="btn btn-accent"
+            href={item.site}
+            target="_blank"
+            rel="noopener"
+            data-track="project_open"
+            data-track-lib="projects"
+            data-track-id={item.slug}
+            data-track-label={item.name}
+          >{t.project.open} <span aria-hidden="true">↗</span></a>
+        )}
+        {item.repo && (
+          <a
+            class="btn"
+            href={item.repo}
+            target="_blank"
+            rel="noopener"
+            data-track="outbound_click"
+            data-track-lib="projects"
+            data-track-label="GitHub"
+          >{t.project.github} <span aria-hidden="true">↗</span></a>
+        )}
+        <a class="btn" href={localePath(locale, projectsPath)}>{t.project.all}</a>
+      </div>
+
+      <div class="detail-grid">
+        <div class="detail-main">
+          {item.detail?.highlights?.length ? (
+            <section class="detail-section">
+              <h2>{t.project.included}</h2>
+              <ul>
+                {item.detail.highlights.map((entry) => <li>{entry}</li>)}
+              </ul>
+            </section>
+          ) : null}
+
+          {item.detail?.useCases?.length ? (
+            <section class="detail-section">
+              <h2>{t.project.useCases}</h2>
+              <ul>
+                {item.detail.useCases.map((entry) => <li>{entry}</li>)}
+              </ul>
+            </section>
+          ) : null}
+        </div>
+
+        <aside class="detail-side">
+          {item.resourceNote && (
+            <div class="detail-fact">
+              <span>{t.project.resourceSize}</span>
+              <strong>{item.resourceNote}</strong>
+            </div>
+          )}
+          <div class="detail-fact">
+            <span>{t.project.stack}</span>
+            <strong>{item.stack.join(' / ')}</strong>
+          </div>
+          {item.stars > 0 && (
+            <div class="detail-fact">
+              <span>{t.project.stars}</span>
+              <strong>{formatStars(item.stars)}</strong>
+            </div>
+          )}
+          {item.freeDownload && (
+            <div class="detail-free">
+              <span>{t.project.freeLabel}</span>
+              <strong>{t.project.freeText}</strong>
+              <p>{t.project.freeNote}</p>
+            </div>
+          )}
+        </aside>
+      </div>
+
+      {related.length > 0 && (
+        <section class="detail-related">
+          <h2>{t.project.other}</h2>
+          <div class="related-links">
+            {related.map((entry) => (
+              <a href={localePath(locale, `/projects/${entry.slug}/`)}>{entry.displayName ?? entry.name} <span aria-hidden="true">→</span></a>
+            ))}
+          </div>
+        </section>
+      )}
+    </article>
+  </div>
+</BaseLayout>

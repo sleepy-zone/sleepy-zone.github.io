@@ -1,0 +1,12 @@
+---
+import ToolsPage from '../../../components/pages/ToolsPage.astro';
+import { locales, type Locale } from '../../../i18n/ui';
+
+export function getStaticPaths() {
+  return locales.filter((locale) => locale !== 'zh').map((locale) => ({ params: { lang: locale } }));
+}
+
+const { lang } = Astro.params;
+---
+
+<ToolsPage locale={lang as Locale} />

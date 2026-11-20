@@ -1,0 +1,25 @@
+mole:
+  desc: Clean up tens of GB of junk and old AI tool data, uninstall/update apps, analyze disk usage and monitor your Mac.
+  tag: System utility
+  imageAlt: Mole dashboard
+  sections:
+    - title: What it does
+      items:
+        - Clean junk and old AI tool data
+        - Uninstall and update apps, analyze disk usage
+        - Monitor live Mac status
+    - title: Who it's for
+      text: People whose Mac is running out of space, especially those with lots of AI tools or models installed.
+    - title: How to use
+      text: Check disk analysis before cleaning, confirm uninstall/update targets, and keep backups as usual. See the official site for current features.
+skillry:
+  desc: A curated collection of Agent Skills.
+  tag: Agent skills
+  imageAlt: Skillry
+  sections:
+    - title: What it is
+      text: Skillry is a collection of Agent Skills, described by the official site as "tasteful Agent Skills".
+    - title: Who it's for
+      text: People using agents for design, frontend or content work who want reusable skills.
+    - title: How to use
+      text: Browse the latest skills and use cases on the official site.

@@ -1,0 +1,115 @@
+fabritor:
+  displayName: fabritor 画像エディタ
+  desc: fabric.js ベースのオープンソース画像エディタ。コラージュや文字入れ、簡単なポスター作成に。
+  imageAlt: fabritor エディタ
+  detail:
+    intro: "fabritor は fabric.js ベースのオープンソース画像エディタです。ブラウザで動き、コラージュや文字入れ、簡単なポスター作成に向いています。"
+    highlights:
+      - "fabric.js + React 製、ブラウザで動作"
+      - "オープンソース。自分でホスト・拡張できる"
+      - "カバー画像や SNS 画像、レイアウト作成に"
+    useCases:
+      - "記事や SNS 用の画像を作る"
+      - "複数の画像を 1 枚のレイアウトにまとめる"
+
+woocs:
+  displayName: woocs WeChat Markdown エディタ
+  desc: doocs/md ベースの、WeChat 記事向けデスクトップ Markdown エディタ。
+  imageAlt: woocs エディタ
+  detail:
+    intro: "woocs は WeChat 記事向けのデスクトップ Markdown エディタです。doocs/md をベースに、Markdown の下書きを WeChat に貼り付けられるリッチテキストに整えます。"
+    highlights:
+      - "Vue + Electron のデスクトップアプリ"
+      - "doocs/md ベースの WeChat 向け整形"
+      - "インポート / エクスポートとショートカット"
+    useCases:
+      - "WeChat 記事の整形"
+      - "Markdown メモをリッチテキストに変換"
+
+photor:
+  displayName: photor スクリーンショット美化
+  desc: Web・ブラウザ拡張・uTools で使える、スクリーンショット美化ツール。
+  imageAlt: photor スクリーンショットエディタ
+  detail:
+    intro: "photor はスクリーンショットに背景や角丸、レイアウトを加える美化ツールです。Web 版、ブラウザ拡張、uTools プラグインで使えます。"
+    highlights:
+      - "Web 版 / ブラウザ拡張 / uTools プラグイン"
+      - "グラデーション背景、角丸、影"
+      - "fabric.js ベース"
+    useCases:
+      - "チュートリアルや資料のスクリーンショットを整える"
+      - "共有用の画像をすばやく作る"
+
+ai-ref-library-cn:
+  displayName: AI イラスト参考素材ライブラリ
+  desc: 顔・ポーズ・服装を検索できる、中国語の AI 绘图参考素材ライブラリ。
+  resourceNote: "3 ライブラリ · 4,345 点"
+  imageAlt: AI イラスト参考素材ライブラリ
+  detail:
+    intro: "顔・ポーズ・服装を検索可能なコレクションに分けた、AI 绘图向けの中国語参考ライブラリです。"
+    highlights:
+      - "顔 1,499 枚。スタイル / 髪色 / 表情で分類"
+      - "ポーズ 288 組 / 1,439 枚。線画も収録"
+      - "服装 1,407 セット。トップス / ボトムス / アウターで組み合わせ"
+    useCases:
+      - "Stable Diffusion / Midjourney の参考を探す"
+      - "同じキャラのポーズや服装のバリエーションを作る"
+
+char-db-cn:
+  displayName: 二次元キャラ着せ替えライブラリ
+  desc: 髪型・服装・ポーズ・組み立てを扱う、二次元キャラの着せ替えライブラリ。
+  resourceNote: "2,347 枚 · 髪型 306 / 服 1,760"
+  imageAlt: 二次元キャラ着せ替えライブラリ
+  detail:
+    intro: "髪型・服装・ポーズ・組み立てを行単位で組み合わせられる、キャラ設定と着せ替えの参考ライブラリです。"
+    highlights:
+      - "2,347 枚の素材"
+      - "髪型 306 / 服装 1,760 / ポーズ 281"
+      - "キャラの組み立てに対応"
+    useCases:
+      - "キャラの着せ替えと設定"
+      - "服装やポーズのプロンプトを具体的に書く"
+
+ai-tag-atlas:
+  displayName: Tag Atlas — AI タグ辞書
+  desc: AI 绘图のタグ辞書とプロンプト作業台。
+  resourceNote: "373 タグ · 29 カテゴリ / 12 レシピ"
+  imageAlt: Tag Atlas の画面
+  detail:
+    intro: "Tag Atlas は AI 绘图のタグ辞書とプロンプト作業台です。服装、体型、表情、ポーズなどを検索できるライブラリに整理しています。"
+    highlights:
+      - "中国語・英語のタグ 373 個"
+      - "29 カテゴリ"
+      - "シーン / 照明のレシピ 12 組"
+    useCases:
+      - "タグの中国語・英語表記を調べる"
+      - "レシピからプロンプトを組み立てる"
+
+mio-design-archive:
+  displayName: Mio デザインアーカイブ
+  desc: 髪型・服装・ポーズをまとめた、九宮格デザインアーカイブ。
+  resourceNote: "430 点 / 47 巻"
+  imageAlt: Mio デザインアーカイブ
+  detail:
+    intro: "Mio デザインアーカイブは、髪型・服装・ポーズを巻ごとに整理した九宮格デザインライブラリです。キャラ設定の参考に使えます。"
+    highlights:
+      - "47 巻 / 430 点"
+      - "髪型 / 服装 / ポーズ"
+      - "ライブラリ全体をダウンロード可能"
+    useCases:
+      - "キャラデザインと服装のアイデア"
+      - "九宮格の設定シートを作る"
+
+sticker-library-cn:
+  displayName: スタンプ素材ライブラリ
+  desc: チャットやコミュニティ向けの中国語スタンプ素材ライブラリ。
+  imageAlt: スタンプ素材ライブラリ
+  detail:
+    intro: "チャットやコミュニティ投稿向けの中国語スタンプ素材を整理したライブラリです。現在も整理を続けています。"
+    highlights:
+      - "中国語スタンプを分類して整理"
+      - "チャットやコミュニティ投稿に"
+      - "整理中"
+    useCases:
+      - "チャットやコミュニティ用のスタンプを探す"
+      - "投稿に画像を添える"

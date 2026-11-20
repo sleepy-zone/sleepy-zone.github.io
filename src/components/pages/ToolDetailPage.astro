@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { affiliateById, affiliates } from '../../lib/affiliates';
+import { localizeAffiliate } from '../../lib/i18n';
+import { alternatePaths, localePath, ui, type Locale } from '../../i18n/ui';
+import { breadcrumbSchema, toolApplicationSchema } from '../../lib/seo';
+
+interface Props {
+  locale?: Locale;
+  id: string;
+}
+
+const { locale = 'zh', id } = Astro.props;
+const base = affiliateById(id);
+if (!base) throw new Error(`Tool not found: ${id}`);
+
+const item = localizeAffiliate(base, locale);
+const t = ui[locale];
+const stop = locale === 'en' ? '.' : '。';
+const description = `${item.desc}${item.platform ? ` (${item.platform})` : ''}${stop} ${t.tools.sub}`;
+const others = affiliates
+  .filter((tool) => tool.id !== item.id)
+  .map((tool) => localizeAffiliate(tool, locale));
+const detailPath = `/tools/${item.id}/`;
+const toolsPath = '/tools/';
+---
+
+<BaseLayout
+  title={item.title}
+  description={description}
+  locale={locale}
+  alternates={alternatePaths(detailPath)}
+  structuredData={[
+    toolApplicationSchema(item, locale),
+    breadcrumbSchema([
+      { name: t.tool.breadcrumbHome, url: localePath(locale, '/') },
+      { name: t.tool.breadcrumbTools, url: localePath(locale, toolsPath) },
+      { name: item.title, url: localePath(locale, detailPath) },
+    ]),
+  ]}
+>
+  <div class="wrap detail-page">
+    <nav class="crumbs" aria-label="breadcrumb">
+      <a href={localePath(locale, '/')}>{t.tool.breadcrumbHome}</a>
+      <span>/</span>
+      <a href={localePath(locale, toolsPath)}>{t.tool.breadcrumbTools}</a>
+      <span>/</span>
+      <span aria-current="page">{item.title}</span>
+    </nav>
+
+    <article class="detail-card">
+      <header class="detail-head">
+        <p class="kicker">TOOL / {item.tag || t.tool.recommended}</p>
+        <h1>{item.title}</h1>
+        <p class="detail-lede">{item.desc}</p>
+        <div class="detail-meta">
+          <span class={`meta-pill ${item.sponsored ? 'new' : ''}`}>{item.sponsored ? t.tool.sponsored : t.tool.recommended}</span>
+          {item.platform && <span>{t.tool.platform}: {item.platform}</span>}
+          {item.tag && <span>{item.tag}</span>}
+        </div>
+      </header>
+
+      {item.image && (
+        <div class="detail-hero is-wide">
+          <img
+            src={item.image}
+            alt={item.imageAlt ?? item.title}
+            width="960"
+            height="540"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+      )}
+
+      <div class="detail-actions">
+        <a
+          class="btn btn-accent"
+          href={item.url}
+          target="_blank"
+          rel={item.sponsored ? 'sponsored nofollow noopener' : 'noopener'}
+          data-track="tool_click"
+          data-track-lib="picks"
+          data-track-id={item.id}
+          data-track-type={item.sponsored ? 'sponsored' : 'recommended'}
+          data-track-label={item.title}
+        >{t.tool.go} <span aria-hidden="true">↗</span></a>
+        <a class="btn" href={localePath(locale, toolsPath)}>{t.tool.all}</a>
+      </div>
+
+      <div class="detail-grid tool-detail-grid">
+        <div class="detail-main">
+          {item.sections?.length ? item.sections.map((section) => (
+            <section class="detail-section">
+              <h2>{section.title}</h2>
+              {section.text && <p class="detail-copy">{section.text}</p>}
+              {section.items?.length ? (
+                <ul>
+                  {section.items.map((entry) => <li>{entry}</li>)}
+                </ul>
+              ) : null}
+            </section>
+          )) : <p class="detail-copy">{item.desc}</p>}
+        </div>
+      </div>
+
+      <p class="tool-disclosure">
+        {item.sponsored ? t.tool.sponsoredNote : t.tool.official}
+      </p>
+
+      {others.length > 0 && (
+        <section class="detail-related">
+          <h2>{t.tool.others}</h2>
+          <div class="related-links">
+            {others.map((tool) => (
+              <a href={localePath(locale, `/tools/${tool.id}/`)}>{tool.title} <span aria-hidden="true">→</span></a>
+            ))}
+          </div>
+        </section>
+      )}
+    </article>
+  </div>
+</BaseLayout>

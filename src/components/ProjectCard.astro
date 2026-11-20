@@ -1,15 +1,19 @@
 ---
-import { statusLabels } from '../data/site';
-import { formatStars, projectDetailHref, type Project } from '../lib/projects';
+import { ui, localePath, type Locale } from '../i18n/ui';
+import { localizeProject } from '../lib/i18n';
+import { formatStars, type Project } from '../lib/projects';
 
 interface Props {
   project: Project;
   priority?: boolean;
+  locale?: Locale;
 }
 
-const { project, priority = false } = Astro.props;
-const href = projectDetailHref(project);
-const label = statusLabels[project.status];
+const { project, priority = false, locale = 'zh' } = Astro.props;
+const item = localizeProject(project, locale);
+const t = ui[locale];
+const href = localePath(locale, `/projects/${item.slug}/`);
+const label = t.status[item.status];
 ---
 
 <a
@@ -17,17 +21,17 @@ const label = statusLabels[project.status];
   href={href}
   data-track="project_click"
   data-track-lib="projects"
-  data-track-id={project.slug}
-  data-track-label={project.name}
-  data-track-type={project.group}
+  data-track-id={item.slug}
+  data-track-label={item.name}
+  data-track-type={item.group}
   data-track-value="detail"
-  data-track-free={project.freeDownload ? 'true' : undefined}
+  data-track-free={item.freeDownload ? 'true' : undefined}
 >
   <div class="project-cover">
-    {project.image ? (
+    {item.image ? (
       <img
-        src={project.image}
-        alt={project.imageAlt ?? project.name}
+        src={item.image}
+        alt={item.imageAlt ?? item.name}
         width="768"
         height="512"
         loading={priority ? 'eager' : 'lazy'}
@@ -35,24 +39,24 @@ const label = statusLabels[project.status];
         decoding="async"
       />
     ) : (
-      <div class="cover-fallback" aria-hidden="true">{project.name}</div>
+      <div class="cover-fallback" aria-hidden="true">{item.name}</div>
     )}
-    <span class={`badge ${project.status}`}>{label}</span>
+    <span class={`badge ${item.status}`}>{label}</span>
   </div>
 
   <div class="project-body">
     <div class="project-title">
-      <h3>{project.displayName ?? project.name}</h3>
-      {project.stars > 0 && <span class="project-stars">★ {formatStars(project.stars)}</span>}
+      <h3>{item.displayName ?? item.name}</h3>
+      {item.stars > 0 && <span class="project-stars">★ {formatStars(item.stars)}</span>}
     </div>
-    <p class="project-desc">{project.desc}</p>
-    {project.resourceNote && <p class="project-note">{project.resourceNote}</p>}
-    {project.freeDownload && (
-      <p class="project-free"><span aria-hidden="true">↓</span> 资源可免费打包下载</p>
+    <p class="project-desc">{item.desc}</p>
+    {item.resourceNote && <p class="project-note">{item.resourceNote}</p>}
+    {item.freeDownload && (
+      <p class="project-free"><span aria-hidden="true">↓</span> {t.project.free}</p>
     )}
     <div class="project-stack">
-      {project.stack.map((item) => <span>{item}</span>)}
+      {item.stack.map((tech) => <span>{tech}</span>)}
     </div>
-    <span class="project-detail-link">项目详情 <span aria-hidden="true">→</span></span>
+    <span class="project-detail-link">{t.project.details} <span aria-hidden="true">→</span></span>
   </div>
 </a>

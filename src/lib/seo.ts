@@ -1,6 +1,7 @@
 import type { Project } from './projects';
 import { projectHref } from './projects';
 import type { Affiliate } from './affiliates';
+import { localeMeta, localePath, type Locale } from '../i18n/ui';
 
 export const SITE_URL = 'https://sleepyzone.online';
 export const PERSON_ID = `${SITE_URL}/#person`;
@@ -29,7 +30,7 @@ export function breadcrumbSchema(items: BreadcrumbItem[]) {
   };
 }
 
-export function projectItemList(projects: Project[], name = 'Sleepy Zone 项目') {
+export function projectItemList(projects: Project[], name = 'Sleepy Zone 项目', locale: Locale = 'zh') {
   return {
     '@type': 'ItemList',
     name,
@@ -42,7 +43,7 @@ export function projectItemList(projects: Project[], name = 'Sleepy Zone 项目'
           '@type': 'CreativeWork',
           name: project.displayName ?? project.name,
           description: project.desc,
-          url: `${SITE_URL}/projects/${project.slug}/`,
+          url: absoluteUrl(localePath(locale, `/projects/${project.slug}/`)),
           ...(project.image ? { image: absoluteUrl(project.image) } : {}),
         },
       };
@@ -50,24 +51,24 @@ export function projectItemList(projects: Project[], name = 'Sleepy Zone 项目'
   };
 }
 
-export function projectApplicationSchema(project: Project) {
+export function projectApplicationSchema(project: Project, locale: Locale = 'zh') {
   const href = projectHref(project);
   return {
     '@type': 'WebApplication',
-    '@id': `${SITE_URL}/projects/${project.slug}/#app`,
+    '@id': absoluteUrl(localePath(locale, `/projects/${project.slug}/`)) + '#app',
     name: project.displayName ?? project.name,
     description: project.detail?.intro ?? project.desc,
-    url: href === '#' ? `${SITE_URL}/projects/${project.slug}/` : absoluteUrl(href),
+    url: href === '#' ? absoluteUrl(localePath(locale, `/projects/${project.slug}/`)) : absoluteUrl(href),
     ...(project.image ? { image: absoluteUrl(project.image) } : {}),
     applicationCategory: project.group === 'library' ? 'DesignApplication' : 'UtilitiesApplication',
     operatingSystem: 'Web',
     author: { '@id': PERSON_ID },
     isPartOf: { '@id': WEBSITE_ID },
-    inLanguage: 'zh-Hans',
+    inLanguage: localeMeta[locale].htmlLang,
   };
 }
 
-export function toolItemList(items: Affiliate[], name = 'Sleepy Zone 工具推荐') {
+export function toolItemList(items: Affiliate[], name = 'Sleepy Zone 工具推荐', locale: Locale = 'zh') {
   return {
     '@type': 'ItemList',
     name,
@@ -79,7 +80,7 @@ export function toolItemList(items: Affiliate[], name = 'Sleepy Zone 工具推�
         '@type': 'SoftwareApplication',
         name: item.title,
         description: item.desc,
-        url: `${SITE_URL}/tools/${item.id}/`,
+        url: absoluteUrl(localePath(locale, `/tools/${item.id}/`)),
         ...(item.image ? { image: absoluteUrl(item.image) } : {}),
         applicationCategory: item.platform === 'macOS' ? 'UtilitiesApplication' : 'BusinessApplication',
         operatingSystem: item.platform ?? 'Web',
@@ -88,10 +89,10 @@ export function toolItemList(items: Affiliate[], name = 'Sleepy Zone 工具推�
   };
 }
 
-export function toolApplicationSchema(item: Affiliate) {
+export function toolApplicationSchema(item: Affiliate, locale: Locale = 'zh') {
   return {
     '@type': 'SoftwareApplication',
-    '@id': `${SITE_URL}/tools/${item.id}/#app`,
+    '@id': absoluteUrl(localePath(locale, `/tools/${item.id}/`)) + '#app',
     name: item.title,
     description: item.desc,
     url: absoluteUrl(item.url),
@@ -99,7 +100,7 @@ export function toolApplicationSchema(item: Affiliate) {
     applicationCategory: item.platform === 'macOS' ? 'UtilitiesApplication' : 'BusinessApplication',
     operatingSystem: item.platform ?? 'Web',
     isPartOf: { '@id': WEBSITE_ID },
-    inLanguage: 'zh-Hans',
+    inLanguage: localeMeta[locale].htmlLang,
   };
 }
 

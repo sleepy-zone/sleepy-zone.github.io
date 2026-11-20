@@ -1,0 +1,115 @@
+fabritor:
+  displayName: fabritor Image Editor
+  desc: Open-source image editor built on fabric.js for quick collages, text and posters.
+  imageAlt: fabritor editor
+  detail:
+    intro: "fabritor is an open-source image editor built on fabric.js. It runs in the browser and is great for quick collages, text overlays and simple posters."
+    highlights:
+      - "Built with fabric.js + React, runs in the browser"
+      - "Open source; self-host or extend"
+      - "Good for covers, social images and layouts"
+    useCases:
+      - "Make covers and social images"
+      - "Turn several images into one layout"
+
+woocs:
+  displayName: woocs WeChat Markdown Editor
+  desc: Desktop Markdown editor for WeChat articles, based on doocs/md.
+  imageAlt: woocs editor
+  detail:
+    intro: "woocs is a desktop Markdown editor for WeChat articles. It is based on doocs/md and turns Markdown drafts into rich text you can paste into WeChat."
+    highlights:
+      - "Vue + Electron desktop app"
+      - "WeChat formatting based on doocs/md"
+      - "Import / export and keyboard shortcuts"
+    useCases:
+      - "Format WeChat articles"
+      - "Turn Markdown notes into rich text"
+
+photor:
+  displayName: photor Screenshot Beautifier
+  desc: Beautify screenshots with backgrounds and layouts on web, browser extension and uTools.
+  imageAlt: photor screenshot editor
+  detail:
+    intro: "photor beautifies screenshots with gradient backgrounds, rounded corners and layout presets. It is available on the web, as a browser extension and as a uTools plugin."
+    highlights:
+      - "Web app, browser extension and uTools plugin"
+      - "Gradient backgrounds, rounded corners and shadows"
+      - "Built on fabric.js"
+    useCases:
+      - "Beautify tutorial and documentation screenshots"
+      - "Make share images quickly"
+
+ai-ref-library-cn:
+  displayName: AI Drawing Reference Library
+  desc: Chinese AI drawing reference library for faces, poses and outfits.
+  resourceNote: "3 libraries · 4,345 items"
+  imageAlt: AI drawing reference library
+  detail:
+    intro: "A Chinese reference library that splits faces, poses and outfits into searchable collections for AI drawing."
+    highlights:
+      - "1,499 faces by style / hair / expression"
+      - "288 pose sets / 1,439 images, including line art"
+      - "1,407 outfits, combinable by top / bottom / outerwear"
+    useCases:
+      - "Find references for Stable Diffusion / Midjourney"
+      - "Keep a character consistent across poses and outfits"
+
+char-db-cn:
+  displayName: Anime Outfit Library
+  desc: Anime character outfit library for hair, clothes, poses and assembly.
+  resourceNote: "2,347 images · 306 hair / 1,760 outfits"
+  imageAlt: anime outfit library
+  detail:
+    intro: "An anime character outfit library that splits hair, clothes, poses and assembly into combinable rows for character design and outfit references."
+    highlights:
+      - "2,347 images"
+      - "306 hair / 1,760 outfits / 281 poses"
+      - "Character assembly"
+    useCases:
+      - "Character outfit and design references"
+      - "Write more specific outfit and pose prompts"
+
+ai-tag-atlas:
+  displayName: Tag Atlas — AI Tag Dictionary
+  desc: AI drawing tag dictionary and prompt workbench.
+  resourceNote: "373 tags · 29 categories / 12 recipes"
+  imageAlt: Tag Atlas interface
+  detail:
+    intro: "Tag Atlas is an AI drawing tag dictionary and prompt workbench. It organizes clothes, body types, expressions and poses into a searchable library."
+    highlights:
+      - "373 bilingual tags"
+      - "29 categories"
+      - "12 scene / lighting recipes"
+    useCases:
+      - "Look up Chinese and English tag names"
+      - "Build prompts from ready-made recipes"
+
+mio-design-archive:
+  displayName: Mio Design Archive
+  desc: Nine-grid design archive for hair, outfits and poses.
+  resourceNote: "430 items / 47 volumes"
+  imageAlt: Mio design archive
+  detail:
+    intro: "Mio Design Archive is a nine-grid design library organized by volume, covering hair, outfits and poses for character design references."
+    highlights:
+      - "47 volumes / 430 items"
+      - "Hair / outfits / poses"
+      - "Full library download"
+    useCases:
+      - "Character design and outfit inspiration"
+      - "Build nine-grid character sheets"
+
+sticker-library-cn:
+  displayName: Sticker Library
+  desc: Chinese sticker library for chats and communities.
+  imageAlt: sticker library
+  detail:
+    intro: "A Chinese sticker library for chats and community posts, organized and still growing."
+    highlights:
+      - "Categorized Chinese stickers"
+      - "For chats and community posts"
+      - "Work in progress"
+    useCases:
+      - "Find stickers for chats and communities"
+      - "Add visuals to posts"
