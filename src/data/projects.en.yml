@@ -102,14 +102,14 @@ mio-design-archive:
 
 sticker-library-cn:
   displayName: Sticker Library
-  desc: Chinese sticker library for chats and communities.
+  desc: 26 sticker styles, 23 with generated demos.
   imageAlt: sticker library
   detail:
-    intro: "A Chinese sticker library for chats and community posts, organized and still growing."
+    intro: "26 sticker and emoji style references, 23 with a complete demo. Each entry keeps its source and license note."
     highlights:
-      - "Categorized Chinese stickers"
-      - "For chats and community posts"
-      - "Work in progress"
+      - "26 styles, 23 with generated demos"
+      - "Character-focused, source and demo side by side"
+      - "3 source-only references, no demo yet"
     useCases:
       - "Find stickers for chats and communities"
       - "Add visuals to posts"

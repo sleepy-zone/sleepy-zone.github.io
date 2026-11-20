@@ -186,9 +186,17 @@
 - slug: sticker-library-cn
   name: sticker-library-cn
   displayName: "表情包素材库"
-  desc: 表情包素材库中文版，整理中
+  desc: 26 套贴纸 / 表情包风格，23 套含 Demo
   image: /img/projects/sticker-library-cn.webp
   imageAlt: 表情包素材库
+  freeDownload: true
+  resourceNote: "26 套 / 23 套 Demo"
+  downloads:
+    - provider: uc
+      url: https://drive.uc.cn/s/ce2c23d9a2614
+    - provider: xunlei
+      url: https://pan.xunlei.com/s/VP6tOlgsrhVYYrNkHDt_SpX1A1?pwd=n3ix
+      password: n3ix
   group: library
   status: active
   stack: [JavaScript]
@@ -196,13 +204,14 @@
   repo: https://github.com/sleepy-zone/sticker-library-cn
   stars: 0
   detail:
-    intro: "表情包素材库中文版，整理中文聊天和社群常用的表情包素材。"
+    intro: "26 套贴纸 / 表情包风格参考，23 套带完整 Demo；每套保留来源与授权说明，适合找风格和做同款表情包。"
     highlights:
-      - "中文表情包分类整理"
-      - "适合聊天和社群运营"
-      - "持续整理中"
+      - "26 套风格，23 套含生成 Demo"
+      - "人物 / 角色向参考，原图与 Demo 并排"
+      - "3 套仅来源参考，暂未生成 Demo"
     useCases:
-      - "找聊天和社群表情包"
-      - "给内容配图"
+      - "找贴纸 / 表情包风格方向"
+      - "做同款角色表情包"
+      - "给聊天和社群内容配图"
   featured: true
   order: 10
