@@ -42,7 +42,7 @@ export const ui = {
       metaTitle: 'AI 绘图素材与开源工具',
       title: '项目',
       sub: (n: number, lib: number, online: number) => `${n} 个项目，${lib} 个 AI 绘图资源库，${online} 个可在线访问。素材支持免费打包下载。`,
-      legend: 'STARS = GitHub Star，构建时自动同步 · 状态：维护中 / 暂停',
+      legend: '状态：维护中 / 暂停',
     },
     groups: {
       library: { label: 'AI 绘图素材库', heading: 'AI 绘图参考', desc: '借助这几个站点，快速 AI 出图' },
@@ -122,7 +122,7 @@ export const ui = {
       metaTitle: 'AI Drawing References & Open Source Tools',
       title: 'Projects',
       sub: (n: number, lib: number, online: number) => `${n} projects, ${lib} AI art libraries and ${online} online. Free bundles are available.`,
-      legend: 'STARS = GitHub stars, synced at build · Status: maintained / paused',
+      legend: 'Status: maintained / paused',
     },
     groups: {
       library: { label: 'AI Art Libraries', heading: 'AI drawing references', desc: 'Searchable references for faces, poses and outfits.' },
@@ -202,7 +202,7 @@ export const ui = {
       metaTitle: 'AI イラスト素材とオープンソースツール',
       title: 'プロジェクト',
       sub: (n: number, lib: number, online: number) => `${n} 件のプロジェクト、AI 素材ライブラリ ${lib} 件、オンライン ${online} 件。素材は無料でまとめてダウンロードできます。`,
-      legend: 'STARS = GitHub スター（ビルド時に同期）· 状態：公開中 / 一時停止',
+      legend: '状態：公開中 / 一時停止',
     },
     groups: {
       library: { label: 'AI イラスト素材', heading: 'AI 绘图の参考', desc: '顔・ポーズ・服装を検索できる参考ライブラリ。' },

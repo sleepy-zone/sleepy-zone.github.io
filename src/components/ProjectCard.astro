@@ -1,7 +1,7 @@
 ---
 import { ui, localePath, type Locale } from '../i18n/ui';
 import { localizeProject } from '../lib/i18n';
-import { formatStars, type Project } from '../lib/projects';
+import type { Project } from '../lib/projects';
 
 interface Props {
   project: Project;
@@ -47,16 +47,12 @@ const label = t.status[item.status];
   <div class="project-body">
     <div class="project-title">
       <h3>{item.displayName ?? item.name}</h3>
-      {item.stars > 0 && <span class="project-stars">★ {formatStars(item.stars)}</span>}
     </div>
     <p class="project-desc">{item.desc}</p>
     {item.resourceNote && <p class="project-note">{item.resourceNote}</p>}
     {item.freeDownload && (
       <p class="project-free"><span aria-hidden="true">↓</span> {t.project.free}</p>
     )}
-    <div class="project-stack">
-      {item.stack.map((tech) => <span>{tech}</span>)}
-    </div>
     <span class="project-detail-link">{t.project.details} <span aria-hidden="true">→</span></span>
   </div>
 </a>

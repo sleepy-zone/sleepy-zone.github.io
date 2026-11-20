@@ -2021,7 +2021,8 @@ button {
   border-top: 1px solid var(--line-soft);
 }
 
-.tool-detail-grid {
+.tool-detail-grid,
+.detail-grid.no-side {
   grid-template-columns: minmax(0, 1fr);
 }
 

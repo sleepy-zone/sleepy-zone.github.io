@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { projects, projectBySlug, formatStars } from '../../lib/projects';
+import { projects, projectBySlug } from '../../lib/projects';
 import { localizeProject } from '../../lib/i18n';
 import { alternatePaths, localePath, ui, type Locale } from '../../i18n/ui';
 import { breadcrumbSchema, projectApplicationSchema } from '../../lib/seo';
@@ -37,6 +37,7 @@ const related = projects
 
 const detailPath = `/projects/${item.slug}/`;
 const projectsPath = '/projects/';
+const hasSide = Boolean(item.resourceNote || item.freeDownload);
 ---
 
 <BaseLayout
@@ -71,7 +72,6 @@ const projectsPath = '/projects/';
         <div class="detail-meta">
           <span class={`meta-pill ${item.status}`}>{statusLabel}</span>
           <span>{kindLabel}</span>
-          {item.stars > 0 && <span>★ {formatStars(item.stars)}</span>}
           {item.freeDownload && <span class="meta-free">{t.project.freeText}</span>}
         </div>
       </header>
@@ -149,7 +149,7 @@ const projectsPath = '/projects/';
         </section>
       ) : null}
 
-      <div class="detail-grid">
+      <div class={`detail-grid${hasSide ? '' : ' no-side'}`}>
         <div class="detail-main">
           {item.detail?.highlights?.length ? (
             <section class="detail-section">
@@ -170,31 +170,23 @@ const projectsPath = '/projects/';
           ) : null}
         </div>
 
-        <aside class="detail-side">
-          {item.resourceNote && (
-            <div class="detail-fact">
-              <span>{t.project.resourceSize}</span>
-              <strong>{item.resourceNote}</strong>
-            </div>
-          )}
-          <div class="detail-fact">
-            <span>{t.project.stack}</span>
-            <strong>{item.stack.join(' / ')}</strong>
-          </div>
-          {item.stars > 0 && (
-            <div class="detail-fact">
-              <span>{t.project.stars}</span>
-              <strong>{formatStars(item.stars)}</strong>
-            </div>
-          )}
-          {item.freeDownload && (
-            <div class="detail-free">
-              <span>{t.project.freeLabel}</span>
-              <strong>{t.project.freeText}</strong>
-              <p>{t.project.freeNote}</p>
-            </div>
-          )}
-        </aside>
+        {hasSide && (
+          <aside class="detail-side">
+            {item.resourceNote && (
+              <div class="detail-fact">
+                <span>{t.project.resourceSize}</span>
+                <strong>{item.resourceNote}</strong>
+              </div>
+            )}
+            {item.freeDownload && (
+              <div class="detail-free">
+                <span>{t.project.freeLabel}</span>
+                <strong>{t.project.freeText}</strong>
+                <p>{t.project.freeNote}</p>
+              </div>
+            )}
+          </aside>
+        )}
       </div>
 
       {related.length > 0 && (
