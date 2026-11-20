@@ -107,6 +107,23 @@
   imageAlt: 二次元角色换装库界面
   freeDownload: true
   resourceNote: "2,347 张 · 306 发型 / 1,760 服装"
+  downloadsTitle: "素材包下载"
+  downloadsNote: "原图包 191 MB（1,027 张原图 + 281 张线稿）、单品图包 465 MB（1,320 张）。每包都有 UC 网盘与迅雷网盘两条，内容相同。"
+  downloads:
+    - provider: uc
+      label: 原图包
+      url: https://drive.uc.cn/s/3d9f9a726af44
+    - provider: xunlei
+      label: 原图包
+      url: https://pan.xunlei.com/s/VP6taL3v0z9hKwOzDXhJxh6TA1?pwd=ycnb
+      password: ycnb
+    - provider: uc
+      label: 单品图包
+      url: https://drive.uc.cn/s/bfb9b8494c934
+    - provider: xunlei
+      label: 单品图包
+      url: https://pan.xunlei.com/s/VP6taYv-Y8LL17B9cqBZBY9OA1?pwd=27dz
+      password: 27dz
   group: library
   status: active
   stack: [JavaScript]

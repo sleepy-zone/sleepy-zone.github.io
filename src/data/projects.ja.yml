@@ -59,6 +59,23 @@ char-db-cn:
   displayName: 二次元キャラ着せ替えライブラリ
   desc: 髪型・服装・ポーズ・組み立てを扱う、二次元キャラの着せ替えライブラリ。
   resourceNote: "2,347 枚 · 髪型 306 / 服 1,760"
+  downloadsTitle: 素材パックのダウンロード
+  downloadsNote: "原図パック 191 MB（原図 1,027 枚 + 線画 281 枚）、単品画像パック 465 MB（1,320 枚）。どちらのパックも UCドライブと迅雷ドライブの 2 本ずつ、中身は同じです。"
+  downloads:
+    - provider: uc
+      label: 原図パック
+      url: https://drive.uc.cn/s/3d9f9a726af44
+    - provider: xunlei
+      label: 原図パック
+      url: https://pan.xunlei.com/s/VP6taL3v0z9hKwOzDXhJxh6TA1?pwd=ycnb
+      password: ycnb
+    - provider: uc
+      label: 単品パック
+      url: https://drive.uc.cn/s/bfb9b8494c934
+    - provider: xunlei
+      label: 単品パック
+      url: https://pan.xunlei.com/s/VP6taYv-Y8LL17B9cqBZBY9OA1?pwd=27dz
+      password: 27dz
   imageAlt: 二次元キャラ着せ替えライブラリ
   detail:
     intro: "髪型・服装・ポーズ・組み立てを行単位で組み合わせられる、キャラ設定と着せ替えの参考ライブラリです。"

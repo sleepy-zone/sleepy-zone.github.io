@@ -59,6 +59,23 @@ char-db-cn:
   displayName: Anime Outfit Library
   desc: Anime character outfit library for hair, clothes, poses and assembly.
   resourceNote: "2,347 images · 306 hair / 1,760 outfits"
+  downloadsTitle: Download the packs
+  downloadsNote: "Originals pack 191 MB (1,027 images + 281 line art), single-garment pack 465 MB (1,320 images). Each pack has a UC Drive and a Xunlei Drive link; both hold the same files."
+  downloads:
+    - provider: uc
+      label: Originals
+      url: https://drive.uc.cn/s/3d9f9a726af44
+    - provider: xunlei
+      label: Originals
+      url: https://pan.xunlei.com/s/VP6taL3v0z9hKwOzDXhJxh6TA1?pwd=ycnb
+      password: ycnb
+    - provider: uc
+      label: Garments
+      url: https://drive.uc.cn/s/bfb9b8494c934
+    - provider: xunlei
+      label: Garments
+      url: https://pan.xunlei.com/s/VP6taYv-Y8LL17B9cqBZBY9OA1?pwd=27dz
+      password: 27dz
   imageAlt: anime outfit library
   detail:
     intro: "An anime character outfit library that splits hair, clothes, poses and assembly into combinable rows for character design and outfit references."

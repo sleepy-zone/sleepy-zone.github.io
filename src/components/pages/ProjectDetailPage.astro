@@ -136,7 +136,10 @@ const projectsPath = '/projects/';
               >
                 <span class="dl-card-no" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
                 <span class="dl-card-body">
-                  <strong>{entry.provider === 'uc' ? t.project.dlUc : t.project.dlXunlei}</strong>
+                  <strong>
+                    {entry.label ? `${entry.label} · ` : ''}
+                    {entry.provider === 'uc' ? t.project.dlUc : t.project.dlXunlei}
+                  </strong>
                   <span>{entry.password ? t.project.dlPassword.replace('{pwd}', entry.password) : t.project.dlNoPassword}</span>
                 </span>
                 <span class="dl-card-arrow" aria-hidden="true">↓</span>
