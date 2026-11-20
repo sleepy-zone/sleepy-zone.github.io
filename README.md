@@ -158,7 +158,7 @@ git push
 - 页面标题、描述、canonical、OG/Twitter 卡片统一在 `src/layouts/BaseLayout.astro`。
 - 结构化数据在 `src/lib/seo.ts`：Person / Organization / WebSite / WebPage；首页和项目页是 ItemList，项目详情是 WebApplication，工具详情是 SoftwareApplication，文章是 BlogPosting + BreadcrumbList。
 - 新增项目会自动生成 `/projects/<slug>/` 并进入 ItemList；新增工具会自动生成 `/tools/<id>/`；归档文章自动进入 BlogPosting。
-- 社交卡片：`public/og.png`（1200×630）；品牌 logo：`public/logo-512.png`。
+- 社交卡片：`public/og.png`（中文）、`og-en.png`、`og-ja.png`（1200×630）；品牌 logo：`public/logo-512.png`。
 - `sitemap-index.xml` 和 `robots.txt` 已配置；sitemap 包含中文、英文、日文的首页/项目/工具及详情页（共 39 条），归档博客保留可访问但不提交 sitemap。
 - 上线后到 Google Search Console / Bing Webmaster 提交 `https://sleepyzone.online/sitemap-index.xml`。
 - 19 个归档旧 URL 里的 `.md` 已去掉，旧地址会重定向到干净 URL；不要在新文章里使用带 `.md` 的 slug。

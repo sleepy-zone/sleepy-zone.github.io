@@ -25,7 +25,7 @@ const {
   description = site.description,
   ogType = 'website',
   noindex = false,
-  image = '/og.png',
+  image,
   publishedTime,
   tags = [],
   structuredData,
@@ -36,7 +36,8 @@ const {
 const meta = localeMeta[locale];
 const siteUrl = Astro.site ?? new URL(SITE_URL);
 const canonical = new URL(Astro.url.pathname, siteUrl);
-const ogImage = new URL(image, siteUrl);
+const ogImagePath = image ?? (locale === 'zh' ? '/og.png' : `/og-${locale}.png`);
+const ogImage = new URL(ogImagePath, siteUrl);
 const pageTitle = title ? `${title} — ${site.title}` : `${site.title} — AI 绘图素材库与开源工具`;
 const robots = noindex
   ? 'noindex,follow'
