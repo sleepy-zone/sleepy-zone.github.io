@@ -89,29 +89,20 @@
   stars: 768
 
   downloadsTitle: "素材包下载"
-  downloadsNote: "脸 / 姿势 / 服装三套素材，每套都有百度网盘与夸克网盘两条，内容相同。"
+  downloadsNote: "脸库和服装库使用迅雷网盘，姿势库使用百度网盘；三个库各一条链接。"
   downloads:
-    - provider: baidu
+    - provider: xunlei
       label: 脸库
-      url: https://pan.baidu.com/s/1rxqVp0qkxCQf-8Z8DXI6HA?pwd=jR2P
-      password: jR2P
-    - provider: quark
-      label: 脸库
-      url: https://pan.quark.cn/s/469084c4f0fa
+      url: https://pan.xunlei.com/s/VP6tg2ruaifqyrnzz5lzBdnKA1?pwd=ewt6
+      password: ewt6
     - provider: baidu
       label: 姿势库
       url: https://pan.baidu.com/s/1rY8E88d19xabnoBGhex4zg?pwd=vsf6
       password: vsf6
-    - provider: quark
-      label: 姿势库
-      url: https://pan.quark.cn/s/6b1004add615
-    - provider: baidu
+    - provider: xunlei
       label: 服装库
-      url: https://pan.baidu.com/s/1bsGuveiCBRbucS-17tpTrg?pwd=s39e
-      password: s39e
-    - provider: quark
-      label: 服装库
-      url: https://pan.quark.cn/s/492b9782ab78
+      url: https://pan.xunlei.com/s/VP6tgFmWnWfCg0Xll2VhG9I5A1?pwd=4ch7
+      password: 4ch7
   detail:
     intro: "AI 绘图素材库中文版，把脸、姿势和服装拆成可检索的参考库，适合给 AI 绘图找角色、动作和服装参考。"
     highlights:
