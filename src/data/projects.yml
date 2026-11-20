@@ -228,13 +228,13 @@
 - slug: outfit-db-cn
   name: outfit-db-cn
   displayName: "服装提示词库 · ChiHAL 精选"
-  desc: AI 服装设计师 ChiHAL 的 18 套原创设计：规格板 / 试穿图 / 可复制的分栏提示词
+  desc: AI 服装设计师 ChiHAL 的 19 套原创设计：规格板 / 试穿图 / 可复制的分栏提示词
   image: /img/projects/outfit-db-cn.webp
   imageAlt: 服装提示词库界面
   freeDownload: true
-  resourceNote: "18 套 / 51 张原图"
+  resourceNote: "19 套 / 54 张原图"
   downloadsTitle: "图集下载"
-  downloadsNote: "18 套 / 51 张原图（941×1672），每套含设计规格板 + 试穿图 + 分栏中文提示词，约 14 MB，两个网盘任选，内容相同。"
+  downloadsNote: "19 套 / 54 张原图（941×1672），每套含设计规格板 + 试穿图 + 分栏中文提示词，约 15 MB，两个网盘任选，内容相同。"
   downloads:
     - provider: xunlei
       url: https://pan.xunlei.com/s/VP6tXXOv4pc6uiTeJ_irQOM_A1?pwd=zkat
@@ -250,8 +250,8 @@
   detail:
     intro: "服装提示词库把 AI 服装设计师 ChiHAL（@chihal_ai0509）的原创服饰整理成可检索的库：每套一张设计规格板、若干张试穿图，以及一条按上装 / 下装 / 腿部 / 鞋履 / 配饰 / 材质分栏的完整服装提示词，可整段或只取一栏复制。"
     highlights:
-      - "18 套精选，覆盖暗黑朋克 / 新中式 / Y2K / 迪斯科 / 芭蕾核 / 赛车 / 都市裁缝等 9 类风格"
-      - "116 段提示词，按部位分栏，每栏单独可复制"
+      - "19 套精选，覆盖暗黑朋克 / 新中式 / Y2K / 迪斯科 / 芭蕾核 / 赛车 / 都市裁缝 / 复古流行等 10 类风格"
+      - "123 段提示词，按部位分栏，每栏单独可复制"
       - "设计规格板含正背面立裁、色卡、面料小样与细节特写"
       - "整库可打包下载：原图 941×1672 + 每套中文提示词"
     useCases:
