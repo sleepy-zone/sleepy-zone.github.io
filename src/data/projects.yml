@@ -196,11 +196,11 @@
 - slug: mio-design-archive
   name: mio-design-archive
   displayName: "Mio 设计档案"
-  desc: 九宫格设计档案：50 卷 / 457 件
+  desc: 九宫格设计档案：51 卷 / 466 件
   image: /img/projects/mio-design-archive.webp
   imageAlt: Mio 设计档案界面
   freeDownload: true
-  resourceNote: "457 件 / 50 卷"
+  resourceNote: "466 件 / 51 卷"
   downloads:
     - provider: uc
       url: https://drive.uc.cn/s/2206700fdc4d4
@@ -216,7 +216,7 @@
   detail:
     intro: "Mio 设计档案是九宫格设计库，按卷整理发型、服装和姿势，适合做角色设计和设定图参考。"
     highlights:
-      - "50 卷 / 457 件"
+      - "51 卷 / 466 件"
       - "发型 / 服装 / 姿势"
       - "整库可打包下载"
     useCases:
