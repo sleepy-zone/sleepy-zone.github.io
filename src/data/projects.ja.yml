@@ -124,12 +124,12 @@ ai-tag-atlas:
 mio-design-archive:
   displayName: Mio デザインアーカイブ
   desc: 髪型・服装・ポーズをまとめた、九宮格デザインアーカイブ。
-  resourceNote: "466 点 / 51 巻"
+  resourceNote: "484 点 / 53 巻"
   imageAlt: Mio デザインアーカイブ
   detail:
     intro: "Mio デザインアーカイブは、髪型・服装・ポーズを巻ごとに整理した九宮格デザインライブラリです。キャラ設定の参考に使えます。"
     highlights:
-      - "51 巻 / 466 点"
+      - "53 巻 / 484 点"
       - "髪型 / 服装 / ポーズ"
       - "ライブラリ全体をダウンロード可能"
     useCases:
