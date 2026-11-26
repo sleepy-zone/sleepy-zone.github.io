@@ -11,11 +11,9 @@ const path = Astro.url.pathname;
 const t = ui[locale];
 const projectsHref = localePath(locale, '/projects/');
 const toolsHref = localePath(locale, '/tools/');
-const isHome = path === localePath(locale, '/');
 const links = [
   { href: projectsHref, label: t.nav.projects },
   { href: toolsHref, label: t.nav.tools },
-  ...(isHome ? [{ href: '#play', label: t.nav.game }] : []),
 ];
 const isActive = (href: string) => path === href || path.startsWith(href);
 const availableLocales = locales.filter((item) => alternates[item]);

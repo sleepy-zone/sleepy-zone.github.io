@@ -1636,20 +1636,6 @@ button {
   }
 }
 
-@media (max-width: 520px) {
-  .brand-text {
-    display: none;
-  }
-
-  .brand {
-    gap: 0;
-  }
-
-  .brand-mark {
-    font-size: 22px;
-  }
-}
-
 @media (max-width: 380px) {
   .lang-switch summary span,
   .lang-chev {
