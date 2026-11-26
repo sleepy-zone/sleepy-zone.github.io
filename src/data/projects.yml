@@ -237,10 +237,10 @@
   downloadsNote: "39 套 / 126 张原图，每套含设计规格板 + 试穿图 + 分栏中文提示词，约 36 MB，两个网盘任选，内容相同。"
   downloads:
     - provider: xunlei
-      url: https://pan.xunlei.com/s/VP6tXXOv4pc6uiTeJ_irQOM_A1?pwd=zkat
-      password: zkat
+      url: https://pan.xunlei.com/s/VP7NVilaE2tIxro-r8Ce-yGkA1?pwd=hbz6
+      password: hbz6
     - provider: uc
-      url: https://drive.uc.cn/s/46163a3645e14
+      url: https://drive.uc.cn/s/da7b5b131fe34
   group: library
   status: new
   stack: [JavaScript]
