@@ -203,10 +203,10 @@
   resourceNote: "493 件 / 54 卷"
   downloads:
     - provider: uc
-      url: https://drive.uc.cn/s/2206700fdc4d4
+      url: https://drive.uc.cn/s/dba33a562ce24
     - provider: xunlei
-      url: https://pan.xunlei.com/s/VP6tMtuXOfJTUtz5vFtxXCp4A1?pwd=ux93
-      password: ux93
+      url: https://pan.xunlei.com/s/VP7NOGfN8ny-fOep32dqoRXgA1?pwd=9pd5
+      password: 9pd5
   group: library
   status: active
   stack: [HTML]
