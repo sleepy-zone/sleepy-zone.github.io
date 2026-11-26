@@ -151,17 +151,17 @@ sticker-library-cn:
       - "Add visuals to posts"
 
 outfit-db-cn:
-  displayName: Outfit Prompt Library · ChiHAL
-  desc: "29 original outfits from AI fashion designer ChiHAL: spec sheets, look shots and copy-ready prompts"
-  resourceNote: "29 outfits / 86 originals"
+  displayName: Outfit Prompt Library
+  desc: "39 original outfits from two AI fashion designers: spec sheets, look shots and copy-ready prompts"
+  resourceNote: "39 outfits / 126 originals"
   downloadsTitle: "Image pack download"
-  downloadsNote: "29 outfits / 86 originals (941×1672). Each outfit comes with a spec sheet, look shots and a Chinese prompt split by garment part. About 14 MB; either host works, same content."
+  downloadsNote: "39 outfits / 126 originals. Each outfit comes with a spec sheet, look shots and a Chinese prompt split by garment part. About 14 MB; either host works, same content."
   imageAlt: outfit prompt library
   detail:
     intro: "Outfit Prompt Library collects original outfits by AI fashion designer ChiHAL (@chihal_ai0509) into a searchable library. Every outfit has a design spec sheet, several look shots, and a full garment prompt split by top / bottom / legwear / shoes / accessories / materials, which you can copy whole or section by section."
     highlights:
-      - "29 curated outfits across 12 style families: dark punk, neo-Chinese, Y2K, disco, balletcore, racing, urban tailoring and more"
-      - "193 prompt sections, each copyable on its own"
+      - "39 curated outfits across 13 style families: dark punk, neo-Chinese, Y2K, disco, balletcore, racing, urban tailoring and more"
+      - "263 prompt sections, each copyable on its own"
       - "Spec sheets with front/back tailoring, colour chips, fabric swatches and detail shots"
       - "Full pack download: 941×1672 originals plus Chinese prompts per outfit"
     useCases:
