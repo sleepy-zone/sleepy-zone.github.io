@@ -11,9 +11,11 @@ const path = Astro.url.pathname;
 const t = ui[locale];
 const projectsHref = localePath(locale, '/projects/');
 const toolsHref = localePath(locale, '/tools/');
+const isHome = path === localePath(locale, '/');
 const links = [
   { href: projectsHref, label: t.nav.projects },
   { href: toolsHref, label: t.nav.tools },
+  ...(isHome ? [{ href: '#play', label: t.nav.game }] : []),
 ];
 const isActive = (href: string) => path === href || path.startsWith(href);
 const availableLocales = locales.filter((item) => alternates[item]);
@@ -21,7 +23,7 @@ const availableLocales = locales.filter((item) => alternates[item]);
 
 <header class="topbar">
   <div class="wrap topbar-inner">
-    <a class="brand" href={localePath(locale, '/')}><span class="brand-mark" aria-hidden="true">☾</span>Sleepy Zone</a>
+    <a class="brand" href={localePath(locale, '/')}><span class="brand-mark" aria-hidden="true">☾</span><span class="brand-text">Sleepy Zone</span></a>
     <nav class="nav" aria-label={locale === 'zh' ? '主导航' : locale === 'en' ? 'Main navigation' : 'メインナビゲーション'}>
       {availableLocales.length > 1 && (
         <details class="lang-switch">

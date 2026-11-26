@@ -164,6 +164,7 @@ button {
 
 .nav a {
   display: inline-flex;
+  white-space: nowrap;
   align-items: center;
   height: 34px;
   padding: 0 13px;
@@ -1635,6 +1636,32 @@ button {
   }
 }
 
+@media (max-width: 520px) {
+  .brand-text {
+    display: none;
+  }
+
+  .brand {
+    gap: 0;
+  }
+
+  .brand-mark {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 380px) {
+  .lang-switch summary span,
+  .lang-chev {
+    display: none;
+  }
+
+  .lang-switch summary {
+    padding: 0 5px;
+    gap: 0;
+  }
+}
+
 @media (max-width: 420px) {
   .nav a.nav-ext {
     display: none;
@@ -2230,6 +2257,7 @@ button {
 
 .lang-switch summary {
   display: inline-flex;
+  white-space: nowrap;
   align-items: center;
   gap: 5px;
   height: 32px;
@@ -2490,5 +2518,24 @@ button {
 
   .game-desc {
     font-size: 13px;
+  }
+}
+
+/* anchor target below sticky-ish header */
+#play {
+  scroll-margin-top: 84px;
+}
+
+.detail-game {
+  margin-top: 28px;
+}
+
+.detail-game .section-head {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 600px) {
+  .detail-game {
+    margin-top: 22px;
   }
 }

@@ -206,5 +206,31 @@ const downloadProviderLabel = {
         </section>
       )}
     </article>
+
+    <section class="detail-game" aria-labelledby="detail-game-title">
+      <div class="section-head">
+        <div>
+          <p class="sec-kicker">PLAY</p>
+          <h2 id="detail-game-title">{t.home.game.title}</h2>
+        </div>
+        <span class="game-badge">WECHAT MINI GAME</span>
+      </div>
+      <div class="game-promo">
+        <img
+          class="game-qr"
+          src="/img/game/wuxian-duidi-qr.png?v=1"
+          alt={t.home.game.alt}
+          width="600"
+          height="600"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="game-copy">
+          <p class="game-name">{t.home.game.name}</p>
+          <p class="game-desc">{t.home.game.desc}</p>
+          <p class="game-hint">{t.home.game.hint}</p>
+        </div>
+      </div>
+    </section>
   </div>
 </BaseLayout>

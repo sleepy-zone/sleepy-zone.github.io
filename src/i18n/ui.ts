@@ -21,7 +21,7 @@ export function alternatePaths(path: string) {
 export const ui = {
   zh: {
     description: '前端开发者 SleepyZone 的项目与 AI 绘图资源站：AI 绘图素材库、二次元角色换装、标签词典、设计档案与开源工具。',
-    nav: { projects: '项目', tools: '工具推荐' },
+    nav: { projects: '项目', tools: '工具推荐', game: '小游戏' },
     footer: { archive: '归档', tagline: '希望你们快乐～' },
     skip: '跳到正文',
     home: {
@@ -111,7 +111,7 @@ export const ui = {
   },
   en: {
     description: 'SleepyZone is a project and AI drawing resource hub: AI art reference libraries, anime outfit references, a tag dictionary, design archives and open-source tools.',
-    nav: { projects: 'Projects', tools: 'Tools' },
+    nav: { projects: 'Projects', tools: 'Tools', game: 'Game' },
     footer: { archive: '', tagline: "Hope you're doing well." },
     skip: 'Skip to content',
     home: {
@@ -201,7 +201,7 @@ export const ui = {
   },
   ja: {
     description: 'SleepyZone のプロジェクトと AI イラスト素材のハブ。AI 绘图の参考素材、二次元キャラの着せ替え、タグ辞書、デザインアーカイブ、オープンソースツールをまとめています。',
-    nav: { projects: 'プロジェクト', tools: 'ツール' },
+    nav: { projects: 'プロジェクト', tools: 'ツール', game: 'ゲーム' },
     footer: { archive: '', tagline: '楽しい毎日を。' },
     skip: '本文へスキップ',
     home: {
