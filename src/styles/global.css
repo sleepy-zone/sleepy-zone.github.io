@@ -2389,3 +2389,106 @@ button {
   color: #fff;
   font-size: 12px;
 }
+
+/* ---------------- mini game promo ---------------- */
+
+.game-section .section-head {
+  margin-bottom: 18px;
+}
+
+.game-badge {
+  align-self: flex-start;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.game-promo {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--r-lg);
+}
+
+.game-qr {
+  width: 112px;
+  height: 112px;
+  flex: none;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.game-copy {
+  min-width: 0;
+}
+
+.game-name {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.game-desc {
+  max-width: 700px;
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--body);
+}
+
+.game-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.game-hint span {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--canvas-soft);
+  border: 1px solid var(--line-soft);
+  color: var(--body);
+  font-size: 11px;
+}
+
+@media (max-width: 600px) {
+  .game-badge {
+    display: none;
+  }
+
+  .game-promo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .game-qr {
+    width: 88px;
+    height: 88px;
+  }
+
+  .game-name {
+    font-size: 20px;
+  }
+
+  .game-desc {
+    font-size: 13px;
+  }
+}

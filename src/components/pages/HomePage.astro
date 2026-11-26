@@ -83,11 +83,37 @@ const localizedFeatured = featured.map((project) => localizeProject(project, loc
     </div>
   </section>
 
+  <section class="wrap section" id="play">
+    <div class="section-head">
+      <div>
+        <p class="sec-kicker">{t.home.game.kicker}</p>
+        <h2>{t.home.game.title}</h2>
+      </div>
+      <span class="game-badge">WECHAT MINI GAME</span>
+    </div>
+    <div class="game-promo">
+      <img
+        class="game-qr"
+        src="/img/game/wuxian-duidi-qr.png?v=1"
+        alt={t.home.game.alt}
+        width="600"
+        height="600"
+        loading="eager"
+        decoding="async"
+      />
+      <div class="game-copy">
+        <p class="game-name">{t.home.game.name}</p>
+        <p class="game-desc">{t.home.game.desc}</p>
+        <p class="game-hint">{t.home.game.hint}</p>
+      </div>
+    </div>
+  </section>
+
   {affiliates.length > 0 && (
     <section class="wrap section" id="picks">
       <div class="section-head">
         <div>
-          <p class="sec-kicker">02 / PICKS</p>
+          <p class="sec-kicker">03 / PICKS</p>
           <h2>{t.home.tools}</h2>
         </div>
         <a class="more" href={localePath(locale, '/tools/')}>{t.home.allTools(affiliates.length)} <span aria-hidden="true">→</span></a>
