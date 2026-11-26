@@ -2525,3 +2525,30 @@ button {
     margin-top: 22px;
   }
 }
+
+/* hot badge on the mini-game hero tab */
+.btn-game-tab {
+  position: relative;
+  overflow: visible;
+}
+
+.tab-hot {
+  position: absolute;
+  top: -7px;
+  right: -6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 15px;
+  padding: 0 4px;
+  border-radius: 3px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  box-shadow: 0 0 0 2px var(--canvas);
+  pointer-events: none;
+}
