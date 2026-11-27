@@ -95,7 +95,7 @@ Star 数由 `src/data/stars.json` 覆盖，YAML 里的值是兜底。项目卡�
 - 卡片跳到本地详情页 `/tools/<id>/`，详情页的「前往官网」才是外链。
 - `sponsored: false` 显示「推荐」，详情页说明是官网链接；改成 `true` 后显示「推广」、佣金披露，并自动加 `rel="sponsored nofollow noopener"`。
 - `sections` 写工具详情正文，避免只有一个推广卡。
-- 当前工具是 Mole 和 Skillry；Skillry 已按 `via=sleepyzone` 标为推广。Mole 的 `atp=sleepy` 也像推广参数，如果确认是 affiliate，应把 `sponsored` 改成 `true`。
+- 当前工具是 Mole、Skillry 和千问办公；Skillry 和千问办公已标为推广。Mole 的 `atp=sleepy` 也像推广参数，如果确认是 affiliate，应把 `sponsored` 改成 `true`。
 
 ## 图片
 
@@ -161,7 +161,7 @@ git push
 - 结构化数据在 `src/lib/seo.ts`：Person / Organization / WebSite / WebPage；首页和项目页是 ItemList，项目详情是 WebApplication，工具详情是 SoftwareApplication，文章是 BlogPosting + BreadcrumbList。
 - 新增项目会自动生成 `/projects/<slug>/` 并进入 ItemList；新增工具会自动生成 `/tools/<id>/`；归档文章自动进入 BlogPosting。
 - 社交卡片：`public/og.png`（中文）、`og-en.png`、`og-ja.png`（1200×630）；品牌 logo：`public/logo-512.png`。
-- `sitemap-index.xml` 和 `robots.txt` 已配置；sitemap 包含中文、英文、日文的首页/项目/工具及详情页（当前 42 条），归档博客保留可访问但不提交 sitemap。
+- `sitemap-index.xml` 和 `robots.txt` 已配置；sitemap 包含中文、英文、日文的首页/项目/工具及详情页（当前 45 条），归档博客保留可访问但不提交 sitemap。
 - 上线后到 Google Search Console / Bing Webmaster 提交 `https://sleepyzone.online/sitemap-index.xml`。
 - 19 个归档旧 URL 里的 `.md` 已去掉，旧地址会重定向到干净 URL；不要在新文章里使用带 `.md` 的 slug。
 

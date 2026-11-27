@@ -23,3 +23,19 @@ skillry:
       text: People using agents for design, frontend or content work who want reusable skills.
     - title: How to use
       text: Browse the latest skills and use cases on the official site.
+
+qwen-office:
+  title: Qwen Office
+  desc: "MiniMax M3.1 Flash is free for a limited time. Qwen Office is an AI office suite for documents, spreadsheets, presentations, data analysis and research."
+  tag: AI office
+  imageAlt: Qwen Office download page
+  platform: Multi-platform
+  sections:
+    - title: What it is
+      text: Qwen Office is an AI office platform for individuals and teams, covering documents, spreadsheets, presentations, data analysis and research.
+    - title: Limited-time offer
+      text: MiniMax M3.1 Flash is free for a limited time. Download the client to try it; availability and quota are subject to the official site.
+    - title: Who it's for
+      text: People who write documents, build spreadsheets, make presentations, analyze data or do research. Available on Windows, macOS, HarmonyOS and Linux desktops, plus mobile.
+    - title: How to use
+      text: Pick your system on the official download page. Features and offers are subject to the official site.

@@ -43,3 +43,25 @@
   sponsored: true
   enabled: true
   order: 2
+
+- id: qwen-office
+  title: 千问办公
+  desc: MiniMax M3.1 Flash 限时免费使用。千问办公 AI 客户端，覆盖文档、表格、演示、数据分析与专业研究。
+  url: https://qwenwork.cn/download?utm_source=rentuibang&utm_content=banner452
+  image: /img/tools/qwen-office.webp
+  imageAlt: 千问办公下载页
+  tag: AI 办公
+  mark: 千
+  platform: 多端
+  sections:
+    - title: 是什么
+      text: 千问办公是面向个人与企业的 AI 办公平台，覆盖文档、表格、演示、数据分析与专业研究。
+    - title: 限时福利
+      text: MiniMax M3.1 Flash 限时免费使用。下载客户端后即可体验，具体活动期限与额度以官网为准。
+    - title: 适合谁
+      text: 需要写文档、做表、做演示、做数据分析或专业研究的人；支持 Windows、macOS、HarmonyOS、Linux 桌面端及移动端。
+    - title: 使用建议
+      text: 从官方下载页选择对应系统安装；功能和活动以官网当前说明为准。
+  sponsored: true
+  enabled: true
+  order: 3

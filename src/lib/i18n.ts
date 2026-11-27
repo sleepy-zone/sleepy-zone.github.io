@@ -19,8 +19,10 @@ interface ProjectTranslation {
 }
 
 interface AffiliateTranslation {
+  title?: string;
   desc?: string;
   tag?: string;
+  platform?: string;
   imageAlt?: string;
   sections?: Affiliate['sections'];
 }
@@ -58,8 +60,10 @@ export function localizeAffiliate(item: Affiliate, locale: Locale): Affiliate {
   if (!translation) return item;
   return {
     ...item,
+    title: translation.title ?? item.title,
     desc: translation.desc ?? item.desc,
     tag: translation.tag ?? item.tag,
+    platform: translation.platform ?? item.platform,
     imageAlt: translation.imageAlt ?? item.imageAlt,
     sections: translation.sections ?? item.sections,
   };

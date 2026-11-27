@@ -23,3 +23,19 @@ skillry:
       text: デザイン、フロントエンド、コンテンツ制作で Agent を使い、既存のスキルを再利用したい人。
     - title: 使い方
       text: 公式サイトで最新のスキルと用途を確認してください。
+
+qwen-office:
+  title: Qwen Office
+  desc: "MiniMax M3.1 Flash が期間限定で無料。Qwen Office は文書・表計算・プレゼン・データ分析・リサーチに対応する AI オフィススイートです。"
+  tag: AI オフィス
+  imageAlt: Qwen Office ダウンロードページ
+  platform: マルチプラットフォーム
+  sections:
+    - title: これは何か
+      text: Qwen Office は個人・企業向けの AI オフィスプラットフォームで、文書、表計算、プレゼン、データ分析、リサーチに対応します。
+    - title: 期間限定キャンペーン
+      text: MiniMax M3.1 Flash が期間限定で無料。クライアントをダウンロードして試せます。期間と利用枠は公式サイトをご確認ください。
+    - title: 向いている人
+      text: 文書作成、表計算、プレゼン、データ分析、リサーチを行う人。Windows、macOS、HarmonyOS、Linux のデスクトップとモバイルに対応しています。
+    - title: 使い方
+      text: 公式ダウンロードページで OS を選んでインストールしてください。機能とキャンペーンは公式サイトの最新情報をご確認ください。
