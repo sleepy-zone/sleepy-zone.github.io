@@ -94,6 +94,7 @@ Star 数由 `src/data/stars.json` 覆盖，YAML 里的值是兜底。项目卡�
 
 - 卡片跳到本地详情页 `/tools/<id>/`，详情页的「前往官网」才是外链。
 - `sponsored: false` 显示「推荐」，详情页说明是官网链接；改成 `true` 后显示「推广」、佣金披露，并自动加 `rel="sponsored nofollow noopener"`。
+- 如果不想显示详情页的「这是推广链接…」说明，加 `disclosure: false`；`sponsored: true` 的标记和 `rel` 仍保留。
 - `sections` 写工具详情正文，避免只有一个推广卡。
 - 当前工具是 Mole、Skillry 和千问办公；Skillry 和千问办公已标为推广。Mole 的 `atp=sleepy` 也像推广参数，如果确认是 affiliate，应把 `sponsored` 改成 `true`。
 

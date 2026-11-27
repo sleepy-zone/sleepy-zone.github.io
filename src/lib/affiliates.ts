@@ -17,6 +17,8 @@ export interface Affiliate {
     items?: string[];
   }>;
   sponsored?: boolean;
+  /** false 时详情页不显示“这是推广链接…”说明，但推广标和 rel 仍保留 */
+  disclosure?: boolean;
   enabled?: boolean;
   order?: number;
 }

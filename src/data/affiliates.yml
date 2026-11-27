@@ -63,5 +63,6 @@
     - title: 使用建议
       text: 从官方下载页选择对应系统安装；功能和活动以官网当前说明为准。
   sponsored: true
+  disclosure: false
   enabled: true
   order: 3
