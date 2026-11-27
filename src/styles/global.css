@@ -2552,3 +2552,15 @@ button {
   box-shadow: 0 0 0 2px var(--canvas);
   pointer-events: none;
 }
+
+/* qwen office entry next to masthead CTAs */
+.qwen-hero {
+  position: relative;
+  overflow: visible;
+}
+
+@media (max-width: 600px) {
+  .qwen-hero {
+    margin-left: auto;
+  }
+}
