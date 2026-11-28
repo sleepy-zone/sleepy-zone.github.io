@@ -228,13 +228,13 @@
 - slug: outfit-db-cn
   name: outfit-db-cn
   displayName: "服装提示词库 · 中文版"
-  desc: 两位 AI 服装设计师 39 套原创设计：规格板 / 试穿图 / 可复制的分栏提示词
+  desc: 两位 AI 服装设计师 45 套原创设计：规格板 / 试穿图 / 可复制的分栏提示词
   image: /img/projects/outfit-db-cn.webp
   imageAlt: 服装提示词库界面
   freeDownload: true
-  resourceNote: "39 套 / 126 张原图"
+  resourceNote: "45 套 / 145 张原图"
   downloadsTitle: "图集下载"
-  downloadsNote: "39 套 / 126 张原图，每套含设计规格板 + 试穿图 + 分栏中文提示词，约 36 MB，两个网盘任选，内容相同。"
+  downloadsNote: "45 套 / 145 张原图，每套含设计规格板 + 试穿图 + 分栏中文提示词，约 42 MB，两个网盘任选，内容相同。"
   downloads:
     - provider: xunlei
       url: https://pan.xunlei.com/s/VP7NVilaE2tIxro-r8Ce-yGkA1?pwd=hbz6
@@ -248,10 +248,10 @@
   repo: https://github.com/sleepy-zone/outfit-db-cn
   stars: 0
   detail:
-    intro: "服装提示词库把两位 AI 服装设计师的原创服饰整理成可检索的库：ChiHAL（@chihal_ai0509）29 套街头系，SQZKaicho（@SQZKaicho）10 套 SQUALLUZ 赛车 / 机车 / 度假 / 夜场系列。每套一张设计规格板、若干张试穿图，以及可整段或分栏复制的提示词。"
+    intro: "服装提示词库把两位 AI 服装设计师的原创服饰整理成可检索的库：ChiHAL（@chihal_ai0509）35 套街头系，SQZKaicho（@SQZKaicho）10 套 SQUALLUZ 赛车 / 机车 / 度假 / 夜场系列。每套一张设计规格板、若干张试穿图，以及可整段或分栏复制的提示词。"
     highlights:
-      - "39 套精选 · 14 类风格：ChiHAL 的暗黑朋克 / 新中式 / Y2K / 芭蕾核 / 都市裁缝，加 SQZ 的赛车摩托 / 度假泳装"
-      - "263 段提示词：ChiHAL 按部位分栏、SQZ 按规格表分栏，每栏单独可复制"
+      - "45 套精选 · 15 类风格：ChiHAL 的暗黑朋克 / 新中式 / Y2K / 芭蕾核 / 都市裁缝，加 SQZ 的赛车摩托 / 度假泳装"
+      - "300 段提示词：ChiHAL 按部位分栏、SQZ 按规格表分栏，每栏单独可复制"
       - "设计规格板含正背面立裁、色卡、面料小样与细节特写"
       - "整库可打包下载：原图 + 每套中文提示词"
     useCases:
